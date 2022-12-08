@@ -8,8 +8,8 @@ Here's a list of topics the blog's about, with cool links that I recommend readi
 - [ad](https://joeware.net/)
 - [aad](https://learn.microsoft.com/en-us/azure/active-directory/hybrid/)
 - [.net](https://www.hanselman.com/)
-- [linux]
-- [frame.work](https://frame.work)
+- [linux](https://pop.system76.com/)
+- [frame.work](https://frame.work/about)
 
 
 Dog tax: 
