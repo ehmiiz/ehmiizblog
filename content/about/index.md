@@ -18,12 +18,16 @@ I'm a 29 year old guy who's writing this blog mostly to see how blogs can be bui
 * Positivity
 * Digital bookshelf to look back on for myself
 * Knowledge sharing
-* Get more .md experiance
+* Get more .md experience
 
 ### Contact
 
-You can mail me at:
-emil@ehmiiz.tech
+You can DM me on twitter:
+https://twitter.com/ehmiiz
+
+or LinkedIn:
+https://www.linkedin.com/in/ehmiiz
+
 
 ### Coming up
 
@@ -62,5 +66,9 @@ This is a list of books I've read starting from 2020-03-01. The books in this li
 * Sword of Destiny: Tales of the Witcher
 * Fördelar ADHD by Anders Hansen
 * Ready Player One
-* Blood of Elves: Witcher 1
-
+* Witcher 1: Blood of Elves
+* Witcher 2: Time of Contempt
+* Witcher 3: Baptism of Fire
+* Witcher 4: The Tower of the Swallow
+* Witcher 5: The Lady of the Lake
+* Witcher 6: Season of Storms

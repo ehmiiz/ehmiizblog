@@ -1,7 +1,6 @@
-baseURL: https://blog.ehmiiz.tech
+baseURL: https://ehmiiz.tech
 languageCode: en-us
 defaultContentLanguage: en
-title: pwsh blog
 theme: cupper-hugo-theme
 googleAnalytics: UA-123456789-1
 
@@ -17,9 +16,9 @@ imaging:
   quality: 99
 
 params:
-  description: Tech & Book blog, all things PowerShell & what I'm currently reading!
+  description: Recommended reading link [XY](https://xyproblem.info/)
   homeMetaContent: An accessibility-friendly Hugo theme, ported from the original Cupper project.
-  footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). Deployed to [Netlify](https://www.netlify.com/).
+  footer: Follow me on [Github](https://github.com/ehmiiz) and [Twitter](https://twitter.com/ehmiiz)
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat: Jan 2, 2006
   codePenUser: someUser
@@ -38,7 +37,7 @@ params:
     - js/custom_01.js
     - js/custom_02.js
   utterances:
-    repo: ehmiiz/ehmiiz.github.io
+    repo: ehmiiz/ehmiizblog
     issueTerm: title
     theme: github-light
 
@@ -48,17 +47,14 @@ menu:
       url: /
       weight: 1
     - name: Blog
-      url: /blog/
+      url: /blog
       weight: 2
-    - name: List
-      url: /list/
-      weight: 3
     - name: About
-      url: /about/
-      weight: 4
+      url: /about
+      weight: 3
     - name: RSS
       url: /index.xml
-      weight: 5
+      weight: 4
 
 markup:
   defaultMarkdownHandler: goldmark
