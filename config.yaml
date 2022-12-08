@@ -26,7 +26,7 @@ params:
   hideHeaderLinks: false
   search: true
   showThemeSwitcher: true
-  defaultDarkTheme: false
+  defaultDarkTheme: true
   moveFooterToHeader: false
   # navTitleText: Cupper Theme
   logoAlt: An alternative text description of the logo
