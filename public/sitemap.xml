@@ -3,9 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ehmiiz.tech/</loc>
-  </url><url>
-    <loc>https://ehmiiz.tech/</loc>
+    <lastmod>2022-12-08T11:42:12+01:00</lastmod>
     <priority>0</priority>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/</loc>
+    <lastmod>2022-12-08T11:42:12+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_adcs_certinstall/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_ad_unsecure_by_default/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_agpm_setacl/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_making_binary_ps_module/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_pwgenerator_update/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/solution_efs_windows/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/about/</loc>
+    <lastmod>2022-12-08T14:43:56+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_tip_tab/</loc>
+    <lastmod>2022-12-08T11:42:12+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_ad_2021_review/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_simplehyper-vlabmodule/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/cv/</loc>
+    <lastmod>2022-12-08T10:41:18+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_automatedgpocloning/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_pwgenerator/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/ps_digitallysigned/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/life-3.0/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/lotr-for/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.tech/blog/hobbit/</loc>
+    <lastmod>2022-12-08T11:38:45+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.tech/tags/</loc>
   </url>
