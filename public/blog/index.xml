@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pwsh blog</title>
-    <link>https://blog.ehmiiz.tech/</link>
-    <description>Recent content on pwsh blog</description>
+    <title>Blogs on pwsh blog</title>
+    <link>https://blog.ehmiiz.tech/blog/</link>
+    <description>Recent content in Blogs on pwsh blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Nov 2022 08:13:11 +0100</lastBuildDate><atom:link href="https://blog.ehmiiz.tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 08:13:11 +0100</lastBuildDate><atom:link href="https://blog.ehmiiz.tech/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell Solution: Install PFX certificate on servers</title>
       <link>https://blog.ehmiiz.tech/blog/ps_adcs_certinstall/</link>
@@ -74,17 +74,6 @@ The keypair to this certificate is stored in your Personal certificate store, lu
     </item>
     
     <item>
-      <title>About Ehmiiz.tech</title>
-      <link>https://blog.ehmiiz.tech/about/</link>
-      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.ehmiiz.tech/about/</guid>
-      <description>Hi, and welcome to my blog I&amp;rsquo;m a 29 year old guy who&amp;rsquo;s writing this blog mostly to see how blogs can be built using github and hugo! And to remember what books I&amp;rsquo;ve read.
-Goals of this blog  Simplicity Curiosity Positivity Digital bookshelf to look back on for myself Knowledge sharing Get more .md experiance  Contact You can mail me at: emil@ehmiiz.tech
-Coming up This is a list of books I&amp;rsquo;ve read starting from 2020-03-01.</description>
-    </item>
-    
-    <item>
       <title>PowerShell Productivity tip: Working with History</title>
       <link>https://blog.ehmiiz.tech/blog/ps_tip_#tab/</link>
       <pubDate>Mon, 16 May 2022 08:05:11 +0100</pubDate>
@@ -113,17 +102,6 @@ For myself I&amp;rsquo;ve been writing quite a few security focused modules and 
       <guid>https://blog.ehmiiz.tech/blog/ps_simplehyper-vlabmodule/</guid>
       <description>Meet Labmil. Labmil is a script I made to serve a specific usecase. When AutomatedLab is overkill, and when you don&amp;rsquo;t want to skip the installation phase of the lab.
 Features  Quickly put the Windows Server ISO-file to good use It&amp;rsquo;s a simple script for anyone to modify for personal needs It outputs a customobject Create multiple VM&amp;rsquo;s using PowerShell logic  Non-Features The script has a few non-features. Non-Features are cool because it makes the script unique and useful in certain senarios.</description>
-    </item>
-    
-    <item>
-      <title>CV, Emil Larsson 👨‍💻</title>
-      <link>https://blog.ehmiiz.tech/cv/</link>
-      <pubDate>Sun, 25 Jul 2021 07:13:37 +0100</pubDate>
-      
-      <guid>https://blog.ehmiiz.tech/cv/</guid>
-      <description>Working from home since early 2020.
-  Titles 🧙  IT Automation Engineer Identity and Access management Engineer Security Operator  Above are some of the titles I feel comfortable calling myself, although I&amp;rsquo;ve been working with identity and access management &amp;amp; IT automation for most of my career, I always view security as a priority in everything I do.
-Skills 🤹🏽 This is a list of skills that I possess besides general deep IT knowledge and understanding.</description>
     </item>
     
     <item>
@@ -187,16 +165,6 @@ It’s author, Max Tegmark, got me very interested in the subject and he does so
       <guid>https://blog.ehmiiz.tech/blog/hobbit/</guid>
       <description>The Hobbit &amp;ndash; At Amazon
   &amp;ldquo;A timeless advanture for all ages&amp;rdquo; This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies. I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.</description>
-    </item>
-    
-    <item>
-      <title>List View</title>
-      <link>https://blog.ehmiiz.tech/list/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.ehmiiz.tech/list/</guid>
-      <description>The script that builds this list can be found here: ehmiiz/Invoke-List.ps1
-  2022-11-16 &amp;mdash;&amp;gt; PowerShell Solution: Install PFX certificate on servers 2022-10-05 &amp;mdash;&amp;gt; PowerShell for Security: Continuous post of AD Weaknesses  2022-09-08 &amp;mdash;&amp;gt; PowerShell Solution: AGPM unable to take control of a GPO 2022-08-15 &amp;mdash;&amp;gt; PowerShell: C Sharp for PowerShell Modules  2022-07-04 &amp;mdash;&amp;gt; PowerShell for Security: PassWord Gen Part 2  2022-06-15 &amp;mdash;&amp;gt; Solution: Restore Deleted Private key for EFS Encrypted Files 2022-05-16 &amp;mdash;&amp;gt; PowerShell Productivity tip: Working with History  2022-01-04 &amp;mdash;&amp;gt; PowerShell in 2021: From my IAM Perspective  2021-12-21 &amp;mdash;&amp;gt; PowerShell for Automation: Simple Hyper-V VM-Creation script  2021-05-12 &amp;mdash;&amp;gt; PowerShell Solution: Automate GPO creations 2021-05-10 &amp;mdash;&amp;gt; PowerShell for Security: PassWord Gen Part 1  2021-02-11 &amp;mdash;&amp;gt; PowerShell Solution: Script not digitally signed  2021-02-08 &amp;mdash;&amp;gt; Book review: Life 3.</description>
     </item>
     
   </channel>

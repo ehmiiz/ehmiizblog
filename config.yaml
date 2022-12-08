@@ -1,10 +1,10 @@
-baseURL: https://example.com
+baseURL: https://blog.ehmiiz.tech
 languageCode: en-us
 defaultContentLanguage: en
-title: Cupper
+title: pwsh blog
 theme: cupper-hugo-theme
 googleAnalytics: UA-123456789-1
-disqusShortname: yourdiscussshortname
+
 enableGitInfo: true
 
 taxonomies:
@@ -17,7 +17,7 @@ imaging:
   quality: 99
 
 params:
-  description: An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project.
+  description: Tech & Book blog, all things PowerShell & what I'm currently reading!
   homeMetaContent: An accessibility-friendly Hugo theme, ported from the original Cupper project.
   footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme). Deployed to [Netlify](https://www.netlify.com/).
   # For more date formats see https://gohugo.io/functions/format/
@@ -38,7 +38,7 @@ params:
     - js/custom_01.js
     - js/custom_02.js
   utterances:
-    repo: username/username.github.io
+    repo: ehmiiz/ehmiiz.github.io
     issueTerm: title
     theme: github-light
 
@@ -48,10 +48,10 @@ menu:
       url: /
       weight: 1
     - name: Blog
-      url: /post/
+      url: /blog/
       weight: 2
-    - name: Tags
-      url: /tags/
+    - name: List
+      url: /list/
       weight: 3
     - name: About
       url: /about/

@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.92.2" />
-  <link rel="canonical" href="https://blog.ehmiiz.tech/list/" />
+  <link rel="canonical" href="https://blog.ehmiiz.tech/blog/ps_agpm_setacl/" />
 
   
     
-    <meta name="description" content="The script that builds this list can be found here: ehmiiz/Invoke-List.ps1
-  2022-11-16 —&gt; PowerShell Solution: Install PFX certificate on servers 2022-10-05 —&gt; PowerShell for Security: Continuous post of AD Weaknesses  2022-09-08 —&gt; PowerShell Solution: AGPM unable to take control of a GPO 2022-08-15 —&gt; PowerShell: C Sharp for PowerShell Modules  2022-07-04 —&gt; PowerShell for Security: PassWord Gen Part 2  2022-06-15 —&gt; Solution: Restore Deleted Private key for EFS Encrypted Files 2022-05-16 —&gt; PowerShell Productivity tip: Working with History  2022-01-04 —&gt; PowerShell in 2021: From my IAM Perspective  2021-12-21 —&gt; PowerShell for Automation: Simple Hyper-V VM-Creation script  2021-05-12 —&gt; PowerShell Solution: Automate GPO creations 2021-05-10 —&gt; PowerShell for Security: PassWord Gen Part 1  2021-02-11 —&gt; PowerShell Solution: Script not digitally signed  2021-02-08 —&gt; Book review: Life 3.">
+    <meta name="description" content="Problem If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, Advanced Group Policy Management or AGPM, is an amazing tool.
+AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.
+When combined with new sysadmins that has not been introduced to the concept of AGPM, uncontrolled GPOs might become a problem and the built in error messages are sadly not the greatest.">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://blog.ehmiiz.tech/apple-touch-icon.png">
@@ -61,7 +62,7 @@
 
   
   
-  <title>List View | pwsh blog</title>
+  <title>PowerShell Solution: AGPM unable to take control of a GPO | pwsh blog</title>
 </head>
 
   <body>
@@ -270,25 +271,73 @@
         <div>
           
   <main id="main">
-    <h1>List View</h1>
-    <p>The script that builds this list can be found here: <a href="https://gist.github.com/ehmiiz/263633ed531e6c5507291309f3a9c514#file-invoke-list-ps1">ehmiiz/Invoke-List.ps1</a></p>
-<p> </p>
-<p> </p>
-<h4 id="2022-11-16-----powershell-solution-install-pfx-certificate-on-servershttpsblogehmiiztechpowershell-solution-install-pfx-certificate-on-servers">2022-11-16 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-install-pfx-certificate-on-servers/">PowerShell Solution: Install PFX certificate on servers</a></h4>
-<h4 id="2022-10-05-----powershell-for-security-continuous-post-of-ad-weaknesses-httpsblogehmiiztechpowershell-for-security-continuous-post-of-ad-weaknesses">2022-10-05 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-security-continuous-post-of-ad-weaknesses/">PowerShell for Security: Continuous post of AD Weaknesses </a></h4>
-<h4 id="2022-09-08-----powershell-solution-agpm-unable-to-take-control-of-a-gpohttpsblogehmiiztechpowershell-solution-agpm-unable-to-take-control-of-a-gpo">2022-09-08 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-agpm-unable-to-take-control-of-a-gpo/">PowerShell Solution: AGPM unable to take control of a GPO</a></h4>
-<h4 id="2022-08-15-----powershell-c-sharp-for-powershell-modules-httpsblogehmiiztechpowershell-c-sharp-for-powershell-modules">2022-08-15 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-c-sharp-for-powershell-modules/">PowerShell: C Sharp for PowerShell Modules </a></h4>
-<h4 id="2022-07-04-----powershell-for-security-password-gen-part-2-httpsblogehmiiztechpowershell-for-security-password-gen-part-2">2022-07-04 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-security-password-gen-part-2/">PowerShell for Security: PassWord Gen Part 2 </a></h4>
-<h4 id="2022-06-15-----solution-restore-deleted-private-key-for-efs-encrypted-fileshttpsblogehmiiztechsolution-restore-deleted-private-key-for-efs-encrypted-files">2022-06-15 &mdash;&gt; <a href="https://blog.ehmiiz.tech/solution-restore-deleted-private-key-for-efs-encrypted-files/">Solution: Restore Deleted Private key for EFS Encrypted Files</a></h4>
-<h4 id="2022-05-16-----powershell-productivity-tip-working-with-history-httpsblogehmiiztechpowershell-productivity-tip-working-with-history">2022-05-16 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-productivity-tip-working-with-history/">PowerShell Productivity tip: Working with History </a></h4>
-<h4 id="2022-01-04-----powershell-in-2021-from-my-iam-perspective-httpsblogehmiiztechpowershell-in-2021-from-my-iam-perspective">2022-01-04 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-in-2021-from-my-iam-perspective/">PowerShell in 2021: From my IAM Perspective </a></h4>
-<h4 id="2021-12-21-----powershell-for-automation-simple-hyper-v-vm-creation-script-httpsblogehmiiztechpowershell-for-automation-simple-hyper-v-vm-creation-script">2021-12-21 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-automation-simple-hyper-v-vm-creation-script/">PowerShell for Automation: Simple Hyper-V VM-Creation script </a></h4>
-<h4 id="2021-05-12-----powershell-solution-automate-gpo-creationshttpsblogehmiiztechpowershell-solution-automate-gpo-creations">2021-05-12 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-automate-gpo-creations/">PowerShell Solution: Automate GPO creations</a></h4>
-<h4 id="2021-05-10-----powershell-for-security-password-gen-part-1-httpsblogehmiiztechpowershell-for-security-password-gen-part-1">2021-05-10 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-security-password-gen-part-1/">PowerShell for Security: PassWord Gen Part 1 </a></h4>
-<h4 id="2021-02-11-----powershell-solution-script-not-digitally-signed-httpsblogehmiiztechpowershell-solution-script-not-digitally-signed">2021-02-11 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-script-not-digitally-signed/">PowerShell Solution: Script not digitally signed </a></h4>
-<h4 id="2021-02-08-----book-review-life-30httpsblogehmiiztechbook-review-life-30">2021-02-08 &mdash;&gt; <a href="https://blog.ehmiiz.tech/book-review-life-3.0/">Book review: Life 3.0</a></h4>
-<h4 id="2021-02-07-----book-review-the-hobbithttpsblogehmiiztechbook-review-the-hobbit">2021-02-07 &mdash;&gt; <a href="https://blog.ehmiiz.tech/book-review-the-hobbit/">Book Review: The Hobbit</a></h4>
-<h4 id="2021-02-07-----book-review-lotr-the-fellowship-of-the-ringhttpsblogehmiiztechbook-review-lotr-the-fellowship-of-the-ring">2021-02-07 &mdash;&gt; <a href="https://blog.ehmiiz.tech/book-review-lotr-the-fellowship-of-the-ring/">Book Review: LOTR, The Fellowship of the Ring</a></h4>
+    <h1>PowerShell Solution: AGPM unable to take control of a GPO</h1>
+    <figure><img src="/pics/oldkeyboard.jpg"/>
+</figure>
+
+<h2 id="problem">Problem</h2>
+<p>If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, <a href="https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/agpm/">Advanced Group Policy Management</a> or AGPM, is an amazing tool.</p>
+<p>AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.</p>
+<p>When combined with new sysadmins that has not been introduced to the concept of AGPM, uncontrolled GPOs might become a problem and the built in error messages are sadly not the greatest.</p>
+<pre><code class="language-text">(GPMC Error) could not take the ownership of the production GPO. Access is denied. (Exceptions from HRESULT : 0x80070005 (E_ACCESSDENIED)).
+</code></pre>
+<figure><img src="/pics/error_code_meme.jpg"/>
+</figure>
+
+<p>Access denied is caused by the AGPM service-account not having the permission to take control of the GPO (not having control of a GPO in AGPM really does ruin the point of AGPM). Solving this problem involves giving the service-account the permissions needed, however it&rsquo;s a bit of a tricky thing to do.</p>
+<h2 id="solution">Solution</h2>
+<p>As we&rsquo;ve established, we must add the correct permissions for the service-account to the GPO, easy right?
+Luckily yes, because we know PowerShell!</p>
+<figure><img src="/pics/PowerShellHero.jpg"/>
+</figure>
+
+<p>To add the permissions, we need to understand how a GPO is stored. There&rsquo;s two places a GPOs data resides in, ActiveDirectory (GPC) &amp; Sysvol (GPT).</p>
+<h3 id="gpc">GPC</h3>
+<p>Group Policy Container (GPC), luckily the name is easy to remember because we already understand that AD consists of Organizational Units and&hellip; Containers.
+The GPC is stored in AD, under &ldquo;CN=,Policies,CN=System,DC=x,DC=x&rdquo;. Since it&rsquo;s an AD object, logically it has attributes describing the object version etc.</p>
+<h3 id="gpt">GPT</h3>
+<p>Group Policy Template (GPT), is stored in the DC&rsquo;s system volume (sysvol), under the &lsquo;policies&rsquo; subfolder.</p>
+<p>The GPT stores the majority of GPO data, it contains a folder structure of files that describes the GPOs functionality, meaning it stores script files, administrative template-based policies and various other security settings.</p>
+<h3 id="replication">Replication</h3>
+<p>GPC uses AD replication, and GPT uses DFS-R since its in sysvol. This is important because we will edit the ACLs of both AD and sysvol in order to solve our issue.</p>
+<h3 id="editing-acl-for-gpc">Editing ACL for GPC</h3>
+<p>Editing its ACL requires generating an ActiveDirectoryRights object with the desired access. This can be done multiple ways, <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771151(v=ws.11)">dsacls</a>, using <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2">Set-ACL</a> to name a few. In this case I had heard of an amazing module from <a href="https://twitter.com/SimonWahlin">Simon Wahlin</a> called <a href="https://www.powershellgallery.com/packages/DSACL/1.0.0">DSACL</a>, so I can simply do the following:</p>
+<pre><code class="language-powershell">$ADRights = &quot;CreateChild&quot;, &quot;DeleteChild&quot;, &quot;Self&quot;, &quot;WriteProperty&quot;, &quot;DeleteTree&quot;, &quot;Delete&quot;, &quot;GenericRead&quot;, &quot;WriteDacl&quot;, &quot;WriteOwner&quot;, &quot;AccessSystemSecurity&quot;
+</code></pre>
+<pre><code class="language-powershell">Add-DSACLCustom -TargetDN $GPODN -DelegateDN $DelegateDN -ActiveDirectoryRights $ADRights  -InheritanceType Descendents -AccessControlType Allow
+
+Add-DSACLCustom -TargetDN $GPODN -DelegateDN $DelegateDN -ActiveDirectoryRights $ADRights[0..8] -InheritanceType None -AccessControlType Allow
+</code></pre>
+<p>The &lsquo;TargetDN&rsquo; in this case will be the GPCs distinguishedName, and the DelegateDN will be the distinguishedName of our AGPM service-account.
+We run the cmdlet twice to mimic the way AGPM edits the ACL in a controlled GPO. AccessSystemSecurity was not needed in the 2nd ACE and therefore I ended up selecting the first 9 (0..8) ADRights.</p>
+<h3 id="editing-the-acl-for-gpt">Editing the ACL for GPT</h3>
+<p>Since GPT is in sysvol, we now have the task of editing a filesystem ACL. This is different from a directory service ACL. There&rsquo;s many ways of doing this as well, <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cacls">cacls</a>, and <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2">Set-ACL</a> works great. I ended up taking the easy way out and used <a href="https://www.powershellgallery.com/packages/NTFSSecurity/4.2.6">NTFSSecurity</a>, again another killer PowerShell module with 1,1mil downloads as of writing. And that&rsquo;s quite understandable considering this is how one can grant full control on a filesystem:</p>
+<pre><code class="language-powershell">Add-NTFSAccess -Path &quot;\\DOMAIN\SYSVOL\DOMAIN.TEST\Policies\{$($GPOObject.Id)}&quot; -AccessRights FullControl -Account 'DOMAIN\Service-Account-AGPM'
+</code></pre>
+<h3 id="almost-ready-to-solve">Almost ready to solve!</h3>
+<p>As we have learned, GPC and GPT is a bit different. Sysvol and AD does replicate, but in different ways. Key take-away is that most likely we need to wait for replication in order for the AGPM server to understand that the rights are in fact in place. This took me around 15m, this could have been avoided had I done the changes on the same server.</p>
+<p>Using the <a href="https://docs.microsoft.com/en-us/powershell/module/agpm/add-controlledgpo?view=win-mdop2-ps">AGPM module</a>, we&rsquo;re now ready to take control of the GPO, since we now have the access to do so.</p>
+<pre><code class="language-powershell">Get-Gpo -Name &quot;TheUncontrolledGPO&quot; | Add-ControlledGpo -PassThru
+</code></pre>
+<p>In my case, I had more then 1 uncontrolled GPO, to say the least.
+Sadly the AGPM module doesn&rsquo;t have something like &lsquo;Get-UncontrolledGPO&rsquo;.</p>
+<p>What I ended up doing was to filter out all uncontrolled GPOs myself using Compare-Object, .</p>
+<pre><code class="language-powershell">$ControlledGPOS = Get-ControlledGpo
+$UncontrolledGPOS = (Compare-Object $ControlledGPOS.Name (Get-GPO -All).DisplayName).InputObject
+
+foreach ($GPO in $UncontrolledGPOS) {
+    Get-Gpo -Name $GPO | Add-ControlledGpo -PassThru
+}
+</code></pre>
+<p>You can of course also navigate within GPMC &gt; ChangeControl &gt; Uncontrolled &gt; select all GPOs, rightclick, Control.</p>
+<p>Congratulations on having a fully controlled AGPM environment.</p>
+<h2 id="discussion">Discussion</h2>
+<p>Understanding where a GPO is stored is a nice way of understanding how they work. The reason behind having them stored in separate places most likely goes back to fact that AD is old, and back in the days, size mattered.
+Having the GPT files in the AD database (.dit) would simply mean a huge increase in data for AD. Splitting things up and having the DCs taking a bit of storage was probably a good idea back then.</p>
+<p>On another note, notice my code in this solution was quite simple. Even thought we did some complex tasks. I was actively not trying to re-invent the wheel, and this is something that gets more important the &lsquo;harder&rsquo; the task becomes. Using &ldquo;blackbox&rdquo; modules where we only follow the PowerShell standard way of typing out a cmdlet, can be a great way of achieving complex tasks with speed.
+It&rsquo;s also important that when a &ldquo;blackbox&rdquo; module solves something for you, go back and try to dig deeper in what it actually did. I find this a good way of learning things in general.</p>
+<h3 id="happy-coding">Happy coding</h3>
+<h3 id="emil">/Emil</h3>
 
   </main>
 

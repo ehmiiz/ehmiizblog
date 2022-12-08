@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.92.2" />
-  <link rel="canonical" href="https://blog.ehmiiz.tech/list/" />
+  <link rel="canonical" href="https://blog.ehmiiz.tech/blog/ps_digitallysigned/" />
 
   
     
-    <meta name="description" content="The script that builds this list can be found here: ehmiiz/Invoke-List.ps1
-  2022-11-16 —&gt; PowerShell Solution: Install PFX certificate on servers 2022-10-05 —&gt; PowerShell for Security: Continuous post of AD Weaknesses  2022-09-08 —&gt; PowerShell Solution: AGPM unable to take control of a GPO 2022-08-15 —&gt; PowerShell: C Sharp for PowerShell Modules  2022-07-04 —&gt; PowerShell for Security: PassWord Gen Part 2  2022-06-15 —&gt; Solution: Restore Deleted Private key for EFS Encrypted Files 2022-05-16 —&gt; PowerShell Productivity tip: Working with History  2022-01-04 —&gt; PowerShell in 2021: From my IAM Perspective  2021-12-21 —&gt; PowerShell for Automation: Simple Hyper-V VM-Creation script  2021-05-12 —&gt; PowerShell Solution: Automate GPO creations 2021-05-10 —&gt; PowerShell for Security: PassWord Gen Part 1  2021-02-11 —&gt; PowerShell Solution: Script not digitally signed  2021-02-08 —&gt; Book review: Life 3.">
+    <meta name="description" content="“.ps1 is not digitally signed. The script will not execute on the system.” This error is clearly not really a typical error, but can be a blocker, nonetheless. It’s more of a security feature than an error.
+Simple solution if you’re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://blog.ehmiiz.tech/apple-touch-icon.png">
@@ -61,7 +63,7 @@
 
   
   
-  <title>List View | pwsh blog</title>
+  <title>PowerShell Solution: Script not digitally signed | pwsh blog</title>
 </head>
 
   <body>
@@ -270,25 +272,17 @@
         <div>
           
   <main id="main">
-    <h1>List View</h1>
-    <p>The script that builds this list can be found here: <a href="https://gist.github.com/ehmiiz/263633ed531e6c5507291309f3a9c514#file-invoke-list-ps1">ehmiiz/Invoke-List.ps1</a></p>
-<p> </p>
-<p> </p>
-<h4 id="2022-11-16-----powershell-solution-install-pfx-certificate-on-servershttpsblogehmiiztechpowershell-solution-install-pfx-certificate-on-servers">2022-11-16 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-install-pfx-certificate-on-servers/">PowerShell Solution: Install PFX certificate on servers</a></h4>
-<h4 id="2022-10-05-----powershell-for-security-continuous-post-of-ad-weaknesses-httpsblogehmiiztechpowershell-for-security-continuous-post-of-ad-weaknesses">2022-10-05 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-security-continuous-post-of-ad-weaknesses/">PowerShell for Security: Continuous post of AD Weaknesses </a></h4>
-<h4 id="2022-09-08-----powershell-solution-agpm-unable-to-take-control-of-a-gpohttpsblogehmiiztechpowershell-solution-agpm-unable-to-take-control-of-a-gpo">2022-09-08 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-agpm-unable-to-take-control-of-a-gpo/">PowerShell Solution: AGPM unable to take control of a GPO</a></h4>
-<h4 id="2022-08-15-----powershell-c-sharp-for-powershell-modules-httpsblogehmiiztechpowershell-c-sharp-for-powershell-modules">2022-08-15 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-c-sharp-for-powershell-modules/">PowerShell: C Sharp for PowerShell Modules </a></h4>
-<h4 id="2022-07-04-----powershell-for-security-password-gen-part-2-httpsblogehmiiztechpowershell-for-security-password-gen-part-2">2022-07-04 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-security-password-gen-part-2/">PowerShell for Security: PassWord Gen Part 2 </a></h4>
-<h4 id="2022-06-15-----solution-restore-deleted-private-key-for-efs-encrypted-fileshttpsblogehmiiztechsolution-restore-deleted-private-key-for-efs-encrypted-files">2022-06-15 &mdash;&gt; <a href="https://blog.ehmiiz.tech/solution-restore-deleted-private-key-for-efs-encrypted-files/">Solution: Restore Deleted Private key for EFS Encrypted Files</a></h4>
-<h4 id="2022-05-16-----powershell-productivity-tip-working-with-history-httpsblogehmiiztechpowershell-productivity-tip-working-with-history">2022-05-16 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-productivity-tip-working-with-history/">PowerShell Productivity tip: Working with History </a></h4>
-<h4 id="2022-01-04-----powershell-in-2021-from-my-iam-perspective-httpsblogehmiiztechpowershell-in-2021-from-my-iam-perspective">2022-01-04 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-in-2021-from-my-iam-perspective/">PowerShell in 2021: From my IAM Perspective </a></h4>
-<h4 id="2021-12-21-----powershell-for-automation-simple-hyper-v-vm-creation-script-httpsblogehmiiztechpowershell-for-automation-simple-hyper-v-vm-creation-script">2021-12-21 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-automation-simple-hyper-v-vm-creation-script/">PowerShell for Automation: Simple Hyper-V VM-Creation script </a></h4>
-<h4 id="2021-05-12-----powershell-solution-automate-gpo-creationshttpsblogehmiiztechpowershell-solution-automate-gpo-creations">2021-05-12 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-automate-gpo-creations/">PowerShell Solution: Automate GPO creations</a></h4>
-<h4 id="2021-05-10-----powershell-for-security-password-gen-part-1-httpsblogehmiiztechpowershell-for-security-password-gen-part-1">2021-05-10 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-for-security-password-gen-part-1/">PowerShell for Security: PassWord Gen Part 1 </a></h4>
-<h4 id="2021-02-11-----powershell-solution-script-not-digitally-signed-httpsblogehmiiztechpowershell-solution-script-not-digitally-signed">2021-02-11 &mdash;&gt; <a href="https://blog.ehmiiz.tech/powershell-solution-script-not-digitally-signed/">PowerShell Solution: Script not digitally signed </a></h4>
-<h4 id="2021-02-08-----book-review-life-30httpsblogehmiiztechbook-review-life-30">2021-02-08 &mdash;&gt; <a href="https://blog.ehmiiz.tech/book-review-life-3.0/">Book review: Life 3.0</a></h4>
-<h4 id="2021-02-07-----book-review-the-hobbithttpsblogehmiiztechbook-review-the-hobbit">2021-02-07 &mdash;&gt; <a href="https://blog.ehmiiz.tech/book-review-the-hobbit/">Book Review: The Hobbit</a></h4>
-<h4 id="2021-02-07-----book-review-lotr-the-fellowship-of-the-ringhttpsblogehmiiztechbook-review-lotr-the-fellowship-of-the-ring">2021-02-07 &mdash;&gt; <a href="https://blog.ehmiiz.tech/book-review-lotr-the-fellowship-of-the-ring/">Book Review: LOTR, The Fellowship of the Ring</a></h4>
+    <h1>PowerShell Solution: Script not digitally signed</h1>
+    <h2 id="ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system">“.ps1 is not digitally signed. The script will not execute on the system.”</h2>
+<p>This error is clearly not really a typical error, but can be a blocker, nonetheless. It&rsquo;s more of a security feature than an error.</p>
+<p>Simple solution if you&rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:</p>
+<p><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></p>
+<p>This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.</p>
+<p>Another solution would be if you&rsquo;re executing the script from your own user:</p>
+<p><code>Set-ExecutionPolicy RemoteSigned</code></p>
+<p>Further documentation regarding Set-ExecutionPolicy may be found <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10)?redirectedfrom=MSDN">here</a>.</p>
+<p>Original blogpost that helped me solve this issue was found here: <a href="https://caiomsouza.medium.com/">here</a>.</p>
+<h2 id="happy-coding">Happy coding</h2>
 
   </main>
 
