@@ -11,6 +11,7 @@ Here's a list of topics the blog's about, with cool links that I recommend readi
 - [linux](https://pop.system76.com/)
 - [frame.work](https://frame.work/about)
 
+Goal is to educate & spread awareness regarding the topics above, I hope you have fun reading, or learn something!
 
 Dog tax: 
 {{< figure
