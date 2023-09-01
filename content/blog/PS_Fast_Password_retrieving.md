@@ -1,9 +1,15 @@
---- 
-title: "PowerShell KeePass and saving time."
-date: 2023-08-20T08:23:11+01:00 
+---
+date: "2023-09-01"
 draft: false
-comments: true
-
+lastmod: "2023-09-01"
+publishdate: "2023-08-25"
+tags:
+- powershell
+- security
+- passwords
+- automation
+title: PowerShell KeePass and saving time
+toc: true
 ---
 
 {{< figure

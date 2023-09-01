@@ -5,6 +5,43 @@
     <link>/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>automation</title>
+      <link>/tags/automation/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>passwords</title>
+      <link>/tags/passwords/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/passwords/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>powershell</title>
+      <link>/tags/powershell/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>/tags/security/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/security/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
