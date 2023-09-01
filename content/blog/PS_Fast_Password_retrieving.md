@@ -18,7 +18,7 @@ toc: true
 
 Glad to be back from a 7-month dad leave. Let's dive into some timesaving PowerShell!
 
-## The Problem
+### The Problem
 
 Password managers are very useful for anyone having more than one set of credentials, and most of us do.
 
@@ -29,7 +29,7 @@ However, I found myself using the graphical user interface (GUI) of my password 
 Summary: Password managers GUIs are slow and tedious to work with. Lets make em 
 
 
-## My Solution
+### My Solution
 
 The solution to this problem that I went with was to create a custom script, which will install and configure my PowerShell session to easily access my password manager after typing in its master password. Together with a couple of functions to easily retrieve and copy-paste my password to the clipboard.
 

@@ -263,12 +263,12 @@ However, I found myself using the graphical user interface (GUI) of my password 
 </figure>
 
 <p>Glad to be back from a 7-month dad leave. Let&rsquo;s dive into some timesaving PowerShell!</p>
-<h2 id="the-problem">The Problem</h2>
+<h3 id="the-problem">The Problem</h3>
 <p>Password managers are very useful for anyone having more than one set of credentials, and most of us do.</p>
 <p>They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.</p>
 <p>However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret. The problem with navigating a GUI every day is that it&rsquo;s time consuming, and there&rsquo;s room for improvement, especially if you enjoy delving into some PowerShell and/or always have a terminal open.</p>
 <p>Summary: Password managers GUIs are slow and tedious to work with. Lets make em</p>
-<h2 id="my-solution">My Solution</h2>
+<h3 id="my-solution">My Solution</h3>
 <p>The solution to this problem that I went with was to create a custom script, which will install and configure my PowerShell session to easily access my password manager after typing in its master password. Together with a couple of functions to easily retrieve and copy-paste my password to the clipboard.</p>
 <p>Setting something to your clipboard, especially a password, is a risk since other applications also can access the clipboard, thus the clipboard needs to be cleared by setting a sleep timer and overwriting the secret.</p>
 <p>As a start, I will need to create a couple of parameters so the input becomes dynamic, so that I can use the script regardless of what filepath or database name I have on the computer.</p>
