@@ -1,4 +1,4 @@
-## Ehmiiz.tech
+## Ehmiiz.se
 
 Welcome to my blog! I'm [Emil](https://ehmiiz.se/about) and here, you'll find a variety of topics that I'm passionate about, including:
 

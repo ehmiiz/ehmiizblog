@@ -2,7 +2,6 @@ baseURL: https://ehmiiz.se
 languageCode: en-us
 defaultContentLanguage: en
 theme: cupper-hugo-theme
-googleAnalytics: UA-251533000-1
 
 enableGitInfo: true
 
