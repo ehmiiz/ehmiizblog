@@ -1,8 +1,8 @@
 # Welcome!
 
-## https://ehmiiz.tech
+## https://ehmiiz.se
 
-On ehmiiz.tech, you can read about IT, IT Security, IT Automation, but first and foremost **PowerShell**.
+On ehmiiz.se, you can read about IT, IT Security, IT Automation, but first and foremost **PowerShell**.
 
 
 
