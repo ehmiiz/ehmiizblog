@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ehmiiz.se/</loc>
+    <loc>/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://ehmiiz.se/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_fast_password_retrieving/</loc>
+    <loc>/blog/ps_fast_password_retrieving/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_linuxinfo_release/</loc>
+    <loc>/blog/ps_linuxinfo_release/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_pscustomobject_trick/</loc>
+    <loc>/blog/ps_pscustomobject_trick/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_docs_contributions/</loc>
+    <loc>/blog/ps_docs_contributions/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_z_mod/</loc>
+    <loc>/blog/ps_z_mod/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_ad_delegation/</loc>
+    <loc>/blog/ps_ad_delegation/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/cv/</loc>
+    <loc>/cv/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_adcs_certinstall/</loc>
+    <loc>/blog/ps_adcs_certinstall/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</loc>
+    <loc>/blog/ps_ad_unsecure_by_default/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_agpm_setacl/</loc>
+    <loc>/blog/ps_agpm_setacl/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_making_binary_ps_module/</loc>
+    <loc>/blog/ps_making_binary_ps_module/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_pwgenerator_update/</loc>
+    <loc>/blog/ps_pwgenerator_update/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/solution_efs_windows/</loc>
+    <loc>/blog/solution_efs_windows/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2023-09-01T13:47:39+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_tip_tab/</loc>
+    <loc>/blog/ps_tip_tab/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_ad_2021_review/</loc>
+    <loc>/blog/ps_ad_2021_review/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_simplehyper-vlabmodule/</loc>
+    <loc>/blog/ps_simplehyper-vlabmodule/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_automatedgpocloning/</loc>
+    <loc>/blog/ps_automatedgpocloning/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_pwgenerator/</loc>
+    <loc>/blog/ps_pwgenerator/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/ps_digitallysigned/</loc>
+    <loc>/blog/ps_digitallysigned/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/life-3.0/</loc>
+    <loc>/blog/life-3.0/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/lotr-for/</loc>
+    <loc>/blog/lotr-for/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/blog/hobbit/</loc>
+    <loc>/blog/hobbit/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.se/tags/</loc>
+    <loc>/tags/</loc>
   </url>
 </urlset>
