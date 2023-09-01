@@ -1,6 +1,6 @@
 ---
 date: 2022-05-30
-title: "About Ehmiiz.tech"
+title: "About Ehmiiz.se"
 comments: true
 ---
 {{< figure
@@ -9,7 +9,7 @@ comments: true
 
 ## Hi, and welcome to my blog
 
-I'm 30 years old living in Sweden. I started writing this blog mainly as a "book review"-blog, and to see how blogs can be built using [github](https://github.com/ehmiiz/hugofancyblog/) and [hugo](https://gohugo.io/), however, over time, I’ve shifted the focus of my blog to concentrate on PowerShell.
+I'm 30 years old living in Sweden. I started writing this blog mainly as a "book review"-blog, and to see how blogs can be built using [github](https://github.com/ehmiiz/ehmiizblogn/) and [hugo](https://gohugo.io/), however, over time, I’ve shifted the focus of my blog to concentrate on PowerShell.
 
 ### Goals of this blog
 

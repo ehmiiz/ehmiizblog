@@ -2,81 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ehmiiz.tech/blog/</loc>
-    <lastmod>2023-08-21T14:55:22+02:00</lastmod>
+    <loc>https://ehmiiz.se/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
+    <priority>0</priority>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_fast_password_retrieving/</loc>
-    <lastmod>2023-08-21T14:55:22+02:00</lastmod>
+    <loc>https://ehmiiz.se/blog/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_linuxinfo_release/</loc>
-    <lastmod>2023-04-08T22:12:29+02:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_fast_password_retrieving/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_pscustomobject_trick/</loc>
-    <lastmod>2023-03-22T22:20:23+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_linuxinfo_release/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_docs_contributions/</loc>
-    <lastmod>2023-03-19T07:09:27+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_pscustomobject_trick/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_z_mod/</loc>
-    <lastmod>2023-03-17T23:51:42+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_docs_contributions/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_ad_delegation/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_z_mod/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/cv/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_ad_delegation/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_adcs_certinstall/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/cv/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_ad_unsecure_by_default/</loc>
-    <lastmod>2023-03-19T14:25:49+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_adcs_certinstall/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_agpm_setacl/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_making_binary_ps_module/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_agpm_setacl/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_pwgenerator_update/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_making_binary_ps_module/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/solution_efs_windows/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_pwgenerator_update/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/about/</loc>
-    <lastmod>2023-04-05T20:38:02+02:00</lastmod>
+    <loc>https://ehmiiz.se/blog/solution_efs_windows/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_tip_tab/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/about/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_ad_2021_review/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_tip_tab/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_simplehyper-vlabmodule/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_ad_2021_review/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_automatedgpocloning/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_simplehyper-vlabmodule/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_pwgenerator/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_automatedgpocloning/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/ps_digitallysigned/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_pwgenerator/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/life-3.0/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/ps_digitallysigned/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/lotr-for/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/life-3.0/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/blog/hobbit/</loc>
-    <lastmod>2023-03-17T23:42:16+01:00</lastmod>
+    <loc>https://ehmiiz.se/blog/lotr-for/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/</loc>
-    <lastmod>2023-08-22T15:25:53+02:00</lastmod>
+    <loc>https://ehmiiz.se/blog/hobbit/</loc>
+    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>https://ehmiiz.tech/tags/</loc>
+    <loc>https://ehmiiz.se/tags/</loc>
   </url>
 </urlset>
