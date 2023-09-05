@@ -51,7 +51,7 @@ menu:
     - name: About
       url: /about/
       weight: 3
-    - name: My Modules
+    - name: Modules
       url: /modules/
       weight: 4
     - name: RSS
