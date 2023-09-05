@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>My PowerShell Modules</title>
+      <link>/modules/</link>
+      <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/modules/</guid>
+      <description>linuxinfo BinaryPasswordGenerator ExplainLinuxFS PowerShell-Docs-CommunityModule PSHangMan mstscps FilesToFolders </description>
+    </item>
+    
+    <item>
       <title>PowerShell KeePass and saving time</title>
       <link>/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>

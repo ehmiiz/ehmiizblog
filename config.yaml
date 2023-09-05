@@ -51,9 +51,13 @@ menu:
     - name: About
       url: /about/
       weight: 3
+    - name: My Modules
+      url: /modules/
+      weight: 4
     - name: RSS
       url: /index.xml
-      weight: 4
+      weight: 5
+    
 
 markup:
   defaultMarkdownHandler: goldmark
