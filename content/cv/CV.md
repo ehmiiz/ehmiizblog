@@ -11,55 +11,96 @@ Personal development for myself and my team members is something I value highly.
 
 ## Skills
 
-This is a list of skills that I possess besides general deep IT knowledge and understanding. The list is in order high knowledge to medium knowledge
+This is a list of skills that I possess besides general deep IT knowledge and understanding.
 
-* PowerShell, mainly module authoring and tool-making
+* PowerShell, mainly module authoring and toolmaking
 * Active Directory, AD DS, AD CS, AD FS
 * Azure Active Directory, Automation, Functions
-* Windows Server
-* Group Policy Management
+* Windows Server, Group Policy Management
+* Networking, NTLM, Kerberos, DNS, DHCP, TCP, IP, Subnets, Routing, Firewall
 * AD Connect, Conditional Access, Log Analytics
 * WinRM & SSH
 * APIs & Webhooks
-* DHCP & DNS
-* SSO, SAML / OAuth Authentication
-* NTLM, Kerberos, LDAP(S) understanding, troubleshooting, setting up
-* Git
-* GitHub, GitLab (CI/CD, GitHub Actions mainly)
-* TCP / IP
-* Linux
-* Software & Web Development
+* SSO, SAML, OAuth Authentication
+* LDAPS deep knowledge, troubleshooting, configuring
+* Git, GitHub, GitLab, CI/CD, GitHub Actions
+* Linux, RHEL, Debian, Bash
+* Software Development, CLI, Static Web
 
 ## Experience & Accomplishments
 
-All my prior work has been in 7k-15k+ plus organizations
-View my LinkedIn page for further information
+### 2018-2023 - Veoneer in Linköping, IAM Engineer / Architect
 
-* Automated IT operations for multiple companies with significant, provable and data-driven results
-* Created API based automated workflows and other code-based processes
-* Multiple AD Migration projects
-* Secured and defended multiple AD environments for years
-* Active contributor of the PowerShell community, and other open-source projects
-* Accomplished Role-Based Access Delegation projects
-* Implemented and improved global password policies
-* Automated Domain Controller staging, with roles, agents and policies
-* Automated a Code-signing repository internally
-* Automated creation of logical components for new physical AD sites (OU, Delegations, policies, users & groups)
-* Developed around 100 different automated, schedule/trigger driven processes for the IT organization, using Azure Automation/Functions & PowerShell, saving countless manhours for us
-* Identity And Access Architect - 2023-202X
-* Identity And Access Engineer - 2018-2022
-* Identity and Access Ops - 2014 - 2018
-* 2nd and 3rd level IT-Operator between 2012-2014
+At Veoneer, I started working as a consultant and was later hired directly.
+My main role was to design, implement and support identity topics for the IT organization.
+
+I was promoted to a more senior role where I was designing more solutions, and having internal knowledge transfers within IT.
+
+#### Day-to-Day:
+
+- Maintaining AD DS, AD CS, AD FS, Azure AD / Entra ID, AD Connect
+- Configuring new logical AD Sites, Group Policy design and maintain
+- Supporting ServiceNow development team on automation using Azure Automation / Functions
+- Continuous improvement of AD Security posture
+- Owner of a large IT teams Gitlab repository
+
+#### Projects:
+
+- Implemented and designed role based access in Active Directory
+- Extended existing AD forest with segregated domain
+- Implemented backend automation process for the company
+- Carve out projects, where my role was mainly implementer
+- Designed a new process for, and migrated existing script based automation from scattered scheduled tasks to Azure Automation
+- Passed multiple AD audits (SOX, TISAX), where I was control owner of Active Directory and Azure AD.
+
+
+### 2014-2018 - Saab in Linköping, Systems Engineer
+
+At Saab, I was a consultant hired by DXC Technology working 100% with Saab in Linköping.
+I was working with 3rd level support and later on focusing on Active Directory.
+
+#### Day-to-Day:
+
+- Maintaining AD DS and AD CS
+- Continuous improvement of AD Security posture
+- Supporting projects with bulk updates in AD, DNS and DHCP using PowerShell
+- PowerShell toolmaking for the support departments
+- Technical documentation writing for the IT organization
+- Problem-ticket troubleshooting and solving
+
+#### Projects:
+
+- AD migration and expanding
+- AD Schema extension
+
+### 2013-2014 - Siemens SIT in Finspång, IT Technician
+
+#### Day-to-Day:
+
+- Windows client troubleshooting
+- PC hardware troubleshooting / replacing
+- SCCM configurations
+- User support
+- Active Directory operations
+
+#### Projects:
+
+- Windows XP -> 7 migration projects for 1000+ clients
+
+
+### Outside of professional work
+
+- Frequent and top contributer to the PowerShell Docs on Microsoft Learn
+- Run my own blog where I write about security and automation
+
 
 ## Goals
 
 Continuous improvements on all my areas and specifically focus more on Secure IAM, a combination of both IAM & Security, from an engineering aspect.
 
-## Contacts
-
-+46 0723061454, emil.t.larsson@outlook.com
-
 ## Personal
+
+**Contacts**: +46 0723061454 | emil.t.larsson@outlook.com
 
 * A father of two and engaged
 * I've had dogs my whole life and currently have a Finnish Lapphund
@@ -71,7 +112,5 @@ Continuous improvements on all my areas and specifically focus more on Secure IA
 * I'm a hobby Software developer (C#, Python)
 * I love to read books
 * I enjoy self improvement
-* I am currently employed-
+* I am currently employed
 * Online Version: https://ehmiiz.se/cv
-
-[View as PDF](EmilLarssonCV.pdf)
