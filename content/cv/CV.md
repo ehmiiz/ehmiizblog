@@ -27,6 +27,7 @@ This is a list of skills that I possess besides general deep IT knowledge and un
 * Linux, RHEL, Debian, Bash
 * Software Development, CLI, Static Web
 
+
 ## Experience & Accomplishments
 
 ### 2018-2023 - Veoneer in Linköping, IAM Engineer / Architect
@@ -35,8 +36,9 @@ At Veoneer, I started working as a consultant and was later hired directly.
 My main role was to design, implement and support identity topics for the IT organization.
 
 I was promoted to a more senior role where I was designing more solutions, and having internal knowledge transfers within IT.
+<br><br/>
 
-#### Day-to-Day:
+_Day-to-Day:_
 
 - Maintaining AD DS, AD CS, AD FS, Azure AD / Entra ID, AD Connect
 - Configuring new logical AD Sites, Group Policy design and maintain
@@ -44,7 +46,7 @@ I was promoted to a more senior role where I was designing more solutions, and h
 - Continuous improvement of AD Security posture
 - Owner of a large IT teams Gitlab repository
 
-#### Projects:
+_Projects:_
 
 - Implemented and designed role based access in Active Directory
 - Extended existing AD forest with segregated domain
@@ -59,7 +61,7 @@ I was promoted to a more senior role where I was designing more solutions, and h
 At Saab, I was a consultant hired by DXC Technology working 100% with Saab in Linköping.
 I was working with 3rd level support and later on focusing on Active Directory.
 
-#### Day-to-Day:
+_Day-to-Day:_
 
 - Maintaining AD DS and AD CS
 - Continuous improvement of AD Security posture
@@ -68,14 +70,15 @@ I was working with 3rd level support and later on focusing on Active Directory.
 - Technical documentation writing for the IT organization
 - Problem-ticket troubleshooting and solving
 
-#### Projects:
+_Projects:_
 
 - AD migration and expanding
 - AD Schema extension
+- Technical documentation migration and formatting
 
 ### 2013-2014 - Siemens SIT in Finspång, IT Technician
 
-#### Day-to-Day:
+_Day-to-Day:_
 
 - Windows client troubleshooting
 - PC hardware troubleshooting / replacing
@@ -83,20 +86,18 @@ I was working with 3rd level support and later on focusing on Active Directory.
 - User support
 - Active Directory operations
 
-#### Projects:
+_Projects:_
 
 - Windows XP -> 7 migration projects for 1000+ clients
 
+<br><br/>
+<br><br/>
+<br><br/>
 
 ### Outside of professional work
 
 - Frequent and top contributer to the PowerShell Docs on Microsoft Learn
 - Run my own blog where I write about security and automation
-
-
-## Goals
-
-Continuous improvements on all my areas and specifically focus more on Secure IAM, a combination of both IAM & Security, from an engineering aspect.
 
 ## Personal
 
