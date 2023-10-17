@@ -1,30 +1,19 @@
----
-title: "CV, Emil Larsson 👨‍💻"
-date: 2023-03-10T07:13:37+01:00
-draft: false
-comments: false
----
-{{< figure
-  src="https://i.imgur.com/lXUYNbu.jpg"
-  caption="Working from home since early 2020."
-  >}}
+#  Emil Larsson
 
-## Main interests 🧙
+## Main interests
 
-* [IT Automation](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3)
-* [Identity and Access management](https://www.microsoft.com/en-us/security/business/security-101/what-is-identity-access-management-iam)
-* [Windows Hybrid Server Administrator](https://learn.microsoft.com/en-us/certifications/windows-server-hybrid-administrator/)
-
-Above are a click-able list of my main interests, each link will take you to a site that describes it better then I can.
+* IT Automation
+* Identity and Access management
+* Windows Hybrid Server Administrator
 
 I've been working with IAM & automation for most of my career, and I always view security as first priority in my technical work.
 Personal development for myself and my team members is something I value highly.
 
-## Skills 🤹🏽
+## Skills
 
 This is a list of skills that I possess besides general deep IT knowledge and understanding. The list is in order high knowledge to medium knowledge
 
-* PowerShell, mainly [module authoring](https://www.powershellgallery.com/profiles/elarsson) and tool-making
+* PowerShell, mainly module authoring and tool-making
 * Active Directory, AD DS, AD CS, AD FS
 * Azure Active Directory, Automation, Functions
 * Windows Server
@@ -41,7 +30,7 @@ This is a list of skills that I possess besides general deep IT knowledge and un
 * Linux
 * Software & Web Development
 
-## Experience & Accomplishments ✔️
+## Experience & Accomplishments
 
 All my prior work has been in 7k-15k+ plus organizations
 View my LinkedIn page for further information
@@ -50,7 +39,7 @@ View my LinkedIn page for further information
 * Created API based automated workflows and other code-based processes
 * Multiple AD Migration projects
 * Secured and defended multiple AD environments for years
-* Active contributor of the PowerShell community, and other open-source projects: [GitHub Page](https://github.com/ehmiiz)
+* Active contributor of the PowerShell community, and other open-source projects
 * Accomplished Role-Based Access Delegation projects
 * Implemented and improved global password policies
 * Automated Domain Controller staging, with roles, agents and policies
@@ -62,15 +51,15 @@ View my LinkedIn page for further information
 * Identity and Access Ops - 2014 - 2018
 * 2nd and 3rd level IT-Operator between 2012-2014
 
-## Goals 🥅
+## Goals
 
 Continuous improvements on all my areas and specifically focus more on Secure IAM, a combination of both IAM & Security, from an engineering aspect.
 
-## Contacts ☎️
+## Contacts
 
 +46 0723061454, emil.t.larsson@outlook.com
 
-## Personal 🏡
+## Personal
 
 * A father of two and engaged
 * I've had dogs my whole life and currently have a Finnish Lapphund
@@ -82,6 +71,7 @@ Continuous improvements on all my areas and specifically focus more on Secure IA
 * I'm a hobby Software developer (C#, Python)
 * I love to read books
 * I enjoy self improvement
-* I am currently employed
+* I am currently employed-
+* Online Version: https://ehmiiz.se/cv
 
 [View as PDF](EmilLarssonCV.pdf)

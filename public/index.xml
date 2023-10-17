@@ -8,12 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My PowerShell Modules</title>
+      <title>My Modules</title>
       <link>/modules/</link>
       <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>/modules/</guid>
-      <description>linuxinfo BinaryPasswordGenerator ExplainLinuxFS PowerShell-Docs-CommunityModule PSHangMan mstscps FilesToFolders </description>
+      <description>PowerShellGallery Modules In this section you&amp;rsquo;ll find a list of my published PSGallery modules.
+My modules vary in functionality and usefulness. I believe in learning by doing, and some projects are simply created for myself, to learn git, PowerShell, c#, linux binaries, and what have you. I try to stick to a few key pointers though:
+Cross-platform
+Open-Source
+Documented
+Support -WhatIf if a command touches data
+Not pollute the shell/operating system, a Uninstall-Module will simply remove any trace of the module</description>
     </item>
     
     <item>
@@ -36,8 +42,8 @@ However, I found myself using the graphical user interface (GUI) of my password 
       <guid>/blog/ps_linuxinfo_release/</guid>
       <description>Install-Module linuxinfo I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.
 Install it from the PowerShellGallery:
-Install-Module linuxinfo -VerboseView it&amp;rsquo;s functions:
-Get-Command -Module linuxinfoCommandType Name Version Source----------- ---- ------- ------Function Get-BatteryInfo 0.</description>
+Install-Module linuxinfo -Verbose View it&amp;rsquo;s functions:
+Get-Command -Module linuxinfo CommandType Name Version Source ----------- ---- ------- ------ Function Get-BatteryInfo 0.</description>
     </item>
     
     <item>
@@ -176,7 +182,7 @@ Goals of this blog Positivity Curiosity Learning Knowledge sharing Get more .md/
       
       <guid>/blog/ps_tip_tab/</guid>
       <description>One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.
-Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. hTo view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
+Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. h To view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
     </item>
     
     <item>
