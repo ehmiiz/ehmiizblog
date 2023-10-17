@@ -42,8 +42,8 @@ However, I found myself using the graphical user interface (GUI) of my password 
       <guid>/blog/ps_linuxinfo_release/</guid>
       <description>Install-Module linuxinfo I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.
 Install it from the PowerShellGallery:
-Install-Module linuxinfo -Verbose View it&amp;rsquo;s functions:
-Get-Command -Module linuxinfo CommandType Name Version Source ----------- ---- ------- ------ Function Get-BatteryInfo 0.</description>
+Install-Module linuxinfo -VerboseView it&amp;rsquo;s functions:
+Get-Command -Module linuxinfoCommandType Name Version Source----------- ---- ------- ------Function Get-BatteryInfo 0.</description>
     </item>
     
     <item>
@@ -182,7 +182,7 @@ Goals of this blog Positivity Curiosity Learning Knowledge sharing Get more .md/
       
       <guid>/blog/ps_tip_tab/</guid>
       <description>One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.
-Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. h To view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
+Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. hTo view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
     </item>
     
     <item>
