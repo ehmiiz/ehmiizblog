@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Hugo 0.100.2" />
-  <link rel="canonical" href="/blog/ps_ad_unsecure_by_default/" />
+  <link rel="canonical" href="/blog/ps_automatedaccessreviewreport/" />
 
   
     
-    <meta name="description" content="Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp; ADFS suite.
-In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.
-Please note that this post is personal and subject to change.">
+    <meta name="description" content="Access reviews are critical for organizations that values up-to-date On-prem AD groups &amp; Azure AD Groups.
+Various audit &amp; compliance teams will most likely value data from reviewers decision high, all this data can be found using the Microsoft Graph. This blog post will go into details on how you could:
+Create an app registration in Azure AD Delegate API permissions to the app: Application:	AccessReview.Read.AllCreate a token secret to store in an Automation account Creating a Azure Automation Runbook Creating a script that uses Microsoft Graph, PowerShell and Export-CSV to generate the final Access review list Lets get started!">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -61,7 +61,7 @@ Please note that this post is personal and subject to change.">
 
   
   
-  <title>PowerShell for Security: Continuous post of AD Weaknesses | </title>
+  <title>PowerShell Automation: Generate an Azure Access Review Report using Microsoft Graph! | </title>
 </head>
 
   <body>
@@ -270,81 +270,31 @@ Please note that this post is personal and subject to change.">
         <div>
           
   <main id="main">
-    <h1>PowerShell for Security: Continuous post of AD Weaknesses</h1>
-    <h2 id="idea-behind-this-post">Idea behind this post</h2>
-<p>As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp; ADFS suite.</p>
-<p>In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.</p>
-<p>Please note that this post is personal and subject to change. Its sole purpose is to help others. Always exercise caution when running code from an untrusted source - read it carefully and test it in a lab environment before implementing it in production.</p>
-<h2 id="1-clear-text-passwords-in-sysvol-kb2962486">1. Clear-Text Passwords In Sysvol (KB2962486)</h2>
-<h3 id="problem">Problem:</h3>
-<p>Group policies are (partly) stored in the domain wide share named Sysvol.
-Sysvol is a share that every domain user has read access to. A feature of group policy preferences (GPP), is the ability to store credentials in a policy, thus making use of the permissions of said account in an effective way.</p>
-<p>The only problem is that the credentials are encrypted using a AES key, that&rsquo;s publically avalible <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be?redirectedfrom=MSDN">here.</a></p>
-<h3 id="solution">Solution:</h3>
-<p>Patch your Domain Controllers so that admins cannot store credentials in sysvol: <a href="https://support.microsoft.com/en-us/topic/ms14-025-vulnerability-in-group-policy-preferences-could-allow-elevation-of-privilege-may-13-2014-60734e15-af79-26ca-ea53-8cd617073c30">MS14-025: Vulnerability in Group Policy Preferences could allow elevation of privilege</a></p>
-<h3 id="script">Script:</h3>
-<p>This is a simple script that will match the cpassword row of the xml file, telling you what policy you need to fix:</p>
-<pre><code class="language-powershell"># Get domain
-$DomainName = Get-ADDomain | Select-Object -ExpandProperty DNSRoot
-
-# Build path
-$DomainSYSVOLShareScan = &quot;\\$domainname\SYSVOL\$domainname\Policies\&quot;
-
-# Check path recursivly for match
-Get-ChildItem $DomainSYSVOLShareScan -Filter *.xml -Recurse | % {
-    if (Select-String -Path $_.FullName -Pattern &quot;Cpassword&quot;) {
-        $_.FullName
-    }
-}
+    <h1>PowerShell Automation: Generate an Azure Access Review Report using Microsoft Graph!</h1>
+    <p>Access reviews are critical for organizations that values up-to-date On-prem AD groups &amp; Azure AD Groups.</p>
+<p>Various audit &amp; compliance teams will most likely value data from reviewers decision high, all this data can be found using the Microsoft Graph. This blog post will go into details on how you could:</p>
+<ol>
+<li>Create an app registration in Azure AD</li>
+<li>Delegate API permissions to the app:</li>
+</ol>
+<pre><code>Application:	AccessReview.Read.All
 </code></pre>
-<h2 id="2-authenticated-users-can-join-up-to-10-computers-to-the-domain-krbrelayuphttpswwwmicrosoftcomsecurityblog20220525detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup">2. Authenticated Users Can Join Up to 10 Computers to the Domain (<a href="https://www.microsoft.com/security/blog/2022/05/25/detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup/">KrbRelayUp</a>)</h2>
-<h3 id="problem-1">Problem:</h3>
-<p>Active Directory creates an attribute by default in it&rsquo;s schema named: <code>ms-DS-MachineAccountQuota</code>. The value of this attribute determines how many computers a user in the Authenticated Users group can join to the domain.</p>
-<p>However, this “trust by default” approach can pose a security risk, an attacker can leverage this attribute for privilege escalation attacks by adding new devices to the domain.</p>
-<h3 id="solution-1">Solution:</h3>
-<p>Find and identify the value of ms-DS-MachineAccountQuota.</p>
-<p><a href="https://www.microsoft.com/en-us/security/blog/2022/05/25/detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup/">As Microsoft puts it</a>:</p>
-<p>Organizations should also consider setting the ms-DS-MachineAccountQuota attribute to 0 to make it more difficult for an attacker to leverage the attribute for attacks. Setting the attribute to 0 stops non-admin users from adding new devices to the domain, blocking the most effective method to carry out the attack’s first step and forcing attackers to choose more complex methods to acquire a suitable resource.</p>
-<h3 id="script-1">Script:</h3>
-<pre><code class="language-powershell">$DomainDN = (Get-ADDomain).DistinguishedName
-
-Get-ADObject -Identity $DomainDN -Properties ms-DS-MachineAccountQuota
-
-Set-ADDomain -Identity $DomainDN -Replace @{&quot;ms-DS-MachineAccountQuota&quot;=&quot;0&quot;}
-</code></pre>
-<p>I recommend running the script line-by-line, and try it out in a lab-environment first.</p>
-<p>The script:</p>
+<ol start="3">
+<li>Create a token secret to store in an Automation account</li>
+<li>Creating a Azure Automation Runbook</li>
+<li>Creating a script that uses Microsoft Graph, PowerShell and Export-CSV to generate the final Access review list</li>
+</ol>
+<p>Lets get started!</p>
+<h2 id="pre-reqs">Pre-reqs</h2>
+<p>Before we get started there are some pre-requierments needed, I&rsquo;m asuming the following;</p>
 <ul>
-<li>Gets the DN of the domain</li>
-<li>Gets the ms-DS-MachineAccountQuota attribute</li>
-<li>Sets it to 0, making non-privileged users unable to domain join computers.</li>
+<li>Read has Global Admin rights in the Azure tenant, needed for the admin consent</li>
+<li>The read has maintainer right to an Azure Automation account</li>
 </ul>
-<p>Talk this decision through with your security department, test plan execute.</p>
-<h2 id="3-adminsdholder-acl-misconfigurations">3. AdminSDHolder ACL misconfigurations</h2>
-<h3 id="problem-2">Problem:</h3>
-<p>The AdminSDHolder process is a built in security feature of Active Directory. It&rsquo;s a process (<code>sdprop</code>) which runs on the primary domain controller that will configure all sensitive users (<code>admincount = 1</code>) in the domain to have a what&rsquo;s configured in the System/AdminSDHolder containers ACL. Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.</p>
-<p>When configuring an AD domain, the primary domain controller will set the value <code>admincount</code> to 1 on the following users &amp; groups:</p>
-<pre><code class="language-plaintext">Administrator
-Administrators
-Print Operators
-Backup Operators
-Replicator
-krbtgt
-Domain Controllers
-Schema Admins
-Enterprise Admins
-Domain Admins
-Server Operators
-Account Operators
-Read-only Domain Controllers
-Key Admins
-Enterprise Key Admins
-</code></pre>
-<p>Any other object that has direct access to any of these, will also be added a 1 in it&rsquo;s <code>admincount</code> attribute by the <code>sdprop</code> process, within a 60 min interval.</p>
-<p>It&rsquo;s common to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.</p>
-<h3 id="solution-2">Solution:</h3>
-<p><img src="/pics/ACLMap.png" alt="Missconfigured ACLs"></p>
-<h3 id="happy-hunting">Happy hunting</h3>
+<h2 id="app-registration-and-permissions">App registration and Permissions</h2>
+<h2 id="azure-automation--shared-variables">Azure Automation &amp; Shared variables</h2>
+<h2 id="powershell-script-for-access-review--graph">PowerShell script for Access Review / Graph</h2>
+<h2 id="heading"></h2>
 
   </main>
 

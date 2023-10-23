@@ -75,6 +75,54 @@ The script:
 
 Talk this decision through with your security department, test plan execute.
 
+## 3. AdminSDHolder ACL misconfigurations
+
+### Problem:
+
+The AdminSDHolder process is a built in security feature of Active Directory. It's a process (`sdprop`) which runs on the primary domain controller that will configure all sensitive users (`admincount = 1`) in the domain to have a what's configured in the System/AdminSDHolder containers ACL. Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.
+
+When configuring an AD domain, the primary domain controller will set the value `admincount` to 1 on the following users & groups:
+
+```plaintext
+Administrator
+Administrators
+Print Operators
+Backup Operators
+Replicator
+krbtgt
+Domain Controllers
+Schema Admins
+Enterprise Admins
+Domain Admins
+Server Operators
+Account Operators
+Read-only Domain Controllers
+Key Admins
+Enterprise Key Admins
+```
+
+Any other object that has direct access to any of these, will also be added a 1 in it's `admincount` attribute by the `sdprop` process, within a 60 min interval.
+
+It's common to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.
+
+
+### Solution:
+
+Review the AdminSDHolder ACL under the System container, remove anything that does not have a **very** good reason to be there (AAD Connect, Exchange, MSOL_ are common, and should be secure with long randomized passwords).
+
+Understanding what rights are unsecure in Active Directory is needed as a first step.
+
+This diagram might help you do just that:
+
+![Missconfigured ACLs](/pics/ACLMap.png)
+
+### Script:
+
+```powershell
+# Gets ACL of AdminSDHolder, display as a GridView
+$AdminSDHolder = Get-ADObject -Filter { name -like "AdminSDHolder" }
+$AdminSDHolderACL = (Get-Acl "AD:\\$AdminSDHolder").Access | Out-GridView
+```
 
 
 ### Happy hunting
