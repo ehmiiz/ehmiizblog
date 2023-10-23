@@ -19,5 +19,14 @@ They reduce the chance of credential leakage to unauthorized people and are vast
 However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret.</description>
     </item>
     
+    <item>
+      <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
+      <link>/blog/ps_ad_unsecure_by_default/</link>
+      <pubDate>Sun, 23 Oct 2022 08:23:11 +0100</pubDate>
+      
+      <guid>/blog/ps_ad_unsecure_by_default/</guid>
+      <description>Headings ## Heading 2### Heading 3#### Heading 4##### Heading 5###### Heading 6Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Idea behind this post ## 1. Clear-Text Passwords In Sysvol (KB2962486)### Problem:### Solution:### Script:As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.</description>
+    </item>
+    
   </channel>
 </rss>

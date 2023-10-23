@@ -9,9 +9,7 @@
 
   
     
-    <meta name="description" content="Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp; ADFS suite.
-In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.
-Please note that this post is personal and subject to change.">
+    <meta name="description" content="Headings ## Heading 2### Heading 3#### Heading 4##### Heading 5###### Heading 6Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Idea behind this post ## 1. Clear-Text Passwords In Sysvol (KB2962486)### Problem:### Solution:### Script:As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp; ADFS suite.">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -271,7 +269,24 @@ Please note that this post is personal and subject to change.">
           
   <main id="main">
     <h1>PowerShell for Security: Continuous post of AD Weaknesses</h1>
-    <h2 id="idea-behind-this-post">Idea behind this post</h2>
+    <h2 id="headings">Headings</h2>
+<pre><code>## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+</code></pre>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+<h2 id="idea-behind-this-post">Idea behind this post</h2>
+<pre><code>## 1. Clear-Text Passwords In Sysvol (KB2962486)
+### Problem:
+### Solution:
+### Script:
+</code></pre>
 <p>As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp; ADFS suite.</p>
 <p>In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.</p>
 <p>Please note that this post is personal and subject to change. Its sole purpose is to help others. Always exercise caution when running code from an untrusted source - read it carefully and test it in a lab environment before implementing it in production.</p>
@@ -322,7 +337,8 @@ Set-ADDomain -Identity $DomainDN -Replace @{&quot;ms-DS-MachineAccountQuota&quot
 <p>Talk this decision through with your security department, test plan execute.</p>
 <h2 id="3-adminsdholder-acl-misconfigurations">3. AdminSDHolder ACL misconfigurations</h2>
 <h3 id="problem-2">Problem:</h3>
-<p>The AdminSDHolder process is a built in security feature of Active Directory. It&rsquo;s a process (<code>sdprop</code>) which runs on the primary domain controller that will configure all sensitive users (<code>admincount = 1</code>) in the domain to have a what&rsquo;s configured in the System/AdminSDHolder containers ACL. Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.</p>
+<p>The AdminSDHolder process is a built in security feature of Active Directory. It&rsquo;s a process (<code>sdprop</code>) which runs on the primary domain controller that will configure all sensitive users defined by the <code>admincount</code> attribute, in the domain to have a what&rsquo;s configured in the System/AdminSDHolder containers ACL.</p>
+<p>Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.</p>
 <p>When configuring an AD domain, the primary domain controller will set the value <code>admincount</code> to 1 on the following users &amp; groups:</p>
 <pre><code class="language-plaintext">Administrator
 Administrators
@@ -343,7 +359,20 @@ Enterprise Key Admins
 <p>Any other object that has direct access to any of these, will also be added a 1 in it&rsquo;s <code>admincount</code> attribute by the <code>sdprop</code> process, within a 60 min interval.</p>
 <p>It&rsquo;s common to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.</p>
 <h3 id="solution-2">Solution:</h3>
+<p>Review the AdminSDHolder ACL under the System container, remove anything that does not have a <strong>very</strong> good reason to be there (AAD Connect, Exchange, MSOL_ are common, and should be secure with long randomized passwords).</p>
+<p>Understanding what rights are unsecure in Active Directory is needed as a first step.</p>
+<p>This diagram might help you do just that:</p>
 <p><img src="/pics/ACLMap.png" alt="Missconfigured ACLs"></p>
+<h3 id="script-2">Script:</h3>
+<pre><code class="language-powershell"># Gets ACL of AdminSDHolder, display as a GridView
+$AdminSDHolder = Get-ADObject -Filter { name -like &quot;AdminSDHolder&quot; }
+$AdminSDHolderACL = (Get-Acl &quot;AD:$AdminSDHolder&quot;).Access | Out-GridView
+</code></pre>
+<ul>
+<li>Review if any <code>IdentityReference</code> is not known</li>
+<li>Review that <code>IsInherited</code> is set to <code>false</code> on all ACEs (entries)</li>
+<li>Review group members of all the groups, think twice if the access makes sense</li>
+</ul>
 <h3 id="happy-hunting">Happy hunting</h3>
 
   </main>

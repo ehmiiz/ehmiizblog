@@ -1,11 +1,34 @@
 --- 
 title: "PowerShell for Security: Continuous post of AD Weaknesses" 
 date: 2022-10-23T08:23:11+01:00 
-draft: false
-comments: true
-
+tags: [ad, security, powershell]
+toc: true
 --- 
+
+## Headings
+
+```
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+```
+
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
 ## Idea behind this post
+
+```
+## 1. Clear-Text Passwords In Sysvol (KB2962486)
+### Problem:
+### Solution:
+### Script:
+```
 
 As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS & ADFS suite.
 
@@ -16,11 +39,14 @@ Please note that this post is personal and subject to change. Its sole purpose i
 ## 1. Clear-Text Passwords In Sysvol (KB2962486)
 
 ### Problem:
+
 Group policies are (partly) stored in the domain wide share named Sysvol.
 Sysvol is a share that every domain user has read access to. A feature of group policy preferences (GPP), is the ability to store credentials in a policy, thus making use of the permissions of said account in an effective way.
 
 The only problem is that the credentials are encrypted using a AES key, that's publically avalible [here.](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be?redirectedfrom=MSDN)
+
 ### Solution:
+
 Patch your Domain Controllers so that admins cannot store credentials in sysvol: [MS14-025: Vulnerability in Group Policy Preferences could allow elevation of privilege](https://support.microsoft.com/en-us/topic/ms14-025-vulnerability-in-group-policy-preferences-could-allow-elevation-of-privilege-may-13-2014-60734e15-af79-26ca-ea53-8cd617073c30)
 
 ### Script:

@@ -6,37 +6,31 @@
     <lastmod>2023-09-05T09:34:34+02:00</lastmod>
   </url><url>
     <loc>/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>/tags/automation/</loc>
     <lastmod>2023-09-01T14:39:16+02:00</lastmod>
   </url><url>
     <loc>/blog/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
   </url><url>
     <loc>/tags/passwords/</loc>
     <lastmod>2023-09-01T14:39:16+02:00</lastmod>
   </url><url>
     <loc>/tags/powershell/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
   </url><url>
     <loc>/blog/ps_fast_password_retrieving/</loc>
     <lastmod>2023-09-01T14:39:16+02:00</lastmod>
   </url><url>
     <loc>/tags/security/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
   </url><url>
     <loc>/blog/ps_linuxinfo_release/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/ps_systeminfo_linux/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/ps_pscustomobject_trick_2/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
     <loc>/blog/ps_pscustomobject_trick/</loc>
@@ -54,14 +48,14 @@
     <loc>/cv/</loc>
     <lastmod>2023-10-17T11:33:47+02:00</lastmod>
   </url><url>
-    <loc>/blog/ps_elastic_type_system/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
     <loc>/blog/ps_adcs_certinstall/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
+    <loc>/tags/ad/</loc>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
+  </url><url>
     <loc>/blog/ps_ad_unsecure_by_default/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
+    <lastmod>2023-10-23T11:48:59+02:00</lastmod>
   </url><url>
     <loc>/blog/ps_agpm_setacl/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
@@ -87,16 +81,10 @@
     <loc>/blog/ps_simplehyper-vlabmodule/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>/blog/ps_automatedaccessreviewreport/</loc>
-    <lastmod>2023-09-01T14:26:10+02:00</lastmod>
-  </url><url>
     <loc>/blog/ps_automatedgpocloning/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
     <loc>/blog/ps_pwgenerator/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/ps_ad_security_module/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
     <loc>/blog/ps_digitallysigned/</loc>
@@ -105,61 +93,19 @@
     <loc>/blog/life-3.0/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>/contact/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
     <loc>/blog/lotr-for/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/reclaim/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/fallofgondolin/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/dinotraining/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/headspace-meditation/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/hit-refresh/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/howtowolf/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/shellofanidea/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/ai-ourfinalinv/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/ai-womd/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/childrenofhurin/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/beren-luthien/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/silmarillion/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/lotr-ttt/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/lotr-rotk/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
-  </url><url>
-    <loc>/blog/code/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
     <loc>/blog/hobbit/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>
   </url><url>
-    <loc>/blog/aisuperpowers/</loc>
-    <lastmod>2023-09-01T13:44:36+02:00</lastmod>
+    <loc>/blog/toc-test/</loc>
+    <lastmod>2019-02-14T15:36:09-06:00</lastmod>
+  </url><url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2019-02-14T15:36:09-06:00</lastmod>
+  </url><url>
+    <loc>/tags/markdown/</loc>
+    <lastmod>2019-02-14T15:36:09-06:00</lastmod>
   </url>
 </urlset>
