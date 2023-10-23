@@ -79,7 +79,9 @@ Talk this decision through with your security department, test plan execute.
 
 ### Problem:
 
-The AdminSDHolder process is a built in security feature of Active Directory. It's a process (`sdprop`) which runs on the primary domain controller that will configure all sensitive users (`admincount = 1`) in the domain to have a what's configured in the System/AdminSDHolder containers ACL. Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.
+The AdminSDHolder process is a built in security feature of Active Directory. It's a process (`sdprop`) which runs on the primary domain controller that will configure all sensitive users defined by the `admincount` attribute, in the domain to have a what's configured in the System/AdminSDHolder containers ACL.
+
+Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.
 
 When configuring an AD domain, the primary domain controller will set the value `admincount` to 1 on the following users & groups:
 
