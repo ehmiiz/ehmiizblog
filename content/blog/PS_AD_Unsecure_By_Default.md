@@ -121,8 +121,12 @@ This diagram might help you do just that:
 ```powershell
 # Gets ACL of AdminSDHolder, display as a GridView
 $AdminSDHolder = Get-ADObject -Filter { name -like "AdminSDHolder" }
-$AdminSDHolderACL = (Get-Acl "AD:\\$AdminSDHolder").Access | Out-GridView
+$AdminSDHolderACL = (Get-Acl "AD:$AdminSDHolder").Access | Out-GridView
 ```
+
+- Review if any `IdentityReference` is not known
+- Review that `IsInherited` is set to `false` on all ACEs (entries)
+- Review group members of all the groups, think twice if the access makes sense
 
 
 ### Happy hunting
