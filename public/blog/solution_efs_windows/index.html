@@ -6,15 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Hugo 0.101.0" />
   <link rel="canonical" href="https://ehmiiz.se/blog/solution_efs_windows/" />
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
   
     
     <meta name="description" content="Problem You have encrypted files using the “File &gt; Properties &gt; Advanced &gt; Encrypt content to secure data” feature in Windows, and have lost your certificates in your personal certificate store.
 Solution A solution to this problem is to restore the private key used for encrypting your file system (EKU: Encrypting File System 1.3.6.1.4.1.311.10.3.4 ) that was generated upon encrypting your files.
 The keypair to this certificate is stored in your Personal certificate store, luckily a copy of the public key is stored in your LocalMachine certificate store.">
-  
-
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://ehmiiz.se/apple-touch-icon.png">
