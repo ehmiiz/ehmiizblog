@@ -4,7 +4,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   {{ hugo.Generator }}
   <link rel="canonical" href="{{ .Permalink }}" />
-  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
   {{ if .IsHome }}
     {{ with .Site.Params.homeMetaContent }}
@@ -15,10 +14,6 @@
       | default .Title }}
     <meta name="description" content="{{ $summary }}">
   {{ end }}
-
-  {{ with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
-{{ end }}
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | absURL }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | absURL }}"> 
