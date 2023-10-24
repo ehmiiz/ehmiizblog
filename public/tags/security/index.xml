@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>security on </title>
-    <link>/tags/security/</link>
+    <link>ehmiiz.se/tags/security/</link>
     <description>Recent content in security on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="ehmiiz.se/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell KeePass and saving time</title>
-      <link>/blog/ps_fast_password_retrieving/</link>
+      <link>ehmiiz.se/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>/blog/ps_fast_password_retrieving/</guid>
+      <guid>ehmiiz.se/blog/ps_fast_password_retrieving/</guid>
       <description>Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!
 The Problem Password managers are very useful for anyone having more than one set of credentials, and most of us do.
 They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.
@@ -21,11 +21,11 @@ However, I found myself using the graphical user interface (GUI) of my password 
     
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
-      <link>/blog/ps_ad_unsecure_by_default/</link>
+      <link>ehmiiz.se/blog/ps_ad_unsecure_by_default/</link>
       <pubDate>Sun, 23 Oct 2022 08:23:11 +0100</pubDate>
       
-      <guid>/blog/ps_ad_unsecure_by_default/</guid>
-      <description>Headings ## Heading 2### Heading 3#### Heading 4##### Heading 5###### Heading 6Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Idea behind this post ## 1. Clear-Text Passwords In Sysvol (KB2962486)### Problem:### Solution:### Script:As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.</description>
+      <guid>ehmiiz.se/blog/ps_ad_unsecure_by_default/</guid>
+      <description>Headings ## Heading 2 ### Heading 3 #### Heading 4 ##### Heading 5 ###### Heading 6 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Idea behind this post ## 1. Clear-Text Passwords In Sysvol (KB2962486) ### Problem: ### Solution: ### Script: As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.</description>
     </item>
     
   </channel>
