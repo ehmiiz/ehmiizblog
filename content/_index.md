@@ -1,5 +1,8 @@
+{{< figure
+  src="/pics/welcome.png"
+>}}
 
-**Welcome to my blog!** I'm [Emil](https://ehmiiz.se/about) and here, you'll find a variety of topics that I'm passionate about, including:
+I'm [Emil](https://ehmiiz.se/about) and here, you'll find a variety of topics that I'm passionate about, including:
 
 - [PowerShell](https://jsnover.com/Docs/MonadManifesto.pdf)
 - [Windows Server](https://petri.com/category/windows-server)
