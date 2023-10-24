@@ -1,5 +1,5 @@
 baseURL: "/"
-relativeurls: true
+relativeurls: false
 languageCode: en-us
 defaultContentLanguage: en
 theme: cupper-hugo-theme

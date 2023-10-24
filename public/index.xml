@@ -58,6 +58,28 @@ Get-Command -Module linuxinfo CommandType Name Version Source ----------- ---- -
     </item>
     
     <item>
+      <title>Gather system info on a Linux host using PowerShell</title>
+      <link>/blog/ps_systeminfo_linux/</link>
+      <pubDate>Mon, 03 Apr 2023 14:58:11 +0100</pubDate>
+      
+      <guid>/blog/ps_systeminfo_linux/</guid>
+      <description>Meet linuxinfo. If your into PowerShell and want to explore some Linux system administrator tasks, this module translates your PowerShell skills into the world of Linux.
+Still in development
+Happy labbing! </description>
+    </item>
+    
+    <item>
+      <title>PowerShell PSCustomObject Variations</title>
+      <link>/blog/ps_pscustomobject_trick_2/</link>
+      <pubDate>Sat, 01 Apr 2023 08:23:11 +0100</pubDate>
+      
+      <guid>/blog/ps_pscustomobject_trick_2/</guid>
+      <description>PSCustomObject, valuable skill PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.
+There&amp;rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&amp;rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the PowerShell docs cover it very well.
+In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to Export-CSV, or even better, Export-Excel</description>
+    </item>
+    
+    <item>
       <title>PSCustomObject conditional loop-trick!</title>
       <link>/blog/ps_pscustomobject_trick/</link>
       <pubDate>Wed, 22 Mar 2023 08:23:11 +0100</pubDate>
@@ -107,6 +129,17 @@ Your best bet is to use the Delegation wizard, but wheres the fun (PowerShell fu
       <description>Working from home since early 2020.
 Main interests 🧙 IT Automation Identity and Access management Windows Hybrid Server Administrator Above are a click-able list of my main interests, each link will take you to a site that describes it better then I can.
 I&amp;rsquo;ve been working with IAM &amp;amp; automation for most of my career, and I always view security as first priority in my technical work. Personal development for myself and my team members is something I value highly.</description>
+    </item>
+    
+    <item>
+      <title>PowerShell: Before you complain about PowerShell verbosity</title>
+      <link>/blog/ps_elastic_type_system/</link>
+      <pubDate>Fri, 30 Dec 2022 08:05:11 +0100</pubDate>
+      
+      <guid>/blog/ps_elastic_type_system/</guid>
+      <description>The Elastic Type System Notes:
+What does elastic type system mean Example of verbose syntax with command line equivalent Verb-Noun syntax Super long cmdlet names Why they are bound to happen Aliases, transitional and convenience Auto complete on capitilized noun: g-ADF[tab] TLDR;
+Type out something fast (interactively), or Write code that you/other people can read easily Happy coding /Emil </description>
     </item>
     
     <item>
@@ -207,6 +240,17 @@ Features Quickly put the Windows Server ISO-file to good use It&amp;rsquo;s a si
     </item>
     
     <item>
+      <title>PowerShell Automation: Generate an Azure Access Review Report using Microsoft Graph!</title>
+      <link>/blog/ps_automatedaccessreviewreport/</link>
+      <pubDate>Thu, 09 Sep 2021 14:58:11 +0100</pubDate>
+      
+      <guid>/blog/ps_automatedaccessreviewreport/</guid>
+      <description>Access reviews are critical for organizations that values up-to-date On-prem AD groups &amp;amp; Azure AD Groups.
+Various audit &amp;amp; compliance teams will most likely value data from reviewers decision high, all this data can be found using the Microsoft Graph. This blog post will go into details on how you could:
+Create an app registration in Azure AD Delegate API permissions to the app: Application:	AccessReview.Read.All Create a token secret to store in an Automation account Creating a Azure Automation Runbook Creating a script that uses Microsoft Graph, PowerShell and Export-CSV to generate the final Access review list Lets get started!</description>
+    </item>
+    
+    <item>
       <title>PowerShell Solution: Automate GPO creations</title>
       <link>/blog/ps_automatedgpocloning/</link>
       <pubDate>Wed, 12 May 2021 14:56:09 +0200</pubDate>
@@ -224,6 +268,17 @@ The problem I was trying to solve was the following; How do we script the task o
       <guid>/blog/ps_pwgenerator/</guid>
       <description>My history with Password Generators Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)
 My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&amp;rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</description>
+    </item>
+    
+    <item>
+      <title>PowerShell for Security: Get Important AD Answers from this module</title>
+      <link>/blog/ps_ad_security_module/</link>
+      <pubDate>Sun, 25 Apr 2021 08:23:11 +0100</pubDate>
+      
+      <guid>/blog/ps_ad_security_module/</guid>
+      <description>Questions to AD Engineers I started to work on a new module that I call ADSEC.
+Its purpose is to answer the critical AD security related questions below:
+Who can replicate secrets (password hashes) from an Active Directory domain? Who can change security permissions on the AdminSDHolder object? Who can change the membership of the Domain Admins security group? Who can reset an Active Directory privileged user account&amp;rsquo;s password? Who can disable the use of Smartcards on an Active Directory user account?</description>
     </item>
     
     <item>
@@ -250,6 +305,15 @@ It’s author, Max Tegmark, got me very interested in the subject and he does so
     </item>
     
     <item>
+      <title>Contact</title>
+      <link>/contact/</link>
+      <pubDate>Sun, 07 Feb 2021 13:56:05 +0100</pubDate>
+      
+      <guid>/contact/</guid>
+      <description>emil@ehmiiz.tech </description>
+    </item>
+    
+    <item>
       <title>Book Review: LOTR, The Fellowship of the Ring</title>
       <link>/blog/lotr-for/</link>
       <pubDate>Sun, 07 Feb 2021 12:51:50 +0100</pubDate>
@@ -260,6 +324,144 @@ One ring to rule them all, one Ring to find them* One Ring to bring them all and
     </item>
     
     <item>
+      <title>Book Review: Reclaim</title>
+      <link>/blog/reclaim/</link>
+      <pubDate>Sun, 07 Feb 2021 12:51:36 +0100</pubDate>
+      
+      <guid>/blog/reclaim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Fallofgondolin</title>
+      <link>/blog/fallofgondolin/</link>
+      <pubDate>Sun, 07 Feb 2021 12:51:29 +0100</pubDate>
+      
+      <guid>/blog/fallofgondolin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Dinotraining</title>
+      <link>/blog/dinotraining/</link>
+      <pubDate>Sun, 07 Feb 2021 12:51:20 +0100</pubDate>
+      
+      <guid>/blog/dinotraining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Headspace Meditation</title>
+      <link>/blog/headspace-meditation/</link>
+      <pubDate>Sun, 07 Feb 2021 12:51:04 +0100</pubDate>
+      
+      <guid>/blog/headspace-meditation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Hit Refresh</title>
+      <link>/blog/hit-refresh/</link>
+      <pubDate>Sun, 07 Feb 2021 12:50:53 +0100</pubDate>
+      
+      <guid>/blog/hit-refresh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Howtowolf</title>
+      <link>/blog/howtowolf/</link>
+      <pubDate>Sun, 07 Feb 2021 12:50:47 +0100</pubDate>
+      
+      <guid>/blog/howtowolf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Shellofanidea</title>
+      <link>/blog/shellofanidea/</link>
+      <pubDate>Sun, 07 Feb 2021 12:50:38 +0100</pubDate>
+      
+      <guid>/blog/shellofanidea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Ai Ourfinalinv</title>
+      <link>/blog/ai-ourfinalinv/</link>
+      <pubDate>Sun, 07 Feb 2021 12:50:26 +0100</pubDate>
+      
+      <guid>/blog/ai-ourfinalinv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Ai Womd</title>
+      <link>/blog/ai-womd/</link>
+      <pubDate>Sun, 07 Feb 2021 12:50:17 +0100</pubDate>
+      
+      <guid>/blog/ai-womd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Childrenofhurin</title>
+      <link>/blog/childrenofhurin/</link>
+      <pubDate>Sun, 07 Feb 2021 12:49:40 +0100</pubDate>
+      
+      <guid>/blog/childrenofhurin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Beren Luthien</title>
+      <link>/blog/beren-luthien/</link>
+      <pubDate>Sun, 07 Feb 2021 12:49:26 +0100</pubDate>
+      
+      <guid>/blog/beren-luthien/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: Silmarillion</title>
+      <link>/blog/silmarillion/</link>
+      <pubDate>Sun, 07 Feb 2021 12:49:19 +0100</pubDate>
+      
+      <guid>/blog/silmarillion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Review: LOTR, The Two Towers</title>
+      <link>/blog/lotr-ttt/</link>
+      <pubDate>Sun, 07 Feb 2021 12:49:09 +0100</pubDate>
+      
+      <guid>/blog/lotr-ttt/</guid>
+      <description>LOTR: The Two Towers &amp;ndash; At Amazon
+This book is amazing.</description>
+    </item>
+    
+    <item>
+      <title>Book Review: LOTR, The Return of the King</title>
+      <link>/blog/lotr-rotk/</link>
+      <pubDate>Sun, 07 Feb 2021 12:49:02 +0100</pubDate>
+      
+      <guid>/blog/lotr-rotk/</guid>
+      <description>LOTR: The Return of the King &amp;ndash; At Amazon
+This book is amazing.</description>
+    </item>
+    
+    <item>
+      <title>Book Review: Code</title>
+      <link>/blog/code/</link>
+      <pubDate>Sun, 07 Feb 2021 12:48:38 +0100</pubDate>
+      
+      <guid>/blog/code/</guid>
+      <description> Code: The Hidden Language of Computer Hardware and Software by Charles Petzold &amp;ndash; Code: At Amazon
+Will reread A bit hard to read </description>
+    </item>
+    
+    <item>
       <title>Book Review: The Hobbit</title>
       <link>/blog/hobbit/</link>
       <pubDate>Sun, 07 Feb 2021 12:39:23 +0100</pubDate>
@@ -267,6 +469,30 @@ One ring to rule them all, one Ring to find them* One Ring to bring them all and
       <guid>/blog/hobbit/</guid>
       <description>The Hobbit &amp;ndash; At Amazon
 &amp;ldquo;A timeless advanture for all ages&amp;rdquo; This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies. I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.</description>
+    </item>
+    
+    <item>
+      <title>Book Review: AI Superpowers</title>
+      <link>/blog/aisuperpowers/</link>
+      <pubDate>Sun, 07 Feb 2021 11:48:14 +0100</pubDate>
+      
+      <guid>/blog/aisuperpowers/</guid>
+      <description>AI SUPERPOWERS by Kai-fu Lee &amp;ndash; AI SUPERPOWERS At Amazon
+Insert book review here here
+here 1
+here 2</description>
+    </item>
+    
+    <item>
+      <title>Cupper Typography</title>
+      <link>/blog/toc-test/</link>
+      <pubDate>Thu, 14 Feb 2019 15:36:09 -0600</pubDate>
+      
+      <guid>/blog/toc-test/</guid>
+      <description>Headings ## Heading 2 ### Heading 3 #### Heading 4 ##### Heading 5 ###### Heading 6 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Text *This text will be italic* _This will also be italic_ **This text will be bold** __This will also be bold__ _You **can** combine them_ This text will be italic
+This will also be italic
+This text will be bold
+This will also be bold</description>
     </item>
     
   </channel>
