@@ -20,14 +20,15 @@ I hope you enjoy your stay here.
 
 If you have any questions about any of the blog posts or just want to chat, feel free to send me a private message on any social media platform. I'd love to hear from you!
 
-Dog tax:
+{{< figure
+  src="https://www.planetpowershell.com/Content/img/planetpowershell-featured-badge.png"
+  caption="This blog is featured on"
+  attr=" PlanetPowerShell"
+  attrlink="https://www.planetpowershell.com/"
+>}}
+
 
 {{< figure
   src="/pics/riki.jpg"
->}}
-
-This blog is featured on [planetpowershell](https://planetpowershell.com):
-
-{{< figure
-  src="https://www.planetpowershell.com/Content/img/planetpowershell-featured-badge.png"
+  caption="Dog tax!"
 >}}
