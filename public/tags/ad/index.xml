@@ -6,11 +6,11 @@
     <description>Recent content in ad on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Oct 2022 08:23:11 +0100</lastBuildDate><atom:link href="ehmiiz.se/tags/ad/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate><atom:link href="ehmiiz.se/tags/ad/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
       <link>ehmiiz.se/blog/ps_ad_unsecure_by_default/</link>
-      <pubDate>Sun, 23 Oct 2022 08:23:11 +0100</pubDate>
+      <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
       
       <guid>ehmiiz.se/blog/ps_ad_unsecure_by_default/</guid>
       <description>Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.
