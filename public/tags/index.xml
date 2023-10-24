@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>ehmiiz.se/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate><atom:link href="ehmiiz.se/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ad</title>
-      <link>ehmiiz.se/tags/ad/</link>
+      <link>/tags/ad/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/tags/ad/</guid>
+      <guid>/tags/ad/</guid>
       <description></description>
     </item>
     
     <item>
       <title>powershell</title>
-      <link>ehmiiz.se/tags/powershell/</link>
+      <link>/tags/powershell/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/tags/powershell/</guid>
+      <guid>/tags/powershell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>security</title>
-      <link>ehmiiz.se/tags/security/</link>
+      <link>/tags/security/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/tags/security/</guid>
+      <guid>/tags/security/</guid>
       <description></description>
     </item>
     
     <item>
       <title>automation</title>
-      <link>ehmiiz.se/tags/automation/</link>
+      <link>/tags/automation/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>ehmiiz.se/tags/automation/</guid>
+      <guid>/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>passwords</title>
-      <link>ehmiiz.se/tags/passwords/</link>
+      <link>/tags/passwords/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>ehmiiz.se/tags/passwords/</guid>
+      <guid>/tags/passwords/</guid>
       <description></description>
     </item>
     

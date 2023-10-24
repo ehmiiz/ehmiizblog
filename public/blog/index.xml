@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on </title>
-    <link>ehmiiz.se/blog/</link>
+    <link>/blog/</link>
     <description>Recent content in Blogs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate><atom:link href="ehmiiz.se/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
-      <link>ehmiiz.se/blog/ps_ad_unsecure_by_default/</link>
+      <link>/blog/ps_ad_unsecure_by_default/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_ad_unsecure_by_default/</guid>
+      <guid>/blog/ps_ad_unsecure_by_default/</guid>
       <description>Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.
 In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.
 Please note that this post is personal and subject to change.</description>
@@ -20,10 +20,10 @@ Please note that this post is personal and subject to change.</description>
     
     <item>
       <title>PowerShell KeePass and saving time</title>
-      <link>ehmiiz.se/blog/ps_fast_password_retrieving/</link>
+      <link>/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_fast_password_retrieving/</guid>
+      <guid>/blog/ps_fast_password_retrieving/</guid>
       <description>Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!
 The Problem Password managers are very useful for anyone having more than one set of credentials, and most of us do.
 They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.
@@ -32,10 +32,10 @@ However, I found myself using the graphical user interface (GUI) of my password 
     
     <item>
       <title>Analyze your Linux system using PowerShell</title>
-      <link>ehmiiz.se/blog/ps_linuxinfo_release/</link>
+      <link>/blog/ps_linuxinfo_release/</link>
       <pubDate>Sat, 08 Apr 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_linuxinfo_release/</guid>
+      <guid>/blog/ps_linuxinfo_release/</guid>
       <description>Install-Module linuxinfo I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.
 Install it from the PowerShellGallery:
 Install-Module linuxinfo -Verbose View it&amp;rsquo;s functions:
@@ -44,10 +44,10 @@ Get-Command -Module linuxinfo CommandType Name Version Source ----------- ---- -
     
     <item>
       <title>PSCustomObject conditional loop-trick!</title>
-      <link>ehmiiz.se/blog/ps_pscustomobject_trick/</link>
+      <link>/blog/ps_pscustomobject_trick/</link>
       <pubDate>Wed, 22 Mar 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_pscustomobject_trick/</guid>
+      <guid>/blog/ps_pscustomobject_trick/</guid>
       <description>PSCustomObject, valuable skill PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.
 There&amp;rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&amp;rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the PowerShell docs cover it very well.
 In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to Export-CSV, or even better, Export-Excel</description>
@@ -55,40 +55,40 @@ In this blog post, I will cover a trick that I frequently use when generating st
     
     <item>
       <title>How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository</title>
-      <link>ehmiiz.se/blog/ps_docs_contributions/</link>
+      <link>/blog/ps_docs_contributions/</link>
       <pubDate>Fri, 17 Mar 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_docs_contributions/</guid>
+      <guid>/blog/ps_docs_contributions/</guid>
       <description>Intro The PowerShell-Docs repository is the home of the official PowerShell documentation. It contains reference and conceptual content for various versions and modules of PowerShell. Contributing to this repository is a great way to learn Git, Markdown and PowerShell, as well as to help improve the quality and accuracy of the documentation.
 In this blog post, I will show you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s beneficial for your learning and development.</description>
     </item>
     
     <item>
       <title>Using the PowerShell Module Z to Save Time in the Terminal</title>
-      <link>ehmiiz.se/blog/ps_z_mod/</link>
+      <link>/blog/ps_z_mod/</link>
       <pubDate>Fri, 17 Mar 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_z_mod/</guid>
+      <guid>/blog/ps_z_mod/</guid>
       <description>The module &amp;ldquo;Z&amp;rdquo; is a handy tool that can save you lots of time when navigating around your terminal. In this blog-post, we&amp;rsquo;ll cover how to install it to user scope, how to configure it by jumping around the terminal to different places, and how it saves lots of time in the long run.
 Installing Z to your CurrentUser scope To install Z, open a PowerShell terminal and run the following command:</description>
     </item>
     
     <item>
       <title>Active Directory Delegation done the PowerShell way!</title>
-      <link>ehmiiz.se/blog/ps_ad_delegation/</link>
+      <link>/blog/ps_ad_delegation/</link>
       <pubDate>Sat, 11 Mar 2023 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_ad_delegation/</guid>
+      <guid>/blog/ps_ad_delegation/</guid>
       <description>Active Directory Access Granting The following module is very important for a Active Directory operations or engineering type person. Most who have tried granting permissions outside of adding users to groups in Active Directory would probably agree that, access delegation can be a daunting task.
 Your best bet is to use the Delegation wizard, but wheres the fun (PowerShell fun..) in that. And how well does it scale? Not very well.</description>
     </item>
     
     <item>
       <title>PowerShell Solution: Install PFX certificate on servers</title>
-      <link>ehmiiz.se/blog/ps_adcs_certinstall/</link>
+      <link>/blog/ps_adcs_certinstall/</link>
       <pubDate>Wed, 16 Nov 2022 08:13:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_adcs_certinstall/</guid>
+      <guid>/blog/ps_adcs_certinstall/</guid>
       <description>Problem As you may have guessed, this post will be about installing certificates using PowerShell.
 Every year as someone working with identity topics, I am tasked with renewing certificates across the environment. Many services relies fully on valid certificates in order to function securely.
 One critical service in particular that this scenario will cover is: Active Directory Federation Services, ADFS.
@@ -97,10 +97,10 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
     
     <item>
       <title>PowerShell Solution: AGPM unable to take control of a GPO</title>
-      <link>ehmiiz.se/blog/ps_agpm_setacl/</link>
+      <link>/blog/ps_agpm_setacl/</link>
       <pubDate>Thu, 08 Sep 2022 14:56:09 +0200</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_agpm_setacl/</guid>
+      <guid>/blog/ps_agpm_setacl/</guid>
       <description>Problem If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, Advanced Group Policy Management or AGPM, is an amazing tool.
 AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.
 When combined with new sysadmins that has not been introduced to the concept of AGPM, uncontrolled GPOs might become a problem and the built in error messages are sadly not the greatest.</description>
@@ -108,10 +108,10 @@ When combined with new sysadmins that has not been introduced to the concept of 
     
     <item>
       <title>PowerShell: C Sharp for PowerShell Modules</title>
-      <link>ehmiiz.se/blog/ps_making_binary_ps_module/</link>
+      <link>/blog/ps_making_binary_ps_module/</link>
       <pubDate>Mon, 15 Aug 2022 14:58:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_making_binary_ps_module/</guid>
+      <guid>/blog/ps_making_binary_ps_module/</guid>
       <description>My journey into C# so far I&amp;rsquo;ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest. The natural next language to learn for me has always been C#, reason being it&amp;rsquo;s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.
 Some content I&amp;rsquo;ve devoured to increase my C# knowledge are:
 C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, Book by Deepak Dhami &amp;amp; Prateek Singh Various YouTube content and talks on building PowerShell Binary Modules using C#:</description>
@@ -119,10 +119,10 @@ C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, 
     
     <item>
       <title>PowerShell for Security: PassWord Gen Part 2</title>
-      <link>ehmiiz.se/blog/ps_pwgenerator_update/</link>
+      <link>/blog/ps_pwgenerator_update/</link>
       <pubDate>Mon, 04 Jul 2022 14:58:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_pwgenerator_update/</guid>
+      <guid>/blog/ps_pwgenerator_update/</guid>
       <description>Did it again 2021-05-10 - I wrote an article on Password Generators.
 The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp;amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.
 However, This time I&amp;rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .</description>
@@ -130,10 +130,10 @@ However, This time I&amp;rsquo;ve taken a whole new bull by the horn. While look
     
     <item>
       <title>Solution: Restore Deleted Private key for EFS Encrypted Files</title>
-      <link>ehmiiz.se/blog/solution_efs_windows/</link>
+      <link>/blog/solution_efs_windows/</link>
       <pubDate>Wed, 15 Jun 2022 12:39:23 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/solution_efs_windows/</guid>
+      <guid>/blog/solution_efs_windows/</guid>
       <description>Problem You have encrypted files using the &amp;ldquo;File &amp;gt; Properties &amp;gt; Advanced &amp;gt; Encrypt content to secure data&amp;rdquo; feature in Windows, and have lost your certificates in your personal certificate store.
 Solution A solution to this problem is to restore the private key used for encrypting your file system (EKU: Encrypting File System 1.3.6.1.4.1.311.10.3.4 ) that was generated upon encrypting your files.
 The keypair to this certificate is stored in your Personal certificate store, luckily a copy of the public key is stored in your LocalMachine certificate store.</description>
@@ -141,20 +141,20 @@ The keypair to this certificate is stored in your Personal certificate store, lu
     
     <item>
       <title>PowerShell Productivity tip: Working with History</title>
-      <link>ehmiiz.se/blog/ps_tip_tab/</link>
+      <link>/blog/ps_tip_tab/</link>
       <pubDate>Mon, 16 May 2022 08:05:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_tip_tab/</guid>
+      <guid>/blog/ps_tip_tab/</guid>
       <description>One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.
 Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. h To view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
     </item>
     
     <item>
       <title>PowerShell in 2021: From my IAM Perspective</title>
-      <link>ehmiiz.se/blog/ps_ad_2021_review/</link>
+      <link>/blog/ps_ad_2021_review/</link>
       <pubDate>Tue, 04 Jan 2022 08:13:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_ad_2021_review/</guid>
+      <guid>/blog/ps_ad_2021_review/</guid>
       <description>2021: From my IAM Perspective First of all, this blog-post inspired me to write something similar, so thanks @MDowst for sharing.
 For myself I&amp;rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&amp;rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.
 2021: Some cool stuff I found PSReadLine and it&amp;rsquo;s IntelliSense GoPS - a shell navigation module PoshBot PowerShell Community Calls Write-Info - a cool logging module Windows terminal and it&amp;rsquo;s split-tab functionality 2022 exciting stuff Some stuff I&amp;rsquo;m personally excited about:</description>
@@ -162,40 +162,40 @@ For myself I&amp;rsquo;ve been writing quite a few security focused modules and 
     
     <item>
       <title>PowerShell for Automation: Simple Hyper-V VM-Creation script</title>
-      <link>ehmiiz.se/blog/ps_simplehyper-vlabmodule/</link>
+      <link>/blog/ps_simplehyper-vlabmodule/</link>
       <pubDate>Tue, 21 Dec 2021 14:58:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_simplehyper-vlabmodule/</guid>
+      <guid>/blog/ps_simplehyper-vlabmodule/</guid>
       <description>Meet Labmil. Labmil is a script I made to serve a specific usecase. When AutomatedLab is overkill, and when you don&amp;rsquo;t want to skip the installation phase of the lab.
 Features Quickly put the Windows Server ISO-file to good use It&amp;rsquo;s a simple script for anyone to modify for personal needs It outputs a customobject Create multiple VM&amp;rsquo;s using PowerShell logic Non-Features The script has a few non-features. Non-Features are cool because it makes the script unique and useful in certain senarios.</description>
     </item>
     
     <item>
       <title>PowerShell Solution: Automate GPO creations</title>
-      <link>ehmiiz.se/blog/ps_automatedgpocloning/</link>
+      <link>/blog/ps_automatedgpocloning/</link>
       <pubDate>Wed, 12 May 2021 14:56:09 +0200</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_automatedgpocloning/</guid>
+      <guid>/blog/ps_automatedgpocloning/</guid>
       <description>The headache of setting up recurring GPO&amp;rsquo;s I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.
 The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&amp;rsquo;s, true/false), in an automated fasion?</description>
     </item>
     
     <item>
       <title>PowerShell for Security: PassWord Gen Part 1</title>
-      <link>ehmiiz.se/blog/ps_pwgenerator/</link>
+      <link>/blog/ps_pwgenerator/</link>
       <pubDate>Mon, 10 May 2021 14:58:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_pwgenerator/</guid>
+      <guid>/blog/ps_pwgenerator/</guid>
       <description>My history with Password Generators Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)
 My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&amp;rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</description>
     </item>
     
     <item>
       <title>PowerShell Solution: Script not digitally signed</title>
-      <link>ehmiiz.se/blog/ps_digitallysigned/</link>
+      <link>/blog/ps_digitallysigned/</link>
       <pubDate>Thu, 11 Feb 2021 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/ps_digitallysigned/</guid>
+      <guid>/blog/ps_digitallysigned/</guid>
       <description>“.ps1 is not digitally signed. The script will not execute on the system.” This error is clearly not really a typical error, but can be a blocker, nonetheless. It&amp;rsquo;s more of a security feature than an error.
 Simple solution if you&amp;rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
@@ -204,10 +204,10 @@ This will allow the powershell session process itself to bypass the Exec policy,
     
     <item>
       <title>Book review: Life 3.0</title>
-      <link>ehmiiz.se/blog/life-3.0/</link>
+      <link>/blog/life-3.0/</link>
       <pubDate>Mon, 08 Feb 2021 08:23:11 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/life-3.0/</guid>
+      <guid>/blog/life-3.0/</guid>
       <description>Life 3.0, Being human in the age of AI Life 3.0 by Max Tegmark &amp;ndash; Life 3.0 At Amazon
 First book on AI Personally, this was the first time reading a book about AI. And as a tech-savvy sysadmin who loves video games, sci-fi and great stories, it got me hooked.
 It’s author, Max Tegmark, got me very interested in the subject and he does so by being naturally curious, super-nerdy in a fun way, and just all-round knowledgeable in tech, he’s a professor after all!</description>
@@ -215,20 +215,20 @@ It’s author, Max Tegmark, got me very interested in the subject and he does so
     
     <item>
       <title>Book Review: LOTR, The Fellowship of the Ring</title>
-      <link>ehmiiz.se/blog/lotr-for/</link>
+      <link>/blog/lotr-for/</link>
       <pubDate>Sun, 07 Feb 2021 12:51:50 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/lotr-for/</guid>
+      <guid>/blog/lotr-for/</guid>
       <description>LOTR: The Fellowship of the Ring &amp;ndash; At Amazon
 One ring to rule them all, one Ring to find them* One Ring to bring them all and in the darkness bind them Sometimes when I read books, I get a feeling to just read faster, not pay attention to detail, to get to the point of the story. While reading Lord of the rings, I forgot about that feeling completely.</description>
     </item>
     
     <item>
       <title>Book Review: The Hobbit</title>
-      <link>ehmiiz.se/blog/hobbit/</link>
+      <link>/blog/hobbit/</link>
       <pubDate>Sun, 07 Feb 2021 12:39:23 +0100</pubDate>
       
-      <guid>ehmiiz.se/blog/hobbit/</guid>
+      <guid>/blog/hobbit/</guid>
       <description>The Hobbit &amp;ndash; At Amazon
 &amp;ldquo;A timeless advanture for all ages&amp;rdquo; This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies. I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.</description>
     </item>
