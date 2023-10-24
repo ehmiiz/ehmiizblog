@@ -1,6 +1,6 @@
 --- 
 title: "PowerShell for Security: Continuous post of AD Weaknesses" 
-date: 2022-10-23T08:23:11+01:00 
+date: 2023-10-23T08:23:11+01:00 
 tags: [ad, security, powershell]
 toc: true
 ---
