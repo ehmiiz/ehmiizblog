@@ -1,4 +1,4 @@
-baseURL: "ehmiiz.se"
+baseURL: "/"
 relativeurls: true
 languageCode: en-us
 defaultContentLanguage: en
