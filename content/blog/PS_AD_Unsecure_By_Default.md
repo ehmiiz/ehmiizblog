@@ -3,32 +3,9 @@ title: "PowerShell for Security: Continuous post of AD Weaknesses"
 date: 2022-10-23T08:23:11+01:00 
 tags: [ad, security, powershell]
 toc: true
---- 
-
-## Headings
-
-```
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
-```
-
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
+---
 
 ## Idea behind this post
-
-```
-## 1. Clear-Text Passwords In Sysvol (KB2962486)
-### Problem:
-### Solution:
-### Script:
-```
 
 As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS & ADFS suite.
 

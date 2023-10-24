@@ -25,7 +25,9 @@ However, I found myself using the graphical user interface (GUI) of my password 
       <pubDate>Sun, 23 Oct 2022 08:23:11 +0100</pubDate>
       
       <guid>ehmiiz.se/blog/ps_ad_unsecure_by_default/</guid>
-      <description>Headings ## Heading 2 ### Heading 3 #### Heading 4 ##### Heading 5 ###### Heading 6 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Idea behind this post ## 1. Clear-Text Passwords In Sysvol (KB2962486) ### Problem: ### Solution: ### Script: As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.</description>
+      <description>Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.
+In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.
+Please note that this post is personal and subject to change.</description>
     </item>
     
   </channel>
