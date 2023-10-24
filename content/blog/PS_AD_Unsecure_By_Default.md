@@ -82,11 +82,22 @@ Talk this decision through with your security department, test plan execute.
 
 ### Problem:
 
-The AdminSDHolder process is a built in security feature of Active Directory. It's a process (`sdprop`) which runs on the primary domain controller that will configure all sensitive users defined by the `admincount` attribute, in the domain to have a what's configured in the System/AdminSDHolder containers ACL.
+The [AdminSDHolder](https://learn.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory#adminsdholder) is an object in Active Directory (AD) that serves as a security descriptor template for protected accounts and groups in an AD domain.
 
-Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.
+It exists in every Active Directory domain and is located in the System Partition.
 
-When configuring an AD domain, the primary domain controller will set the value `admincount` to 1 on the following users & groups:
+Here’s how it works:
+
+- The AdminSDHolder object manages the access control lists (ACLs) of members of built-in privileged AD groups.
+
+- The Security Descriptor Propagation (SDPROP) process runs every hour on the domain controller holding the PDC emulator FSMO role. This process scans the domain for protected accounts, disables rights inheritance, and applies an ACL on the object that mirrors the ACL of the AdminSDHolder container.
+
+- The main function of SDPROP is to protect highly-privileged AD accounts, ensuring that they can’t be deleted or have rights modified, accidentally or intentionally, by users or processes with less privilege.
+
+- If a user is removed from a privileged group, the adminCount attribute remains set to 1 and inheritance disabled.
+
+
+Below is a list of built-in protected objects.
 
 ```plaintext
 Administrator
@@ -108,7 +119,7 @@ Enterprise Key Admins
 
 Any other object that has direct access to any of these, will also be added a 1 in it's `admincount` attribute by the `sdprop` process, within a 60 min interval.
 
-It's common to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.
+A common missconfiguration is to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.
 
 
 ### Solution:
