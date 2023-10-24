@@ -82,13 +82,13 @@ Talk this decision through with your security department, test plan execute.
 
 ### Problem:
 
-The [AdminSDHolder](https://learn.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory#adminsdholder) is an object in Active Directory (AD) that serves as a security descriptor template for protected accounts and groups in an AD domain.
+The [AdminSDHolder](https://learn.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory#adminsdholder) is an object in AD that serves as a security descriptor template for protected accounts and groups in an AD domain.
 
 It exists in every Active Directory domain and is located in the System Partition.
 
-Here’s how it works:
+Main features of AdminSDHolder:
 
-- The AdminSDHolder object manages the access control lists (ACLs) of members of built-in privileged AD groups.
+- The AdminSDHolder object manages the ACLs of members of built-in privileged AD groups.
 
 - The Security Descriptor Propagation (SDPROP) process runs every hour on the domain controller holding the PDC emulator FSMO role. This process scans the domain for protected accounts, disables rights inheritance, and applies an ACL on the object that mirrors the ACL of the AdminSDHolder container.
 
