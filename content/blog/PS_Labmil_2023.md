@@ -8,7 +8,6 @@ comments: false
 
 ## Once again, meet [Labmil](https://github.com/ehmiiz/labmil).
 
-![Displaying the cmdlet](/public/pics/2023-10-28_labmil.png)
 
 2021, I [wrote about my script to generate hyper-v VMs](https://www.ehmiiz.se/blog/ps_simplehyper-vlabmodule/). I still use this way of creating my labs, and I think the simple nature of it is valuable.
 
