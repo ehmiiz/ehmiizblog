@@ -2,27 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ehmiiz.se/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://ehmiiz.se/blog/</loc>
+    <lastmod>2023-10-25T14:58:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.se/blog/ps_labmil_2023/</loc>
+    <lastmod>2023-10-25T14:58:11+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/ad/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
-  </url><url>
-    <loc>https://ehmiiz.se/blog/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
+    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/powershell/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
+    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
+    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/security/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
+    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/</loc>
-    <lastmod>2023-10-24T09:54:33+02:00</lastmod>
+    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/modules/</loc>
     <lastmod>2023-09-05T09:34:34+02:00</lastmod>
@@ -173,5 +172,8 @@
   </url><url>
     <loc>https://ehmiiz.se/tags/markdown/</loc>
     <lastmod>2023-10-23T12:20:45+02:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.se/</loc>
+    <lastmod>2023-10-24T11:14:16+02:00</lastmod>
   </url>
 </urlset>

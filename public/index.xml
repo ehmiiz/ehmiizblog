@@ -5,8 +5,18 @@
     <link>https://ehmiiz.se/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate><atom:link href="https://ehmiiz.se/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://ehmiiz.se/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerShell: Super simple Hyper-V VM creation</title>
+      <link>https://ehmiiz.se/blog/ps_labmil_2023/</link>
+      <pubDate>Wed, 25 Oct 2023 14:58:11 +0100</pubDate>
+      
+      <guid>https://ehmiiz.se/blog/ps_labmil_2023/</guid>
+      <description>Once again, meet Labmil. 2021, I wrote about my script to generate hyper-v VMs. I still use this way of creating my labs, and I think the simple nature of it is valuable.
+The only requirements to using it is PowerShell, git and an iso file. Since it&amp;rsquo;s specifically a hyper-v script, naturally it will require Windows.
+# Clone labmilgit clone https://github.com/ehmiiz/labmil.git# Set iso path to desired VM OS$IsoPath = &amp;quot;C:\Temp\WS2022.</description>
+    </item>
+    
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
       <link>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</link>
@@ -53,8 +63,8 @@ However, I found myself using the graphical user interface (GUI) of my password 
       <guid>https://ehmiiz.se/blog/ps_linuxinfo_release/</guid>
       <description>Install-Module linuxinfo I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.
 Install it from the PowerShellGallery:
-Install-Module linuxinfo -Verbose View it&amp;rsquo;s functions:
-Get-Command -Module linuxinfo CommandType Name Version Source ----------- ---- ------- ------ Function Get-BatteryInfo 0.</description>
+Install-Module linuxinfo -VerboseView it&amp;rsquo;s functions:
+Get-Command -Module linuxinfoCommandType Name Version Source----------- ---- ------- ------Function Get-BatteryInfo 0.</description>
     </item>
     
     <item>
@@ -215,7 +225,7 @@ Goals of this blog Positivity Curiosity Learning Knowledge sharing Get more .md/
       
       <guid>https://ehmiiz.se/blog/ps_tip_tab/</guid>
       <description>One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.
-Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. h To view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
+Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. hTo view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
     </item>
     
     <item>
@@ -247,7 +257,7 @@ Features Quickly put the Windows Server ISO-file to good use It&amp;rsquo;s a si
       <guid>https://ehmiiz.se/blog/ps_automatedaccessreviewreport/</guid>
       <description>Access reviews are critical for organizations that values up-to-date On-prem AD groups &amp;amp; Azure AD Groups.
 Various audit &amp;amp; compliance teams will most likely value data from reviewers decision high, all this data can be found using the Microsoft Graph. This blog post will go into details on how you could:
-Create an app registration in Azure AD Delegate API permissions to the app: Application:	AccessReview.Read.All Create a token secret to store in an Automation account Creating a Azure Automation Runbook Creating a script that uses Microsoft Graph, PowerShell and Export-CSV to generate the final Access review list Lets get started!</description>
+Create an app registration in Azure AD Delegate API permissions to the app: Application:	AccessReview.Read.AllCreate a token secret to store in an Automation account Creating a Azure Automation Runbook Creating a script that uses Microsoft Graph, PowerShell and Export-CSV to generate the final Access review list Lets get started!</description>
     </item>
     
     <item>
@@ -489,7 +499,7 @@ here 2</description>
       <pubDate>Thu, 14 Feb 2019 15:36:09 -0600</pubDate>
       
       <guid>https://ehmiiz.se/blog/toc-test/</guid>
-      <description>Headings ## Heading 2 ### Heading 3 #### Heading 4 ##### Heading 5 ###### Heading 6 Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Text *This text will be italic* _This will also be italic_ **This text will be bold** __This will also be bold__ _You **can** combine them_ This text will be italic
+      <description>Headings ## Heading 2### Heading 3#### Heading 4##### Heading 5###### Heading 6Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Text *This text will be italic*_This will also be italic_**This text will be bold**__This will also be bold___You **can** combine them_This text will be italic
 This will also be italic
 This text will be bold
 This will also be bold</description>

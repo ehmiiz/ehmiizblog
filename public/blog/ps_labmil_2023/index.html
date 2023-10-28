@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Hugo 0.117.0">
-  <link rel="canonical" href="https://ehmiiz.se/blog/ps_making_binary_ps_module/" />
+  <link rel="canonical" href="https://ehmiiz.se/blog/ps_labmil_2023/" />
 
   
     
-    <meta name="description" content="My journey into C# so far I’ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest. The natural next language to learn for me has always been C#, reason being it’s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.
-Some content I’ve devoured to increase my C# knowledge are:
-C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, Book by Deepak Dhami &amp; Prateek Singh Various YouTube content and talks on building PowerShell Binary Modules using C#:">
+    <meta name="description" content="Once again, meet Labmil. 2021, I wrote about my script to generate hyper-v VMs. I still use this way of creating my labs, and I think the simple nature of it is valuable.
+The only requirements to using it is PowerShell, git and an iso file. Since it’s specifically a hyper-v script, naturally it will require Windows.
+# Clone labmilgit clone https://github.com/ehmiiz/labmil.git# Set iso path to desired VM OS$IsoPath = &#34;C:\Temp\WS2022.">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://ehmiiz.se/apple-touch-icon.png">
@@ -61,7 +61,7 @@ C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, 
 
   
   
-  <title>PowerShell: C Sharp for PowerShell Modules | </title>
+  <title>PowerShell: Super simple Hyper-V VM creation | </title>
 </head>
 
   <body>
@@ -270,223 +270,54 @@ C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, 
         <div>
           
   <main id="main">
-    <h1>PowerShell: C Sharp for PowerShell Modules</h1>
-    <figure><img src="/pics/stack_books.jpg"/>
-</figure>
+    <h1>PowerShell: Super simple Hyper-V VM creation</h1>
+    <h2 id="once-again-meet-labmilhttpsgithubcomehmiizlabmil">Once again, meet <a href="https://github.com/ehmiiz/labmil">Labmil</a>.</h2>
+<p><img src="/public/pics/2023-10-28_labmil.png" alt="Displaying the cmdlet"></p>
+<p>2021, I <a href="https://www.ehmiiz.se/blog/ps_simplehyper-vlabmodule/">wrote about my script to generate hyper-v VMs</a>. I still use this way of creating my labs, and I think the simple nature of it is valuable.</p>
+<p>The only requirements to using it is PowerShell, git and an iso file. Since it&rsquo;s specifically a hyper-v script, naturally it will require Windows.</p>
+<pre><code class="language-powershell"># Clone labmil
+git clone https://github.com/ehmiiz/labmil.git
 
-<h2 id="my-journey-into-c-so-far">My journey into C# so far</h2>
-<p>I&rsquo;ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest.
-The natural next language to learn for me has always been C#, reason being it&rsquo;s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.</p>
-<p>Some content I&rsquo;ve devoured to increase my C# knowledge are:</p>
-<ul>
-<li>C# Fundamentals course on PluralSight by Scott Allen</li>
-<li>PowerShell to C# And Back, Book by Deepak Dhami &amp; Prateek Singh</li>
-</ul>
-<p>Various YouTube content and talks on building PowerShell Binary Modules using C#:</p>
-<ul>
-<li>Building Cross Platform PowerShell Modules by Adam Driscoll</li>
-<li>Writing Compiled PowerShell Cmdlets by Thomas Rayner</li>
-</ul>
-<p>The above lists are things I&rsquo;ve went through and I can honestly recommend.</p>
-<h2 id="whats-to-come">What&rsquo;s to come</h2>
-<p>I plan to further increase my knowledge with the books:</p>
-<ul>
-<li>The C# Player&rsquo;s Guide, Book by RB Whitaker</li>
-<li>C# In Depth, Book by Jon Skeet</li>
-</ul>
-<p>As well as writing more modules and other C# related projects.</p>
-<h2 id="the-process-of-wrapping-a-binary-module-using-a-nuget-package">The process of wrapping a binary module using a nuget package</h2>
-<ol>
-<li>
-<p>Install a modern version of the dotnet cli together with a dotnet sdk suitable for that version</p>
-</li>
-<li>
-<p>Init an empty git repo for the new code to live in</p>
-</li>
-<li>
-<p>Navigate to the folder; dotnet new classlib. This will generate a dotnet class library, once compiled it will generate a DLL file that will be our module</p>
-</li>
-<li>
-<p>In the csproj file, to make the module compatible with Win PowerShell &amp; PowerShell, we set the TargetFramework to &ldquo;netstandard2.0&rdquo;</p>
-</li>
-<li>
-<p>Remove ImplicitUsings and Nullable Enabled. These are language features we do not need</p>
-</li>
-<li>
-<p>dotnet add package PowerShell Standard.Library</p>
-</li>
-<li>
-<p>dotnet add package thenugetpackage</p>
-</li>
-<li>
-<p>dotnet publish. We have now added the packages needed to start wrapping the nuget package into a PowerShell module</p>
-</li>
-<li>
-<p>To follow the official PowerShell repos naming standard, all the cmdlets are to be named: VerbNounCommand.cs</p>
-</li>
-</ol>
-<p>The following source code is commented to help one with a PowerShell background to understand it easier:</p>
-<pre><code class="language-Csharp">// Usings, similar to Import-Module
-using System;
-using System.Management.Automation;
-using PasswordGenerator;
+# Set iso path to desired VM OS
+$IsoPath = &quot;C:\Temp\WS2022.iso&quot;
 
-namespace PasswordGenerator
-{
-    // VerbsCommon contains a list of approved common verbs, the string Password is the Noun of the cmdlet
-    [Cmdlet(VerbsCommon.New,&quot;Password&quot;)]
-    // Cmdletname : PSCmdlet, similar to Function Name {}
-    public class GetGeneratedPasswordCommand : PSCmdlet
-    {
-        // [Parameter], default value is 16. If Get &gt; Default, if set &gt; set the value of the param
-        private int _pwLengthDefault = 16;
-        [Parameter]
-        [ValidateRange(4,128)]
-        public Int32 Length
-        {
-            get
-            {
-                return _pwLengthDefault;
-            }
-            set
-            {
-                _pwLengthDefault = value;
-            }
-        }
+# Set working directory to the cloned repo
+Set-Location labmil
 
-        private int _amountDefault = 1;
-        [Parameter]
-        public Int32 Amount
-        {
-            get
-            {
-                return _amountDefault;
-            }
-            set
-            {
-                _amountDefault = value;
-            }
-        }
-
-        // Switch parameters, they turn true if specified
-        [Parameter]
-        public SwitchParameter IncludeSpecial { get; set; }
-        [Parameter]
-        public SwitchParameter IncludeNumeric { get; set; }
-        [Parameter]
-        public SwitchParameter IncludeUppercase { get; set; }
-        [Parameter]
-        public SwitchParameter IncludeLowercase { get; set; }
-
-        protected override void ProcessRecord()
-        {
-            // for loop, same concept as in PowerShell
-            for (int i = 0; i &lt; Amount; i++)
-            {
-                if (!IncludeLowercase &amp; !IncludeUppercase &amp; IncludeSpecial &amp; IncludeNumeric)
-                {
-                    var pwd = new Password(Length).IncludeSpecial().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password); 
-                }
-                else if (IncludeNumeric &amp; !IncludeSpecial &amp; !IncludeUppercase &amp; !IncludeLowercase)
-                {
-                    var pwd = new Password(Length).IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (IncludeSpecial &amp; !IncludeNumeric &amp; !IncludeUppercase &amp; !IncludeLowercase)
-                {
-                    var pwd = new Password(Length).IncludeSpecial();
-                    var password = pwd.Next();
-                    WriteObject(password); 
-                }
-                else if (!IncludeNumeric &amp; !IncludeSpecial &amp; IncludeUppercase &amp; IncludeLowercase)
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeUppercase();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeNumeric &amp; !IncludeSpecial &amp; !IncludeLowercase &amp; IncludeUppercase)
-                {
-                    var pwd = new Password(Length).IncludeUppercase();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeNumeric &amp; !IncludeSpecial &amp; !IncludeUppercase &amp; IncludeLowercase)
-                {
-                    var pwd = new Password(Length).IncludeLowercase();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeNumeric &amp; IncludeLowercase &amp; IncludeUppercase &amp; IncludeSpecial)
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeUppercase().IncludeSpecial();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeNumeric &amp; IncludeLowercase &amp; IncludeUppercase &amp; IncludeNumeric)
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeUppercase().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeNumeric &amp; !IncludeUppercase &amp; IncludeSpecial &amp; IncludeLowercase)
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeSpecial();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeSpecial &amp; !IncludeUppercase &amp; IncludeLowercase &amp; IncludeNumeric)
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeLowercase &amp; !IncludeNumeric &amp; IncludeUppercase &amp; IncludeSpecial)
-                {
-                    var pwd = new Password(Length).IncludeUppercase().IncludeSpecial();
-                    var password = pwd.Next();
-                    WriteObject(password);
-                }
-                else if (!IncludeLowercase &amp; !IncludeSpecial &amp; IncludeUppercase &amp; IncludeNumeric)
-                {
-                    var pwd = new Password(Length).IncludeUppercase().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password); 
-                }
-                else if (!IncludeUppercase &amp; IncludeLowercase &amp; IncludeNumeric &amp; IncludeSpecial)
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeSpecial().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password); 
-                }
-                else if (!IncludeLowercase &amp; IncludeUppercase &amp; IncludeNumeric &amp; IncludeSpecial)
-                {
-                    var pwd = new Password(Length).IncludeUppercase().IncludeSpecial().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password); 
-                }
-                else
-                {
-                    var pwd = new Password(Length).IncludeLowercase().IncludeUppercase().IncludeSpecial().IncludeNumeric();
-                    var password = pwd.Next();
-                    WriteObject(password); 
-                }
-            }
-            
-        }
-
-    }
+# Create the VM with desired name, IsoPath is only needed once
+if ( -not (Test-Path $IsoPath) ) {
+    Write-Error &quot;Path not found!&quot; -ErrorAction Stop
 }
-
+.\New-LabmilVM.ps1 -Name &quot;DC01&quot; -IsoPath $IsoPath -Verbose
+.\New-LabmilVM.ps1 -Name &quot;DC02&quot; -Verbose
 </code></pre>
-<p>The rest is a matter of figuring out how the package works, and what it supports.
-Make sure to try to get all the functionality of the package out in the PowerShell module. Obviously it might require you to make more cmdlets.</p>
-<p>Next blog will be how I published my module to the PowerShell Gallery. Using Git, Github, PSGallery and PlatyPS.</p>
+<p>The above script can be used to get going. But I would recommend just writing down the git clone part, or remember it (the repo name).</p>
+<p>After this, interactive use is very simple.</p>
+<p>The idea behind the script is to demonstrate in what order you start using labmil.</p>
+<ol>
+<li>Install it using git</li>
+<li>Be aware of where your ISO is</li>
+<li>Call the New-LabmilVM function, give the VM a name and, first time setup, provide the iso</li>
+<li>Create how many VMs you want using a different name</li>
+</ol>
+<h2 id="features-2024-and-forward">Features 2024 and forward</h2>
+<ul>
+<li>
+<p>No breaking changes! I like the simple nature of the lambil script and want to support the way it&rsquo;s working. It promotes learning but reduces repetitiveness.</p>
+</li>
+<li>
+<p>Optional parameters:</p>
+<ul>
+<li>Role: AD DS, AD CS: configures the OS, lightweight lab</li>
+<li>NetworkSetup: Should automate internal switch and nic config</li>
+</ul>
+</li>
+</ul>
+<h2 id="ad-labbing">AD Labbing</h2>
+<p>The reason labmil exists is because of my interest in labbing with Windows Server <a href="https://www.ehmiiz.se/blog/ps_ad_unsecure_by_default/">but specifically AD DS</a>.</p>
+<p>I will be creating (even thought I know several other tools exist) a tool to populate a simple AD domain, with built in ACLs, OUs, Users, Computers, Group nesting, and security vulnerabilities. So I can automate setting up a new AD lab for myself but also for others.</p>
 <p>Stay tuned!</p>
-<h3 id="happy-coding">Happy coding</h3>
-<h3 id="emil">/Emil</h3>
+<h2 id="happy-labbing">Happy labbing!</h2>
 
   </main>
 

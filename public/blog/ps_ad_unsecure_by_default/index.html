@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.101.0" />
+  <meta name="generator" content="Hugo 0.117.0">
   <link rel="canonical" href="https://ehmiiz.se/blog/ps_ad_unsecure_by_default/" />
 
   
@@ -322,9 +322,24 @@ Set-ADDomain -Identity $DomainDN -Replace @{&quot;ms-DS-MachineAccountQuota&quot
 <p>Talk this decision through with your security department, test plan execute.</p>
 <h2 id="3-adminsdholder-acl-misconfigurations">3. AdminSDHolder ACL misconfigurations</h2>
 <h3 id="problem-2">Problem:</h3>
-<p>The AdminSDHolder process is a built in security feature of Active Directory. It&rsquo;s a process (<code>sdprop</code>) which runs on the primary domain controller that will configure all sensitive users defined by the <code>admincount</code> attribute, in the domain to have a what&rsquo;s configured in the System/AdminSDHolder containers ACL.</p>
-<p>Furthermore, the process will disable ACL inheritence, protecting the users from accidental delegation by admins.</p>
-<p>When configuring an AD domain, the primary domain controller will set the value <code>admincount</code> to 1 on the following users &amp; groups:</p>
+<p>The <a href="https://learn.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory#adminsdholder">AdminSDHolder</a> is an object in AD that serves as a security descriptor template for protected accounts and groups in an AD domain.</p>
+<p>It exists in every Active Directory domain and is located in the System Partition.</p>
+<p>Main features of AdminSDHolder:</p>
+<ul>
+<li>
+<p>The AdminSDHolder object manages the ACLs of members of built-in privileged AD groups.</p>
+</li>
+<li>
+<p>The Security Descriptor Propagation (SDPROP) process runs every hour on the domain controller holding the PDC emulator FSMO role. This process scans the domain for protected accounts, disables rights inheritance, and applies an ACL on the object that mirrors the ACL of the AdminSDHolder container.</p>
+</li>
+<li>
+<p>The main function of SDPROP is to protect highly-privileged AD accounts, ensuring that they can’t be deleted or have rights modified, accidentally or intentionally, by users or processes with less privilege.</p>
+</li>
+<li>
+<p>If a user is removed from a privileged group, the adminCount attribute remains set to 1 and inheritance disabled.</p>
+</li>
+</ul>
+<p>Below is a list of built-in protected objects.</p>
 <pre><code class="language-plaintext">Administrator
 Administrators
 Print Operators
@@ -342,7 +357,7 @@ Key Admins
 Enterprise Key Admins
 </code></pre>
 <p>Any other object that has direct access to any of these, will also be added a 1 in it&rsquo;s <code>admincount</code> attribute by the <code>sdprop</code> process, within a 60 min interval.</p>
-<p>It&rsquo;s common to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.</p>
+<p>A common missconfiguration is to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.</p>
 <h3 id="solution-2">Solution:</h3>
 <p>Review the AdminSDHolder ACL under the System container, remove anything that does not have a <strong>very</strong> good reason to be there (AAD Connect, Exchange, MSOL_ are common, and should be secure with long randomized passwords).</p>
 <p>Understanding what rights are unsecure in Active Directory is needed as a first step.</p>
@@ -390,9 +405,9 @@ $AdminSDHolderACL = (Get-Acl &quot;AD:$AdminSDHolder&quot;).Access | Out-GridVie
 
 
 
-<script src="/js/search.7aef046a0cc8b0c532f1d20087b920459bc868c936bb48a6ae221eceefca2d07.js"></script>
+<script src="/js/search.da4e0819db35e5fc5289562d46cf4a2173684e337d69d997639a24b79ecd6416.js"></script>
 
-<link rel="stylesheet" href="/css/search.fe0cd54a21628574bff49d721c827d1bb165ab56b0f22dd55ae78addbe61c309.css"></link>
+<link rel="stylesheet" href="/css/search.54f9a90ceddfdaa3e66698090e7d4a7e7a7f217c85bc79c48ed09c8cb3ee6777.css"></link>
 
 
 
