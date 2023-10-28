@@ -8,7 +8,6 @@ comments: false
 
 ## Once again, meet [Labmil](https://github.com/ehmiiz/labmil).
 
-
 2021, I [wrote about my script to generate hyper-v VMs](https://www.ehmiiz.se/blog/ps_simplehyper-vlabmodule/). I still use this way of creating my labs, and I think the simple nature of it is valuable.
 
 The only requirements to using it is PowerShell, git and an iso file. Since it's specifically a hyper-v script, naturally it will require Windows.
@@ -31,6 +30,10 @@ if ( -not (Test-Path $IsoPath) ) {
 .\New-LabmilVM.ps1 -Name "DC01" -IsoPath $IsoPath -Verbose
 .\New-LabmilVM.ps1 -Name "DC02" -Verbose
 ```
+
+{{< figure
+  src="/pics/2023-10-28_labmil.png"
+>}}
 
 The above script can be used to get going. But I would recommend just writing down the git clone part, or remember it (the repo name).
 
