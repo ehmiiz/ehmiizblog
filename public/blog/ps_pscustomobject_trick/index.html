@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.100.2" />
+  <meta name="generator" content="Hugo 0.120.3">
   <link rel="canonical" href="/blog/ps_pscustomobject_trick/" />
 
   
@@ -279,7 +279,7 @@ In this blog post, I will cover a trick that I frequently use when generating st
 <p>There&rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.3">PowerShell docs cover it very well</a>.</p>
 <p>In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.3">Export-CSV</a>, or even better, <a href="https://adamtheautomator.com/powershell-excel/">Export-Excel</a></p>
 <h2 id="looping--conditions">Looping &amp; Conditions</h2>
-<p>This trick involves when you want to create a boolean (true or false) value in your PSCustomObject variable. 
+<p>This trick involves when you want to create a boolean (true or false) value in your PSCustomObject variable.
 Here&rsquo;s an example of what I mean:</p>
 <pre><code class="language-powershell"># Create an array object in a variable
 $PSCustomObject = @()
