@@ -1,4 +1,5 @@
-baseURL: "/"
+baseURL: "https://ehmiiz.se"
+relativeurls: false
 languageCode: en-us
 defaultContentLanguage: en
 theme: cupper-hugo-theme

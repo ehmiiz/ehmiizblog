@@ -2,45 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on </title>
-    <link>/tags/</link>
+    <link>https://ehmiiz.se/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate>
+    <atom:link href="https://ehmiiz.se/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>automation</title>
-      <link>/tags/automation/</link>
-      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>passwords</title>
-      <link>/tags/passwords/</link>
-      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/passwords/</guid>
+      <title>ad</title>
+      <link>https://ehmiiz.se/tags/ad/</link>
+      <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
+      <guid>https://ehmiiz.se/tags/ad/</guid>
       <description></description>
     </item>
     <item>
       <title>powershell</title>
-      <link>/tags/powershell/</link>
-      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/powershell/</guid>
+      <link>https://ehmiiz.se/tags/powershell/</link>
+      <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
+      <guid>https://ehmiiz.se/tags/powershell/</guid>
       <description></description>
     </item>
     <item>
       <title>security</title>
-      <link>/tags/security/</link>
-      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/security/</guid>
+      <link>https://ehmiiz.se/tags/security/</link>
+      <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
+      <guid>https://ehmiiz.se/tags/security/</guid>
       <description></description>
     </item>
     <item>
-      <title>ad</title>
-      <link>/tags/ad/</link>
-      <pubDate>Sun, 23 Oct 2022 08:23:11 +0100</pubDate>
-      <guid>/tags/ad/</guid>
+      <title>automation</title>
+      <link>https://ehmiiz.se/tags/automation/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://ehmiiz.se/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>passwords</title>
+      <link>https://ehmiiz.se/tags/passwords/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://ehmiiz.se/tags/passwords/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>hugo</title>
+      <link>https://ehmiiz.se/tags/hugo/</link>
+      <pubDate>Thu, 14 Feb 2019 15:36:09 -0600</pubDate>
+      <guid>https://ehmiiz.se/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>markdown</title>
+      <link>https://ehmiiz.se/tags/markdown/</link>
+      <pubDate>Thu, 14 Feb 2019 15:36:09 -0600</pubDate>
+      <guid>https://ehmiiz.se/tags/markdown/</guid>
       <description></description>
     </item>
   </channel>

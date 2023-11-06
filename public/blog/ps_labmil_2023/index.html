@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Hugo 0.120.3">
-  <link rel="canonical" href="https://ehmiiz.se/blog/howtowolf/" />
+  <link rel="canonical" href="https://ehmiiz.se/blog/ps_labmil_2023/" />
 
   
     
-    <meta name="description" content="Book Review: Howtowolf">
+    <meta name="description" content="Once again, meet Labmil. 2021, I wrote about my script to generate hyper-v VMs. I still use this way of creating my labs, and I think the simple nature of it is valuable.
+The only requirements to using it is PowerShell, git and an iso file. Since it’s specifically a hyper-v script, naturally it will require Windows.
+# Clone labmilgit clone https://github.com/ehmiiz/labmil.git# Set iso path to desired VM OS$IsoPath = &#34;C:\Temp\WS2022.">
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="https://ehmiiz.se/apple-touch-icon.png">
@@ -59,7 +61,7 @@
 
   
   
-  <title>Book Review: Howtowolf | </title>
+  <title>PowerShell: Super simple Hyper-V VM creation | </title>
 </head>
 
   <body>
@@ -268,8 +270,57 @@
         <div>
           
   <main id="main">
-    <h1>Book Review: Howtowolf</h1>
-    
+    <h1>PowerShell: Super simple Hyper-V VM creation</h1>
+    <h2 id="once-again-meet-labmilhttpsgithubcomehmiizlabmil">Once again, meet <a href="https://github.com/ehmiiz/labmil">Labmil</a>.</h2>
+<p>2021, I <a href="https://www.ehmiiz.se/blog/ps_simplehyper-vlabmodule/">wrote about my script to generate hyper-v VMs</a>. I still use this way of creating my labs, and I think the simple nature of it is valuable.</p>
+<p>The only requirements to using it is PowerShell, git and an iso file. Since it&rsquo;s specifically a hyper-v script, naturally it will require Windows.</p>
+<pre><code class="language-powershell"># Clone labmil
+git clone https://github.com/ehmiiz/labmil.git
+
+# Set iso path to desired VM OS
+$IsoPath = &quot;C:\Temp\WS2022.iso&quot;
+
+# Set working directory to the cloned repo
+Set-Location labmil
+
+# Create the VM with desired name, IsoPath is only needed once
+if ( -not (Test-Path $IsoPath) ) {
+    Write-Error &quot;Path not found!&quot; -ErrorAction Stop
+}
+.\New-LabmilVM.ps1 -Name &quot;DC01&quot; -IsoPath $IsoPath -Verbose
+.\New-LabmilVM.ps1 -Name &quot;DC02&quot; -Verbose
+</code></pre>
+<figure><img src="/pics/2023-10-28_labmil.png"/>
+</figure>
+
+<p>The above script can be used to get going. But I would recommend just writing down the git clone part, or remember it (the repo name).</p>
+<p>After this, interactive use is very simple.</p>
+<p>The idea behind the script is to demonstrate in what order you start using labmil.</p>
+<ol>
+<li>Install it using git</li>
+<li>Be aware of where your ISO is</li>
+<li>Call the New-LabmilVM function, give the VM a name and, first time setup, provide the iso</li>
+<li>Create how many VMs you want using a different name</li>
+</ol>
+<h2 id="features-2024-and-forward">Features 2024 and forward</h2>
+<ul>
+<li>
+<p>No breaking changes! I like the simple nature of the lambil script and want to support the way it&rsquo;s working. It promotes learning but reduces repetitiveness.</p>
+</li>
+<li>
+<p>Optional parameters:</p>
+<ul>
+<li>Role: AD DS, AD CS: configures the OS, lightweight lab</li>
+<li>NetworkSetup: Should automate internal switch and nic config</li>
+</ul>
+</li>
+</ul>
+<h2 id="ad-labbing">AD Labbing</h2>
+<p>The reason labmil exists is because of my interest in labbing with Windows Server <a href="https://www.ehmiiz.se/blog/ps_ad_unsecure_by_default/">but specifically AD DS</a>.</p>
+<p>I will be creating (even thought I know several other tools exist) a tool to populate a simple AD domain, with built in ACLs, OUs, Users, Computers, Group nesting, and security vulnerabilities. So I can automate setting up a new AD lab for myself but also for others.</p>
+<p>Stay tuned!</p>
+<h2 id="happy-labbing">Happy labbing!</h2>
+
   </main>
 
           

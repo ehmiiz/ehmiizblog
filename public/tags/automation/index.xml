@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>automation on </title>
-    <link>/tags/automation/</link>
+    <link>https://ehmiiz.se/tags/automation/</link>
     <description>Recent content in automation on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ehmiiz.se/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell KeePass and saving time</title>
-      <link>/blog/ps_fast_password_retrieving/</link>
+      <link>https://ehmiiz.se/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>/blog/ps_fast_password_retrieving/</guid>
+      <guid>https://ehmiiz.se/blog/ps_fast_password_retrieving/</guid>
       <description>Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!
 The Problem Password managers are very useful for anyone having more than one set of credentials, and most of us do.
 They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.
