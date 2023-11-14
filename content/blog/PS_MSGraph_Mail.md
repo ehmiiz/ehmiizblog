@@ -32,6 +32,13 @@ Using a `Client Secret` is fine if you have good control over who has access to 
 
 This step-by-step guide will set up the app registration and the secret, and finally add the secret to the automation accounts shared resources as a variable.
 
+---
+**NOTE**
+
+If you're looking to be more fine-grained in your access delegation, and want to skip the whole secret management aspect, be sure to look into [Managed Identities](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp), specifically User-Assigned. Thanks [Dennis](https://www.linkedin.com/in/denkaj/)!
+
+---
+
 1. In the Azure Portal -> `App registrations`
 2. `New Registration` -> Name the app to something descriptive like Runbook name or similar
 3. `Register`
