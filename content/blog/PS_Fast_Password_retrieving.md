@@ -26,7 +26,7 @@ They reduce the chance of credential leakage to unauthorized people and are vast
 
 However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret. The problem with navigating a GUI every day is that it's time consuming, and there's room for improvement, especially if you enjoy delving into some PowerShell and/or always have a terminal open.
 
-Summary: Password managers GUIs are slow and tedious to work with. Lets make em 
+Summary: Password managers GUIs are slow and tedious to work with. Let's explore an alternative that is much faster!
 
 
 ### My Solution
@@ -57,7 +57,7 @@ Since I use [KeePass, naturally this module](https://github.com/JustinGrote/Secr
 It's an awesome module that I highly recommend for any KeePass & PowerShell user.
 I will use [SecretManagement](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.secretmanagement/?view=ps-modules) to enable the KeePass module and use it's vault capabilities.
 
-This will save me tons of time and I trust the sources that the modules originate from, to deliver secure and tested code. Much more then I trust myself to think of all security aspects of a something that would replace the modules already offered.
+This will save me tons of time and I trust the sources that the modules originate from, to deliver secure and tested code. Much more then I trust myself to think of all security aspects of a something that would replace the modules already offered. Another great benefit of having PowerShell as a gateway to your password manager is that you don't need to install the vendors application at all, this is a big plus if you're (like I am) a fan of minimalism.
 
 Next part of the code would be to install the modules:
 I set a condition to check if both modules are already present. If not, I try to install them.

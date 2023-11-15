@@ -280,7 +280,7 @@ However, I found myself using the graphical user interface (GUI) of my password 
 <p>Password managers are very useful for anyone having more than one set of credentials, and most of us do.</p>
 <p>They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.</p>
 <p>However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret. The problem with navigating a GUI every day is that it&rsquo;s time consuming, and there&rsquo;s room for improvement, especially if you enjoy delving into some PowerShell and/or always have a terminal open.</p>
-<p>Summary: Password managers GUIs are slow and tedious to work with. Lets make em</p>
+<p>Summary: Password managers GUIs are slow and tedious to work with. Let&rsquo;s explore an alternative that is much faster!</p>
 <h3 id="my-solution">My Solution</h3>
 <p>The solution to this problem that I went with was to create a custom script, which will install and configure my PowerShell session to easily access my password manager after typing in its master password. Together with a couple of functions to easily retrieve and copy-paste my password to the clipboard.</p>
 <p>Setting something to your clipboard, especially a password, is a risk since other applications also can access the clipboard, thus the clipboard needs to be cleared by setting a sleep timer and overwriting the secret.</p>
@@ -298,7 +298,7 @@ However, I found myself using the graphical user interface (GUI) of my password 
 <p>Since I use <a href="https://github.com/JustinGrote/SecretManagement.KeePass">KeePass, naturally this module</a> comes in handy.</p>
 <p>It&rsquo;s an awesome module that I highly recommend for any KeePass &amp; PowerShell user.
 I will use <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.secretmanagement/?view=ps-modules">SecretManagement</a> to enable the KeePass module and use it&rsquo;s vault capabilities.</p>
-<p>This will save me tons of time and I trust the sources that the modules originate from, to deliver secure and tested code. Much more then I trust myself to think of all security aspects of a something that would replace the modules already offered.</p>
+<p>This will save me tons of time and I trust the sources that the modules originate from, to deliver secure and tested code. Much more then I trust myself to think of all security aspects of a something that would replace the modules already offered. Another great benefit of having PowerShell as a gateway to your password manager is that you don&rsquo;t need to install the vendors application at all, this is a big plus if you&rsquo;re (like I am) a fan of minimalism.</p>
 <p>Next part of the code would be to install the modules:
 I set a condition to check if both modules are already present. If not, I try to install them.
 Since the <code>Install-Module</code> cmdlets <code>Name</code> parameter accepts a string array (look for <code>String []</code> in the help files), I wont have to foreach loop through the modules.</p>

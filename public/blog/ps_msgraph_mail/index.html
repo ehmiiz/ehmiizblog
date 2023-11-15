@@ -286,6 +286,10 @@ Pre-Requirements M365 licensed noreply address as a shared mailbox Azure Automat
 <p>The alternative to using an Client Secret would be to <a href="https://learn.microsoft.com/entra/identity-platform/howto-create-self-signed-certificate">use a certificate</a> and I would recommend doing so since it&rsquo;s a more secure solution in general.</p>
 <p>Using a <code>Client Secret</code> is fine if you have good control over who has access to your App Registration and your automation account.</p>
 <p>This step-by-step guide will set up the app registration and the secret, and finally add the secret to the automation accounts shared resources as a variable.</p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>If you&rsquo;re looking to be more fine-grained in your access delegation, and want to skip the whole secret management aspect, be sure to look into <a href="https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp">Managed Identities</a>, specifically User-Assigned. Thanks <a href="https://www.linkedin.com/in/denkaj/">Dennis</a>!</p>
+<hr>
 <ol>
 <li>In the Azure Portal -&gt; <code>App registrations</code></li>
 <li><code>New Registration</code> -&gt; Name the app to something descriptive like Runbook name or similar</li>
