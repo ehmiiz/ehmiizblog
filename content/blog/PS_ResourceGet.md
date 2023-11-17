@@ -91,9 +91,9 @@ Cmdlet          Update-PSResource                                  1.0.1      Mi
 Cmdlet          Update-PSScriptFileInfo                            1.0.1      Microsoft.PowerShell.PSResourceGet
 ```
 
-It's not only installing modules that's faster:
-
 ## What's installed?
+
+It's not only installing modules that's faster, it's also very fast at getting installed modules.
 
 Getting installed modules can be very time-consuming on shared systems, especially where you have the az modules installed, so this is a great performance win overall.
 
