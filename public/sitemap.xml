@@ -3,7 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ehmiiz.se/blog/</loc>
-    <lastmod>2023-11-14T09:53:13+01:00</lastmod>
+    <lastmod>2023-11-16T08:23:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ehmiiz.se/blog/ps_resourceget/</loc>
+    <lastmod>2023-11-16T08:23:11+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/blog/ps_msgraph_mail/</loc>
     <lastmod>2023-11-14T09:53:13+01:00</lastmod>
@@ -15,28 +18,28 @@
     <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/powershell/</loc>
-    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
+    <lastmod>2023-11-15T07:51:24+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</loc>
     <lastmod>2023-10-24T11:34:16+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/security/</loc>
-    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
+    <lastmod>2023-11-15T07:51:24+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/</loc>
-    <lastmod>2023-10-24T11:34:16+02:00</lastmod>
+    <lastmod>2023-11-15T07:51:24+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/modules/</loc>
     <lastmod>2023-09-05T09:34:34+02:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/automation/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-11-15T07:51:24+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/tags/passwords/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-11-15T07:51:24+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/blog/ps_fast_password_retrieving/</loc>
-    <lastmod>2023-09-01T14:39:16+02:00</lastmod>
+    <lastmod>2023-11-15T07:51:24+01:00</lastmod>
   </url><url>
     <loc>https://ehmiiz.se/blog/ps_linuxinfo_release/</loc>
     <lastmod>2023-09-01T13:44:36+02:00</lastmod>

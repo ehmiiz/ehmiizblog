@@ -8,6 +8,15 @@
     <language>en-us</language>
     <atom:link href="https://ehmiiz.se/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>PowerShell 7.4: Install-Module is evolving.</title>
+      <link>https://ehmiiz.se/blog/ps_resourceget/</link>
+      <pubDate>Thu, 16 Nov 2023 08:23:11 +0100</pubDate>
+      <guid>https://ehmiiz.se/blog/ps_resourceget/</guid>
+      <description>PSResourceGet Install-Module has evolved.
+Have you ever asked yourself, what module imports the Install-Module cmdlet? It&amp;rsquo;s kind of a meta question, check for yourself! Spoiler a bit down for anyone reading on mobile.
+Get-Command -Name Install-ModuleSpoilerCommandType Name Version Source----------- ---- ------- ------Function Install-Module 2.2.5 PowerShellGetWith the GA release of PowerShell 7.4 a rewrite of PowerShellGet is included, (hint hint, renamed to PSResourceGet), and boy is it fast.</description>
+    </item>
+    <item>
       <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation</title>
       <link>https://ehmiiz.se/blog/ps_msgraph_mail/</link>
       <pubDate>Mon, 06 Nov 2023 08:23:11 +0100</pubDate>
