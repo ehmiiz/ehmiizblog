@@ -58,7 +58,7 @@ Speaking about PowerShellGet V2, there's still a future for this module, but ins
 Install-Module -Name PowerShellGet -AllowPrerelease -Force
 ```
 
-There parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there's no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems. [Here's some further reading](https://devblogs.microsoft.com/powershell/powershellget-3-0-22-beta22-is-now-available/) on the subject.
+The parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there's no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems. [Here's some further reading](https://devblogs.microsoft.com/powershell/powershellget-3-0-22-beta22-is-now-available/) on the subject.
 
 ## Let's take PSResourceGet for a spin
 
