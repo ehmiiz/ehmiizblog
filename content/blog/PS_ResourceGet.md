@@ -38,6 +38,10 @@ With the [GA release of PowerShell 7.4](https://devblogs.microsoft.com/powershel
 
 I installed PowerShell 7.4 on two different Ubuntu 20.04 WSL distros, and I installed a few modules to benchmark the old trusty `Install-Module` and the new sheriff in town: `Install-PSResource`.
 
+{{< figure
+  src="/pics/PSResourceGet.png"
+>}}
+
 The results speak for themselves. PSResourceGet is much faster then PowerShellGet V2.
 
 Speaking about PowerShellGet V2, there's still a future for this module, but instead of new APIs and features, V3 (currently in pre-release) was converted to a compatibility layer over to the new and faster PSResourceGet.
@@ -46,12 +50,13 @@ Speaking about PowerShellGet V2, there's still a future for this module, but ins
   src="/pics/PSResourceGetModules.png"
 >}}
 
-```powershell
-Install-Module -Name PowerShellGet -AllowPrerelease -Force
-```
 {{< figure
   src="/pics/notperfectcompat.png"
 >}}
+
+```powershell
+Install-Module -Name PowerShellGet -AllowPrerelease -Force
+```
 
 There parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there's no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems. [Here's some further reading](https://devblogs.microsoft.com/powershell/powershellget-3-0-22-beta22-is-now-available/) on the subject.
 
