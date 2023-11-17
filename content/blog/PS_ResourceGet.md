@@ -36,14 +36,16 @@ Get-Command -Name Install-Module
 
 With the [GA release of PowerShell 7.4](https://devblogs.microsoft.com/powershell/powershell-7-4-general-availability/) a rewrite of PowerShellGet is included, (hint hint, renamed to [PSResourceGet](https://devblogs.microsoft.com/powershell/psresourceget-is-generally-available/)), and boy is it fast.
 
-I installed PowerShell 7.4 on two different Ubuntu 20.04 WSL distros, and I installed some modules to benchmark on old trusty `Install-Module` and the new sheriff in town: `Install-PSResource`.
+I installed PowerShell 7.4 on two different Ubuntu 20.04 WSL distros, and I installed a few modules to benchmark the old trusty `Install-Module` and the new sheriff in town: `Install-PSResource`.
 
 {{< figure
-  src="/pics/PSResourceGetModules"
+  src="/pics/PSResourceGetModules.png"
 >}}
 
 
-The results speak for themselves. PSResourceGet is much faster then PowerShellGet V2. Speaking about PowerShellGet V2, there's still a future for this module, but instead of new APIs and features, V3 (currently in pre-release) was converted to a compatibility layer over to the new and faster PSResourceGet.
+The results speak for themselves. PSResourceGet is much faster then PowerShellGet V2.
+
+Speaking about PowerShellGet V2, there's still a future for this module, but instead of new APIs and features, V3 (currently in pre-release) was converted to a compatibility layer over to the new and faster PSResourceGet.
 
 ```powershell
 Install-Module -Name PowerShellGet -AllowPrerelease -Force
@@ -52,7 +54,7 @@ Install-Module -Name PowerShellGet -AllowPrerelease -Force
   src="/pics/notperfectcompat.png"
 >}}
 
-There parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there's no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems.
+There parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there's no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems. [Here's some further reading](https://devblogs.microsoft.com/powershell/powershellget-3-0-22-beta22-is-now-available/) on the subject.
 
 ## Let's take it for a spin
 
@@ -87,17 +89,24 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 
 It's not only installing modules that's faster:
 
+## What's installed?
+
+Getting installed modules can be very time-consuming on shared systems, especially where you have the az modules installed, so this is a great performance win overall.
+
+
 {{< figure
   src="/pics/gettingmodules.png"
 >}}
 
-Getting installed modules can be very time-consuming on shared systems, especially where you have the az modules installed, so this is a great performance win overall.
+## Find new stuff
+
+Finding new modules and scripts is also a crucial part of PowerShell, especially for the community members. I would argue with PSResourceGet going GA, PowerShell 7.4 is probably one of the most significant performance boosters of PowerShell (in it's open source life).
 
 {{< figure
   src="/pics/find-module.png"
 >}}
 
-Finding new modules and scripts is also a crucial part of PowerShell, especially for the community members. I would argue with PSResourceGet going GA, PowerShell 7.4 is probably one of the most significant performance boosters of PowerShell (in it's open source life).
+As you can see, finding modules seems way faster, and there's not many matches on NTFS, so this scales well.
 
 ## What about publishing?
 
@@ -105,17 +114,18 @@ Let's try to use the new `Publish-PSResource`. I have a minor bug-fix to do on m
 
 I start with editing my very simple publishing script. Since I don't know if the github-hosted runner will have PSResourceGet installed yet, I need to validate that the cmdlet is present before calling it. If it's not, I'm simply installing it using PowerShellGet v2.
 
+This should do it!
+
 {{< figure
   src="/pics/publish-psresource_0.png"
 >}}
-
-This should do it!
 
 {{< figure
   src="/pics/publish-psresource_1.1.png"
 >}}
 
-Hmm, seems like I messed something up. The Github-hosted runner can't find Publish-PSResource so, it's trying to install PSResourceGet using `Install-Module`. However I miss-spelled the module name. It should be `Microsoft.PowerShell.PSResourceGet`, let's fix that and re-run it my workflow.
+
+Hmm, seems like I messed something up. The Github-hosted runner can't find Publish-PSResource so, it's trying to install PSResourceGet using `Install-Module`. However I miss-spelled the module name if you look closely at line 7. It should be `Microsoft.PowerShell.PSResourceGet`, let's fix that and re-run my workflow.
 
 {{< figure
   src="/pics/publish-psresource_1.png"
@@ -137,7 +147,7 @@ We covered PowerShellGet V3 being a compatibility layer and some caveats with it
 
 We looked at migrating a simple publishing script from `Publish-Module` to `Publish-PSResource`.
 
-I recommend to poke around with the new PSResourceGet cmdlets, and for interactive use not rely on any compatibility layer, save that for the edge-cases.
+I recommend to poke around with the new PSResourceGet cmdlets and [read it's official documentation](https://learn.microsoft.com/powershell/module/microsoft.powershell.psresourceget/?view=powershellget-3.x), and for interactive use not rely on any compatibility layer, save that for the edge-cases.
 
 Thanks for reading this far, hope you found it helpful. PM me on twitter for any feedback.
 
