@@ -38,14 +38,13 @@ With the [GA release of PowerShell 7.4](https://devblogs.microsoft.com/powershel
 
 I installed PowerShell 7.4 on two different Ubuntu 20.04 WSL distros, and I installed a few modules to benchmark the old trusty `Install-Module` and the new sheriff in town: `Install-PSResource`.
 
-{{< figure
-  src="/pics/PSResourceGetModules.png"
->}}
-
-
 The results speak for themselves. PSResourceGet is much faster then PowerShellGet V2.
 
 Speaking about PowerShellGet V2, there's still a future for this module, but instead of new APIs and features, V3 (currently in pre-release) was converted to a compatibility layer over to the new and faster PSResourceGet.
+
+{{< figure
+  src="/pics/PSResourceGetModules.png"
+>}}
 
 ```powershell
 Install-Module -Name PowerShellGet -AllowPrerelease -Force
