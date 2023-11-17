@@ -110,7 +110,7 @@ Finding new modules and scripts is also a crucial part of PowerShell, especially
   src="/pics/find-module.png"
 >}}
 
-As you can see, finding modules seems way faster, and there's not many matches on NTFS, so this scales well.
+As you can see, finding modules is way faster, and here we're even using two-way wildcards.
 
 ## What about publishing?
 
