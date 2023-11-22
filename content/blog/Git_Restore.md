@@ -9,7 +9,11 @@ draft: false
   src="/pics/restore_git.png"
 >}}
 
-Git is a powerful and popular version control system that allows you to track changes in your files and collaborate with other developers. Sometimes, you may want to restore a file from git to a previous state, either because you made a mistake, want to undo some changes, or need to compare different versions. In this blog post, we will show you how to restore a file from git in four different scenarios, depending on how far you have progressed in the git workflow.
+Git is a powerful and popular version control system, sometimes a bit too powerful.
+
+Depending on how your day went, you may want to restore a file from git to a previous state, either because you made an oopsie, want to undo some changes, or need to compare different versions.
+
+Let's go through four common scenarios on how to do just that!
 
 ## Scenario 1: Saved Locally on the Local Git Repository
 
