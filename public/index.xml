@@ -2,437 +2,206 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://ehmiiz.se/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://ehmiiz.se/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Restore a File from Git</title>
-      <link>https://ehmiiz.se/blog/git_restore/</link>
+      <link>http://localhost:1313/blog/git_restore/</link>
       <pubDate>Wed, 22 Nov 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/git_restore/</guid>
-      <description>Git is a powerful and popular version control system that allows you to track changes in your files and collaborate with other developers. Sometimes, you may want to restore a file from git to a previous state, either because you made a mistake, want to undo some changes, or need to compare different versions. In this blog post, we will show you how to restore a file from git in four different scenarios, depending on how far you have progressed in the git workflow.</description>
+      <guid>http://localhost:1313/blog/git_restore/</guid>
+      <description>Git is a powerful and popular version control system, sometimes a bit too powerful.&#xA;Depending on how your day went, you may want to restore a file from git to a previous state, either because you made an oopsie, want to undo some changes, or need to compare different versions.&#xA;Let&amp;rsquo;s go through four common scenarios on how to do just that!&#xA;Scenario 1: Saved Locally on the Local Git Repository The simplest scenario is when you have saved your file locally on your local git repository, but have not staged or committed it yet.</description>
     </item>
     <item>
       <title>PowerShell 7.4: Install-Module is evolving.</title>
-      <link>https://ehmiiz.se/blog/ps_resourceget/</link>
+      <link>http://localhost:1313/blog/ps_resourceget/</link>
       <pubDate>Thu, 16 Nov 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_resourceget/</guid>
-      <description>Where does Install-Module come from? Install-Module has evolved.
-Have you ever asked yourself, what module imports the Install-Module cmdlet? It&amp;rsquo;s kind of a meta question, check for yourself! Spoiler a bit down for anyone reading on mobile.
-Get-Command -Name Install-ModuleSpoilerCommandType Name Version Source----------- ---- ------- ------Function Install-Module 2.2.5 PowerShellGetNew sheriff in town 🤠 With the GA release of PowerShell 7.4 a rewrite of PowerShellGet is included, (hint hint, renamed to PSResourceGet), and boy is it fast.</description>
+      <guid>http://localhost:1313/blog/ps_resourceget/</guid>
+      <description>Where does Install-Module come from? Install-Module has evolved.&#xA;Have you ever asked yourself, what module imports the Install-Module cmdlet? It&amp;rsquo;s kind of a meta question, check for yourself! Spoiler a bit down for anyone reading on mobile.&#xA;Get-Command -Name Install-Module&#xD;Spoiler&#xD;CommandType Name Version Source&#xD;----------- ---- ------- ------&#xD;Function Install-Module 2.2.5 PowerShellGet&#xD;New sheriff in town 🤠 With the GA release of PowerShell 7.4 a rewrite of PowerShellGet is included, (hint hint, renamed to PSResourceGet), and boy is it fast.</description>
     </item>
     <item>
       <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation</title>
-      <link>https://ehmiiz.se/blog/ps_msgraph_mail/</link>
+      <link>http://localhost:1313/blog/ps_msgraph_mail/</link>
       <pubDate>Mon, 06 Nov 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_msgraph_mail/</guid>
-      <description>Send-MgUserMail The following solution example is covering how to set-up and use the Send-MgUserMail cmdlet in Azure Automation to send an email with a subject, message body and an attached zip file.
-Pre-Requirements M365 licensed noreply address as a shared mailbox Azure Automation account with the modules Microsoft.Graph.Users.Actions and Microsoft.Graph.Authentication installed App Registration with Send.Mail application API permission exposed Authentication &amp;amp; Access This solution will use an Client Secret and a encrypted automation variable.</description>
+      <guid>http://localhost:1313/blog/ps_msgraph_mail/</guid>
+      <description>Send-MgUserMail The following solution example is covering how to set-up and use the Send-MgUserMail cmdlet in Azure Automation to send an email with a subject, message body and an attached zip file.&#xA;Pre-Requirements M365 licensed noreply address as a shared mailbox Azure Automation account with the modules Microsoft.Graph.Users.Actions and Microsoft.Graph.Authentication installed App Registration with Send.Mail application API permission exposed Authentication &amp;amp; Access This solution will use an Client Secret and a encrypted automation variable.</description>
     </item>
     <item>
       <title>PowerShell: Super simple Hyper-V VM creation</title>
-      <link>https://ehmiiz.se/blog/ps_labmil_2023/</link>
+      <link>http://localhost:1313/blog/ps_labmil_2023/</link>
       <pubDate>Wed, 25 Oct 2023 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_labmil_2023/</guid>
-      <description>Once again, meet Labmil. 2021, I wrote about my script to generate hyper-v VMs. I still use this way of creating my labs, and I think the simple nature of it is valuable.
-The only requirements to using it is PowerShell, git and an iso file. Since it&amp;rsquo;s specifically a hyper-v script, naturally it will require Windows.
-# Clone labmilgit clone https://github.com/ehmiiz/labmil.git# Set iso path to desired VM OS$IsoPath = &amp;quot;C:\Temp\WS2022.</description>
+      <guid>http://localhost:1313/blog/ps_labmil_2023/</guid>
+      <description>Once again, meet Labmil. 2021, I wrote about my script to generate hyper-v VMs. I still use this way of creating my labs, and I think the simple nature of it is valuable.&#xA;The only requirements to using it is PowerShell, git and an iso file. Since it&amp;rsquo;s specifically a hyper-v script, naturally it will require Windows.&#xA;# Clone labmil&#xD;git clone https://github.com/ehmiiz/labmil.git&#xD;# Set iso path to desired VM OS&#xD;$IsoPath = &amp;quot;C:\Temp\WS2022.</description>
     </item>
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
-      <link>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</link>
+      <link>http://localhost:1313/blog/ps_ad_unsecure_by_default/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_ad_unsecure_by_default/</guid>
-      <description>Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.
-In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.
-Please note that this post is personal and subject to change.</description>
+      <guid>http://localhost:1313/blog/ps_ad_unsecure_by_default/</guid>
+      <description>Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.&#xA;In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.&#xA;Please note that this post is personal and subject to change.</description>
     </item>
     <item>
       <title>My Modules</title>
-      <link>https://ehmiiz.se/modules/</link>
+      <link>http://localhost:1313/modules/</link>
       <pubDate>Tue, 05 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://ehmiiz.se/modules/</guid>
-      <description>PowerShellGallery Modules In this section you&amp;rsquo;ll find a list of my published PSGallery modules.
-My modules vary in functionality and usefulness. I believe in learning by doing, and some projects are simply created for myself, to learn git, PowerShell, c#, linux binaries, and what have you. I try to stick to a few key pointers though:
-Cross-platform
-Open-Source
-Documented
-Support -WhatIf if a command touches data
-Not pollute the shell/operating system, a Uninstall-Module will simply remove any trace of the module</description>
+      <guid>http://localhost:1313/modules/</guid>
+      <description>PowerShellGallery Modules In this section you&amp;rsquo;ll find a list of my published PSGallery modules.&#xA;My modules vary in functionality and usefulness. I believe in learning by doing, and some projects are simply created for myself, to learn git, PowerShell, c#, linux binaries, and what have you. I try to stick to a few key pointers though:&#xA;Cross-platform&#xA;Open-Source&#xA;Documented&#xA;Support -WhatIf if a command touches data&#xA;Not pollute the shell/operating system, a Uninstall-Module will simply remove any trace of the module</description>
     </item>
     <item>
       <title>PowerShell KeePass and saving time</title>
-      <link>https://ehmiiz.se/blog/ps_fast_password_retrieving/</link>
+      <link>http://localhost:1313/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_fast_password_retrieving/</guid>
-      <description>Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!
-The Problem Password managers are very useful for anyone having more than one set of credentials, and most of us do.
-They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.
-However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret.</description>
+      <guid>http://localhost:1313/blog/ps_fast_password_retrieving/</guid>
+      <description>Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!&#xA;The Problem Password managers are very useful for anyone having more than one set of credentials, and most of us do.&#xA;They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.&#xA;However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret.</description>
     </item>
     <item>
       <title>Analyze your Linux system using PowerShell</title>
-      <link>https://ehmiiz.se/blog/ps_linuxinfo_release/</link>
+      <link>http://localhost:1313/blog/ps_linuxinfo_release/</link>
       <pubDate>Sat, 08 Apr 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_linuxinfo_release/</guid>
-      <description>Install-Module linuxinfo I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.
-Install it from the PowerShellGallery:
-Install-Module linuxinfo -VerboseView it&amp;rsquo;s functions:
-Get-Command -Module linuxinfoCommandType Name Version Source----------- ---- ------- ------Function Get-BatteryInfo 0.</description>
-    </item>
-    <item>
-      <title>Gather system info on a Linux host using PowerShell</title>
-      <link>https://ehmiiz.se/blog/ps_systeminfo_linux/</link>
-      <pubDate>Mon, 03 Apr 2023 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_systeminfo_linux/</guid>
-      <description>Meet linuxinfo. If your into PowerShell and want to explore some Linux system administrator tasks, this module translates your PowerShell skills into the world of Linux.
-Still in development
-Happy labbing! </description>
-    </item>
-    <item>
-      <title>PowerShell PSCustomObject Variations</title>
-      <link>https://ehmiiz.se/blog/ps_pscustomobject_trick_2/</link>
-      <pubDate>Sat, 01 Apr 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_pscustomobject_trick_2/</guid>
-      <description>PSCustomObject, valuable skill PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.
-There&amp;rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&amp;rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the PowerShell docs cover it very well.
-In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to Export-CSV, or even better, Export-Excel</description>
+      <guid>http://localhost:1313/blog/ps_linuxinfo_release/</guid>
+      <description>Install-Module linuxinfo I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.&#xA;Install it from the PowerShellGallery:&#xA;Install-Module linuxinfo -Verbose&#xD;View it&amp;rsquo;s functions:&#xA;Get-Command -Module linuxinfo&#xD;CommandType Name Version Source&#xD;----------- ---- ------- ------&#xD;Function Get-BatteryInfo 0.</description>
     </item>
     <item>
       <title>PSCustomObject conditional loop-trick!</title>
-      <link>https://ehmiiz.se/blog/ps_pscustomobject_trick/</link>
+      <link>http://localhost:1313/blog/ps_pscustomobject_trick/</link>
       <pubDate>Wed, 22 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_pscustomobject_trick/</guid>
-      <description>PSCustomObject, valuable skill PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.
-There&amp;rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&amp;rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the PowerShell docs cover it very well.
-In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to Export-CSV, or even better, Export-Excel</description>
+      <guid>http://localhost:1313/blog/ps_pscustomobject_trick/</guid>
+      <description>PSCustomObject, valuable skill PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.&#xA;There&amp;rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&amp;rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the PowerShell docs cover it very well.&#xA;In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to Export-CSV, or even better, Export-Excel</description>
     </item>
     <item>
       <title>How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository</title>
-      <link>https://ehmiiz.se/blog/ps_docs_contributions/</link>
+      <link>http://localhost:1313/blog/ps_docs_contributions/</link>
       <pubDate>Fri, 17 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_docs_contributions/</guid>
-      <description>Intro The PowerShell-Docs repository is the home of the official PowerShell documentation. It contains reference and conceptual content for various versions and modules of PowerShell. Contributing to this repository is a great way to learn Git, Markdown and PowerShell, as well as to help improve the quality and accuracy of the documentation.
-In this blog post, I will show you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s beneficial for your learning and development.</description>
+      <guid>http://localhost:1313/blog/ps_docs_contributions/</guid>
+      <description>Intro The PowerShell-Docs repository is the home of the official PowerShell documentation. It contains reference and conceptual content for various versions and modules of PowerShell. Contributing to this repository is a great way to learn Git, Markdown and PowerShell, as well as to help improve the quality and accuracy of the documentation.&#xA;In this blog post, I will show you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s beneficial for your learning and development.</description>
     </item>
     <item>
       <title>Using the PowerShell Module Z to Save Time in the Terminal</title>
-      <link>https://ehmiiz.se/blog/ps_z_mod/</link>
+      <link>http://localhost:1313/blog/ps_z_mod/</link>
       <pubDate>Fri, 17 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_z_mod/</guid>
-      <description>The module &amp;ldquo;Z&amp;rdquo; is a handy tool that can save you lots of time when navigating around your terminal. In this blog-post, we&amp;rsquo;ll cover how to install it to user scope, how to configure it by jumping around the terminal to different places, and how it saves lots of time in the long run.
-Installing Z to your CurrentUser scope To install Z, open a PowerShell terminal and run the following command:</description>
+      <guid>http://localhost:1313/blog/ps_z_mod/</guid>
+      <description>The module &amp;ldquo;Z&amp;rdquo; is a handy tool that can save you lots of time when navigating around your terminal. In this blog-post, we&amp;rsquo;ll cover how to install it to user scope, how to configure it by jumping around the terminal to different places, and how it saves lots of time in the long run.&#xA;Installing Z to your CurrentUser scope To install Z, open a PowerShell terminal and run the following command:</description>
     </item>
     <item>
       <title>Active Directory Delegation done the PowerShell way!</title>
-      <link>https://ehmiiz.se/blog/ps_ad_delegation/</link>
+      <link>http://localhost:1313/blog/ps_ad_delegation/</link>
       <pubDate>Sat, 11 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_ad_delegation/</guid>
-      <description>Active Directory Access Granting The following module is very important for a Active Directory operations or engineering type person. Most who have tried granting permissions outside of adding users to groups in Active Directory would probably agree that, access delegation can be a daunting task.
-Your best bet is to use the Delegation wizard, but wheres the fun (PowerShell fun..) in that. And how well does it scale? Not very well.</description>
+      <guid>http://localhost:1313/blog/ps_ad_delegation/</guid>
+      <description>Active Directory Access Granting The following module is very important for a Active Directory operations or engineering type person. Most who have tried granting permissions outside of adding users to groups in Active Directory would probably agree that, access delegation can be a daunting task.&#xA;Your best bet is to use the Delegation wizard, but wheres the fun (PowerShell fun..) in that. And how well does it scale? Not very well.</description>
     </item>
     <item>
       <title>CV, Emil Larsson 👨‍💻</title>
-      <link>https://ehmiiz.se/cv/</link>
+      <link>http://localhost:1313/cv/</link>
       <pubDate>Fri, 10 Mar 2023 07:13:37 +0100</pubDate>
-      <guid>https://ehmiiz.se/cv/</guid>
-      <description>Working from home since early 2020.
-Main interests 🧙 IT Automation Identity and Access management Windows Hybrid Server Administrator Above are a click-able list of my main interests, each link will take you to a site that describes it better then I can.
-I&amp;rsquo;ve been working with IAM &amp;amp; automation for most of my career, and I always view security as first priority in my technical work. Personal development for myself and my team members is something I value highly.</description>
-    </item>
-    <item>
-      <title>PowerShell: Before you complain about PowerShell verbosity</title>
-      <link>https://ehmiiz.se/blog/ps_elastic_type_system/</link>
-      <pubDate>Fri, 30 Dec 2022 08:05:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_elastic_type_system/</guid>
-      <description>The Elastic Type System Notes:
-What does elastic type system mean Example of verbose syntax with command line equivalent Verb-Noun syntax Super long cmdlet names Why they are bound to happen Aliases, transitional and convenience Auto complete on capitilized noun: g-ADF[tab] TLDR;
-Type out something fast (interactively), or Write code that you/other people can read easily Happy coding /Emil </description>
+      <guid>http://localhost:1313/cv/</guid>
+      <description>Working from home since early 2020.&#xA;Main interests 🧙 IT Automation Identity and Access management Windows Hybrid Server Administrator Above are a click-able list of my main interests, each link will take you to a site that describes it better then I can.&#xA;I&amp;rsquo;ve been working with IAM &amp;amp; automation for most of my career, and I always view security as first priority in my technical work. Personal development for myself and my team members is something I value highly.</description>
     </item>
     <item>
       <title>PowerShell Solution: Install PFX certificate on servers</title>
-      <link>https://ehmiiz.se/blog/ps_adcs_certinstall/</link>
+      <link>http://localhost:1313/blog/ps_adcs_certinstall/</link>
       <pubDate>Wed, 16 Nov 2022 08:13:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_adcs_certinstall/</guid>
-      <description>Problem As you may have guessed, this post will be about installing certificates using PowerShell.
-Every year as someone working with identity topics, I am tasked with renewing certificates across the environment. Many services relies fully on valid certificates in order to function securely.
-One critical service in particular that this scenario will cover is: Active Directory Federation Services, ADFS.
-In most cases, you will have multiple ADFS servers, meaning, if your not automating already, you will need to install the SSL certificate manually (no fun experience on 10+ servers).</description>
+      <guid>http://localhost:1313/blog/ps_adcs_certinstall/</guid>
+      <description>Problem As you may have guessed, this post will be about installing certificates using PowerShell.&#xA;Every year as someone working with identity topics, I am tasked with renewing certificates across the environment. Many services relies fully on valid certificates in order to function securely.&#xA;One critical service in particular that this scenario will cover is: Active Directory Federation Services, ADFS.&#xA;In most cases, you will have multiple ADFS servers, meaning, if your not automating already, you will need to install the SSL certificate manually (no fun experience on 10+ servers).</description>
     </item>
     <item>
       <title>PowerShell Solution: AGPM unable to take control of a GPO</title>
-      <link>https://ehmiiz.se/blog/ps_agpm_setacl/</link>
+      <link>http://localhost:1313/blog/ps_agpm_setacl/</link>
       <pubDate>Thu, 08 Sep 2022 14:56:09 +0200</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_agpm_setacl/</guid>
-      <description>Problem If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, Advanced Group Policy Management or AGPM, is an amazing tool.
-AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.
-When combined with new sysadmins that has not been introduced to the concept of AGPM, uncontrolled GPOs might become a problem and the built in error messages are sadly not the greatest.</description>
+      <guid>http://localhost:1313/blog/ps_agpm_setacl/</guid>
+      <description>Problem If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, Advanced Group Policy Management or AGPM, is an amazing tool.&#xA;AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.&#xA;When combined with new sysadmins that has not been introduced to the concept of AGPM, uncontrolled GPOs might become a problem and the built in error messages are sadly not the greatest.</description>
     </item>
     <item>
       <title>PowerShell: C Sharp for PowerShell Modules</title>
-      <link>https://ehmiiz.se/blog/ps_making_binary_ps_module/</link>
+      <link>http://localhost:1313/blog/ps_making_binary_ps_module/</link>
       <pubDate>Mon, 15 Aug 2022 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_making_binary_ps_module/</guid>
-      <description>My journey into C# so far I&amp;rsquo;ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest. The natural next language to learn for me has always been C#, reason being it&amp;rsquo;s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.
-Some content I&amp;rsquo;ve devoured to increase my C# knowledge are:
-C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, Book by Deepak Dhami &amp;amp; Prateek Singh Various YouTube content and talks on building PowerShell Binary Modules using C#:</description>
+      <guid>http://localhost:1313/blog/ps_making_binary_ps_module/</guid>
+      <description>My journey into C# so far I&amp;rsquo;ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest. The natural next language to learn for me has always been C#, reason being it&amp;rsquo;s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.&#xA;Some content I&amp;rsquo;ve devoured to increase my C# knowledge are:&#xA;C# Fundamentals course on PluralSight by Scott Allen PowerShell to C# And Back, Book by Deepak Dhami &amp;amp; Prateek Singh Various YouTube content and talks on building PowerShell Binary Modules using C#:</description>
     </item>
     <item>
       <title>PowerShell for Security: PassWord Gen Part 2</title>
-      <link>https://ehmiiz.se/blog/ps_pwgenerator_update/</link>
+      <link>http://localhost:1313/blog/ps_pwgenerator_update/</link>
       <pubDate>Mon, 04 Jul 2022 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_pwgenerator_update/</guid>
-      <description>Did it again 2021-05-10 - I wrote an article on Password Generators.
-The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp;amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.
-However, This time I&amp;rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .</description>
+      <guid>http://localhost:1313/blog/ps_pwgenerator_update/</guid>
+      <description>Did it again 2021-05-10 - I wrote an article on Password Generators.&#xA;The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp;amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.&#xA;However, This time I&amp;rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .</description>
     </item>
     <item>
       <title>Solution: Restore Deleted Private key for EFS Encrypted Files</title>
-      <link>https://ehmiiz.se/blog/solution_efs_windows/</link>
+      <link>http://localhost:1313/blog/solution_efs_windows/</link>
       <pubDate>Wed, 15 Jun 2022 12:39:23 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/solution_efs_windows/</guid>
-      <description>Problem You have encrypted files using the &amp;ldquo;File &amp;gt; Properties &amp;gt; Advanced &amp;gt; Encrypt content to secure data&amp;rdquo; feature in Windows, and have lost your certificates in your personal certificate store.
-Solution A solution to this problem is to restore the private key used for encrypting your file system (EKU: Encrypting File System 1.3.6.1.4.1.311.10.3.4 ) that was generated upon encrypting your files.
-The keypair to this certificate is stored in your Personal certificate store, luckily a copy of the public key is stored in your LocalMachine certificate store.</description>
+      <guid>http://localhost:1313/blog/solution_efs_windows/</guid>
+      <description>Problem You have encrypted files using the &amp;ldquo;File &amp;gt; Properties &amp;gt; Advanced &amp;gt; Encrypt content to secure data&amp;rdquo; feature in Windows, and have lost your certificates in your personal certificate store.&#xA;Solution A solution to this problem is to restore the private key used for encrypting your file system (EKU: Encrypting File System 1.3.6.1.4.1.311.10.3.4 ) that was generated upon encrypting your files.&#xA;The keypair to this certificate is stored in your Personal certificate store, luckily a copy of the public key is stored in your LocalMachine certificate store.</description>
     </item>
     <item>
       <title>About Ehmiiz.se</title>
-      <link>https://ehmiiz.se/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://ehmiiz.se/about/</guid>
-      <description>Hi, and welcome to my blog I&amp;rsquo;m 30 years old living in Sweden. I started writing this blog mainly as a &amp;ldquo;book review&amp;rdquo;-blog, and to see how blogs can be built using github and hugo, however, over time, I’ve shifted the focus of my blog to concentrate on PowerShell.
-Goals of this blog Positivity Curiosity Learning Knowledge sharing Get more .md/git experience Share PowerShell solutions Transparency This blog is running ads.</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Hi, and welcome to my blog I&amp;rsquo;m 30 years old living in Sweden. I started writing this blog mainly as a &amp;ldquo;book review&amp;rdquo;-blog, and to see how blogs can be built using github and hugo, however, over time, I’ve shifted the focus of my blog to concentrate on PowerShell.&#xA;Goals of this blog Positivity Curiosity Learning Knowledge sharing Get more .md/git experience Share PowerShell solutions Transparency This blog is running ads.</description>
     </item>
     <item>
       <title>PowerShell Productivity tip: Working with History</title>
-      <link>https://ehmiiz.se/blog/ps_tip_tab/</link>
+      <link>http://localhost:1313/blog/ps_tip_tab/</link>
       <pubDate>Mon, 16 May 2022 08:05:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_tip_tab/</guid>
-      <description>One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.
-Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. hTo view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
+      <guid>http://localhost:1313/blog/ps_tip_tab/</guid>
+      <description>One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.&#xA;Different ways of viewing your history To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that. h&#xD;To view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).</description>
     </item>
     <item>
       <title>PowerShell in 2021: From my IAM Perspective</title>
-      <link>https://ehmiiz.se/blog/ps_ad_2021_review/</link>
+      <link>http://localhost:1313/blog/ps_ad_2021_review/</link>
       <pubDate>Tue, 04 Jan 2022 08:13:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_ad_2021_review/</guid>
-      <description>2021: From my IAM Perspective First of all, this blog-post inspired me to write something similar, so thanks @MDowst for sharing.
-For myself I&amp;rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&amp;rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.
-2021: Some cool stuff I found PSReadLine and it&amp;rsquo;s IntelliSense GoPS - a shell navigation module PoshBot PowerShell Community Calls Write-Info - a cool logging module Windows terminal and it&amp;rsquo;s split-tab functionality 2022 exciting stuff Some stuff I&amp;rsquo;m personally excited about:</description>
+      <guid>http://localhost:1313/blog/ps_ad_2021_review/</guid>
+      <description>2021: From my IAM Perspective First of all, this blog-post inspired me to write something similar, so thanks @MDowst for sharing.&#xA;For myself I&amp;rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&amp;rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.&#xA;2021: Some cool stuff I found PSReadLine and it&amp;rsquo;s IntelliSense GoPS - a shell navigation module PoshBot PowerShell Community Calls Write-Info - a cool logging module Windows terminal and it&amp;rsquo;s split-tab functionality 2022 exciting stuff Some stuff I&amp;rsquo;m personally excited about:</description>
     </item>
     <item>
       <title>PowerShell for Automation: Simple Hyper-V VM-Creation script</title>
-      <link>https://ehmiiz.se/blog/ps_simplehyper-vlabmodule/</link>
+      <link>http://localhost:1313/blog/ps_simplehyper-vlabmodule/</link>
       <pubDate>Tue, 21 Dec 2021 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_simplehyper-vlabmodule/</guid>
-      <description>Meet Labmil. Labmil is a script I made to serve a specific usecase. When AutomatedLab is overkill, and when you don&amp;rsquo;t want to skip the installation phase of the lab.
-Features Quickly put the Windows Server ISO-file to good use It&amp;rsquo;s a simple script for anyone to modify for personal needs It outputs a customobject Create multiple VM&amp;rsquo;s using PowerShell logic Non-Features The script has a few non-features. Non-Features are cool because it makes the script unique and useful in certain senarios.</description>
-    </item>
-    <item>
-      <title>PowerShell Automation: Generate an Azure Access Review Report using Microsoft Graph!</title>
-      <link>https://ehmiiz.se/blog/ps_automatedaccessreviewreport/</link>
-      <pubDate>Thu, 09 Sep 2021 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_automatedaccessreviewreport/</guid>
-      <description>Access reviews are critical for organizations that values up-to-date On-prem AD groups &amp;amp; Azure AD Groups.
-Various audit &amp;amp; compliance teams will most likely value data from reviewers decision high, all this data can be found using the Microsoft Graph. This blog post will go into details on how you could:
-Create an app registration in Azure AD Delegate API permissions to the app: Application:	AccessReview.Read.AllCreate a token secret to store in an Automation account Creating a Azure Automation Runbook Creating a script that uses Microsoft Graph, PowerShell and Export-CSV to generate the final Access review list Lets get started!</description>
+      <guid>http://localhost:1313/blog/ps_simplehyper-vlabmodule/</guid>
+      <description>Meet Labmil. Labmil is a script I made to serve a specific usecase. When AutomatedLab is overkill, and when you don&amp;rsquo;t want to skip the installation phase of the lab.&#xA;Features Quickly put the Windows Server ISO-file to good use It&amp;rsquo;s a simple script for anyone to modify for personal needs It outputs a customobject Create multiple VM&amp;rsquo;s using PowerShell logic Non-Features The script has a few non-features. Non-Features are cool because it makes the script unique and useful in certain senarios.</description>
     </item>
     <item>
       <title>PowerShell Solution: Automate GPO creations</title>
-      <link>https://ehmiiz.se/blog/ps_automatedgpocloning/</link>
+      <link>http://localhost:1313/blog/ps_automatedgpocloning/</link>
       <pubDate>Wed, 12 May 2021 14:56:09 +0200</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_automatedgpocloning/</guid>
-      <description>The headache of setting up recurring GPO&amp;rsquo;s I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.
-The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&amp;rsquo;s, true/false), in an automated fasion?</description>
+      <guid>http://localhost:1313/blog/ps_automatedgpocloning/</guid>
+      <description>The headache of setting up recurring GPO&amp;rsquo;s I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.&#xA;The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&amp;rsquo;s, true/false), in an automated fasion?</description>
     </item>
     <item>
       <title>PowerShell for Security: PassWord Gen Part 1</title>
-      <link>https://ehmiiz.se/blog/ps_pwgenerator/</link>
+      <link>http://localhost:1313/blog/ps_pwgenerator/</link>
       <pubDate>Mon, 10 May 2021 14:58:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_pwgenerator/</guid>
-      <description>My history with Password Generators Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)
-My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&amp;rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</description>
-    </item>
-    <item>
-      <title>PowerShell for Security: Get Important AD Answers from this module</title>
-      <link>https://ehmiiz.se/blog/ps_ad_security_module/</link>
-      <pubDate>Sun, 25 Apr 2021 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_ad_security_module/</guid>
-      <description>Questions to AD Engineers I started to work on a new module that I call ADSEC.
-Its purpose is to answer the critical AD security related questions below:
-Who can replicate secrets (password hashes) from an Active Directory domain? Who can change security permissions on the AdminSDHolder object? Who can change the membership of the Domain Admins security group? Who can reset an Active Directory privileged user account&amp;rsquo;s password? Who can disable the use of Smartcards on an Active Directory user account?</description>
+      <guid>http://localhost:1313/blog/ps_pwgenerator/</guid>
+      <description>My history with Password Generators Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)&#xA;My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&amp;rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</description>
     </item>
     <item>
       <title>PowerShell Solution: Script not digitally signed</title>
-      <link>https://ehmiiz.se/blog/ps_digitallysigned/</link>
+      <link>http://localhost:1313/blog/ps_digitallysigned/</link>
       <pubDate>Thu, 11 Feb 2021 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ps_digitallysigned/</guid>
-      <description>“.ps1 is not digitally signed. The script will not execute on the system.” This error is clearly not really a typical error, but can be a blocker, nonetheless. It&amp;rsquo;s more of a security feature than an error.
-Simple solution if you&amp;rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.</description>
+      <guid>http://localhost:1313/blog/ps_digitallysigned/</guid>
+      <description>“.ps1 is not digitally signed. The script will not execute on the system.” This error is clearly not really a typical error, but can be a blocker, nonetheless. It&amp;rsquo;s more of a security feature than an error.&#xA;Simple solution if you&amp;rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:&#xA;Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass&#xA;This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.</description>
     </item>
     <item>
       <title>Book review: Life 3.0</title>
-      <link>https://ehmiiz.se/blog/life-3.0/</link>
+      <link>http://localhost:1313/blog/life-3.0/</link>
       <pubDate>Mon, 08 Feb 2021 08:23:11 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/life-3.0/</guid>
-      <description>Life 3.0, Being human in the age of AI Life 3.0 by Max Tegmark &amp;ndash; Life 3.0 At Amazon
-First book on AI Personally, this was the first time reading a book about AI. And as a tech-savvy sysadmin who loves video games, sci-fi and great stories, it got me hooked.
-It’s author, Max Tegmark, got me very interested in the subject and he does so by being naturally curious, super-nerdy in a fun way, and just all-round knowledgeable in tech, he’s a professor after all!</description>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>https://ehmiiz.se/contact/</link>
-      <pubDate>Sun, 07 Feb 2021 13:56:05 +0100</pubDate>
-      <guid>https://ehmiiz.se/contact/</guid>
-      <description>emil@ehmiiz.tech </description>
+      <guid>http://localhost:1313/blog/life-3.0/</guid>
+      <description>Life 3.0, Being human in the age of AI Life 3.0 by Max Tegmark &amp;ndash; Life 3.0 At Amazon&#xA;First book on AI Personally, this was the first time reading a book about AI. And as a tech-savvy sysadmin who loves video games, sci-fi and great stories, it got me hooked.&#xA;It’s author, Max Tegmark, got me very interested in the subject and he does so by being naturally curious, super-nerdy in a fun way, and just all-round knowledgeable in tech, he’s a professor after all!</description>
     </item>
     <item>
       <title>Book Review: LOTR, The Fellowship of the Ring</title>
-      <link>https://ehmiiz.se/blog/lotr-for/</link>
+      <link>http://localhost:1313/blog/lotr-for/</link>
       <pubDate>Sun, 07 Feb 2021 12:51:50 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/lotr-for/</guid>
-      <description>LOTR: The Fellowship of the Ring &amp;ndash; At Amazon
-One ring to rule them all, one Ring to find them* One Ring to bring them all and in the darkness bind them Sometimes when I read books, I get a feeling to just read faster, not pay attention to detail, to get to the point of the story. While reading Lord of the rings, I forgot about that feeling completely.</description>
-    </item>
-    <item>
-      <title>Book Review: Reclaim</title>
-      <link>https://ehmiiz.se/blog/reclaim/</link>
-      <pubDate>Sun, 07 Feb 2021 12:51:36 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/reclaim/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Fallofgondolin</title>
-      <link>https://ehmiiz.se/blog/fallofgondolin/</link>
-      <pubDate>Sun, 07 Feb 2021 12:51:29 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/fallofgondolin/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Dinotraining</title>
-      <link>https://ehmiiz.se/blog/dinotraining/</link>
-      <pubDate>Sun, 07 Feb 2021 12:51:20 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/dinotraining/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Headspace Meditation</title>
-      <link>https://ehmiiz.se/blog/headspace-meditation/</link>
-      <pubDate>Sun, 07 Feb 2021 12:51:04 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/headspace-meditation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Hit Refresh</title>
-      <link>https://ehmiiz.se/blog/hit-refresh/</link>
-      <pubDate>Sun, 07 Feb 2021 12:50:53 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/hit-refresh/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Howtowolf</title>
-      <link>https://ehmiiz.se/blog/howtowolf/</link>
-      <pubDate>Sun, 07 Feb 2021 12:50:47 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/howtowolf/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Shellofanidea</title>
-      <link>https://ehmiiz.se/blog/shellofanidea/</link>
-      <pubDate>Sun, 07 Feb 2021 12:50:38 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/shellofanidea/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Ai Ourfinalinv</title>
-      <link>https://ehmiiz.se/blog/ai-ourfinalinv/</link>
-      <pubDate>Sun, 07 Feb 2021 12:50:26 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ai-ourfinalinv/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Ai Womd</title>
-      <link>https://ehmiiz.se/blog/ai-womd/</link>
-      <pubDate>Sun, 07 Feb 2021 12:50:17 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/ai-womd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Childrenofhurin</title>
-      <link>https://ehmiiz.se/blog/childrenofhurin/</link>
-      <pubDate>Sun, 07 Feb 2021 12:49:40 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/childrenofhurin/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Beren Luthien</title>
-      <link>https://ehmiiz.se/blog/beren-luthien/</link>
-      <pubDate>Sun, 07 Feb 2021 12:49:26 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/beren-luthien/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: Silmarillion</title>
-      <link>https://ehmiiz.se/blog/silmarillion/</link>
-      <pubDate>Sun, 07 Feb 2021 12:49:19 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/silmarillion/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Book Review: LOTR, The Two Towers</title>
-      <link>https://ehmiiz.se/blog/lotr-ttt/</link>
-      <pubDate>Sun, 07 Feb 2021 12:49:09 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/lotr-ttt/</guid>
-      <description>LOTR: The Two Towers &amp;ndash; At Amazon
-This book is amazing.</description>
-    </item>
-    <item>
-      <title>Book Review: LOTR, The Return of the King</title>
-      <link>https://ehmiiz.se/blog/lotr-rotk/</link>
-      <pubDate>Sun, 07 Feb 2021 12:49:02 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/lotr-rotk/</guid>
-      <description>LOTR: The Return of the King &amp;ndash; At Amazon
-This book is amazing.</description>
-    </item>
-    <item>
-      <title>Book Review: Code</title>
-      <link>https://ehmiiz.se/blog/code/</link>
-      <pubDate>Sun, 07 Feb 2021 12:48:38 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/code/</guid>
-      <description> Code: The Hidden Language of Computer Hardware and Software by Charles Petzold &amp;ndash; Code: At Amazon
-Will reread A bit hard to read </description>
+      <guid>http://localhost:1313/blog/lotr-for/</guid>
+      <description>LOTR: The Fellowship of the Ring &amp;ndash; At Amazon&#xA;One ring to rule them all, one Ring to find them* One Ring to bring them all and in the darkness bind them Sometimes when I read books, I get a feeling to just read faster, not pay attention to detail, to get to the point of the story. While reading Lord of the rings, I forgot about that feeling completely.</description>
     </item>
     <item>
       <title>Book Review: The Hobbit</title>
-      <link>https://ehmiiz.se/blog/hobbit/</link>
+      <link>http://localhost:1313/blog/hobbit/</link>
       <pubDate>Sun, 07 Feb 2021 12:39:23 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/hobbit/</guid>
-      <description>The Hobbit &amp;ndash; At Amazon
-&amp;ldquo;A timeless advanture for all ages&amp;rdquo; This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies. I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.</description>
-    </item>
-    <item>
-      <title>Book Review: AI Superpowers</title>
-      <link>https://ehmiiz.se/blog/aisuperpowers/</link>
-      <pubDate>Sun, 07 Feb 2021 11:48:14 +0100</pubDate>
-      <guid>https://ehmiiz.se/blog/aisuperpowers/</guid>
-      <description>AI SUPERPOWERS by Kai-fu Lee &amp;ndash; AI SUPERPOWERS At Amazon
-Insert book review here here
-here 1
-here 2</description>
-    </item>
-    <item>
-      <title>Cupper Typography</title>
-      <link>https://ehmiiz.se/blog/toc-test/</link>
-      <pubDate>Thu, 14 Feb 2019 15:36:09 -0600</pubDate>
-      <guid>https://ehmiiz.se/blog/toc-test/</guid>
-      <description>Headings ## Heading 2### Heading 3#### Heading 4##### Heading 5###### Heading 6Heading 2 Heading 3 Heading 4 Heading 5 Heading 6 Text *This text will be italic*_This will also be italic_**This text will be bold**__This will also be bold___You **can** combine them_This text will be italic
-This will also be italic
-This text will be bold
-This will also be bold</description>
+      <guid>http://localhost:1313/blog/hobbit/</guid>
+      <description>The Hobbit &amp;ndash; At Amazon&#xA;&amp;ldquo;A timeless advanture for all ages&amp;rdquo; This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies. I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.</description>
     </item>
   </channel>
 </rss>
