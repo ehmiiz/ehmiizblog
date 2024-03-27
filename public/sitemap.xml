@@ -109,5 +109,7 @@
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2023-10-24T11:14:16+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/ps_scriptasaservice/</loc>
   </url>
 </urlset>

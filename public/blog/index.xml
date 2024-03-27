@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Nov 2023 14:50:39 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 Mar 2024 14:58:11 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PowerShell Guide: Script as a Windows Service</title>
+      <link>http://localhost:1313/blog/ps_scriptasaservice/</link>
+      <pubDate>Tue, 26 Mar 2024 14:58:11 +0100</pubDate>
+      <guid>http://localhost:1313/blog/ps_scriptasaservice/</guid>
+      <description>Red or blue pill If you are in the same rabbit-hole as I was of setting up a Windows Service of any form of looping script, there&amp;rsquo;s two pills you can choose from:&#xA;Red Pill: Create a program that abide to the law of the fearsome Service Control Manager.&#xA;Blue Pill: Write a PowerShell script, 8 lines of XML, and download WinSW.exe&#xA;WinSW describes itself as following:&#xA;A wrapper executable that can run any executable as a Windows service, in a permissive license.</description>
+    </item>
     <item>
       <title>How to Restore a File from Git</title>
       <link>http://localhost:1313/blog/git_restore/</link>
