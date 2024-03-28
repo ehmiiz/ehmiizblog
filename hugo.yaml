@@ -1,5 +1,5 @@
 theme: hugo-flex
-baseURL: 
+baseURL: https://ehmiiz.github.io/ehmiizblog/
 languageCode: en-us
 params:
   color: black
