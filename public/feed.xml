@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<?xml-stylesheet type="text/xsl" href="//localhost:1313/xml/base.min.xml" ?>
+<?xml-stylesheet type="text/xsl" href="/xml/base.min.xml" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>all posts</title>
-    <link>//localhost:1313/</link>
+    <link>/</link>
     <description>Recent content on all posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Mar 2024 14:58:11 +0100</lastBuildDate>
-    <atom:link rel="self" href="//localhost:1313/feed.xml" type="application/rss+xml" />
+    <atom:link rel="self" href="/feed.xml" type="application/rss+xml" />
     <item>
       <title>PowerShell Guide: Script as a Windows Service</title>
-      <link>//localhost:1313/blog/ps_scriptasaservice/</link>
+      <link>/blog/ps_scriptasaservice/</link>
       <pubDate>Tue, 26 Mar 2024 14:58:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_scriptasaservice/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/red_blue.png&#34;/&gt;
+      <guid>/blog/ps_scriptasaservice/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/red_blue.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;red-or-blue-pill&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_scriptasaservice/#red-or-blue-pill&#34;&gt;Red or blue pill&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_scriptasaservice/#red-or-blue-pill&#34;&gt;Red or blue pill&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;If you are in the same rabbit-hole as I was of setting up a Windows Service of any form of looping script, there&amp;rsquo;s two pills you can choose from:&lt;/p&gt;
 &lt;ol&gt;
@@ -33,7 +33,7 @@
 &lt;p&gt;&lt;code&gt;A wrapper executable that can run any executable as a Windows service, in a permissive license.&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Naturally as someone who enjoys coding with hand grenades, I took the Blue Pill and here&amp;rsquo;s how that story went:&lt;/p&gt;
 &lt;h2 id=&#34;the-blue-pill&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_scriptasaservice/#the-blue-pill&#34;&gt;The Blue Pill&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_scriptasaservice/#the-blue-pill&#34;&gt;The Blue Pill&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Create a new working directory and save it to a variable&lt;/li&gt;
@@ -106,7 +106,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# As an administrator&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Get-Service&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PowerShellService&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Start-Service&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_scriptasaservice/#conclusion&#34;&gt;Conclusion&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_scriptasaservice/#conclusion&#34;&gt;Conclusion&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Running a PowerShell script as a service on any windows machine isn&amp;rsquo;t that complicated thanks to WinSW. It&amp;rsquo;s a great choice if you don&amp;rsquo;t want to get deeper into the process of developing windows services (it&amp;rsquo;s kind of a fun rabbit-hole though).&lt;/p&gt;
 &lt;p&gt;I recommend reading &lt;a href=&#34;https://github.com/winsw/winsw?tab=readme-ov-file#documentation&#34;&gt;docs of WinSW&lt;/a&gt;.&lt;/p&gt;
@@ -119,26 +119,26 @@
 &lt;li&gt;If you get the notorious &lt;code&gt;The service did not respond to the start or control request in a timely fashion&lt;/code&gt;, you have my condolences (This is a very general error msg that has no clear answer by itself it seems)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;good-luck-have-fun-happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_scriptasaservice/#good-luck-have-fun-happy-coding&#34;&gt;Good luck have fun, happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_scriptasaservice/#good-luck-have-fun-happy-coding&#34;&gt;Good luck have fun, happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_scriptasaservice/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_scriptasaservice/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>How to Restore a File from Git</title>
-      <link>//localhost:1313/blog/git_restore/</link>
+      <link>/blog/git_restore/</link>
       <pubDate>Wed, 22 Nov 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/git_restore/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/restore_git.png&#34;/&gt;
+      <guid>/blog/git_restore/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/restore_git.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Git is a powerful and popular version control system, sometimes a bit too powerful.&lt;/p&gt;
 &lt;p&gt;Depending on how your day went, you may want to restore a file from git to a previous state, either because you made an oopsie, want to undo some changes, or need to compare different versions.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s go through four common scenarios on how to do just that!&lt;/p&gt;
 &lt;h2 id=&#34;scenario-1-saved-locally-on-the-local-git-repository&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/git_restore/#scenario-1-saved-locally-on-the-local-git-repository&#34;&gt;Scenario 1: Saved Locally on the Local Git Repository&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/git_restore/#scenario-1-saved-locally-on-the-local-git-repository&#34;&gt;Scenario 1: Saved Locally on the Local Git Repository&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The simplest scenario is when you have saved your file locally on your local git repository, but have not staged or committed it yet.&lt;/p&gt;
 &lt;p&gt;In this case, you can use the git restore command to discard the changes in your working directory and restore the file to the last committed state.&lt;/p&gt;
@@ -154,7 +154,7 @@
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git restore .&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;scenario-2-saved-locally-and-staged-locally&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/git_restore/#scenario-2-saved-locally-and-staged-locally&#34;&gt;Scenario 2: Saved Locally and Staged Locally&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/git_restore/#scenario-2-saved-locally-and-staged-locally&#34;&gt;Scenario 2: Saved Locally and Staged Locally&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The next scenario is when you have saved your file locally and staged it locally, but have not committed it yet.&lt;/p&gt;
 &lt;p&gt;In this case, you can use the git restore &amp;ndash;staged command to unstage the file and remove it from the staging area.&lt;/p&gt;
@@ -176,7 +176,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git restore --source&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;HEAD index.html&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will remove the index.html file from the staging area and overwrite it in your working directory with the version from the HEAD commit. You can also use a dot (.) instead of the file name to unstage and restore all the files in your staging area and working directory.&lt;/p&gt;
 &lt;h2 id=&#34;scenario-3-saved-locally-staged-locally-and-committed&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/git_restore/#scenario-3-saved-locally-staged-locally-and-committed&#34;&gt;Scenario 3: Saved Locally, Staged Locally and Committed&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/git_restore/#scenario-3-saved-locally-staged-locally-and-committed&#34;&gt;Scenario 3: Saved Locally, Staged Locally and Committed&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The third scenario is when you have saved your file locally, staged it locally and committed it, but have not pushed it to the remote repository yet. In this case, you can use the git reset &amp;ndash;hard command to reset your local branch to the previous commit and discard all the changes in your staging area and working directory. For example, if you want to reset your local branch to the previous commit, you can run the following command:&lt;/p&gt;
 
@@ -194,7 +194,7 @@
 &lt;p&gt;This will check out the index.html file from the commit before the HEAD commit and overwrite it in your working directory with the version from that commit.&lt;/p&gt;
 &lt;p&gt;You can also use a dot (.) here as well, to check out and restore all the files from the previous commit.&lt;/p&gt;
 &lt;h2 id=&#34;scenario-4-saved-locally-staged-locally-committed-and-pushed-to-remote-repository&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/git_restore/#scenario-4-saved-locally-staged-locally-committed-and-pushed-to-remote-repository&#34;&gt;Scenario 4: Saved Locally, Staged Locally, Committed and Pushed to Remote Repository&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/git_restore/#scenario-4-saved-locally-staged-locally-committed-and-pushed-to-remote-repository&#34;&gt;Scenario 4: Saved Locally, Staged Locally, Committed and Pushed to Remote Repository&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The fourth and final scenario is when you have saved your file locally, staged it locally, committed it and pushed it to the remote repository.&lt;/p&gt;
 &lt;p&gt;In this case, you can use the git revert command to create a new commit that reverses the changes in the previous commit and restores the file to the state before that commit.&lt;/p&gt;
@@ -208,27 +208,27 @@
 &lt;p&gt;You can then push the new commit to the remote repository to update it with the reverted changes.&lt;/p&gt;
 &lt;p&gt;You can also use the &amp;ndash;no-commit option to revert the changes without creating a new commit, and then use the git restore or git checkout commands as in the previous scenarios to restore the file to the desired state.&lt;/p&gt;
 &lt;h2 id=&#34;to-sum-it-up&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/git_restore/#to-sum-it-up&#34;&gt;To sum it up&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/git_restore/#to-sum-it-up&#34;&gt;To sum it up&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;We&amp;rsquo;ve demonstrated how to restore a file from git in four different scenarios, depending on how far you have progressed in the git workflow.&lt;/p&gt;
 &lt;p&gt;We have used the git restore, git reset, git checkout and git revert commands to discard, unstage, check out and revert changes in your files and restore them to the previous states.&lt;/p&gt;
 &lt;p&gt;I hope this post has been helpful and maybe even saved some headache!&lt;/p&gt;
 &lt;p&gt;If you have any questions or feedback, please feel free to DM me on Twitter or LinkedIn.&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/git_restore/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/git_restore/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell 7.4: Install-Module is evolving.</title>
-      <link>//localhost:1313/blog/ps_resourceget/</link>
+      <link>/blog/ps_resourceget/</link>
       <pubDate>Thu, 16 Nov 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_resourceget/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/evolvepokemon.png&#34;/&gt;
+      <guid>/blog/ps_resourceget/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/evolvepokemon.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;where-does-install-module-come-from&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#where-does-install-module-come-from&#34;&gt;Where does Install-Module come from?&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#where-does-install-module-come-from&#34;&gt;Where does Install-Module come from?&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Install-Module&lt;/code&gt; has evolved.&lt;/p&gt;
 &lt;p&gt;Have you ever asked yourself, what module imports the &lt;code&gt;Install-Module&lt;/code&gt; cmdlet?
@@ -246,19 +246,19 @@ It&amp;rsquo;s kind of a meta question, check for yourself! Spoiler a bit down f
     Function        Install-Module                                     2.2.5      PowerShellGet&lt;/code&gt;&lt;/pre&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;h2 id=&#34;new-sheriff-in-town-&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#new-sheriff-in-town-&#34;&gt;New sheriff in town 🤠&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#new-sheriff-in-town-&#34;&gt;New sheriff in town 🤠&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;With the &lt;a href=&#34;https://devblogs.microsoft.com/powershell/powershell-7-4-general-availability/&#34;&gt;GA release of PowerShell 7.4&lt;/a&gt; a rewrite of PowerShellGet is included, (hint hint, renamed to &lt;a href=&#34;https://devblogs.microsoft.com/powershell/psresourceget-is-generally-available/&#34;&gt;PSResourceGet&lt;/a&gt;), and boy is it fast.&lt;/p&gt;
 &lt;p&gt;I installed PowerShell 7.4 on two different Ubuntu 20.04 WSL distros, and I installed a few modules to benchmark the old trusty &lt;code&gt;Install-Module&lt;/code&gt; and the new sheriff in town: &lt;code&gt;Install-PSResource&lt;/code&gt;.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/PSResourceGetModules.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/PSResourceGetModules.png&#34;/&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/PSResourceGet.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/PSResourceGet.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The results speak for themselves. PSResourceGet is much faster then PowerShellGet V2.&lt;/p&gt;
 &lt;p&gt;Speaking about PowerShellGet V2, there&amp;rsquo;s still a future for this module, but instead of new APIs and features, V3 (currently in pre-release) was converted to a compatibility layer over to the new and faster PSResourceGet.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/notperfectcompat.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/notperfectcompat.png&#34;/&gt;
 &lt;/figure&gt;
 
 
@@ -267,7 +267,7 @@ It&amp;rsquo;s kind of a meta question, check for yourself! Spoiler a bit down f
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Install-Module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Name&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PowerShellGet&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-AllowPrerelease&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Force&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;The parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there&amp;rsquo;s no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems. &lt;a href=&#34;https://devblogs.microsoft.com/powershell/powershellget-3-0-22-beta22-is-now-available/&#34;&gt;Here&amp;rsquo;s some further reading&lt;/a&gt; on the subject.&lt;/p&gt;
 &lt;h2 id=&#34;lets-take-psresourceget-for-a-spin&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#lets-take-psresourceget-for-a-spin&#34;&gt;Let&amp;rsquo;s take PSResourceGet for a spin&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#lets-take-psresourceget-for-a-spin&#34;&gt;Let&amp;rsquo;s take PSResourceGet for a spin&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;PSResourceGet seem to me an awesome new module based on it&amp;rsquo;s speed, so better get used to it&amp;rsquo;s new syntax because this will be my new main driver for sure.&lt;/p&gt;
 
@@ -298,44 +298,44 @@ Cmdlet          Update-PSModuleManifest                            1.0.1      Mi
 Cmdlet          Update-PSResource                                  1.0.1      Microsoft.PowerShell.PSResourceGet
 Cmdlet          Update-PSScriptFileInfo                            1.0.1      Microsoft.PowerShell.PSResourceGet&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;whats-installed&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#whats-installed&#34;&gt;What&amp;rsquo;s installed?&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#whats-installed&#34;&gt;What&amp;rsquo;s installed?&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;It&amp;rsquo;s not only installing modules that&amp;rsquo;s faster, it&amp;rsquo;s also very fast at getting installed modules.&lt;/p&gt;
 &lt;p&gt;Getting installed modules can be very time-consuming on shared systems, especially where you have the az modules installed, so this is a great performance win overall.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/gettingmodules.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/gettingmodules.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;find-new-stuff&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#find-new-stuff&#34;&gt;Find new stuff&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#find-new-stuff&#34;&gt;Find new stuff&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Finding new modules and scripts is also a crucial part of PowerShell, especially for the community members. I would argue with PSResourceGet going GA, PowerShell 7.4 is probably one of the most significant performance boosters of PowerShell (in it&amp;rsquo;s open source life).&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/find-module.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/find-module.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;As you can see, finding modules is way faster, and here we&amp;rsquo;re even using two-way wildcards.&lt;/p&gt;
 &lt;h2 id=&#34;what-about-publishing&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#what-about-publishing&#34;&gt;What about publishing?&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#what-about-publishing&#34;&gt;What about publishing?&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s try to use the new &lt;code&gt;Publish-PSResource&lt;/code&gt;. I have a minor bug-fix to do on my project &lt;a href=&#34;https://www.ehmiiz.se/blog/ps_linuxinfo_release/&#34;&gt;linuxinfo&lt;/a&gt; and will edit my publishing script so that github action will publish it for me using Publish-PSResource.&lt;/p&gt;
 &lt;p&gt;I start with editing my very simple publishing script. Since I don&amp;rsquo;t know if the github-hosted runner will have PSResourceGet installed yet, I need to validate that the cmdlet is present before calling it. If it&amp;rsquo;s not, I&amp;rsquo;m simply installing it using PowerShellGet v2.&lt;/p&gt;
 &lt;p&gt;This should do it!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/publish-psresource_0.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/publish-psresource_0.png&#34;/&gt;
 &lt;/figure&gt;
 
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/publish-psresource_1.1.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/publish-psresource_1.1.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Hmm, seems like I messed something up. The Github-hosted runner can&amp;rsquo;t find Publish-PSResource so, it&amp;rsquo;s trying to install PSResourceGet using &lt;code&gt;Install-Module&lt;/code&gt;. However I miss-spelled the module name if you look closely at line 7. It should be &lt;code&gt;Microsoft.PowerShell.PSResourceGet&lt;/code&gt;, let&amp;rsquo;s fix that and re-run my workflow.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/publish-psresource_1.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/publish-psresource_1.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Looks way better now!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/publish-psresource_3.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/publish-psresource_3.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;And there&amp;rsquo;s a new version of &lt;code&gt;linuxinfo&lt;/code&gt; with a minor bugfix. And the Publish-PSResource migration was very straightforward.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#conclusion&#34;&gt;Conclusion&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#conclusion&#34;&gt;Conclusion&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In this post, we learned about the origin of &lt;code&gt;Install-Module&lt;/code&gt;, being PowerShellGet v2, and it&amp;rsquo;s predecessor &lt;code&gt;Install-PSResource&lt;/code&gt;, being PSResourceGet. We took some cmdlets for a spin and realized that, the new version is easily twice as fast, in some cases even 3 times faster.&lt;/p&gt;
 &lt;p&gt;We covered PowerShellGet V3 being a compatibility layer and some caveats with it.&lt;/p&gt;
@@ -343,27 +343,27 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 &lt;p&gt;I recommend to poke around with the new PSResourceGet cmdlets and &lt;a href=&#34;https://learn.microsoft.com/powershell/module/microsoft.powershell.psresourceget/?view=powershellget-3.x&#34;&gt;read it&amp;rsquo;s official documentation&lt;/a&gt;, and for interactive use not rely on any compatibility layer, save that for the edge-cases.&lt;/p&gt;
 &lt;p&gt;Thanks for reading this far, hope you found it helpful. PM me on twitter for any feedback.&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_resourceget/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_resourceget/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation</title>
-      <link>//localhost:1313/blog/ps_msgraph_mail/</link>
+      <link>/blog/ps_msgraph_mail/</link>
       <pubDate>Mon, 06 Nov 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_msgraph_mail/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/NiceMail.png&#34;/&gt;
+      <guid>/blog/ps_msgraph_mail/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/NiceMail.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;send-mgusermail&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#send-mgusermail&#34;&gt;Send-MgUserMail&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#send-mgusermail&#34;&gt;Send-MgUserMail&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The following solution example is covering how to set-up and use the &lt;code&gt;Send-MgUserMail&lt;/code&gt; cmdlet in &lt;code&gt;Azure Automation&lt;/code&gt; to send an email with a subject, message body and an attached zip file.&lt;/p&gt;
 &lt;h2 id=&#34;pre-requirements&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#pre-requirements&#34;&gt;Pre-Requirements&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#pre-requirements&#34;&gt;Pre-Requirements&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://learn.microsoft.com/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide#create-a-shared-mailbox-and-add-members&#34;&gt;M365 licensed &lt;code&gt;noreply&lt;/code&gt; address as a shared mailbox&lt;/a&gt;&lt;/li&gt;
@@ -371,7 +371,7 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 &lt;li&gt;App Registration with &lt;code&gt;Send.Mail&lt;/code&gt; application API permission exposed&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;authentication--access&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#authentication--access&#34;&gt;Authentication &amp;amp; Access&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#authentication--access&#34;&gt;Authentication &amp;amp; Access&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This solution will use an &lt;code&gt;Client Secret&lt;/code&gt; and a &lt;code&gt;encrypted automation variable&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The alternative to using an Client Secret would be to &lt;a href=&#34;https://learn.microsoft.com/entra/identity-platform/howto-create-self-signed-certificate&#34;&gt;use a certificate&lt;/a&gt; and I would recommend doing so since it&amp;rsquo;s a more secure solution in general.&lt;/p&gt;
@@ -426,7 +426,7 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; that &lt;code&gt;Get-AutomationVariable&lt;/code&gt; is a cmdlet which is only available for the az automation sandbox environment. It&amp;rsquo;s also the only way of getting the encrypted variable.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Get-AutomationVariable&lt;/code&gt; is an internal cmdlet from the module &lt;code&gt;Orchestrator.AssetManagement.Cmdlets&lt;/code&gt; which is a part of Azure Automation, so running this outside of a runbook will fail.&lt;/p&gt;
 &lt;h2 id=&#34;sending-the-mail&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#sending-the-mail&#34;&gt;Sending the mail&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#sending-the-mail&#34;&gt;Sending the mail&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Now that we have authentication and access out of the way, we can start developing a function that we will use in the runbook to send an email.
 My example below has a requirement of an attachment. I&amp;rsquo;m using this for gathering data, compressing it and attaching the .zip file in the mail function.&lt;/p&gt;
@@ -535,13 +535,13 @@ My example below has a requirement of an attachment. I&amp;rsquo;m using this fo
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Send-AutomatedEmail&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;@SendMailSplat&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And that&amp;rsquo;s all there is to it! Congrats on sending an email using the Microsoft Graph.&lt;/p&gt;
 &lt;h2 id=&#34;key-takeaways&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#key-takeaways&#34;&gt;Key Takeaways&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#key-takeaways&#34;&gt;Key Takeaways&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;While building this solution, I noticed that there&amp;rsquo;s a lack of content and documentation on some things, one of those things are how to send an email to more than one recipient. If your migration from &lt;a href=&#34;https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.3&#34;&gt;Send-MailMessage&lt;/a&gt;, it isn&amp;rsquo;t so straightforward, since &lt;code&gt;Send-MgUserMail&lt;/code&gt; is based on either JSON or MIME format.&lt;/p&gt;
 &lt;p&gt;Meaning in a nutshell we can&amp;rsquo;t just pass an array of email accounts and call it a day, instead we need to build an object that looks like something along the lines of:
 Message -&amp;gt; ToRecipients -&amp;gt; emailAddress -&amp;gt; adress : adress.company.com&lt;/p&gt;
 &lt;h3 id=&#34;alternative-1-fast&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#alternative-1-fast&#34;&gt;Alternative 1 (fast)&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#alternative-1-fast&#34;&gt;Alternative 1 (fast)&lt;/a&gt;
 &lt;/h3&gt;
 
   
@@ -556,7 +556,7 @@ Message -&amp;gt; ToRecipients -&amp;gt; emailAddress -&amp;gt; adress : adress.
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;alternative-2-slow&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#alternative-2-slow&#34;&gt;Alternative 2 (slow)&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#alternative-2-slow&#34;&gt;Alternative 2 (slow)&lt;/a&gt;
 &lt;/h3&gt;
 
   
@@ -571,20 +571,20 @@ Message -&amp;gt; ToRecipients -&amp;gt; emailAddress -&amp;gt; adress : adress.
 &lt;p&gt;Use whatever fits your needs best.&lt;/p&gt;
 &lt;p&gt;Hope this was valuable to someone wanting to move away from &lt;code&gt;Send-MailMessage&lt;/code&gt; to &lt;code&gt;Send-MgUserMail&lt;/code&gt;!&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_msgraph_mail/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_msgraph_mail/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell: Super simple Hyper-V VM creation</title>
-      <link>//localhost:1313/blog/ps_labmil_2023/</link>
+      <link>/blog/ps_labmil_2023/</link>
       <pubDate>Wed, 25 Oct 2023 14:58:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_labmil_2023/</guid>
+      <guid>/blog/ps_labmil_2023/</guid>
       <description>&lt;h2 id=&#34;once-again-meet-labmilhttpsgithubcomehmiizlabmil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_labmil_2023/#once-again-meet-labmilhttpsgithubcomehmiizlabmil&#34;&gt;Once again, meet &lt;a href=&#34;https://github.com/ehmiiz/labmil&#34;&gt;Labmil&lt;/a&gt;.&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_labmil_2023/#once-again-meet-labmilhttpsgithubcomehmiizlabmil&#34;&gt;Once again, meet &lt;a href=&#34;https://github.com/ehmiiz/labmil&#34;&gt;Labmil&lt;/a&gt;.&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;2021, I &lt;a href=&#34;https://www.ehmiiz.se/blog/ps_simplehyper-vlabmodule/&#34;&gt;wrote about my script to generate hyper-v VMs&lt;/a&gt;. I still use this way of creating my labs, and I think the simple nature of it is valuable.&lt;/p&gt;
 &lt;p&gt;The only requirements to using it is PowerShell, git and an iso file. Since it&amp;rsquo;s specifically a hyper-v script, naturally it will require Windows.&lt;/p&gt;
@@ -606,7 +606,7 @@ Message -&amp;gt; ToRecipients -&amp;gt; emailAddress -&amp;gt; adress : adress.
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;New-LabmilVM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;ps1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Name&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;DC01&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-IsoPath&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$IsoPath&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Verbose&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;New-LabmilVM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;ps1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Name&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;DC02&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Verbose&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/2023-10-28_labmil.png&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/2023-10-28_labmil.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The above script can be used to get going. But I would recommend just writing down the git clone part, or remember it (the repo name).&lt;/p&gt;
@@ -619,7 +619,7 @@ Message -&amp;gt; ToRecipients -&amp;gt; emailAddress -&amp;gt; adress : adress.
 &lt;li&gt;Create how many VMs you want using a different name&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;features-2024-and-forward&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_labmil_2023/#features-2024-and-forward&#34;&gt;Features 2024 and forward&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_labmil_2023/#features-2024-and-forward&#34;&gt;Features 2024 and forward&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -634,42 +634,42 @@ Message -&amp;gt; ToRecipients -&amp;gt; emailAddress -&amp;gt; adress : adress.
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ad-labbing&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_labmil_2023/#ad-labbing&#34;&gt;AD Labbing&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_labmil_2023/#ad-labbing&#34;&gt;AD Labbing&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The reason labmil exists is because of my interest in labbing with Windows Server &lt;a href=&#34;https://www.ehmiiz.se/blog/ps_ad_unsecure_by_default/&#34;&gt;but specifically AD DS&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I will be creating (even thought I know several other tools exist) a tool to populate a simple AD domain, with built in ACLs, OUs, Users, Computers, Group nesting, and security vulnerabilities. So I can automate setting up a new AD lab for myself but also for others.&lt;/p&gt;
 &lt;p&gt;Stay tuned!&lt;/p&gt;
 &lt;h2 id=&#34;happy-labbing&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_labmil_2023/#happy-labbing&#34;&gt;Happy labbing!&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_labmil_2023/#happy-labbing&#34;&gt;Happy labbing!&lt;/a&gt;
 &lt;/h2&gt;
 </description>
     </item>
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
-      <link>//localhost:1313/blog/ps_ad_unsecure_by_default/</link>
+      <link>/blog/ps_ad_unsecure_by_default/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_ad_unsecure_by_default/</guid>
+      <guid>/blog/ps_ad_unsecure_by_default/</guid>
       <description>&lt;h2 id=&#34;idea-behind-this-post&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#idea-behind-this-post&#34;&gt;Idea behind this post&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#idea-behind-this-post&#34;&gt;Idea behind this post&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.&lt;/p&gt;
 &lt;p&gt;In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.&lt;/p&gt;
 &lt;p&gt;Please note that this post is personal and subject to change. Its sole purpose is to help others. Always exercise caution when running code from an untrusted source - read it carefully and test it in a lab environment before implementing it in production.&lt;/p&gt;
 &lt;h2 id=&#34;1-clear-text-passwords-in-sysvol-kb2962486&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#1-clear-text-passwords-in-sysvol-kb2962486&#34;&gt;1. Clear-Text Passwords In Sysvol (KB2962486)&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#1-clear-text-passwords-in-sysvol-kb2962486&#34;&gt;1. Clear-Text Passwords In Sysvol (KB2962486)&lt;/a&gt;
 &lt;/h2&gt;
 &lt;h3 id=&#34;problem&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#problem&#34;&gt;Problem:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#problem&#34;&gt;Problem:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Group policies are (partly) stored in the domain wide share named Sysvol.
 Sysvol is a share that every domain user has read access to. A feature of group policy preferences (GPP), is the ability to store credentials in a policy, thus making use of the permissions of said account in an effective way.&lt;/p&gt;
 &lt;p&gt;The only problem is that the credentials are encrypted using a AES key, that&amp;rsquo;s publically avalible &lt;a href=&#34;https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be?redirectedfrom=MSDN&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;solution&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#solution&#34;&gt;Solution:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#solution&#34;&gt;Solution:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Patch your Domain Controllers so that admins cannot store credentials in sysvol: &lt;a href=&#34;https://support.microsoft.com/en-us/topic/ms14-025-vulnerability-in-group-policy-preferences-could-allow-elevation-of-privilege-may-13-2014-60734e15-af79-26ca-ea53-8cd617073c30&#34;&gt;MS14-025: Vulnerability in Group Policy Preferences could allow elevation of privilege&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;script&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#script&#34;&gt;Script:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#script&#34;&gt;Script:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;This is a simple script that will match the cpassword row of the xml file, telling you what policy you need to fix:&lt;/p&gt;
 
@@ -688,21 +688,21 @@ Sysvol is a share that every domain user has read access to. A feature of group 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;2-authenticated-users-can-join-up-to-10-computers-to-the-domain-krbrelayuphttpswwwmicrosoftcomsecurityblog20220525detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#2-authenticated-users-can-join-up-to-10-computers-to-the-domain-krbrelayuphttpswwwmicrosoftcomsecurityblog20220525detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup&#34;&gt;2. Authenticated Users Can Join Up to 10 Computers to the Domain (&lt;a href=&#34;https://www.microsoft.com/security/blog/2022/05/25/detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup/&#34;&gt;KrbRelayUp&lt;/a&gt;)&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#2-authenticated-users-can-join-up-to-10-computers-to-the-domain-krbrelayuphttpswwwmicrosoftcomsecurityblog20220525detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup&#34;&gt;2. Authenticated Users Can Join Up to 10 Computers to the Domain (&lt;a href=&#34;https://www.microsoft.com/security/blog/2022/05/25/detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup/&#34;&gt;KrbRelayUp&lt;/a&gt;)&lt;/a&gt;
 &lt;/h2&gt;
 &lt;h3 id=&#34;problem-1&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#problem-1&#34;&gt;Problem:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#problem-1&#34;&gt;Problem:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Active Directory creates an attribute by default in it&amp;rsquo;s schema named: &lt;code&gt;ms-DS-MachineAccountQuota&lt;/code&gt;. The value of this attribute determines how many computers a user in the Authenticated Users group can join to the domain.&lt;/p&gt;
 &lt;p&gt;However, this “trust by default” approach can pose a security risk, an attacker can leverage this attribute for privilege escalation attacks by adding new devices to the domain.&lt;/p&gt;
 &lt;h3 id=&#34;solution-1&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#solution-1&#34;&gt;Solution:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#solution-1&#34;&gt;Solution:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Find and identify the value of ms-DS-MachineAccountQuota.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.microsoft.com/en-us/security/blog/2022/05/25/detecting-and-preventing-privilege-escalation-attacks-leveraging-kerberos-relaying-krbrelayup/&#34;&gt;As Microsoft puts it&lt;/a&gt;:&lt;/p&gt;
 &lt;p&gt;Organizations should also consider setting the ms-DS-MachineAccountQuota attribute to 0 to make it more difficult for an attacker to leverage the attribute for attacks. Setting the attribute to 0 stops non-admin users from adding new devices to the domain, blocking the most effective method to carry out the attack’s first step and forcing attackers to choose more complex methods to acquire a suitable resource.&lt;/p&gt;
 &lt;h3 id=&#34;script-1&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#script-1&#34;&gt;Script:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#script-1&#34;&gt;Script:&lt;/a&gt;
 &lt;/h3&gt;
 
   
@@ -721,10 +721,10 @@ Sysvol is a share that every domain user has read access to. A feature of group 
 &lt;/ul&gt;
 &lt;p&gt;Talk this decision through with your security department, test plan execute.&lt;/p&gt;
 &lt;h2 id=&#34;3-adminsdholder-acl-misconfigurations&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#3-adminsdholder-acl-misconfigurations&#34;&gt;3. AdminSDHolder ACL misconfigurations&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#3-adminsdholder-acl-misconfigurations&#34;&gt;3. AdminSDHolder ACL misconfigurations&lt;/a&gt;
 &lt;/h2&gt;
 &lt;h3 id=&#34;problem-2&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#problem-2&#34;&gt;Problem:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#problem-2&#34;&gt;Problem:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;The &lt;a href=&#34;https://learn.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory#adminsdholder&#34;&gt;AdminSDHolder&lt;/a&gt; is an object in AD that serves as a security descriptor template for protected accounts and groups in an AD domain.&lt;/p&gt;
 &lt;p&gt;It exists in every Active Directory domain and is located in the System Partition.&lt;/p&gt;
@@ -765,14 +765,14 @@ Sysvol is a share that every domain user has read access to. A feature of group 
 &lt;p&gt;Any other object that has direct access to any of these, will also be added a 1 in it&amp;rsquo;s &lt;code&gt;admincount&lt;/code&gt; attribute by the &lt;code&gt;sdprop&lt;/code&gt; process, within a 60 min interval.&lt;/p&gt;
 &lt;p&gt;A common missconfiguration is to add Service Accounts, Security Groups and even enable inheritance, to complete a task or setup a new system in AD, and forget to configure it securely again.&lt;/p&gt;
 &lt;h3 id=&#34;solution-2&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#solution-2&#34;&gt;Solution:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#solution-2&#34;&gt;Solution:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Review the AdminSDHolder ACL under the System container, remove anything that does not have a &lt;strong&gt;very&lt;/strong&gt; good reason to be there (AAD Connect, Exchange, MSOL_ are common, and should be secure with long randomized passwords).&lt;/p&gt;
 &lt;p&gt;Understanding what rights are unsecure in Active Directory is needed as a first step.&lt;/p&gt;
 &lt;p&gt;This diagram might help you do just that:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/ACLMap.png&#34; alt=&#34;Missconfigured ACLs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/ACLMap.png&#34; alt=&#34;Missconfigured ACLs&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;script-2&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#script-2&#34;&gt;Script:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#script-2&#34;&gt;Script:&lt;/a&gt;
 &lt;/h3&gt;
 
   
@@ -786,28 +786,28 @@ Sysvol is a share that every domain user has read access to. A feature of group 
 &lt;li&gt;Review group members of all the groups, think twice if the access makes sense&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;happy-hunting&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_unsecure_by_default/#happy-hunting&#34;&gt;Happy hunting&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_unsecure_by_default/#happy-hunting&#34;&gt;Happy hunting&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell KeePass and saving time</title>
-      <link>//localhost:1313/blog/ps_fast_password_retrieving/</link>
+      <link>/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/ps_fast_password_retrieving/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/ffs_modules.png&#34;/&gt;
+      <guid>/blog/ps_fast_password_retrieving/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/ffs_modules.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!&lt;/p&gt;
 &lt;h3 id=&#34;the-problem&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_fast_password_retrieving/#the-problem&#34;&gt;The Problem&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_fast_password_retrieving/#the-problem&#34;&gt;The Problem&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Password managers are very useful for anyone having more than one set of credentials, and most of us do.&lt;/p&gt;
 &lt;p&gt;They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.&lt;/p&gt;
 &lt;p&gt;However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret. The problem with navigating a GUI every day is that it&amp;rsquo;s time consuming, and there&amp;rsquo;s room for improvement, especially if you enjoy delving into some PowerShell and/or always have a terminal open.&lt;/p&gt;
 &lt;p&gt;Summary: Password managers GUIs are slow and tedious to work with. Let&amp;rsquo;s explore an alternative that is much faster!&lt;/p&gt;
 &lt;h3 id=&#34;my-solution&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_fast_password_retrieving/#my-solution&#34;&gt;My Solution&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_fast_password_retrieving/#my-solution&#34;&gt;My Solution&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;The solution to this problem that I went with was to create a custom script, which will install and configure my PowerShell session to easily access my password manager after typing in its master password. Together with a couple of functions to easily retrieve and copy-paste my password to the clipboard.&lt;/p&gt;
 &lt;p&gt;Setting something to your clipboard, especially a password, is a risk since other applications also can access the clipboard, thus the clipboard needs to be cleared by setting a sleep timer and overwriting the secret.&lt;/p&gt;
@@ -856,7 +856,7 @@ Since the &lt;code&gt;Install-Module&lt;/code&gt; cmdlets &lt;code&gt;Name&lt;/c
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;Write-Verbose&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$KeePassDataBaseName&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; was already configured.&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Verbose&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;functions&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_fast_password_retrieving/#functions&#34;&gt;Function(s)&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_fast_password_retrieving/#functions&#34;&gt;Function(s)&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;To speed things up even further, we want to create some smaller functions to wrap all the long cmdlets that we&amp;rsquo;d otherwise have to write, to get our secrets to the clipboard.&lt;/p&gt;
 &lt;p&gt;I say functions, because here&amp;rsquo;s where you can enable the work we&amp;rsquo;ve done even further, to work with PSCredentialObjects or start a process, wait, and send the password directly too it, thus generating a sort of custom single sign-on solution. However, sticking to the subject, my function will:&lt;/p&gt;
@@ -898,7 +898,7 @@ Since the &lt;code&gt;Install-Module&lt;/code&gt; cmdlets &lt;code&gt;Name&lt;/c
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;ffs&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;github&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;VERBOSE&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Secret&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;found&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clipboard&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Will&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;clear &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;discussion&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_fast_password_retrieving/#discussion&#34;&gt;Discussion&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_fast_password_retrieving/#discussion&#34;&gt;Discussion&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In my example, I&amp;rsquo;m using KeePass, however this is very applicable to other password managers, in fact the PowerShell Gallery has tons of SecretManagement modules can be just as simple to use as in my examples.&lt;/p&gt;
 &lt;p&gt;Some examples:&lt;/p&gt;
@@ -923,14 +923,14 @@ Since the &lt;code&gt;Install-Module&lt;/code&gt; cmdlets &lt;code&gt;Name&lt;/c
     </item>
     <item>
       <title>Analyze your Linux system using PowerShell</title>
-      <link>//localhost:1313/blog/ps_linuxinfo_release/</link>
+      <link>/blog/ps_linuxinfo_release/</link>
       <pubDate>Sat, 08 Apr 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_linuxinfo_release/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/linuxinfogallery.png&#34;/&gt;
+      <guid>/blog/ps_linuxinfo_release/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/linuxinfogallery.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;install-module-linuxinfohttpsgithubcomehmiizlinuxinfo&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_linuxinfo_release/#install-module-linuxinfohttpsgithubcomehmiizlinuxinfo&#34;&gt;Install-Module &lt;a href=&#34;https://github.com/ehmiiz/linuxinfo&#34;&gt;linuxinfo&lt;/a&gt;&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_linuxinfo_release/#install-module-linuxinfohttpsgithubcomehmiizlinuxinfo&#34;&gt;Install-Module &lt;a href=&#34;https://github.com/ehmiiz/linuxinfo&#34;&gt;linuxinfo&lt;/a&gt;&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.&lt;/p&gt;
 &lt;p&gt;Install it from the PowerShellGallery:&lt;/p&gt;
@@ -997,7 +997,7 @@ OS            : GNU/Linux
 KernelRelease : 6.2.9-200.fc37.x86_64
 OSInstallDate : 2023-03-25&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;beyond-hardware-info&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_linuxinfo_release/#beyond-hardware-info&#34;&gt;Beyond Hardware Info&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_linuxinfo_release/#beyond-hardware-info&#34;&gt;Beyond Hardware Info&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;There&amp;rsquo;s more functions similar to the ones described above, where linuxinfo is parsing useful system information and displaying the output as a PSCustomObject. However, taking a look at a different kind of info:&lt;/p&gt;
 
@@ -1031,12 +1031,12 @@ home                           users home directories&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Get basic information about the linux filesystem using PowerShell. Can be very handy if you&amp;rsquo;re coming from a Windows background.&lt;/p&gt;
 &lt;p&gt;The function supports quick navigation using the &lt;code&gt;-Go&lt;/code&gt; parameter, and displaying a richer help message with the &lt;code&gt;-Full&lt;/code&gt; parameter.&lt;/p&gt;
 &lt;h2 id=&#34;testing--disclaimer&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_linuxinfo_release/#testing--disclaimer&#34;&gt;Testing &amp;amp; Disclaimer&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_linuxinfo_release/#testing--disclaimer&#34;&gt;Testing &amp;amp; Disclaimer&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Currently the module has been tested on Ubuntu and Fedora, so I&amp;rsquo;m fairly confident that it works good on Debian &amp;amp; RHEL distributions.&lt;/p&gt;
 &lt;p&gt;However I&amp;rsquo;ve done no testing on arch linux, therefore I&amp;rsquo;m not sure how the experience is there. It&amp;rsquo;s also in an early stage (version 0.0.1), with improvement plans and new functionality. Be sure to hop on the GitHub&lt;a href=&#34;https://github.com/ehmiiz/linuxinfo&#34;&gt; repo&lt;/a&gt; to learn more.&lt;/p&gt;
 &lt;h2 id=&#34;reason&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_linuxinfo_release/#reason&#34;&gt;Reason&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_linuxinfo_release/#reason&#34;&gt;Reason&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;I understand that the use-case for something like linuxinfo is a bit limited since Linux already has great tools for doing similar tasks. However this project is more of a personal journey into learning:&lt;/p&gt;
 &lt;ul&gt;
@@ -1047,26 +1047,26 @@ home                           users home directories&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;But most importantly, having some fun with PowerShell and extending the usefulness and value of PowerShell.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;d be happy if you&amp;rsquo;d like to try it, and star the github repo if you feel it&amp;rsquo;s worth it.&lt;/p&gt;
 &lt;h2 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_linuxinfo_release/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_linuxinfo_release/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h2&gt;
 </description>
     </item>
     <item>
       <title>PSCustomObject conditional loop-trick!</title>
-      <link>//localhost:1313/blog/ps_pscustomobject_trick/</link>
+      <link>/blog/ps_pscustomobject_trick/</link>
       <pubDate>Wed, 22 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_pscustomobject_trick/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/PSCustomObjectTrick.png&#34;/&gt;
+      <guid>/blog/ps_pscustomobject_trick/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/PSCustomObjectTrick.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;pscustomobject-valuable-skill&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pscustomobject_trick/#pscustomobject-valuable-skill&#34;&gt;PSCustomObject, valuable skill&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pscustomobject_trick/#pscustomobject-valuable-skill&#34;&gt;PSCustomObject, valuable skill&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.&lt;/p&gt;
 &lt;p&gt;There&amp;rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&amp;rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.3&#34;&gt;PowerShell docs cover it very well&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.3&#34;&gt;Export-CSV&lt;/a&gt;, or even better, &lt;a href=&#34;https://adamtheautomator.com/powershell-excel/&#34;&gt;Export-Excel&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;looping--conditions&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pscustomobject_trick/#looping--conditions&#34;&gt;Looping &amp;amp; Conditions&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pscustomobject_trick/#looping--conditions&#34;&gt;Looping &amp;amp; Conditions&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This trick involves when you want to create a boolean (true or false) value in your PSCustomObject variable.
 Here&amp;rsquo;s an example of what I mean:&lt;/p&gt;
@@ -1127,7 +1127,7 @@ Here&amp;rsquo;s an example of what I mean:&lt;/p&gt;
 &lt;li&gt;Server answers on ping request?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;steps&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pscustomobject_trick/#steps&#34;&gt;Steps&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pscustomobject_trick/#steps&#34;&gt;Steps&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Generate an array of data&lt;/li&gt;
@@ -1137,30 +1137,30 @@ Here&amp;rsquo;s an example of what I mean:&lt;/p&gt;
 &lt;li&gt;Export data&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;closing-thoughts&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pscustomobject_trick/#closing-thoughts&#34;&gt;Closing thoughts&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pscustomobject_trick/#closing-thoughts&#34;&gt;Closing thoughts&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In this post, I aim to keep things short and concise by letting the example do the talking. The code is commented for easy understanding. This technique can be incredibly useful for generating reports or structured data that can inform decision-making in larger processes. I hope you find it helpful and please let me know if you do.&lt;/p&gt;
 &lt;p&gt;Wishing you a great day and, as always:&lt;/p&gt;
 &lt;h2 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pscustomobject_trick/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pscustomobject_trick/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h2&gt;
 </description>
     </item>
     <item>
       <title>How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository</title>
-      <link>//localhost:1313/blog/ps_docs_contributions/</link>
+      <link>/blog/ps_docs_contributions/</link>
       <pubDate>Fri, 17 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_docs_contributions/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/docs_cont.png&#34;/&gt;
+      <guid>/blog/ps_docs_contributions/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/docs_cont.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;intro&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#intro&#34;&gt;Intro&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#intro&#34;&gt;Intro&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The PowerShell-Docs repository is the home of the official PowerShell documentation. It contains reference and conceptual content for various versions and modules of PowerShell. Contributing to this repository is a great way to learn Git, Markdown and PowerShell, as well as to help improve the quality and accuracy of the documentation.&lt;/p&gt;
 &lt;p&gt;In this blog post, I will show you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s beneficial for your learning and development.&lt;/p&gt;
 &lt;h2 id=&#34;what-are-quality-contributions&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#what-are-quality-contributions&#34;&gt;What are quality contributions?&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#what-are-quality-contributions&#34;&gt;What are quality contributions?&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Quality contributions are enhancements or fixes that improve the readability, consistency, style or accuracy of the documentation. They can include things like:&lt;/p&gt;
 &lt;ul&gt;
@@ -1172,7 +1172,7 @@ Here&amp;rsquo;s an example of what I mean:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Quality contributions are different from content contributions, which involve adding new articles or topics, or making significant changes to existing ones. Content contributions require more discussion and approval from the PowerShell-Docs team before they can be merged.&lt;/p&gt;
 &lt;h2 id=&#34;how-to-make-quality-contributions&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#how-to-make-quality-contributions&#34;&gt;How to make quality contributions?&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#how-to-make-quality-contributions&#34;&gt;How to make quality contributions?&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Before we get into how to make quality contributions, I&amp;rsquo;d like to shamelessly plug my own module: &lt;a href=&#34;https://www.powershellgallery.com/packages/PowerShell-Docs-CommunityModule/&#34;&gt;PowerShell-Docs-CommunityModule&lt;/a&gt;
 It will help you pick out work that has not been done yet.&lt;/p&gt;
@@ -1203,11 +1203,11 @@ It will help you pick out work that has not been done yet.&lt;/p&gt;
 &lt;li&gt;Address any comments or suggestions they may have until your PR is approved and merged.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;why-make-quality-contributions&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#why-make-quality-contributions&#34;&gt;Why make quality contributions?&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#why-make-quality-contributions&#34;&gt;Why make quality contributions?&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Making quality contributions has many benefits for both you and the PowerShell community.&lt;/p&gt;
 &lt;h3 id=&#34;for-you&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#for-you&#34;&gt;For you:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#for-you&#34;&gt;For you:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;You can learn Git, by contributing to a very friendly large code-base project. The owners are more then willing to help you with git related questions. You&amp;rsquo;ll grow a ton in this area once you start doing some PRs.&lt;/li&gt;
@@ -1218,7 +1218,7 @@ It will help you pick out work that has not been done yet.&lt;/p&gt;
 &lt;li&gt;You can build your reputation as a contributor by having your name appear in commit history.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;for-the-community&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#for-the-community&#34;&gt;For the community:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#for-the-community&#34;&gt;For the community:&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;You can help improve the clarity, consistency, style or accuracy of the documentation that many people rely on every day.&lt;/li&gt;
@@ -1228,27 +1228,27 @@ functionality.&lt;/li&gt;
 &lt;li&gt;You will be listed in the &lt;a href=&#34;https://learn.microsoft.com/powershell/scripting/community/contributing/overview?view=powershell-7.2&#34;&gt;Community Contributor Hall of Fame&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#conclusion&#34;&gt;Conclusion&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#conclusion&#34;&gt;Conclusion&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In this post, I showed you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s great for learning Git, Markdown and PowerShell, while at the same time using the PowerShell-Docs-CommunityModule to find out what to do first. We hope this blog post inspires you to join us in making the PowerShell documentation better for everyone.&lt;/p&gt;
 &lt;p&gt;If you have any questions, comments, or suggestions, please feel free to reach out on a DM either on twitter, email or mastodon!
 I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so because of this post, make sure to notify me about it! 😃&lt;/p&gt;
 &lt;h2 id=&#34;happy-contributing&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_docs_contributions/#happy-contributing&#34;&gt;Happy contributing&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_docs_contributions/#happy-contributing&#34;&gt;Happy contributing&lt;/a&gt;
 &lt;/h2&gt;
 </description>
     </item>
     <item>
       <title>Using the PowerShell Module Z to Save Time in the Terminal</title>
-      <link>//localhost:1313/blog/ps_z_mod/</link>
+      <link>/blog/ps_z_mod/</link>
       <pubDate>Fri, 17 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_z_mod/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/z_mod.png&#34;/&gt;
+      <guid>/blog/ps_z_mod/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/z_mod.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The module &lt;a href=&#34;https://github.com/badmotorfinger/z&#34;&gt;&amp;ldquo;Z&amp;rdquo;&lt;/a&gt; is a handy tool that can save you lots of time when navigating around your terminal. In this blog-post, we&amp;rsquo;ll cover how to install it to user scope, how to configure it by jumping around the terminal to different places, and how it saves lots of time in the long run.&lt;/p&gt;
 &lt;h2 id=&#34;installing-z-to-your-currentuser-scope&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_z_mod/#installing-z-to-your-currentuser-scope&#34;&gt;Installing Z to your CurrentUser scope&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_z_mod/#installing-z-to-your-currentuser-scope&#34;&gt;Installing Z to your CurrentUser scope&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;To install Z, open a PowerShell terminal and run the following command:&lt;/p&gt;
 
@@ -1257,7 +1257,7 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Install-Module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Scope&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CurrentUser&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will install Z for your current user only. If you want to install it for all users on your system, you can use -Scope AllUsers instead.&lt;/p&gt;
 &lt;h2 id=&#34;configuring-z&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_z_mod/#configuring-z&#34;&gt;Configuring Z&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_z_mod/#configuring-z&#34;&gt;Configuring Z&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Once you have Z installed, you can start configuring it by jumping around your terminal to different places. To do this, simply navigate to a directory that you frequently visit and then run z followed by a space and then part of the directory name. For example:&lt;/p&gt;
 
@@ -1268,12 +1268,12 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;z&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MyProject&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;This will add C:\Users\MyUser\Documents\Projects\MyProject to Z&amp;rsquo;s list of directories. The more you use z with different directories, the more accurate it will become at predicting where you want to go.&lt;/p&gt;
 &lt;h2 id=&#34;saving-time-with-z&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_z_mod/#saving-time-with-z&#34;&gt;Saving Time with Z&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_z_mod/#saving-time-with-z&#34;&gt;Saving Time with Z&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Once you have Z configured with your frequently visited directories, you can start saving time by using z instead of typing out long paths.&lt;/p&gt;
 &lt;p&gt;It may not seem that much of a timer-saver at first glance, however the more you get used to using z, instead of cd/tab-completion for navigation, the more time you will save. And I would imagine if you use your terminal daily, the time-savings are huge.&lt;/p&gt;
 &lt;h2 id=&#34;zs-a-bash-fork&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_z_mod/#zs-a-bash-fork&#34;&gt;Z&amp;rsquo;s a bash fork&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_z_mod/#zs-a-bash-fork&#34;&gt;Z&amp;rsquo;s a bash fork&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;That&amp;rsquo;s right. The module is actually forked and ported from a bash script, what makes it super useful together with PowerShell is, you guessed it: &lt;a href=&#34;https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.3&#34;&gt;PSProviders&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Not only can you navigate around your file-system, you can also visit your local reg hive, cert store, and other PSProviders, to save them to your directory history.&lt;/p&gt;
@@ -1295,32 +1295,32 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
 &lt;/ul&gt;
 &lt;p&gt;This works with lots of different PSProviders, so try it out yourself!&lt;/p&gt;
 &lt;h2 id=&#34;to-sum-it-up&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_z_mod/#to-sum-it-up&#34;&gt;To sum it up&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_z_mod/#to-sum-it-up&#34;&gt;To sum it up&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;By installing, using and configuring Z, you can save lots of time when navigating around your terminal. By installing it to user scope and configuring it by jumping around your terminal to different places, you&amp;rsquo;ll be able to quickly navigate to frequently visited directories and other PowerShell provider paths, with just a few keystrokes. Keep in mind that the more you use it, the better it gets, both from a functional standpoint but also the amount of time it saves you (So that you can drink coffee instead 😁 ).&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_z_mod/#happy-coding&#34;&gt;Happy Coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_z_mod/#happy-coding&#34;&gt;Happy Coding&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>Active Directory Delegation done the PowerShell way!</title>
-      <link>//localhost:1313/blog/ps_ad_delegation/</link>
+      <link>/blog/ps_ad_delegation/</link>
       <pubDate>Sat, 11 Mar 2023 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_ad_delegation/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/gcm_dsacl.png&#34;/&gt;
+      <guid>/blog/ps_ad_delegation/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/gcm_dsacl.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;active-directory-access-granting&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_delegation/#active-directory-access-granting&#34;&gt;Active Directory Access Granting&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_delegation/#active-directory-access-granting&#34;&gt;Active Directory Access Granting&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The following module is very important for a Active Directory operations or engineering type person. Most who have tried granting permissions outside of adding users to groups in Active Directory would probably agree that, access delegation can be a daunting task.&lt;/p&gt;
 &lt;p&gt;Your best bet is to use the Delegation wizard, but wheres the fun (PowerShell fun..) in that. And how well does it scale? Not very well.&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/delg_wiz.jpg&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/delg_wiz.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;the-alternatives&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_delegation/#the-alternatives&#34;&gt;The alternatives&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_delegation/#the-alternatives&#34;&gt;The alternatives&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;So, the code-friendly alternatives we have are:&lt;/p&gt;
 &lt;ul&gt;
@@ -1376,20 +1376,20 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
 &lt;p&gt;If your into AD and PowerShell, it&amp;rsquo;s a fun and very learning experience to fire up some hyper-v VMs using Windows Server Evaluation ISO and a local client with some left-over RAM, and promote some domain controllers to test this module out. An awesome lab module that I recommend for very fast labs, are &lt;a href=&#34;https://automatedlab.org/en/latest/&#34;&gt;AutomatedLab&lt;/a&gt;. If you want to go a more step-by-step and less abstracted way of setting up a lab, I recommend my own Hyper-V script &lt;a href=&#34;https://ehmiiz.tech/blog/ps_simplehyper-vlabmodule/&#34;&gt;Labmil&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s it. Try it out yourself to discover how easy directory access delegation can be. The amount of AD automation is endless once you get a hang of it, combined with the standard &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps&#34;&gt;ActiveDirectory&lt;/a&gt; module.&lt;/p&gt;
 &lt;h2 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_delegation/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_delegation/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h2&gt;
 </description>
     </item>
     <item>
       <title>PowerShell Solution: Install PFX certificate on servers</title>
-      <link>//localhost:1313/blog/ps_adcs_certinstall/</link>
+      <link>/blog/ps_adcs_certinstall/</link>
       <pubDate>Wed, 16 Nov 2022 08:13:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_adcs_certinstall/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/Install-ADFSCertOnAllServers.png&#34;/&gt;
+      <guid>/blog/ps_adcs_certinstall/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/Install-ADFSCertOnAllServers.png&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;problem&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_adcs_certinstall/#problem&#34;&gt;Problem&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_adcs_certinstall/#problem&#34;&gt;Problem&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;As you may have guessed, this post will be about installing certificates using PowerShell.&lt;/p&gt;
 &lt;p&gt;Every year as someone working with identity topics, I am tasked with renewing certificates across the environment. Many services relies fully on valid certificates in order to function securely.&lt;/p&gt;
@@ -1397,7 +1397,7 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
 &lt;p&gt;In most cases, you will have multiple ADFS servers, meaning, if your not automating already, you will need to install the SSL certificate manually (no fun experience on 10+ servers).&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;There&amp;rsquo;s more to say regarding specifically ADFS SSL certificates, that this post will not cover, however an installation will be needed in many of those scenarios as well.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;solution&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_adcs_certinstall/#solution&#34;&gt;Solution&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_adcs_certinstall/#solution&#34;&gt;Solution&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This solution covers how one could do this for ADFS servers, however it carries over to other services that requires a valid certificate as well.&lt;/p&gt;
 &lt;p&gt;To generate an pfx file out of an external certificate, I recommend using &lt;a href=&#34;https://www.digicert.com/support/tools/certificate-utility-for-windows&#34;&gt;The Digicert Cert Utility&lt;/a&gt; to generate the CSR (Certificate Signing Request) on the root server. Then simply import it using the digicert tool, and export the certificate to a .pfx file.&lt;/p&gt;
@@ -1444,29 +1444,29 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;small-talk&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_adcs_certinstall/#small-talk&#34;&gt;Small Talk&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_adcs_certinstall/#small-talk&#34;&gt;Small Talk&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;And just like that, you&amp;rsquo;ve saved truckloads of time every year using PowerShell.&lt;/p&gt;
 &lt;p&gt;I highly recommend checking out more cmdlets based from the &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/module/pki/?view=windowsserver2022-ps&#34;&gt;pki&lt;/a&gt; and &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/?view=powershell-7.3&#34;&gt;Microsoft.PowerShell.Security module&lt;/a&gt;. The script above displays how one can tackle a .pfx certificate, but using &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/module/pki/import-certificate?view=windowsserver2022-ps&#34;&gt;Import-Certificate&lt;/a&gt;, you could do similar things with .cer files.&lt;/p&gt;
 &lt;p&gt;Also, one could eliminate the need for generating a password with using something like &lt;a href=&#34;https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.secretmanagement/?view=ps-modules&#34;&gt;Microsoft.PowerShell.SecretManagement&lt;/a&gt;. This module translates well into a lot of cmdlets in the pki/security module.&lt;/p&gt;
 &lt;h3 id=&#34;stay-safe--happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_adcs_certinstall/#stay-safe--happy-coding&#34;&gt;Stay safe &amp;amp; happy coding!&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_adcs_certinstall/#stay-safe--happy-coding&#34;&gt;Stay safe &amp;amp; happy coding!&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_adcs_certinstall/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_adcs_certinstall/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell Solution: AGPM unable to take control of a GPO</title>
-      <link>//localhost:1313/blog/ps_agpm_setacl/</link>
+      <link>/blog/ps_agpm_setacl/</link>
       <pubDate>Thu, 08 Sep 2022 14:56:09 +0200</pubDate>
-      <guid>//localhost:1313/blog/ps_agpm_setacl/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/oldkeyboard.jpg&#34;/&gt;
+      <guid>/blog/ps_agpm_setacl/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/oldkeyboard.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;problem&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#problem&#34;&gt;Problem&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#problem&#34;&gt;Problem&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, &lt;a href=&#34;https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/agpm/&#34;&gt;Advanced Group Policy Management&lt;/a&gt; or AGPM, is an amazing tool.&lt;/p&gt;
 &lt;p&gt;AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.&lt;/p&gt;
@@ -1475,35 +1475,35 @@ I hope to see a PR from you, and if you&amp;rsquo;ve successfully done so becaus
   
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(GPMC Error) could not take the ownership of the production GPO. Access is denied. (Exceptions from HRESULT : 0x80070005 (E_ACCESSDENIED)).&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/error_code_meme.jpg&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/error_code_meme.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Access denied is caused by the AGPM service-account not having the permission to take control of the GPO (not having control of a GPO in AGPM really does ruin the point of AGPM). Solving this problem involves giving the service-account the permissions needed, however it&amp;rsquo;s a bit of a tricky thing to do.&lt;/p&gt;
 &lt;h2 id=&#34;solution&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#solution&#34;&gt;Solution&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#solution&#34;&gt;Solution&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;As we&amp;rsquo;ve established, we must add the correct permissions for the service-account to the GPO, easy right?
 Luckily yes, because we know PowerShell!&lt;/p&gt;
-&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/PowerShellHero.jpg&#34;/&gt;
+&lt;figure&gt;&lt;img src=&#34;/pics/PowerShellHero.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;To add the permissions, we need to understand how a GPO is stored. There&amp;rsquo;s two places a GPOs data resides in, ActiveDirectory (GPC) &amp;amp; Sysvol (GPT).&lt;/p&gt;
 &lt;h3 id=&#34;gpc&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#gpc&#34;&gt;GPC&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#gpc&#34;&gt;GPC&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Group Policy Container (GPC), luckily the name is easy to remember because we already understand that AD consists of Organizational Units and&amp;hellip; Containers.
 The GPC is stored in AD, under &amp;ldquo;CN=,Policies,CN=System,DC=x,DC=x&amp;rdquo;. Since it&amp;rsquo;s an AD object, logically it has attributes describing the object version etc.&lt;/p&gt;
 &lt;h3 id=&#34;gpt&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#gpt&#34;&gt;GPT&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#gpt&#34;&gt;GPT&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Group Policy Template (GPT), is stored in the DC&amp;rsquo;s system volume (sysvol), under the &amp;lsquo;policies&amp;rsquo; subfolder.&lt;/p&gt;
 &lt;p&gt;The GPT stores the majority of GPO data, it contains a folder structure of files that describes the GPOs functionality, meaning it stores script files, administrative template-based policies and various other security settings.&lt;/p&gt;
 &lt;h3 id=&#34;replication&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#replication&#34;&gt;Replication&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#replication&#34;&gt;Replication&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;GPC uses AD replication, and GPT uses DFS-R since its in sysvol. This is important because we will edit the ACLs of both AD and sysvol in order to solve our issue.&lt;/p&gt;
 &lt;h3 id=&#34;editing-acl-for-gpc&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#editing-acl-for-gpc&#34;&gt;Editing ACL for GPC&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#editing-acl-for-gpc&#34;&gt;Editing ACL for GPC&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Editing its ACL requires generating an ActiveDirectoryRights object with the desired access. This can be done multiple ways, &lt;a href=&#34;https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771151(v=ws.11)&#34;&gt;dsacls&lt;/a&gt;, using &lt;a href=&#34;https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2&#34;&gt;Set-ACL&lt;/a&gt; to name a few. In this case I had heard of an amazing module from &lt;a href=&#34;https://twitter.com/SimonWahlin&#34;&gt;Simon Wahlin&lt;/a&gt; called &lt;a href=&#34;https://www.powershellgallery.com/packages/DSACL/1.0.0&#34;&gt;DSACL&lt;/a&gt;, so I can simply do the following:&lt;/p&gt;
 
@@ -1519,7 +1519,7 @@ The GPC is stored in AD, under &amp;ldquo;CN=,Policies,CN=System,DC=x,DC=x&amp;r
 &lt;p&gt;The &amp;lsquo;TargetDN&amp;rsquo; in this case will be the GPCs distinguishedName, and the DelegateDN will be the distinguishedName of our AGPM service-account.
 We run the cmdlet twice to mimic the way AGPM edits the ACL in a controlled GPO. AccessSystemSecurity was not needed in the 2nd ACE and therefore I ended up selecting the first 9 (0..8) ADRights.&lt;/p&gt;
 &lt;h3 id=&#34;editing-the-acl-for-gpt&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#editing-the-acl-for-gpt&#34;&gt;Editing the ACL for GPT&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#editing-the-acl-for-gpt&#34;&gt;Editing the ACL for GPT&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;Since GPT is in sysvol, we now have the task of editing a filesystem ACL. This is different from a directory service ACL. There&amp;rsquo;s many ways of doing this as well, &lt;a href=&#34;https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cacls&#34;&gt;cacls&lt;/a&gt;, and &lt;a href=&#34;https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2&#34;&gt;Set-ACL&lt;/a&gt; works great. I ended up taking the easy way out and used &lt;a href=&#34;https://www.powershellgallery.com/packages/NTFSSecurity/4.2.6&#34;&gt;NTFSSecurity&lt;/a&gt;, again another killer PowerShell module with 1,1mil downloads as of writing. And that&amp;rsquo;s quite understandable considering this is how one can grant full control on a filesystem:&lt;/p&gt;
 
@@ -1527,7 +1527,7 @@ We run the cmdlet twice to mimic the way AGPM edits the ACL in a controlled GPO.
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Add-NTFSAccess&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Path&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;\\DOMAIN\SYSVOL\DOMAIN.TEST\Policies\{&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$GPOObject&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;}&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-AccessRights&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FullControl&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Account&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;DOMAIN\Service-Account-AGPM&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;almost-ready-to-solve&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#almost-ready-to-solve&#34;&gt;Almost ready to solve!&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#almost-ready-to-solve&#34;&gt;Almost ready to solve!&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;As we have learned, GPC and GPT is a bit different. Sysvol and AD does replicate, but in different ways. Key take-away is that most likely we need to wait for replication in order for the AGPM server to understand that the rights are in fact in place. This took me around 15m, this could have been avoided had I done the changes on the same server.&lt;/p&gt;
 &lt;p&gt;Using the &lt;a href=&#34;https://docs.microsoft.com/en-us/powershell/module/agpm/add-controlledgpo?view=win-mdop2-ps&#34;&gt;AGPM module&lt;/a&gt;, we&amp;rsquo;re now ready to take control of the GPO, since we now have the access to do so.&lt;/p&gt;
@@ -1550,30 +1550,30 @@ Sadly the AGPM module doesn&amp;rsquo;t have something like &amp;lsquo;Get-Uncon
 &lt;p&gt;You can of course also navigate within GPMC &amp;gt; ChangeControl &amp;gt; Uncontrolled &amp;gt; select all GPOs, rightclick, Control.&lt;/p&gt;
 &lt;p&gt;Congratulations on having a fully controlled AGPM environment.&lt;/p&gt;
 &lt;h2 id=&#34;discussion&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#discussion&#34;&gt;Discussion&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#discussion&#34;&gt;Discussion&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Understanding where a GPO is stored is a nice way of understanding how they work. The reason behind having them stored in separate places most likely goes back to fact that AD is old, and back in the days, size mattered.
 Having the GPT files in the AD database (.dit) would simply mean a huge increase in data for AD. Splitting things up and having the DCs taking a bit of storage was probably a good idea back then.&lt;/p&gt;
 &lt;p&gt;On another note, notice my code in this solution was quite simple. Even thought we did some complex tasks. I was actively not trying to re-invent the wheel, and this is something that gets more important the &amp;lsquo;harder&amp;rsquo; the task becomes. Using &amp;ldquo;blackbox&amp;rdquo; modules where we only follow the PowerShell standard way of typing out a cmdlet, can be a great way of achieving complex tasks with speed.
 It&amp;rsquo;s also important that when a &amp;ldquo;blackbox&amp;rdquo; module solves something for you, go back and try to dig deeper in what it actually did. I find this a good way of learning things in general.&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_agpm_setacl/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_agpm_setacl/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell: C Sharp for PowerShell Modules</title>
-      <link>//localhost:1313/blog/ps_making_binary_ps_module/</link>
+      <link>/blog/ps_making_binary_ps_module/</link>
       <pubDate>Mon, 15 Aug 2022 14:58:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_making_binary_ps_module/</guid>
-      <description>&lt;figure&gt;&lt;img src=&#34;//localhost:1313/pics/stack_books.jpg&#34;/&gt;
+      <guid>/blog/ps_making_binary_ps_module/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;/pics/stack_books.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;my-journey-into-c-so-far&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_making_binary_ps_module/#my-journey-into-c-so-far&#34;&gt;My journey into C# so far&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_making_binary_ps_module/#my-journey-into-c-so-far&#34;&gt;My journey into C# so far&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest.
 The natural next language to learn for me has always been C#, reason being it&amp;rsquo;s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.&lt;/p&gt;
@@ -1589,7 +1589,7 @@ The natural next language to learn for me has always been C#, reason being it&am
 &lt;/ul&gt;
 &lt;p&gt;The above lists are things I&amp;rsquo;ve went through and I can honestly recommend.&lt;/p&gt;
 &lt;h2 id=&#34;whats-to-come&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_making_binary_ps_module/#whats-to-come&#34;&gt;What&amp;rsquo;s to come&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_making_binary_ps_module/#whats-to-come&#34;&gt;What&amp;rsquo;s to come&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;I plan to further increase my knowledge with the books:&lt;/p&gt;
 &lt;ul&gt;
@@ -1598,7 +1598,7 @@ The natural next language to learn for me has always been C#, reason being it&am
 &lt;/ul&gt;
 &lt;p&gt;As well as writing more modules and other C# related projects.&lt;/p&gt;
 &lt;h2 id=&#34;the-process-of-wrapping-a-binary-module-using-a-nuget-package&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_making_binary_ps_module/#the-process-of-wrapping-a-binary-module-using-a-nuget-package&#34;&gt;The process of wrapping a binary module using a nuget package&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_making_binary_ps_module/#the-process-of-wrapping-a-binary-module-using-a-nuget-package&#34;&gt;The process of wrapping a binary module using a nuget package&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1791,35 +1791,35 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;p&gt;Next blog will be how I published my module to the PowerShell Gallery. Using Git, Github, PSGallery and PlatyPS.&lt;/p&gt;
 &lt;p&gt;Stay tuned!&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_making_binary_ps_module/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_making_binary_ps_module/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_making_binary_ps_module/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_making_binary_ps_module/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell for Security: PassWord Gen Part 2</title>
-      <link>//localhost:1313/blog/ps_pwgenerator_update/</link>
+      <link>/blog/ps_pwgenerator_update/</link>
       <pubDate>Mon, 04 Jul 2022 14:58:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_pwgenerator_update/</guid>
+      <guid>/blog/ps_pwgenerator_update/</guid>
       <description>&lt;h2 id=&#34;did-it-again&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#did-it-again&#34;&gt;Did it again&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#did-it-again&#34;&gt;Did it again&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;2021-05-10 - &lt;a href=&#34;https://blog.ehmiiz.tech/powershell-for-security-generate-a-x-platform-password-generator-using-powershell-7/&#34;&gt;I wrote an article on Password Generators&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp;amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.&lt;/p&gt;
 &lt;h2 id=&#34;however&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#however&#34;&gt;However,&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#however&#34;&gt;However,&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This time I&amp;rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .net/C# developer would tackle the challenge that is coding a password generator, I stumbled upon &amp;ldquo;&lt;a href=&#34;https://www.nuget.org/packages/PasswordGenerator/&#34;&gt;PasswordGenerator&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;To my surprise, the package has reached 1.6 million(!!!) downloads. I figured this package must be something special, some sort of holy grail of pass gens. And while I&amp;rsquo;m no C# expert, I&amp;rsquo;m always up for a challenge!&lt;/p&gt;
 &lt;p&gt;So I shamefully forked the repository and started working on a binary PowerShell cmdlet that would mimic the nuget package. 7 versions and 29 commits later, &amp;ldquo;&lt;a href=&#34;https://www.powershellgallery.com/packages/BinaryPasswordGenerator/1.0.1&#34;&gt;BinaryPasswordGenerator&lt;/a&gt;&amp;rdquo; was born!&lt;/p&gt;
 &lt;h3 id=&#34;its-fast&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#its-fast&#34;&gt;It&amp;rsquo;s fast&amp;hellip;&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#its-fast&#34;&gt;It&amp;rsquo;s fast&amp;hellip;&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/FastPWGen.png&#34; alt=&#34;Fast&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/FastPWGen.png&#34; alt=&#34;Fast&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;its-customizable&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#its-customizable&#34;&gt;It&amp;rsquo;s customizable&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#its-customizable&#34;&gt;It&amp;rsquo;s customizable&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;The cmdlet is highly customizable, just like the nuget package. This opens up a new usecase area that the former script did not cover:&lt;/p&gt;
 &lt;ul&gt;
@@ -1830,7 +1830,7 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;li&gt;It&amp;rsquo;s wicked fast, meaning it scales better&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;examples&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#examples&#34;&gt;Examples&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#examples&#34;&gt;Examples&lt;/a&gt;
 &lt;/h3&gt;
 
   
@@ -1885,7 +1885,7 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;New-Password&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-IncludeNumeric&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Length&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;using-together-with-other-powershell-modules&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#using-together-with-other-powershell-modules&#34;&gt;Using together with other PowerShell modules:&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#using-together-with-other-powershell-modules&#34;&gt;Using together with other PowerShell modules:&lt;/a&gt;
 &lt;/h3&gt;
 
   
@@ -1903,95 +1903,95 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Get-Secret&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;User&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-AsPlainText&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;4EkQlMpVjPnO5VM5tYcnUE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;F&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;D3wvhB8w595LXqIEAny1XC4OVn4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1Q79Nlj&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;QwK&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;zBVkFUAHVy44iEIO2icVE0meAz3YEWudP9UdKrjbrp8nJ8DECVll2Uq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kt5&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator_update/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator_update/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>Solution: Restore Deleted Private key for EFS Encrypted Files</title>
-      <link>//localhost:1313/blog/solution_efs_windows/</link>
+      <link>/blog/solution_efs_windows/</link>
       <pubDate>Wed, 15 Jun 2022 12:39:23 +0100</pubDate>
-      <guid>//localhost:1313/blog/solution_efs_windows/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/accessdenied_after_removal.png&#34; alt=&#34;a&#34;&gt;&lt;/p&gt;
+      <guid>/blog/solution_efs_windows/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/pics/accessdenied_after_removal.png&#34; alt=&#34;a&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;problem&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/solution_efs_windows/#problem&#34;&gt;Problem&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/solution_efs_windows/#problem&#34;&gt;Problem&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;You have encrypted files using the &amp;ldquo;File &amp;gt; Properties &amp;gt; Advanced &amp;gt; Encrypt content to secure data&amp;rdquo; feature in Windows, and have lost your certificates in your personal certificate store.&lt;/p&gt;
 &lt;h2 id=&#34;solution&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/solution_efs_windows/#solution&#34;&gt;Solution&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/solution_efs_windows/#solution&#34;&gt;Solution&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;A solution to this problem is to restore the private key used for encrypting your file system (EKU: Encrypting File System 1.3.6.1.4.1.311.10.3.4 ) that was generated upon encrypting your files.&lt;/p&gt;
 &lt;p&gt;The keypair to this certificate is stored in your Personal certificate store, luckily a copy of the public key is stored in your LocalMachine certificate store. This means we can restore the private key and enable decryption as long as the computer has not been reinstalled or lost.&lt;/p&gt;
 &lt;h3 id=&#34;step-by-step&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/solution_efs_windows/#step-by-step&#34;&gt;Step-by-step&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/solution_efs_windows/#step-by-step&#34;&gt;Step-by-step&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;This file is currently unecrypted. Let&amp;rsquo;s encrypt is using the method discussed&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/file.png&#34; alt=&#34;Secret!&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/file.png&#34; alt=&#34;Secret!&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Rightclick the file &amp;gt; properties &amp;gt; advanced &amp;gt; encrypt content..&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/encrypt_gui.png&#34; alt=&#34;encrypt_gui&#34;&gt;
-&lt;img src=&#34;//localhost:1313/pics/encrypt_file.png&#34; alt=&#34;encrypt_file&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/encrypt_gui.png&#34; alt=&#34;encrypt_gui&#34;&gt;
+&lt;img src=&#34;/pics/encrypt_file.png&#34; alt=&#34;encrypt_file&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I will select &amp;lsquo;Ecrypt the file only&amp;rsquo; in this case&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/lock-icon.png&#34; alt=&#34;loc_icon&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/lock-icon.png&#34; alt=&#34;loc_icon&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The lock symbol indicates that the file is successfully encrypted. Under the hood, windows generated a self-signed certificate with a private/public keypair in my personal store and a certificate in my localmachine/addressbook only containing a public key.&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Verify the certificates&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/currentuser_certstore_cert.png&#34; alt=&#34;currentuser_certstore_cert&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/currentuser_certstore_cert.png&#34; alt=&#34;currentuser_certstore_cert&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s verify it&amp;rsquo;s private key:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/currentuser_privatekey_true.png&#34; alt=&#34;private&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/currentuser_privatekey_true.png&#34; alt=&#34;private&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s verify the localmachine/addressbook certificate:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/certstore_find_publickey.png&#34; alt=&#34;cert_store_public&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/localmachine_privatekey_false.png&#34; alt=&#34;cert_store_public_private_key&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/certstore_find_publickey.png&#34; alt=&#34;cert_store_public&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/localmachine_privatekey_false.png&#34; alt=&#34;cert_store_public_private_key&#34;&gt;&lt;/p&gt;
 &lt;p&gt;HasPrivateKey: False - tells us this certificate lacks the private key, and is somewhat useless for the decrypting of our file. We will now move on to the issue at hand&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Delete the current users private key to simulate the issue&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/delete_currentuser_privatekey_cert.png&#34; alt=&#34;delete_currentuser_privatekey_cert&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/delete_currentuser_privatekey_cert.png&#34; alt=&#34;delete_currentuser_privatekey_cert&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s try to query the certificate store to verify the lack of this deleted certificate&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/after_deleted_privatekey.png&#34; alt=&#34;after_deleted_privatekey&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/after_deleted_privatekey.png&#34; alt=&#34;after_deleted_privatekey&#34;&gt;&lt;/p&gt;
 &lt;p&gt;We are recursivly looking for the certificate in the root of the certificate store, and we only got one hit. Meaning the private/public keypair has been removed, together with the ability to decrypt our file:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/accessdenied_after_removal.png&#34; alt=&#34;accessdenied_after_removal&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/accessdenied_after_removal.png&#34; alt=&#34;accessdenied_after_removal&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The screenshot displays an attempt to move the file, as well as open it with notepad. Both failed due to a &amp;ldquo;lack of access&amp;rdquo;.&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Restoring the certificate using the public key in LocalMachine store&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/restore_private_key.png&#34; alt=&#34;restore_private_key&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/restore_private_key.png&#34; alt=&#34;restore_private_key&#34;&gt;&lt;/p&gt;
 &lt;p&gt;First, we move into the LocalMachine\AddressBook path in the certificate store, and we verify that it contains our public-key based certificate&lt;/p&gt;
 &lt;p&gt;We then utilize certutil to restore the private-key part of that we had before lost:&lt;/p&gt;
 
   
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;certutil&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-repairstore&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;addressbook&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;insert thumbprint&amp;gt;&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/privatekey_after_restore_success.png&#34; alt=&#34;privatekey_after_restore_success&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/privatekey_after_restore_success.png&#34; alt=&#34;privatekey_after_restore_success&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Verify that the PrivateKey was infact restored&lt;/p&gt;
 &lt;p&gt;We have now restored the most critical part of the removal, but decryption will still fail, since windows will only query your personal store while the decryption process takes place. This means we will need to export this certificate, together with it&amp;rsquo;s private key - and import it to your personal store.&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Export / Import the key-pair to the Personal Store&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/export_privateandpublic_key.png&#34; alt=&#34;export_privateandpublic_key&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/export_privateandpublic_key.png&#34; alt=&#34;export_privateandpublic_key&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Navigate to the mmc snap-in, import the Certificate snap-in, select Local Computer, and navigate to the &amp;lsquo;Other People&amp;rsquo; folder&lt;/p&gt;
 &lt;p&gt;Right-click the certificate (this is the same certificate that we displayed in PowerShell after the restore process) All Tasks &amp;gt; Export&amp;hellip;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/private_key_selected.png&#34; alt=&#34;private_key_selected&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/private_key_selected.png&#34; alt=&#34;private_key_selected&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Export the private key &amp;gt; Next&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/allow_only_current_user.png&#34; alt=&#34;allow_only_current_user&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/allow_only_current_user.png&#34; alt=&#34;allow_only_current_user&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Use your currently logged on user &amp;gt; Next&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/savetopath.png&#34; alt=&#34;savetopath&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/savetopath.png&#34; alt=&#34;savetopath&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Save to path&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/import_current_user.png&#34; alt=&#34;import_current_user&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/import_current_user.png&#34; alt=&#34;import_current_user&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Navigate to the path, right-click &amp;gt; Install PFX, Current User &amp;gt; Next &amp;gt; Next &amp;gt; Next..&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/successful_import.png&#34; alt=&#34;successful_import&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/successful_import.png&#34; alt=&#34;successful_import&#34;&gt;&lt;/p&gt;
 &lt;p&gt;We have now moved the key-pair back to the personal store, and can now decrypt files&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/successful_decrypt_and_write.png&#34; alt=&#34;successful_decrypt_and_write&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/successful_decrypt_and_write.png&#34; alt=&#34;successful_decrypt_and_write&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Verifying this by writing to the file, and getting it&amp;rsquo;s content&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;//localhost:1313/pics/successful_open_doubleclick.png&#34; alt=&#34;successful_open_doubleclick&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/pics/successful_open_doubleclick.png&#34; alt=&#34;successful_open_doubleclick&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Double-clicking the file now works as expected&lt;/p&gt;
 &lt;h2 id=&#34;discussion&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/solution_efs_windows/#discussion&#34;&gt;Discussion&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/solution_efs_windows/#discussion&#34;&gt;Discussion&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;We have now simulated an issue that unaware users can be exposed to, and solved it using PowerShell, the Certificate snap-in in mmc, and certutil.&lt;/p&gt;
 &lt;p&gt;Accidential deletion the private/public key-pair in the personal store can be quite common, since IT personel usually perform this, together with a GPUpdate, to re-enroll autoenrollment managed certificates. However, in this case the certificate will not re-enroll itself since it&amp;rsquo;s a self-signed certificate, only used locally for ecryption/decryption.&lt;/p&gt;
@@ -2001,15 +2001,15 @@ Make sure to try to get all the functionality of the package out in the PowerShe
     </item>
     <item>
       <title>PowerShell Productivity tip: Working with History</title>
-      <link>//localhost:1313/blog/ps_tip_tab/</link>
+      <link>/blog/ps_tip_tab/</link>
       <pubDate>Mon, 16 May 2022 08:05:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_tip_tab/</guid>
+      <guid>/blog/ps_tip_tab/</guid>
       <description>&lt;figure&gt;&lt;img src=&#34;https://images.unsplash.com/photo-1580136579312-94651dfd596d?ixlib=rb-1.2.1&amp;amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1317&amp;amp;q=80&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;One thing I&amp;rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&amp;rsquo;s quite a few ways to do so currently, so I thought i&amp;rsquo;d share some of my favorite ones.&lt;/p&gt;
 &lt;h2 id=&#34;different-ways-of-viewing-your-history&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_tip_tab/#different-ways-of-viewing-your-history&#34;&gt;Different ways of viewing your history&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_tip_tab/#different-ways-of-viewing-your-history&#34;&gt;Different ways of viewing your history&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&amp;gt; h. Simple as that.&lt;/li&gt;
@@ -2031,7 +2031,7 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cat &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;Get-PSReadLineOption&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;historysavepath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;Replace&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$env:USERNAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Your-Colleague-That-Did-Not-Docx-It&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;history-tend-to-repeat-itself&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_tip_tab/#history-tend-to-repeat-itself&#34;&gt;History Tend To Repeat Itself&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_tip_tab/#history-tend-to-repeat-itself&#34;&gt;History Tend To Repeat Itself&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;As we all know, we humans always have a need to re-run history. Without being political about it, here&amp;rsquo;s some examples on how you could do this in PowerShell&lt;/p&gt;
 
@@ -2043,7 +2043,7 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;but-theres-more&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_tip_tab/#but-theres-more&#34;&gt;But there&amp;rsquo;s more!&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_tip_tab/#but-theres-more&#34;&gt;But there&amp;rsquo;s more!&lt;/a&gt;
 &lt;/h2&gt;
 
   
@@ -2056,7 +2056,7 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;help&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_tip_tab/#help&#34;&gt;Help!&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_tip_tab/#help&#34;&gt;Help!&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;If you&amp;rsquo;ve read this far and desire more reading, run the following one-liner&lt;/p&gt;
 
@@ -2071,28 +2071,28 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Get-Help&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;about_history&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Hopefully this was a decent history-lesson for someone!&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_tip_tab/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_tip_tab/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emilhttpstwittercomehmiiz&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_tip_tab/#emilhttpstwittercomehmiiz&#34;&gt;/&lt;a href=&#34;https://twitter.com/ehmiiz&#34;&gt;Emil&lt;/a&gt;&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_tip_tab/#emilhttpstwittercomehmiiz&#34;&gt;/&lt;a href=&#34;https://twitter.com/ehmiiz&#34;&gt;Emil&lt;/a&gt;&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell in 2021: From my IAM Perspective</title>
-      <link>//localhost:1313/blog/ps_ad_2021_review/</link>
+      <link>/blog/ps_ad_2021_review/</link>
       <pubDate>Tue, 04 Jan 2022 08:13:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_ad_2021_review/</guid>
+      <guid>/blog/ps_ad_2021_review/</guid>
       <description>&lt;figure&gt;&lt;img src=&#34;https://i.imgur.com/FiMaB8M.jpg&#34;/&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;2021-from-my-iam-perspective&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#2021-from-my-iam-perspective&#34;&gt;2021: From my IAM Perspective&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#2021-from-my-iam-perspective&#34;&gt;2021: From my IAM Perspective&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;First of all, this &lt;a href=&#34;https://www.dowst.dev/2021-a-powershell-year-in-review/&#34;&gt;blog-post&lt;/a&gt; inspired me to write something similar, so thanks &lt;a href=&#34;https://twitter.com/MDowst/&#34;&gt;@MDowst&lt;/a&gt; for sharing.&lt;/p&gt;
 &lt;p&gt;For myself I&amp;rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&amp;rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.&lt;/p&gt;
 &lt;h2 id=&#34;2021-some-cool-stuff-i-found&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#2021-some-cool-stuff-i-found&#34;&gt;2021: Some cool stuff I found&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#2021-some-cool-stuff-i-found&#34;&gt;2021: Some cool stuff I found&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.bing.com/search?q=psreadline+predictive+intellisense&amp;amp;cvid=941892197e824c9c996f36910a1dbb04&amp;amp;aqs=edge.0.0.6427j0j1&amp;amp;pglt=163&amp;amp;FORM=ANSPA1&amp;amp;PC=U531&#34;&gt;PSReadLine&lt;/a&gt; and it&amp;rsquo;s IntelliSense&lt;/li&gt;
@@ -2103,7 +2103,7 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;li&gt;&lt;a href=&#34;https://docs.microsoft.com/en-us/windows/terminal/panes&#34;&gt;Windows terminal and it&amp;rsquo;s split-tab functionality&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;2022-exciting-stuff&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#2022-exciting-stuff&#34;&gt;2022 exciting stuff&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#2022-exciting-stuff&#34;&gt;2022 exciting stuff&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Some stuff I&amp;rsquo;m personally excited about:&lt;/p&gt;
 &lt;ul&gt;
@@ -2118,37 +2118,37 @@ Make sure to try to get all the functionality of the package out in the PowerShe
 &lt;li&gt;Would love to contribute to the PowerShell repo this year, or publish some useful code to the PSGallery, to give back to the community&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;time-flies&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#time-flies&#34;&gt;Time flies&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#time-flies&#34;&gt;Time flies&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This year will be my 9th year of using and working with PowerShell, much have changed but mostly for the better.&lt;/p&gt;
 &lt;p&gt;I miss when ISE was the golden standard though, but hopefully VSCode will work more smoothly this year. I do appriciate the cross-platformness of VSCode, and the ability to export and import keybinds.&lt;/p&gt;
 &lt;p&gt;Would be awesome with a competitor to VSCode though, I would assume that some competition would not hurt for the end-user exp, let&amp;rsquo;s see what happens.&lt;/p&gt;
 &lt;h2 id=&#34;end-with-fire&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#end-with-fire&#34;&gt;End with fire!&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#end-with-fire&#34;&gt;End with fire!&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;d like to end my blog-post with this old gem from &lt;a href=&#34;https://www.leeholmes.com/burn-console-optimized-and-ready-for-marshmallows/&#34;&gt;Lee Holmes&lt;/a&gt;
 Still waiting for someone smart enough to re-write this for the Windows Terminal :)&lt;/p&gt;
 &lt;p&gt;Have a good one!&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_ad_2021_review/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_ad_2021_review/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell for Automation: Simple Hyper-V VM-Creation script</title>
-      <link>//localhost:1313/blog/ps_simplehyper-vlabmodule/</link>
+      <link>/blog/ps_simplehyper-vlabmodule/</link>
       <pubDate>Tue, 21 Dec 2021 14:58:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_simplehyper-vlabmodule/</guid>
+      <guid>/blog/ps_simplehyper-vlabmodule/</guid>
       <description>&lt;h2 id=&#34;meet-labmilhttpsgithubcomehmiizlabmil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_simplehyper-vlabmodule/#meet-labmilhttpsgithubcomehmiizlabmil&#34;&gt;Meet &lt;a href=&#34;https://github.com/ehmiiz/labmil&#34;&gt;Labmil&lt;/a&gt;.&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_simplehyper-vlabmodule/#meet-labmilhttpsgithubcomehmiizlabmil&#34;&gt;Meet &lt;a href=&#34;https://github.com/ehmiiz/labmil&#34;&gt;Labmil&lt;/a&gt;.&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Labmil is a script I made to serve a specific usecase. When &lt;a href=&#34;https://automatedlab.org/en/latest/&#34;&gt;AutomatedLab&lt;/a&gt; is overkill, and when you don&amp;rsquo;t want to skip the installation phase of the lab.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/uBIzjmx.png&#34; alt=&#34;Displaying the cmdlet&#34; title=&#34;Get-GeneratedPassword&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;features&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_simplehyper-vlabmodule/#features&#34;&gt;Features&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_simplehyper-vlabmodule/#features&#34;&gt;Features&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Quickly put the Windows Server ISO-file to good use&lt;/li&gt;
@@ -2157,7 +2157,7 @@ Still waiting for someone smart enough to re-write this for the Windows Terminal
 &lt;li&gt;Create multiple VM&amp;rsquo;s using PowerShell logic&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;non-features&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_simplehyper-vlabmodule/#non-features&#34;&gt;Non-Features&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_simplehyper-vlabmodule/#non-features&#34;&gt;Non-Features&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;The script has a few non-features.
 Non-Features are cool because it makes the script unique and useful in certain senarios.&lt;/p&gt;
@@ -2168,7 +2168,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;li&gt;It&amp;rsquo;s only focus is Hyper-V VMs&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;how-i-like-to-do-my-labs&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_simplehyper-vlabmodule/#how-i-like-to-do-my-labs&#34;&gt;How I like to do my labs&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_simplehyper-vlabmodule/#how-i-like-to-do-my-labs&#34;&gt;How I like to do my labs&lt;/a&gt;
 &lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Spin up the VMs you plan on labbing with using New-LabmilVM.ps1&lt;/li&gt;
@@ -2185,23 +2185,23 @@ Non-Features are cool because it makes the script unique and useful in certain s
     </item>
     <item>
       <title>PowerShell Solution: Automate GPO creations</title>
-      <link>//localhost:1313/blog/ps_automatedgpocloning/</link>
+      <link>/blog/ps_automatedgpocloning/</link>
       <pubDate>Wed, 12 May 2021 14:56:09 +0200</pubDate>
-      <guid>//localhost:1313/blog/ps_automatedgpocloning/</guid>
+      <guid>/blog/ps_automatedgpocloning/</guid>
       <description>&lt;h2 id=&#34;the-headache-of-setting-up-recurring-gpos&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#the-headache-of-setting-up-recurring-gpos&#34;&gt;The headache of setting up recurring GPO&amp;rsquo;s&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#the-headache-of-setting-up-recurring-gpos&#34;&gt;The headache of setting up recurring GPO&amp;rsquo;s&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.&lt;/p&gt;
 &lt;p&gt;The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&amp;rsquo;s, true/false), in an automated fasion?&lt;/p&gt;
 &lt;p&gt;The best answer to this question is; You probably shouldn&amp;rsquo;t.&lt;/p&gt;
 &lt;p&gt;If the GPO planning is done carefully, you should not find yourself having this problem - since why would we want 10-100-1000 different GPOs doing basically the same thing? If we could use WMI filters, script-based, logically acting GPOs, the world would be a wonderful place.&lt;/p&gt;
 &lt;h2 id=&#34;reality-hits-you-hard-bro&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#reality-hits-you-hard-bro&#34;&gt;Reality hits you hard, bro&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#reality-hits-you-hard-bro&#34;&gt;Reality hits you hard, bro&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Let&amp;rsquo;s be real, you either did the GPO planning yourself back in the 90&amp;rsquo;s, or someones (probably awesome) dad did it. And he probably had a tight schedule, IT was probably understaffed already back then, and frankly, all companies might not have a &lt;a href=&#34;https://en.wikipedia.org/wiki/Mark_Russinovich&#34;&gt;Mark Russinovich&lt;/a&gt;-kind of guy, implementing flawless, scalable GPO plans for your organization.&lt;/p&gt;
 &lt;p&gt;Sadly the facts listed above does not help you in any way what so ever. Hopefully the rest of this blog post can.&lt;/p&gt;
 &lt;h2 id=&#34;technical-bits&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#technical-bits&#34;&gt;Technical bits&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#technical-bits&#34;&gt;Technical bits&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;PowerShell and GPO&amp;rsquo;s go quite nicly hand in hand, thankfully. Now starts the technical fun stuff. The following is what we need to solve:&lt;/p&gt;
 &lt;p&gt;Have a script that allows you to input a specific condition (City name, Group name, Computer name, yada yada), and have this script:&lt;/p&gt;
@@ -2245,7 +2245,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;p&gt;This process solves two big issues, firstly it allows you to just edit the recurring GPO once, this would otherwise be a recurring task.&lt;/p&gt;
 &lt;p&gt;Secondly, it solves the issue with editing GPO&amp;rsquo;s in production, since you should&amp;rsquo;t tamper with XML files in a production sysvol. Instead the edits you do are directly done to the backup file that&amp;rsquo;s outside of sysvol.&lt;/p&gt;
 &lt;h2 id=&#34;let-us-see-some-code-already&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#let-us-see-some-code-already&#34;&gt;Let us see some code already&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#let-us-see-some-code-already&#34;&gt;Let us see some code already&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This function lets you input&lt;/p&gt;
 &lt;ol&gt;
@@ -2340,25 +2340,25 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;lastly&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#lastly&#34;&gt;Lastly&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#lastly&#34;&gt;Lastly&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This function serves as a base for you to use, and the point here is really to demonstrate the process of how you could tackle this problem. I would suggest playing around with get/set-content to get the desired outcome of the GPO settings in a lab env before even thinking about implementation to production.&lt;/p&gt;
 &lt;p&gt;In many cases, GPO setting changes are XML changes. PowerShell lets you configure anything within an XML file. The key to doing so is to understand the specific setting, so you can manipulate the backed up GPO&amp;rsquo;s XML in your favor.&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_automatedgpocloning/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_automatedgpocloning/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell for Security: PassWord Gen Part 1</title>
-      <link>//localhost:1313/blog/ps_pwgenerator/</link>
+      <link>/blog/ps_pwgenerator/</link>
       <pubDate>Mon, 10 May 2021 14:58:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_pwgenerator/</guid>
+      <guid>/blog/ps_pwgenerator/</guid>
       <description>&lt;h2 id=&#34;my-history-with-password-generators&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#my-history-with-password-generators&#34;&gt;My history with Password Generators&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#my-history-with-password-generators&#34;&gt;My history with Password Generators&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)&lt;/p&gt;
 &lt;p&gt;My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&amp;rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.&lt;/p&gt;
@@ -2366,7 +2366,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;p&gt;Adam Bertram does a great job covering how to wrap this in a module, click the class name to read his post about it.&lt;/p&gt;
 &lt;p&gt;The class does bring a dependency on the the specific dotnet class, and for me, this approach started to bring errors in Powershell cores early versions.&lt;/p&gt;
 &lt;h2 id=&#34;new-attempt-without-dependencies&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#new-attempt-without-dependencies&#34;&gt;New attempt without dependencies&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#new-attempt-without-dependencies&#34;&gt;New attempt without dependencies&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This is my attempt at creating my own password generator&lt;/p&gt;
 
@@ -2454,7 +2454,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;p&gt;Read the comment based help, or load the function and run:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Get-Help Get-GeneratedPassword&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;my-requirements-was-the-following&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#my-requirements-was-the-following&#34;&gt;My Requirements was the following&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#my-requirements-was-the-following&#34;&gt;My Requirements was the following&lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Cover &lt;a href=&#34;https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements&#34;&gt;AD complexity rules&lt;/a&gt; (in 99,9%)&lt;/li&gt;
@@ -2463,7 +2463,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;li&gt;No dependencies outside of Powershell 7&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;begin&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#begin&#34;&gt;Begin&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#begin&#34;&gt;Begin&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the &lt;code&gt;-Amount&lt;/code&gt; parameter&lt;br&gt;
 &lt;code&gt;[ValidateRange(6, 30)] [int32]$PwLength&lt;/code&gt;&lt;/p&gt;
@@ -2483,7 +2483,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;p&gt;The &amp;ldquo;(?-i)&amp;rdquo; part is needed since PowerShell by default is case-insensitive, this definition solves that part, and we need this since we really do care about the match being case-sensitive. &lt;a href=&#34;https://ninmonkeys.com/blog/2020/11/21/using-case-sensitive-regular-expressions-in-powershell-tips/&#34;&gt;This blog post by Jake Bolton&lt;/a&gt; covers the problem in detail.&lt;/p&gt;
 &lt;p&gt;Since all we do here is randomly grabbing strings and joining them, we&amp;rsquo;re only working with a string object. Making the script fast and the output very simple, and since the output is just a simple string, it can be easily turned into a .txt file or used within &lt;a href=&#34;https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1&#34;&gt;ConvertTo-SecureString&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;lastly&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#lastly&#34;&gt;Lastly&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#lastly&#34;&gt;Lastly&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;This is a quite simple and short function, and I&amp;rsquo;m sure it wont cover all my password generating needs for the future, but hopefully for some time at least.&lt;/p&gt;
 &lt;p&gt;I hope this post got you thinking &amp;amp; curious about:&lt;/p&gt;
@@ -2496,20 +2496,20 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/ul&gt;
 &lt;p&gt;in Powershell!&lt;/p&gt;
 &lt;h3 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h3&gt;
 &lt;h3 id=&#34;emil&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_pwgenerator/#emil&#34;&gt;/Emil&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_pwgenerator/#emil&#34;&gt;/Emil&lt;/a&gt;
 &lt;/h3&gt;
 </description>
     </item>
     <item>
       <title>PowerShell Solution: Script not digitally signed</title>
-      <link>//localhost:1313/blog/ps_digitallysigned/</link>
+      <link>/blog/ps_digitallysigned/</link>
       <pubDate>Thu, 11 Feb 2021 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/ps_digitallysigned/</guid>
+      <guid>/blog/ps_digitallysigned/</guid>
       <description>&lt;h2 id=&#34;ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_digitallysigned/#ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system&#34;&gt;“.ps1 is not digitally signed. The script will not execute on the system.”&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_digitallysigned/#ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system&#34;&gt;“.ps1 is not digitally signed. The script will not execute on the system.”&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;This error is clearly not really a typical error, but can be a blocker, nonetheless. It&amp;rsquo;s more of a security feature than an error.&lt;/p&gt;
 &lt;p&gt;Simple solution if you&amp;rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:&lt;/p&gt;
@@ -2520,17 +2520,17 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;p&gt;Further documentation regarding Set-ExecutionPolicy may be found &lt;a href=&#34;https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10)?redirectedfrom=MSDN&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Original blogpost that helped me solve this issue was found here: &lt;a href=&#34;https://caiomsouza.medium.com/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;happy-coding&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/ps_digitallysigned/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/ps_digitallysigned/#happy-coding&#34;&gt;Happy coding&lt;/a&gt;
 &lt;/h2&gt;
 </description>
     </item>
     <item>
       <title>Book review: Life 3.0</title>
-      <link>//localhost:1313/blog/life-3.0/</link>
+      <link>/blog/life-3.0/</link>
       <pubDate>Mon, 08 Feb 2021 08:23:11 +0100</pubDate>
-      <guid>//localhost:1313/blog/life-3.0/</guid>
+      <guid>/blog/life-3.0/</guid>
       <description>&lt;h1 id=&#34;life-30-being-human-in-the-age-of-ai&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/life-3.0/#life-30-being-human-in-the-age-of-ai&#34;&gt;Life 3.0, Being human in the age of AI&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/life-3.0/#life-30-being-human-in-the-age-of-ai&#34;&gt;Life 3.0, Being human in the age of AI&lt;/a&gt;
 &lt;/h1&gt;
 &lt;figure&gt;&lt;img src=&#34;https://images-na.ssl-images-amazon.com/images/I/818K2QDCZvL.jpg&#34;
          alt=&#34;Life 3.0 by Max Tegmark&#34;/&gt;&lt;figcaption&gt;
@@ -2540,13 +2540,13 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/figure&gt;
 
 &lt;h1 id=&#34;first-book-on-ai&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/life-3.0/#first-book-on-ai&#34;&gt;First book on AI&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/life-3.0/#first-book-on-ai&#34;&gt;First book on AI&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;Personally, this was the first time reading a book about AI. And as a tech-savvy sysadmin who loves video games, sci-fi and great stories, it got me hooked.&lt;/p&gt;
 &lt;p&gt;It’s author, Max Tegmark, got me very interested in the subject and he does so by being naturally curious, super-nerdy in a fun way, and just all-round knowledgeable in tech, he’s a professor after all!&lt;/p&gt;
 &lt;p&gt;The book starts off with a scenario (the Omega team) that could’ve been a Hollywood movie plot, and as well a real-life situation. The description on the treat of AI is very clear: It’s not the “Terminator” style AI that’s threatening, It’s AIs built with goals that do not align with the human civilization.&lt;/p&gt;
 &lt;h1 id=&#34;goals&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/life-3.0/#goals&#34;&gt;Goals&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/life-3.0/#goals&#34;&gt;Goals&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;“The more intelligent and powerful machines get, the more important it becomes that their goals are aligned with ours. As long as we build only relatively dumb machines, the question isn&amp;rsquo;t whether human goals will prevail in the end, but merely how much trouble these machines can cause humanity before we figure out how to solve the goal-alignment problem.”&lt;/p&gt;
 &lt;ul&gt;
@@ -2562,7 +2562,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/ul&gt;
 &lt;p&gt;I think this is one of the biggest take-aways of the book, and if I would’ve been a AI/deep-learning developer, I’d take this very serious in my line of work.&lt;/p&gt;
 &lt;h1 id=&#34;myths&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/life-3.0/#myths&#34;&gt;Myths&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/life-3.0/#myths&#34;&gt;Myths&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;The book covers a few well-known AI myths as well as some facts regarding them, I’d figure that it would be good to list a few of them in this review since I found them both interesting and helpful in understanding what the actual AI problems and concerns are, not only what’s being rumored about or displayed in cinema:&lt;/p&gt;
 &lt;ul&gt;
@@ -2583,7 +2583,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;closing-words&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/life-3.0/#closing-words&#34;&gt;Closing words&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/life-3.0/#closing-words&#34;&gt;Closing words&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;In general, the book is not as “heavy” as you would expect coming from a super-brain like Tegmark, it’s in-depth and detailed, but in an interesting and curious way.&lt;/p&gt;
 &lt;p&gt;I would not recommend this book if you’re not interested in the subject, but if you are, it’s a great entry point.&lt;/p&gt;
@@ -2593,9 +2593,9 @@ Non-Features are cool because it makes the script unique and useful in certain s
     </item>
     <item>
       <title>Book Review: LOTR, The Fellowship of the Ring</title>
-      <link>//localhost:1313/blog/lotr-for/</link>
+      <link>/blog/lotr-for/</link>
       <pubDate>Sun, 07 Feb 2021 12:51:50 +0100</pubDate>
-      <guid>//localhost:1313/blog/lotr-for/</guid>
+      <guid>/blog/lotr-for/</guid>
       <description>&lt;figure&gt;&lt;img src=&#34;https://images-na.ssl-images-amazon.com/images/I/91jBdaRVqML.jpg&#34;
          alt=&#34;LOTR: The Fellowship of the Ring&#34;/&gt;&lt;figcaption&gt;
             &lt;p&gt;LOTR: The Fellowship of the Ring
@@ -2604,17 +2604,17 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/figure&gt;
 
 &lt;h1 id=&#34;one-ring-to-rule-them-all-one-ring-to-find-them&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/lotr-for/#one-ring-to-rule-them-all-one-ring-to-find-them&#34;&gt;One ring to rule them all, one Ring to find them*&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/lotr-for/#one-ring-to-rule-them-all-one-ring-to-find-them&#34;&gt;One ring to rule them all, one Ring to find them*&lt;/a&gt;
 &lt;/h1&gt;
 &lt;h4 id=&#34;one-ring-to-bring-them-all-and-in-the-darkness-bind-them&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/lotr-for/#one-ring-to-bring-them-all-and-in-the-darkness-bind-them&#34;&gt;&lt;em&gt;One Ring to bring them all and in the darkness bind them&lt;/em&gt;&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/lotr-for/#one-ring-to-bring-them-all-and-in-the-darkness-bind-them&#34;&gt;&lt;em&gt;One Ring to bring them all and in the darkness bind them&lt;/em&gt;&lt;/a&gt;
 &lt;/h4&gt;
 &lt;p&gt;Sometimes when I read books, I get a feeling to just read faster, not pay attention to detail, to get to the point of the story. While reading Lord of the rings, I forgot about that feeling completely.&lt;/p&gt;
 &lt;p&gt;I think this says a lot about Tolkien’s ability to pay attention to detail, details that forges the story deeper and deeper the more you read, it’s addictive.&lt;/p&gt;
 &lt;p&gt;To compare this book with its prequel ‘The Hobbit’ is rather difficult, for the following reason: The book is not made for children, and it’s very refreshing to step into a darker and deeper side of middle earth, even the farmers of the Shire are somewhat scary for the adventurers.&lt;/p&gt;
 &lt;p&gt;There are complete chapters of the book that will be a new story for readers that’ve watched the movies, and that fact alone is reason enough for you to pick it up and read the hell out of it! Because that’s what you’ll probably find yourself doing, binge read it, it’s that good.&lt;/p&gt;
 &lt;h1 id=&#34;character-details&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/lotr-for/#character-details&#34;&gt;Character details&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/lotr-for/#character-details&#34;&gt;Character details&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;Frodo is a completely different character compared to the movies, and for the better. And there’s so many lessons of life that Sam teaches throughout the book, about being humble, faithful, and a good friend.&lt;/p&gt;
 &lt;p&gt;Another favorite character of mine is Elrond. The references he does to the elder days, he’s basically a living history book – paying attention Elrond, to be curious about his character, will tell a lot about the history of middle earth between the lines, about the 1st and 2nd age, the War of Wrath and history of the first children of Ilúvatar.&lt;/p&gt;
@@ -2624,9 +2624,9 @@ Non-Features are cool because it makes the script unique and useful in certain s
     </item>
     <item>
       <title>Book Review: The Hobbit</title>
-      <link>//localhost:1313/blog/hobbit/</link>
+      <link>/blog/hobbit/</link>
       <pubDate>Sun, 07 Feb 2021 12:39:23 +0100</pubDate>
-      <guid>//localhost:1313/blog/hobbit/</guid>
+      <guid>/blog/hobbit/</guid>
       <description>&lt;figure&gt;&lt;img src=&#34;https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg&#34;
          alt=&#34;The Hobbit&#34;/&gt;&lt;figcaption&gt;
             &lt;p&gt;The Hobbit
@@ -2635,13 +2635,13 @@ Non-Features are cool because it makes the script unique and useful in certain s
 &lt;/figure&gt;
 
 &lt;h1 id=&#34;a-timeless-advanture-for-all-ages&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/hobbit/#a-timeless-advanture-for-all-ages&#34;&gt;&amp;ldquo;A timeless advanture for all ages&amp;rdquo;&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/hobbit/#a-timeless-advanture-for-all-ages&#34;&gt;&amp;ldquo;A timeless advanture for all ages&amp;rdquo;&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies.
 I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.&lt;br&gt;
 Although this book is less heavy on lore, and more focused on the telling of a great adventure.&lt;/p&gt;
 &lt;h1 id=&#34;a-recommendation&#34;&gt;
-  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;//localhost:1313/blog/hobbit/#a-recommendation&#34;&gt;A recommendation&lt;/a&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;/blog/hobbit/#a-recommendation&#34;&gt;A recommendation&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;From me would be, if you read the book to your child, the translated version is fine, but if you plan on reading the Hobbit for your own amusement, read the English version.&lt;/p&gt;
 &lt;p&gt;I plan to read this book for my children, and hopefully they’ll get hooked on Tolkien’s world, just like I did by reading The Hobbit.&lt;/p&gt;
