@@ -1,0 +1,39 @@
+theme: hugo-flex
+baseURL: 
+languageCode: en-us
+params:
+  color: black
+  contact:
+    email: emil@wirely.se
+  subtitle: automation, security, infrastructure
+  footer: >-            # HTML spaces (&#32;) are needed before HTML elements
+    <a href="http://github.com/ehmiiz" rel="Github">GitHub</a>
+    <div></div>
+    <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+  noClasses: false
+
+markup:
+  highlight:
+    noClasses: false
+
+title: all posts
+
+menu:
+  main:
+    - name: home
+      pageRef: /home
+      weight: 1
+    - name: blog
+      pageRef: /blog
+      weight: 2
+    - name: about
+      pageRef: /about
+      weight: 3
+    - name: software
+      pageRef: /modules
+      weight: 4
+    - name: rss
+      pageRef: /
+      weight: 5
+      params:
+        - format: rss

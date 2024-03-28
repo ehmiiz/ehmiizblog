@@ -1,287 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.123.8">
-  <link rel="canonical" href="http://localhost:1313/blog/ps_msgraph_mail/" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Send-MgUserMailThe following solution example is covering how to set-up and use the Send-MgUserMail cmdlet in Azure Automation to send an email with a subject, message body and an attached zip file.
+Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automation account with the modules Microsoft.Graph.Users.Actions and Microsoft.Graph.Authentication installed App Registration with Send.Mail application API permission exposed Authentication &amp; AccessThis solution will use an Client Secret and a encrypted automation variable.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation | all posts</title>
+  <link rel="canonical" href="//localhost:1313/blog/ps_msgraph_mail/">
+
+
+
+
+  
+
+
+
+
+
+
+
 
   
     
-    <meta name="description" content="Send-MgUserMail The following solution example is covering how to set-up and use the Send-MgUserMail cmdlet in Azure Automation to send an email with a subject, message body and an attached zip file.
-Pre-Requirements M365 licensed noreply address as a shared mailbox Azure Automation account with the modules Microsoft.Graph.Users.Actions and Microsoft.Graph.Authentication installed App Registration with Send.Mail application API permission exposed Authentication &amp; Access This solution will use an Client Secret and a encrypted automation variable.">
-  
-
-  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png"> 
-  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png"> 
-  <link rel="manifest" href="http://localhost:1313/site.webmanifest"> 
-  <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg" color="#000000"> 
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-
-  <style>
-    body {
-      visibility: hidden;
-      opacity: 0;
-    }
-  </style>
-
-  <style id="darkTheme">
-    .intro-and-nav,
-    .main-and-footer {
-      filter: invert(100%);
-    }
-
-    * {
-      background-color: inherit
-    }
-
-    img:not([src*=".svg"]),
-    .colors,
-    iframe,
-    .demo-container {
-      filter: invert(100%);
-    }
-  </style>
-
-  <link rel="stylesheet" href="/css/prism.css" media="none" onload="this.media='all';">
-
   
   
-  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
 
-  
-    <link rel="stylesheet" href="/css/custom_01.css">
-  
-    <link rel="stylesheet" href="/css/custom_02.css">
-  
+    <link rel="stylesheet" href="/css/syntax.css">
 
-  
-  
-  <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation | </title>
+
+
 </head>
 
-  <body>
-    <a href="#main">skip to content</a>
-    <noscript>
-  <style>
-    body {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
-</noscript>
-
-    <svg style="display: none">
-  <symbol id="bookmark" viewBox="0 0 40 50">
-   <g transform="translate(2266 3206.2)">
-    <path style="stroke:currentColor;stroke-width:3.2637;fill:none" d="m-2262.2-3203.4-.2331 42.195 16.319-16.318 16.318 16.318.2331-42.428z"/>
-   </g>
-  </symbol>
-
-  <symbol id="w3c" viewBox="0 0 127.09899 67.763">
-   <text font-size="83" style="font-size:83px;font-family:Trebuchet;letter-spacing:-12;fill-opacity:0" letter-spacing="-12" y="67.609352" x="-26.782778">W3C</text>
-   <text font-size="83" style="font-size:83px;font-weight:bold;font-family:Trebuchet;fill-opacity:0" y="67.609352" x="153.21722" font-weight="bold">SVG</text>
-   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m33.695.377 12.062 41.016 12.067-41.016h8.731l-19.968 67.386h-.831l-12.48-41.759-12.479 41.759h-.832l-19.965-67.386h8.736l12.061 41.016 8.154-27.618-3.993-13.397h8.737z"/>
-   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m91.355 46.132c0 6.104-1.624 11.234-4.862 15.394-3.248 4.158-7.45 6.237-12.607 6.237-3.882 0-7.263-1.238-10.148-3.702-2.885-2.47-5.02-5.812-6.406-10.022l6.82-2.829c1.001 2.552 2.317 4.562 3.953 6.028 1.636 1.469 3.56 2.207 5.781 2.207 2.329 0 4.3-1.306 5.909-3.911 1.609-2.606 2.411-5.738 2.411-9.401 0-4.049-.861-7.179-2.582-9.399-1.995-2.604-5.129-3.912-9.397-3.912h-3.327v-3.991l11.646-20.133h-14.062l-3.911 6.655h-2.493v-14.976h32.441v4.075l-12.31 21.217c4.324 1.385 7.596 3.911 9.815 7.571 2.22 3.659 3.329 7.953 3.329 12.892z"/>
-   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.21 0 1.414 8.6-5.008 9.583s-1.924-4.064-5.117-6.314c-2.693-1.899-4.447-2.309-7.186-1.746-3.527.73-7.516 4.938-9.258 10.13-2.084 6.21-2.104 9.218-2.178 11.978-.115 4.428.58 7.043.58 7.043s-3.04-5.626-3.011-13.866c.018-5.882.947-11.218 3.666-16.479 2.404-4.627 5.954-7.404 9.114-7.728 3.264-.343 5.848 1.229 7.841 2.938 2.089 1.788 4.213 5.698 4.213 5.698l4.94-9.837z"/>
-   <path style="fill:currentColor;image-rendering:optimizeQuality;shape-rendering:geometricPrecision" d="m125.82 48.674s-2.208 3.957-3.589 5.48c-1.379 1.524-3.849 4.209-6.896 5.555-3.049 1.343-4.646 1.598-7.661 1.306-3.01-.29-5.807-2.032-6.786-2.764-.979-.722-3.486-2.864-4.897-4.854-1.42-2-3.634-5.995-3.634-5.995s1.233 4.001 2.007 5.699c.442.977 1.81 3.965 3.749 6.572 1.805 2.425 5.315 6.604 10.652 7.545 5.336.945 9.002-1.449 9.907-2.031.907-.578 2.819-2.178 4.032-3.475 1.264-1.351 2.459-3.079 3.116-4.108.487-.758 1.276-2.286 1.276-2.286l-1.276-6.644z"/>
-  </symbol>
-
-  <symbol id="tag" viewBox="0 0 177.16535 177.16535">
-    <g transform="translate(0 -875.2)">
-     <path style="fill-rule:evenodd;stroke-width:0;fill:currentColor" d="m159.9 894.3-68.79 8.5872-75.42 77.336 61.931 60.397 75.429-76.565 6.8495-69.755zm-31.412 31.835a10.813 10.813 0 0 1 1.8443 2.247 10.813 10.813 0 0 1 -3.5174 14.872l-.0445.0275a10.813 10.813 0 0 1 -14.86 -3.5714 10.813 10.813 0 0 1 3.5563 -14.863 10.813 10.813 0 0 1 13.022 1.2884z"/>
-    </g>
-  </symbol>
-
-  <symbol id="balloon" viewBox="0 0 141.73228 177.16535">
-   <g transform="translate(0 -875.2)">
-    <g>
-     <path style="fill:currentColor" d="m68.156 882.83-.88753 1.4269c-4.9564 7.9666-6.3764 17.321-5.6731 37.378.36584 10.437 1.1246 23.51 1.6874 29.062.38895 3.8372 3.8278 32.454 4.6105 38.459 4.6694-.24176 9.2946.2879 14.377 1.481 1.2359-3.2937 5.2496-13.088 8.886-21.623 6.249-14.668 8.4128-21.264 10.253-31.252 1.2464-6.7626 1.6341-12.156 1.4204-19.764-.36325-12.93-2.1234-19.487-6.9377-25.843-2.0833-2.7507-6.9865-7.6112-7.9127-7.8436-.79716-.20019-6.6946-1.0922-6.7755-1.0248-.02213.0182-5.0006-.41858-7.5248-.22808l-2.149-.22808h-3.3738z"/>
-     <path style="fill:currentColor" d="m61.915 883.28-3.2484.4497c-1.7863.24724-3.5182.53481-3.8494.63994-2.4751.33811-4.7267.86957-6.7777 1.5696-.28598 0-1.0254.20146-2.3695.58589-5.0418 1.4418-6.6374 2.2604-8.2567 4.2364-6.281 7.6657-11.457 18.43-12.932 26.891-1.4667 8.4111.71353 22.583 5.0764 32.996 3.8064 9.0852 13.569 25.149 22.801 37.517 1.3741 1.841 2.1708 2.9286 2.4712 3.5792 3.5437-1.1699 6.8496-1.9336 10.082-2.3263-1.3569-5.7831-4.6968-21.86-6.8361-33.002-.92884-4.8368-2.4692-14.322-3.2452-19.991-.68557-5.0083-.77707-6.9534-.74159-15.791.04316-10.803.41822-16.162 1.5026-21.503 1.4593-5.9026 3.3494-11.077 6.3247-15.852z"/>
-     <path style="fill:currentColor" d="m94.499 885.78c-.10214-.0109-.13691 0-.0907.0409.16033.13489 1.329 1.0675 2.5976 2.0723 6.7003 5.307 11.273 14.568 12.658 25.638.52519 4.1949.24765 14.361-.5059 18.523-2.4775 13.684-9.7807 32.345-20.944 53.519l-3.0559 5.7971c2.8082.76579 5.7915 1.727 8.9926 2.8441 11.562-11.691 18.349-19.678 24.129-28.394 7.8992-11.913 11.132-20.234 12.24-31.518.98442-10.02-1.5579-20.876-6.7799-28.959-.2758-.4269-.57803-.86856-.89617-1.3166-3.247-6.13-9.752-12.053-21.264-16.131-2.3687-.86369-6.3657-2.0433-7.0802-2.1166z"/>
-     <path style="fill:currentColor" d="m32.52 892.22c-.20090-.13016-1.4606.81389-3.9132 2.7457-11.486 9.0476-17.632 24.186-16.078 39.61.79699 7.9138 2.4066 13.505 5.9184 20.562 5.8577 11.77 14.749 23.219 30.087 38.74.05838.059.12188.1244.18052.1838 1.3166-.5556 2.5965-1.0618 3.8429-1.5199-.66408-.32448-1.4608-1.3297-3.8116-4.4602-5.0951-6.785-8.7512-11.962-13.051-18.486-5.1379-7.7948-5.0097-7.5894-8.0586-13.054-6.2097-11.13-8.2674-17.725-8.6014-27.563-.21552-6.3494.13041-9.2733 1.775-14.987 2.1832-7.5849 3.9273-10.986 9.2693-18.07 1.7839-2.3656 2.6418-3.57 2.4409-3.7003z"/>
-     <path style="fill:currentColor" d="m69.133 992.37c-6.2405.0309-12.635.76718-19.554 2.5706 4.6956 4.7759 9.935 10.258 12.05 12.625l4.1272 4.6202h11.493l3.964-4.4516c2.0962-2.3541 7.4804-7.9845 12.201-12.768-8.378-1.4975-16.207-2.6353-24.281-2.5955z"/>
-     <rect style="stroke-width:0;fill:currentColor" ry="2.0328" height="27.746" width="22.766" y="1017.7" x="60.201"/>
-    </g>
-   </g>
-  </symbol>
-
-  <symbol id="info" viewBox="0 0 41.667 41.667">
-   <g transform="translate(-37.035 -1004.6)">
-    <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m76.25 1030.2a18.968 18.968 0 0 1 -23.037 13.709 18.968 18.968 0 0 1 -13.738 -23.019 18.968 18.968 0 0 1 23.001 -13.768 18.968 18.968 0 0 1 13.798 22.984"/>
-    <g transform="matrix(1.1146 0 0 1.1146 -26.276 -124.92)">
-     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:3.728;fill:none" d="m75.491 1039.5v-8.7472"/>
-     <path style="stroke-width:0;fill:currentColor" transform="scale(-1)" d="m-73.193-1024.5a2.3719 2.3719 0 0 1 -2.8807 1.7142 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
-    </g>
-   </g>
-  </symbol>
-
-  <symbol id="warning" viewBox="0 0 48.430474 41.646302">
-    <g transform="translate(-1.1273 -1010.2)">
-     <path style="stroke-linejoin:round;stroke:currentColor;stroke-linecap:round;stroke-width:4.151;fill:none" d="m25.343 1012.3-22.14 37.496h44.28z"/>
-     <path style="stroke:currentColor;stroke-linecap:round;stroke-width:4.1512;fill:none" d="m25.54 1027.7v8.7472"/>
-     <path style="stroke-width:0;fill:currentColor" d="m27.839 1042.8a2.3719 2.3719 0 0 1 -2.8807 1.7143 2.3719 2.3719 0 0 1 -1.718 -2.8785 2.3719 2.3719 0 0 1 2.8763 -1.7217 2.3719 2.3719 0 0 1 1.7254 2.8741"/>
-    </g>
-  </symbol>
-
-  <symbol id="menu" viewBox="0 0 50 50">
-     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="0" x="0"/>
-     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="20" x="0"/>
-     <rect style="stroke-width:0;fill:currentColor" height="10" width="50" y="40" x="0"/>
-   </symbol>
-
-   <symbol id="link" viewBox="0 0 50 50">
-    <g transform="translate(0 -1002.4)">
-     <g transform="matrix(.095670 0 0 .095670 2.3233 1004.9)">
-      <g>
-       <path style="stroke-width:0;fill:currentColor" d="m452.84 192.9-128.65 128.65c-35.535 35.54-93.108 35.54-128.65 0l-42.881-42.886 42.881-42.876 42.884 42.876c11.845 11.822 31.064 11.846 42.886 0l128.64-128.64c11.816-11.831 11.816-31.066 0-42.9l-42.881-42.881c-11.822-11.814-31.064-11.814-42.887 0l-45.928 45.936c-21.292-12.531-45.491-17.905-69.449-16.291l72.501-72.526c35.535-35.521 93.136-35.521 128.64 0l42.886 42.881c35.535 35.523 35.535 93.141-.001 128.66zm-254.28 168.51-45.903 45.9c-11.845 11.846-31.064 11.817-42.881 0l-42.884-42.881c-11.845-11.821-11.845-31.041 0-42.886l128.65-128.65c11.819-11.814 31.069-11.814 42.884 0l42.886 42.886 42.876-42.886-42.876-42.881c-35.54-35.521-93.113-35.521-128.65 0l-128.65 128.64c-35.538 35.545-35.538 93.146 0 128.65l42.883 42.882c35.51 35.54 93.11 35.54 128.65 0l72.496-72.499c-23.956 1.597-48.092-3.784-69.474-16.283z"/>
-      </g>
-     </g>
-    </g>
-  </symbol>
-
-  <symbol id="doc" viewBox="0 0 35 45">
-   <g transform="translate(-147.53 -539.83)">
-    <path style="stroke:currentColor;stroke-width:2.4501;fill:none" d="m149.38 542.67v39.194h31.354v-39.194z"/>
-    <g style="stroke-width:25" transform="matrix(.098003 0 0 .098003 133.69 525.96)">
-     <path d="m220 252.36h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
-     <path style="stroke:currentColor;stroke-width:25;fill:none" d="m220 409.95h200"/>
-     <path d="m220 488.74h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
-     <path d="m220 331.15h200" style="stroke:currentColor;stroke-width:25;fill:none"/>
-    </g>
-   </g>
- </symbol>
-
- <symbol id="tick" viewBox="0 0 177.16535 177.16535">
-  <g transform="translate(0 -875.2)">
-   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="155" width="40" y="702.99" x="556.82"/>
-   <rect style="stroke-width:0;fill:currentColor" transform="rotate(30)" height="40" width="90.404" y="817.99" x="506.42"/>
-  </g>
- </symbol>
-</svg>
-
-    <div class="wrapper">
-      <header class="intro-and-nav" role="banner">
-  <div>
-    <div class="intro">
-      <a
-        class="logo"
-        href="http://localhost:1313/"
-        aria-label=" home page"
-      >
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
         
-          <img 
-            src="/images/logo.svg" 
-            alt="An alternative text description of the logo"
-          >
         
-      </a>
-      <p class="library-desc">
-         The <a href="https://bjompen.com/#/">link of the month</a> 
-      </p>
-    </div>
-    <nav id="patterns-nav" class="patterns" role="navigation">
-  <h2 class="vh">Main navigation</h2>
-  <button id="menu-button" aria-expanded="false">
-    <svg viewBox="0 0 50 50" aria-hidden="true" focusable="false">
-      <use href="#menu"></use>
-    </svg>
-    Menu
-  </button>
-  
-  <ul id="patterns-list">
-  
-    <li class="pattern">
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
       
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
       
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
       
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
       
-      <a href="/" >
-        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
-          <use href="#bookmark"></use>
-        </svg>
-        <span class="text">Home</span>
-      </a>
-    </li>
-  
-    <li class="pattern">
-      
-      
-      
-      
-      <a href="/blog/" >
-        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
-          <use href="#bookmark"></use>
-        </svg>
-        <span class="text">Blog</span>
-      </a>
-    </li>
-  
-    <li class="pattern">
-      
-      
-      
-      
-      <a href="/about/" >
-        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
-          <use href="#bookmark"></use>
-        </svg>
-        <span class="text">About</span>
-      </a>
-    </li>
-  
-    <li class="pattern">
-      
-      
-      
-      
-      <a href="/modules/" >
-        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
-          <use href="#bookmark"></use>
-        </svg>
-        <span class="text">Modules</span>
-      </a>
-    </li>
-  
-    <li class="pattern">
-      
-      
-      
-      
-      <a href="/index.xml" >
-        <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
-          <use href="#bookmark"></use>
-        </svg>
-        <span class="text">RSS</span>
-      </a>
-    </li>
-  
-  </ul>
-</nav>
-    
-  </div>
-</header>
-
-      <div class="main-and-footer">
-        <div>
+        
+        
           
-  <main id="main">
-    <h1>PowerShell Solution: Use Send-MgUserMail in Azure Automation</h1>
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/" rel="bookmark">PowerShell Solution: Use Send-MgUserMail in Azure Automation</a>
+  </h2>
+  
+    <time datetime="2023-11-06T08:23:11&#43;01:00">November 6, 2023</time>
+  
+</header>
     <figure><img src="/pics/NiceMail.png"/>
 </figure>
 
-<h2 id="send-mgusermail">Send-MgUserMail</h2>
+<h2 id="send-mgusermail">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#send-mgusermail">Send-MgUserMail</a>
+</h2>
 <p>The following solution example is covering how to set-up and use the <code>Send-MgUserMail</code> cmdlet in <code>Azure Automation</code> to send an email with a subject, message body and an attached zip file.</p>
-<h2 id="pre-requirements">Pre-Requirements</h2>
+<h2 id="pre-requirements">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#pre-requirements">Pre-Requirements</a>
+</h2>
 <ul>
 <li><a href="https://learn.microsoft.com/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide#create-a-shared-mailbox-and-add-members">M365 licensed <code>noreply</code> address as a shared mailbox</a></li>
 <li>Azure Automation account with the modules <code>Microsoft.Graph.Users.Actions</code> and <code>Microsoft.Graph.Authentication</code> installed</li>
 <li>App Registration with <code>Send.Mail</code> application API permission exposed</li>
 </ul>
-<h2 id="authentication--access">Authentication &amp; Access</h2>
+<h2 id="authentication--access">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#authentication--access">Authentication &amp; Access</a>
+</h2>
 <p>This solution will use an <code>Client Secret</code> and a <code>encrypted automation variable</code>.</p>
 <p>The alternative to using an Client Secret would be to <a href="https://learn.microsoft.com/entra/identity-platform/howto-create-self-signed-certificate">use a certificate</a> and I would recommend doing so since it&rsquo;s a more secure solution in general.</p>
 <p>Using a <code>Client Secret</code> is fine if you have good control over who has access to your App Registration and your automation account.</p>
@@ -301,215 +149,219 @@ Pre-Requirements M365 licensed noreply address as a shared mailbox Azure Automat
 <li>Navigate to your automation account in Azure -&gt; <code>Variables</code> -&gt; <code>Add variable</code> -&gt; Copy-paste your secret into this variable, select <code>Encrypted</code>, <code>Create</code></li>
 </ol>
 <p>The authentication will be done in the azure automation runbook, and finally the code will look similar to this:</p>
-<pre><code class="language-powershell"># Connects to graph as your new app using encrypted secret
 
-# Look in your App Registration -&gt; Application (client) ID
-$ClientId = &quot;o2jvskg2-[notreal]-1246-820s-2621786s35e5&quot; 
+  
 
-# Look in Azure -&gt; Microsoft Entra ID -&gt; Overview -&gt; Tenant ID
-$TenantId = &quot;626226122-[notreal]-62ww-5053-56e32ss89sa5&quot;
-
-# Variable Name from step 8 (Authentication)
-$ClientSecretCredential = (Get-AutomationVariable -Name 'From Step 8')
-
-$Body = @{
-    Grant_Type    = &quot;client_credentials&quot;
-    Scope         = &quot;https://graph.microsoft.com/.default&quot;
-    Client_Id     = $ClientId
-    Client_Secret = $ClientSecretCredential
-}
-
-$RestMethodParams = @{
-    Uri = &quot;https://login.microsoftonline.com/$TenantId/oauth2/v2.0/token&quot;
-    Method = &quot;POST&quot;
-    Body = $Body
-}
-
-$Connection = Invoke-RestMethod @RestMethodParams
-$Token = $Connection.access_token
-
-Connect-MgGraph -AccessToken $Token
-</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Connects to graph as your new app using encrypted secret</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Look in your App Registration -&gt; Application (client) ID</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ClientId</span> <span class="p">=</span> <span class="s2">&#34;o2jvskg2-[notreal]-1246-820s-2621786s35e5&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Look in Azure -&gt; Microsoft Entra ID -&gt; Overview -&gt; Tenant ID</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$TenantId</span> <span class="p">=</span> <span class="s2">&#34;626226122-[notreal]-62ww-5053-56e32ss89sa5&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Variable Name from step 8 (Authentication)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ClientSecretCredential</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-AutomationVariable</span> <span class="n">-Name</span> <span class="s1">&#39;From Step 8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$Body</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Grant_Type</span>    <span class="p">=</span> <span class="s2">&#34;client_credentials&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Scope</span>         <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/.default&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Client_Id</span>     <span class="p">=</span> <span class="nv">$ClientId</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Client_Secret</span> <span class="p">=</span> <span class="nv">$ClientSecretCredential</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$RestMethodParams</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Uri</span> <span class="p">=</span> <span class="s2">&#34;https://login.microsoftonline.com/</span><span class="nv">$TenantId</span><span class="s2">/oauth2/v2.0/token&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Method</span> <span class="p">=</span> <span class="s2">&#34;POST&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Body</span> <span class="p">=</span> <span class="nv">$Body</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$Connection</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="nv">@RestMethodParams</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Token</span> <span class="p">=</span> <span class="nv">$Connection</span><span class="p">.</span><span class="py">access_token</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Connect-MgGraph</span> <span class="n">-AccessToken</span> <span class="nv">$Token</span></span></span></code></pre></div>
 <p><strong>Note</strong> that <code>Get-AutomationVariable</code> is a cmdlet which is only available for the az automation sandbox environment. It&rsquo;s also the only way of getting the encrypted variable.</p>
 <p><code>Get-AutomationVariable</code> is an internal cmdlet from the module <code>Orchestrator.AssetManagement.Cmdlets</code> which is a part of Azure Automation, so running this outside of a runbook will fail.</p>
-<h2 id="sending-the-mail">Sending the mail</h2>
+<h2 id="sending-the-mail">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#sending-the-mail">Sending the mail</a>
+</h2>
 <p>Now that we have authentication and access out of the way, we can start developing a function that we will use in the runbook to send an email.
 My example below has a requirement of an attachment. I&rsquo;m using this for gathering data, compressing it and attaching the .zip file in the mail function.</p>
 <p>Customize the function to your specific needs.</p>
-<pre><code class="language-powershell">function Send-AutomatedEmail {
-    param(
-        [Parameter (Mandatory = $false)]
-        [string]$From,
-        [Parameter (Mandatory = $true)]
-        [string]$Subject,
-        [Parameter (Mandatory = $true)]
-        $To,
-        [Parameter (Mandatory = $true)]
-        [string]$Body,
-        [Parameter (Mandatory = $true)]
-        [string]$AttachmentPath
-    )
 
-    if ([string]::IsNullOrEmpty( $From )) {
-        $From = &quot;noreply@contoso.com&quot;
-    }
+  
 
-    # I'm defining the parameters in a hashtable 
-    $ParamTable = @{
-        Subject = $Subject
-        From    = $From
-        To      = $To
-        Type    = &quot;html&quot;
-        Body    = $body
-    }
-
-    # ArrayList instead of adding to an array with += for increased performance
-    $ToRecipients = [System.Collections.ArrayList]::new()
-    
-    $ParamTable.To | ForEach-Object {
-        [void]$ToRecipients.Add(@{
-                emailAddress = @{
-                    address = $_
-                }
-            })
-    }
-
-    try {
-        $MessageAttachment = [Convert]::ToBase64String([IO.File]::ReadAllBytes($AttachmentPath))
-        $MessageAttachmentName = $AttachmentPath.Split(&quot;\&quot;) | Select-Object -Last 1
-    }
-    catch {
-        Write-Error $Error[0] -ErrorAction Stop
-    }
-
-    $params = @{
-        Message         = @{
-            Subject      = $ParamTable.Subject
-            Body         = @{
-                ContentType = $ParamTable.Type
-                Content     = $ParamTable.Body
-            }
-            ToRecipients = $ToRecipients
-            Attachments  = @(
-                @{
-                    &quot;@odata.type&quot; = &quot;#microsoft.graph.fileAttachment&quot;
-                    Name          = $MessageAttachmentName
-                    ContentBytes  = $MessageAttachment
-                }
-            )
-
-        }
-        SaveToSentItems = &quot;false&quot;
-    }
-
-    try {
-        Send-MgUserMail -UserId $ParamTable.From -BodyParameter $params -ErrorAction Stop
-        Write-Output &quot;Email sent to:&quot;
-        $ParamTable.To
-    }
-    catch {
-        Write-Error $Error[0]
-    }
-}
-</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">Send-AutomatedEmail</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$From</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$Subject</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$To</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$Body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$AttachmentPath</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">([</span><span class="no">string</span><span class="p">]::</span><span class="n">IsNullOrEmpty</span><span class="p">(</span> <span class="nv">$From</span> <span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$From</span> <span class="p">=</span> <span class="s2">&#34;noreply@contoso.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># I&#39;m defining the parameters in a hashtable </span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$ParamTable</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Subject</span> <span class="p">=</span> <span class="nv">$Subject</span>
+</span></span><span class="line"><span class="cl">        <span class="n">From</span>    <span class="p">=</span> <span class="nv">$From</span>
+</span></span><span class="line"><span class="cl">        <span class="n">To</span>      <span class="p">=</span> <span class="nv">$To</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Type </span>   <span class="p">=</span> <span class="s2">&#34;html&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Body</span>    <span class="p">=</span> <span class="nv">$body</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># ArrayList instead of adding to an array with += for increased performance</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$ToRecipients</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Collections.ArrayList</span><span class="p">]::</span><span class="n">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">void</span><span class="p">]</span><span class="nv">$ToRecipients</span><span class="p">.</span><span class="py">Add</span><span class="p">(</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">emailAddress</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">address</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$MessageAttachment</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">([</span><span class="no">IO.File</span><span class="p">]::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="nv">$AttachmentPath</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$MessageAttachmentName</span> <span class="p">=</span> <span class="nv">$AttachmentPath</span><span class="p">.</span><span class="py">Split</span><span class="p">(</span><span class="s2">&#34;\&#34;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Last</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$params</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Message</span>         <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Subject</span>      <span class="p">=</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">Subject</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Body</span>         <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ContentType</span> <span class="p">=</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="nb">Type
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span>                <span class="n">Content</span>     <span class="p">=</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">Body</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ToRecipients</span> <span class="p">=</span> <span class="nv">$ToRecipients</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Attachments</span>  <span class="p">=</span> <span class="vm">@</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">&#34;@odata.type&#34;</span> <span class="p">=</span> <span class="s2">&#34;#microsoft.graph.fileAttachment&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">Name</span>          <span class="p">=</span> <span class="nv">$MessageAttachmentName</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ContentBytes</span>  <span class="p">=</span> <span class="nv">$MessageAttachment</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SaveToSentItems</span> <span class="p">=</span> <span class="s2">&#34;false&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Send-MgUserMail</span> <span class="n">-UserId</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">From</span> <span class="n">-BodyParameter</span> <span class="nv">$params</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Email sent to:&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Finally, we construct a new <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.3">splatting table</a> and send the email. A note, for this to run authentication must have happened earlier in the runbook.</p>
-<pre><code class="language-powershell"># Generate some data and compress it
-$Date = Get-Date -Format yyyy-MM-dd
-$CSVPath = &quot;$env:temp\$($Date)-BigReport.csv&quot;
-$ZIPPath = &quot;$env:temp\$($Date)-BigReport.zip&quot;
 
-$BigReport | Sort-Object | Export-Csv -Path $CSVPath -NoTypeInformation -Encoding UTF8
+  
 
-Compress-Archive -Path $CSVPath -DestinationPath $ZipPath
-
-
-# Build the email parameters
-$SendMailSplat = @{
-    Subject        = &quot;Automated Email via MGGraph&quot;
-    Body           = &quot;This is an automated email sent from Azure Automation using MGGraph.&quot;
-    To             = &quot;user1@mail.com&quot;, &quot;user2@mail.com&quot;,&quot;user3@mail.com&quot;
-    AttachmentPath = $ZIPPath
-}
-
-# Send the email
-Send-AutomatedEmail @SendMailSplat
-</code></pre>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Generate some data and compress it</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Date</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="nb">yyyy-MM</span><span class="n">-dd</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$CSVPath</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$env:temp</span><span class="s2">\</span><span class="p">$(</span><span class="nv">$Date</span><span class="p">)</span><span class="s2">-BigReport.csv&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ZIPPath</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$env:temp</span><span class="s2">\</span><span class="p">$(</span><span class="nv">$Date</span><span class="p">)</span><span class="s2">-BigReport.zip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$BigReport</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="p">|</span> <span class="nb">Export-Csv</span> <span class="n">-Path</span> <span class="nv">$CSVPath</span> <span class="n">-NoTypeInformation</span> <span class="n">-Encoding</span> <span class="n">UTF8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Compress-Archive</span> <span class="n">-Path</span> <span class="nv">$CSVPath</span> <span class="n">-DestinationPath</span> <span class="nv">$ZipPath</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Build the email parameters</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$SendMailSplat</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Subject</span>        <span class="p">=</span> <span class="s2">&#34;Automated Email via MGGraph&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Body</span>           <span class="p">=</span> <span class="s2">&#34;This is an automated email sent from Azure Automation using MGGraph.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">To</span>             <span class="p">=</span> <span class="s2">&#34;user1@mail.com&#34;</span><span class="p">,</span> <span class="s2">&#34;user2@mail.com&#34;</span><span class="p">,</span><span class="s2">&#34;user3@mail.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AttachmentPath</span> <span class="p">=</span> <span class="nv">$ZIPPath</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Send the email</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Send-AutomatedEmail</span> <span class="nv">@SendMailSplat</span></span></span></code></pre></div>
 <p>And that&rsquo;s all there is to it! Congrats on sending an email using the Microsoft Graph.</p>
-<h2 id="key-takeaways">Key Takeaways</h2>
+<h2 id="key-takeaways">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#key-takeaways">Key Takeaways</a>
+</h2>
 <p>While building this solution, I noticed that there&rsquo;s a lack of content and documentation on some things, one of those things are how to send an email to more than one recipient. If your migration from <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.3">Send-MailMessage</a>, it isn&rsquo;t so straightforward, since <code>Send-MgUserMail</code> is based on either JSON or MIME format.</p>
 <p>Meaning in a nutshell we can&rsquo;t just pass an array of email accounts and call it a day, instead we need to build an object that looks like something along the lines of:
 Message -&gt; ToRecipients -&gt; emailAddress -&gt; adress : adress.company.com</p>
-<h3 id="alternative-1-fast">Alternative 1 (fast)</h3>
-<pre><code class="language-powershell">$ToRecipients = [System.Collections.ArrayList]::new()
+<h3 id="alternative-1-fast">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#alternative-1-fast">Alternative 1 (fast)</a>
+</h3>
 
-$ParamTable.To | ForEach-Object {
-    [void]$ToRecipients.Add(@{
-            emailAddress = @{
-                address = $_
-            }
-        })
-}
-</code></pre>
-<h3 id="alternative-2-slow">Alternative 2 (slow)</h3>
-<pre><code class="language-powershell">$ToRecipients = @()
-$ParamTable.To | ForEach-Object { $ToRecipients += @{
-        emailAddress = @{
-            address = $_ 
-        }
-    }
-}
-</code></pre>
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ToRecipients</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Collections.ArrayList</span><span class="p">]::</span><span class="n">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="no">void</span><span class="p">]</span><span class="nv">$ToRecipients</span><span class="p">.</span><span class="py">Add</span><span class="p">(</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">emailAddress</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">address</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<h3 id="alternative-2-slow">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#alternative-2-slow">Alternative 2 (slow)</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ToRecipients</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span> <span class="nv">$ToRecipients</span> <span class="p">+=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailAddress</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">address</span> <span class="p">=</span> <span class="nv">$_</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <p>Use whatever fits your needs best.</p>
 <p>Hope this was valuable to someone wanting to move away from <code>Send-MailMessage</code> to <code>Send-MgUserMail</code>!</p>
-<h3 id="happy-coding">Happy coding</h3>
-<h3 id="emil">/Emil</h3>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#emil">/Emil</a>
+</h3>
 
-  </main>
+    
 
-          
-            <footer role="contentinfo">
-  <div
   
-  >
-    <label for="themer">
-      dark theme: <input type="checkbox" id="themer" class="vh">
-      
-      <span aria-hidden="true"></span>
-    </label>
-  </div>
-  
-    Follow me on <a href="https://github.com/ehmiiz">Github</a> and <a href="https://twitter.com/ehmiiz">Twitter</a>, <br> ⬇ Found anything interesting? ⬇ </br> <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="7ZwL7afWlY" data-color="#000000" data-emoji="☕"  data-font="Arial" data-text="Coffee!" data-outline-color="#ffffff" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-  
-</footer>
 
-          
-        </div>
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
       </div>
     </div>
-    
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 
-<script src="/js/dom-scripts.js"></script>  
+</body>
 
-<script src="/js/prism.js"></script>
-
-
-
-<script src="/js/search.da4e0819db35e5fc5289562d46cf4a2173684e337d69d997639a24b79ecd6416.js"></script>
-
-<link rel="stylesheet" href="/css/search.54f9a90ceddfdaa3e66698090e7d4a7e7a7f217c85bc79c48ed09c8cb3ee6777.css"></link>
-
-
-
-  <script src="/js/custom_01.js"></script>
-
-  <script src="/js/custom_02.js"></script>
-
-
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js" integrity="sha384-2BKqo+exmr9su6dir+qCw08N2ZKRucY4PrGQPPWU1A7FtlCGjmEGFqXCv5nyM5Ij" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-
-    
-  </body>
 </html>

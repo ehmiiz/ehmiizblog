@@ -23,7 +23,7 @@ In this case, you can use the git restore command to discard the changes in your
 
 For example, if you want to restore a file named index.html, you can run the following command:
 
-```
+```bash
 git restore index.html
 ```
 
@@ -31,7 +31,7 @@ This will overwrite the index.html file in your working directory with the versi
 
  You can also use a dot (.) instead of the file name to restore all the files in your working directory.
 
-```
+```bash
 git restore .
 ```
 
@@ -43,19 +43,19 @@ In this case, you can use the git restore --staged command to unstage the file a
 
 For example, if you want to unstage a file named index.html, you can run the following command:
 
-```
+```bash
 git restore --staged index.html
 ```
 
 This will remove the index.html file from the staging area and leave it in your working directory with the changes intact. You can then use the git restore command as in the previous scenario to discard the changes in your working directory and restore the file to the last committed state. Alternatively, you can use this command:
-```
+```bash
 git restore --source=HEAD
 ```
 To unstage and restore the file in one step.
 
 For example, if you want to unstage and restore a file named index.html, you can run the following command:
 
-```
+```bash
 git restore --source=HEAD index.html
 ```
 
@@ -65,7 +65,7 @@ This will remove the index.html file from the staging area and overwrite it in y
 
 The third scenario is when you have saved your file locally, staged it locally and committed it, but have not pushed it to the remote repository yet. In this case, you can use the git reset --hard command to reset your local branch to the previous commit and discard all the changes in your staging area and working directory. For example, if you want to reset your local branch to the previous commit, you can run the following command:
 
-```
+```bash
 git reset --hard HEAD~1
 ```
 
@@ -77,7 +77,7 @@ You can then use the git checkout command to check out the file from the previou
 
 For example, if you want to check out and restore a file named index.html from the previous commit, you can run the following command:
 
-```
+```bash
 git checkout HEAD~1 index.html
 ```
 
@@ -93,7 +93,7 @@ In this case, you can use the git revert command to create a new commit that rev
 
 For example, if you want to revert the previous commit and restore a file named index.html to the state before that commit, you can run the following command:
 
-```
+```bash
 git revert HEAD
 ```
 

@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+
+  
+  
+
+
+  <meta charset="utf-8">
+
+
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>all posts</title>
+  <link rel="canonical" href="//localhost:1313/">
+
+
+
+
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+    
+    
+    
+      
+      
+    
+    
+    
+  
+
+
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_z_mod/" rel="bookmark">Using the PowerShell Module Z to Save Time in the Terminal</a>
+  </h2>
+  
+    <time datetime="2023-03-17T08:23:11&#43;01:00">March 17, 2023</time>
+  
+</header>
+      
+        <figure><img src="/pics/z_mod.png"/>
+</figure>
+
+<p>The module <a href="https://github.com/badmotorfinger/z">&ldquo;Z&rdquo;</a> is a handy tool that can save you lots of time when navigating around your terminal. In this blog-post, we&rsquo;ll cover how to install it to user scope, how to configure it by jumping around the terminal to different places, and how it saves lots of time in the long run.</p>
+<h2 id="installing-z-to-your-currentuser-scope">
+  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#installing-z-to-your-currentuser-scope">Installing Z to your CurrentUser scope</a>
+</h2>
+<p>To install Z, open a PowerShell terminal and run the following command:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">z</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span></span></span></code></pre></div>
+<p>This will install Z for your current user only. If you want to install it for all users on your system, you can use -Scope AllUsers instead.</p>
+<h2 id="configuring-z">
+  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#configuring-z">Configuring Z</a>
+</h2>
+<p>Once you have Z installed, you can start configuring it by jumping around your terminal to different places. To do this, simply navigate to a directory that you frequently visit and then run z followed by a space and then part of the directory name. For example:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">MyUser</span><span class="p">\</span><span class="n">Documents</span><span class="p">\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyProject</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="p">\</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="n">MyProject</span></span></span></code></pre></div>
+<p>This will add C:\Users\MyUser\Documents\Projects\MyProject to Z&rsquo;s list of directories. The more you use z with different directories, the more accurate it will become at predicting where you want to go.</p>
+<h2 id="saving-time-with-z">
+  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#saving-time-with-z">Saving Time with Z</a>
+</h2>
+<p>Once you have Z configured with your frequently visited directories, you can start saving time by using z instead of typing out long paths.</p>
+<p>It may not seem that much of a timer-saver at first glance, however the more you get used to using z, instead of cd/tab-completion for navigation, the more time you will save. And I would imagine if you use your terminal daily, the time-savings are huge.</p>
+<h2 id="zs-a-bash-fork">
+  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#zs-a-bash-fork">Z&rsquo;s a bash fork</a>
+</h2>
+<p>That&rsquo;s right. The module is actually forked and ported from a bash script, what makes it super useful together with PowerShell is, you guessed it: <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.3">PSProviders</a>.</p>
+<p>Not only can you navigate around your file-system, you can also visit your local reg hive, cert store, and other PSProviders, to save them to your directory history.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">Cert</span><span class="err">:</span><span class="p">\</span><span class="n">LocalMachine</span><span class="p">\</span><span class="n">My</span><span class="p">\</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="s1">&#39;Cert:\LocalMachine\My&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="n">C:</span><span class="p">\</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="n">my</span></span></span></code></pre></div>
+<ul>
+<li>Here, you start out visiting your local certificate store.</li>
+<li>You save it to your z directory</li>
+<li>You navigate back to C root</li>
+<li>And back to your local cert store using only &ldquo;z my&rdquo;</li>
+</ul>
+<p>This works with lots of different PSProviders, so try it out yourself!</p>
+<h2 id="to-sum-it-up">
+  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#to-sum-it-up">To sum it up</a>
+</h2>
+<p>By installing, using and configuring Z, you can save lots of time when navigating around your terminal. By installing it to user scope and configuring it by jumping around your terminal to different places, you&rsquo;ll be able to quickly navigate to frequently visited directories and other PowerShell provider paths, with just a few keystrokes. Keep in mind that the more you use it, the better it gets, both from a functional standpoint but also the amount of time it saves you (So that you can drink coffee instead 😁 ).</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#happy-coding">Happy Coding</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_ad_delegation/" rel="bookmark">Active Directory Delegation done the PowerShell way!</a>
+  </h2>
+  
+    <time datetime="2023-03-11T08:23:11&#43;01:00">March 11, 2023</time>
+  
+</header>
+      
+        <figure><img src="/pics/gcm_dsacl.png"/>
+</figure>
+
+<h2 id="active-directory-access-granting">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_delegation/#active-directory-access-granting">Active Directory Access Granting</a>
+</h2>
+<p>The following module is very important for a Active Directory operations or engineering type person. Most who have tried granting permissions outside of adding users to groups in Active Directory would probably agree that, access delegation can be a daunting task.</p>
+<p>Your best bet is to use the Delegation wizard, but wheres the fun (PowerShell fun..) in that. And how well does it scale? Not very well.</p>
+<figure><img src="/pics/delg_wiz.jpg"/>
+</figure>
+
+<h2 id="the-alternatives">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_delegation/#the-alternatives">The alternatives</a>
+</h2>
+<p>So, the code-friendly alternatives we have are:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771151(v=ws.11)">DSACLS</a></li>
+</ul>
+<p>The first alternative, the native command DSACLS, can be a powerful way delegating, but is very frustrating to work with (or so I think).</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/31375506/set-acl-on-ad-computer-object">Set-ACL</a></li>
+</ul>
+<p>This alternative is probably your best bet outside of the module DSACL. However creating the directory access rules and applying them can be a bit cumbersome.</p>
+<p>Both alternatives are fine, but will require you to do some heavy lifting in terms of learning. I will not go into depth into the alternatives here, it&rsquo;s just a good heads-up that these exists.</p>
+<p>If you&rsquo;ve learnt the basic of using a cmdlet in PowerShell, luckily for you, access delegation is just a module install away.</p>
+<p>Using <a href="https://github.com/SimonWahlin/DSACL">DSACL</a>.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Install the DSACL Module</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">DSACL</span>  <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Build a splatting table with the desired groups</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ParamSplat</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TargetDN</span> <span class="p">=</span> <span class="s2">&#34;CN=SalesUsers,DC=Contoso,DC=COM&#34;</span> <span class="c"># DistinguishedName of object to modify ACL on. Usually an OU.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DelegateDN</span> <span class="p">=</span> <span class="s2">&#34;CN=SalesAdmins,OU=Groups,DC=Contoso,DC=COM&#34;</span> <span class="c"># DistinguishedName of group or user to give permissions to.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DirectOnGroup</span> <span class="p">=</span> <span class="vm">$true</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Add-DSACLManageGroupMember</span> <span class="nv">@ParamSplat</span></span></span></code></pre></div>
+<p>This example creates a <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting">splatting</a> table, and defines the objects to modify ACL (access control list), and user/group to give the permission to.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ParamSplat</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TargetDN</span> <span class="p">=</span> <span class="s2">&#34;OU=Users,DC=Contoso,DC=COM&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DelegateDN</span> <span class="p">=</span> <span class="s2">&#34;CN=SalesAdmins,OU=Groups,DC=Contoso,DC=COM&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AccessType</span> <span class="p">=</span> <span class="s1">&#39;Allow&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ObjectTypeName</span> <span class="p">=</span> <span class="s1">&#39;User&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">NoInheritance</span> <span class="p">=</span> <span class="vm">$True</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Add-DSACLFullControl</span> <span class="nv">@ParamSplat</span></span></span></code></pre></div>
+<p>Gives the SalesAdmins group Full Control over &lsquo;User&rsquo; object administrations in the Users OU. Disables Inheritance, making the ACL only apply on the given OU (Users).</p>
+<p>The module contains some really useful cmdlets for managing AD delegation, to name a few:</p>
+<ul>
+<li>Set-DSACLOwner</li>
+<li>Add-DSACLJoinDomain</li>
+<li>Add-DSACLResetPassword</li>
+</ul>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Command</span> <span class="n">-Module</span> <span class="n">DSACL</span></span></span></code></pre></div>
+<p>I recommend checking out the <a href="https://github.com/SimonWahlin/DSACL/tree/master/docs">online documentation</a> for each cmdlet, as well as running them in lab and verifying the ACL&rsquo;s once executed.</p>
+<p>If your into AD and PowerShell, it&rsquo;s a fun and very learning experience to fire up some hyper-v VMs using Windows Server Evaluation ISO and a local client with some left-over RAM, and promote some domain controllers to test this module out. An awesome lab module that I recommend for very fast labs, are <a href="https://automatedlab.org/en/latest/">AutomatedLab</a>. If you want to go a more step-by-step and less abstracted way of setting up a lab, I recommend my own Hyper-V script <a href="https://ehmiiz.tech/blog/ps_simplehyper-vlabmodule/">Labmil</a>.</p>
+<p>That&rsquo;s it. Try it out yourself to discover how easy directory access delegation can be. The amount of AD automation is endless once you get a hang of it, combined with the standard <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps">ActiveDirectory</a> module.</p>
+<h2 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_delegation/#happy-coding">Happy coding</a>
+</h2>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/" rel="bookmark">PowerShell Solution: Install PFX certificate on servers</a>
+  </h2>
+  
+    <time datetime="2022-11-16T08:13:11&#43;01:00">November 16, 2022</time>
+  
+</header>
+      
+        <figure><img src="/pics/Install-ADFSCertOnAllServers.png"/>
+</figure>
+
+<h2 id="problem">
+  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#problem">Problem</a>
+</h2>
+<p>As you may have guessed, this post will be about installing certificates using PowerShell.</p>
+<p>Every year as someone working with identity topics, I am tasked with renewing certificates across the environment. Many services relies fully on valid certificates in order to function securely.</p>
+<p>One critical service in particular that this scenario will cover is: <code>Active Directory Federation Services</code>, ADFS.</p>
+<p>In most cases, you will have multiple ADFS servers, meaning, if your not automating already, you will need to install the SSL certificate manually (no fun experience on 10+ servers).</p>
+<p><em>There&rsquo;s more to say regarding specifically ADFS SSL certificates, that this post will not cover, however an installation will be needed in many of those scenarios as well.</em></p>
+<h2 id="solution">
+  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#solution">Solution</a>
+</h2>
+<p>This solution covers how one could do this for ADFS servers, however it carries over to other services that requires a valid certificate as well.</p>
+<p>To generate an pfx file out of an external certificate, I recommend using <a href="https://www.digicert.com/support/tools/certificate-utility-for-windows">The Digicert Cert Utility</a> to generate the CSR (Certificate Signing Request) on the root server. Then simply import it using the digicert tool, and export the certificate to a .pfx file.</p>
+<p>Here&rsquo;s an example of how to export an already installed certificate as a PFX file:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$PfxPw</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s1">&#39;Enter a password&#39;</span> <span class="n">-AsSecureString</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="n">cert</span><span class="err">:</span><span class="p">\</span><span class="n">localMachine</span><span class="p">\</span><span class="n">my</span><span class="p">\&lt;</span><span class="n">thumbprint</span><span class="p">&gt;</span> <span class="p">|</span> <span class="nb">Export-PfxCertificate</span> <span class="n">-FilePath</span> <span class="n">C:</span><span class="p">\</span><span class="n">Cert</span><span class="p">\</span><span class="n">ssl_cert</span><span class="p">.</span><span class="py">pfx</span> <span class="n">-Password</span> <span class="nv">$PfxPw</span></span></span></code></pre></div>
+<p><em>It&rsquo;s important that the certificate gets imported on the server where the CSR was generated, in order to have a valid public/private keypair.</em></p>
+<p>What we need to start out is:</p>
+<ol>
+<li>The ADFS Root server with the pfx certificate exported</li>
+<li>Access to all ADFS servers</li>
+<li>WinRM/PowerShell remoting enabled environment</li>
+</ol>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Local path to the certificate</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$PFXPath</span> <span class="p">=</span> <span class="s1">&#39;C:\Cert\ssl_cert.pfx&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Credential object, we only use the password property</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Creds</span> <span class="p">=</span> <span class="nb">Get-Credential</span> <span class="n">-UserName</span> <span class="s1">&#39;Enter PFX password below&#39;</span> <span class="n">-Message</span> <span class="s1">&#39;Enter PFX password below&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Path of the remote server we will copy to</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ServerCertPath</span> <span class="p">=</span> <span class="s2">&#34;C:\Cert\&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$InternalServers</span> <span class="p">=</span> <span class="s2">&#34;SERVER1&#34;</span><span class="p">,</span> <span class="s2">&#34;SERVER2&#34;</span><span class="p">,</span> <span class="s2">&#34;SERVER3&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Server</span> <span class="k">in</span> <span class="nv">$InternalServers</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># Creates a remote session</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$Session</span> <span class="p">=</span> <span class="nb">New-PSSession</span> <span class="n">-ComputerName</span> <span class="nv">$Server</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Copies the certificate to the remote session</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="nv">$PFXPath</span> <span class="n">-ToSession</span> <span class="nv">$Session</span> <span class="n">-Destination</span> <span class="nv">$ServerCertPath</span> <span class="n">-Force</span> <span class="n">-Verbose</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># Imports the pfx certificate using the credentials provided remotely</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Invoke-Command</span> <span class="n">-Session</span> <span class="nv">$Session</span> <span class="n">-ScriptBlock</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">Import-PfxCertificate</span> <span class="n">-FilePath</span> <span class="nv">$using</span><span class="err">:</span><span class="n">ServerCertPath</span> <span class="n">-CertStoreLocation</span> <span class="n">Cert</span><span class="err">:</span><span class="p">\</span><span class="n">LocalMachine</span><span class="p">\</span><span class="n">My</span> <span class="n">-Password</span> <span class="nv">$using</span><span class="err">:</span><span class="n">Creds</span><span class="p">.</span><span class="py">Password</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<h2 id="small-talk">
+  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#small-talk">Small Talk</a>
+</h2>
+<p>And just like that, you&rsquo;ve saved truckloads of time every year using PowerShell.</p>
+<p>I highly recommend checking out more cmdlets based from the <a href="https://learn.microsoft.com/en-us/powershell/module/pki/?view=windowsserver2022-ps">pki</a> and <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/?view=powershell-7.3">Microsoft.PowerShell.Security module</a>. The script above displays how one can tackle a .pfx certificate, but using <a href="https://learn.microsoft.com/en-us/powershell/module/pki/import-certificate?view=windowsserver2022-ps">Import-Certificate</a>, you could do similar things with .cer files.</p>
+<p>Also, one could eliminate the need for generating a password with using something like <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.secretmanagement/?view=ps-modules">Microsoft.PowerShell.SecretManagement</a>. This module translates well into a lot of cmdlets in the pki/security module.</p>
+<h3 id="stay-safe--happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#stay-safe--happy-coding">Stay safe &amp; happy coding!</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/" rel="bookmark">PowerShell Solution: AGPM unable to take control of a GPO</a>
+  </h2>
+  
+    <time datetime="2022-09-08T14:56:09&#43;02:00">September 8, 2022</time>
+  
+</header>
+      
+        <figure><img src="/pics/oldkeyboard.jpg"/>
+</figure>
+
+<h2 id="problem">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#problem">Problem</a>
+</h2>
+<p>If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, <a href="https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/agpm/">Advanced Group Policy Management</a> or AGPM, is an amazing tool.</p>
+<p>AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.</p>
+<p>When combined with new sysadmins that has not been introduced to the concept of AGPM, uncontrolled GPOs might become a problem and the built in error messages are sadly not the greatest.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">(GPMC Error) could not take the ownership of the production GPO. Access is denied. (Exceptions from HRESULT : 0x80070005 (E_ACCESSDENIED)).</span></span></code></pre></div>
+<figure><img src="/pics/error_code_meme.jpg"/>
+</figure>
+
+<p>Access denied is caused by the AGPM service-account not having the permission to take control of the GPO (not having control of a GPO in AGPM really does ruin the point of AGPM). Solving this problem involves giving the service-account the permissions needed, however it&rsquo;s a bit of a tricky thing to do.</p>
+<h2 id="solution">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#solution">Solution</a>
+</h2>
+<p>As we&rsquo;ve established, we must add the correct permissions for the service-account to the GPO, easy right?
+Luckily yes, because we know PowerShell!</p>
+<figure><img src="/pics/PowerShellHero.jpg"/>
+</figure>
+
+<p>To add the permissions, we need to understand how a GPO is stored. There&rsquo;s two places a GPOs data resides in, ActiveDirectory (GPC) &amp; Sysvol (GPT).</p>
+<h3 id="gpc">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#gpc">GPC</a>
+</h3>
+<p>Group Policy Container (GPC), luckily the name is easy to remember because we already understand that AD consists of Organizational Units and&hellip; Containers.
+The GPC is stored in AD, under &ldquo;CN=,Policies,CN=System,DC=x,DC=x&rdquo;. Since it&rsquo;s an AD object, logically it has attributes describing the object version etc.</p>
+<h3 id="gpt">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#gpt">GPT</a>
+</h3>
+<p>Group Policy Template (GPT), is stored in the DC&rsquo;s system volume (sysvol), under the &lsquo;policies&rsquo; subfolder.</p>
+<p>The GPT stores the majority of GPO data, it contains a folder structure of files that describes the GPOs functionality, meaning it stores script files, administrative template-based policies and various other security settings.</p>
+<h3 id="replication">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#replication">Replication</a>
+</h3>
+<p>GPC uses AD replication, and GPT uses DFS-R since its in sysvol. This is important because we will edit the ACLs of both AD and sysvol in order to solve our issue.</p>
+<h3 id="editing-acl-for-gpc">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#editing-acl-for-gpc">Editing ACL for GPC</a>
+</h3>
+<p>Editing its ACL requires generating an ActiveDirectoryRights object with the desired access. This can be done multiple ways, <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771151(v=ws.11)">dsacls</a>, using <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2">Set-ACL</a> to name a few. In this case I had heard of an amazing module from <a href="https://twitter.com/SimonWahlin">Simon Wahlin</a> called <a href="https://www.powershellgallery.com/packages/DSACL/1.0.0">DSACL</a>, so I can simply do the following:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ADRights</span> <span class="p">=</span> <span class="s2">&#34;CreateChild&#34;</span><span class="p">,</span> <span class="s2">&#34;DeleteChild&#34;</span><span class="p">,</span> <span class="s2">&#34;Self&#34;</span><span class="p">,</span> <span class="s2">&#34;WriteProperty&#34;</span><span class="p">,</span> <span class="s2">&#34;DeleteTree&#34;</span><span class="p">,</span> <span class="s2">&#34;Delete&#34;</span><span class="p">,</span> <span class="s2">&#34;GenericRead&#34;</span><span class="p">,</span> <span class="s2">&#34;WriteDacl&#34;</span><span class="p">,</span> <span class="s2">&#34;WriteOwner&#34;</span><span class="p">,</span> <span class="s2">&#34;AccessSystemSecurity&#34;</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Add-DSACLCustom</span> <span class="n">-TargetDN</span> <span class="nv">$GPODN</span> <span class="n">-DelegateDN</span> <span class="nv">$DelegateDN</span> <span class="n">-ActiveDirectoryRights</span> <span class="nv">$ADRights</span>  <span class="n">-InheritanceType</span> <span class="n">Descendents</span> <span class="n">-AccessControlType</span> <span class="n">Allow</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Add-DSACLCustom</span> <span class="n">-TargetDN</span> <span class="nv">$GPODN</span> <span class="n">-DelegateDN</span> <span class="nv">$DelegateDN</span> <span class="n">-ActiveDirectoryRights</span> <span class="nv">$ADRights</span><span class="p">[</span><span class="mf">0</span><span class="p">.</span><span class="mf">.8</span><span class="p">]</span> <span class="n">-InheritanceType</span> <span class="n">None</span> <span class="n">-AccessControlType</span> <span class="n">Allow</span></span></span></code></pre></div>
+<p>The &lsquo;TargetDN&rsquo; in this case will be the GPCs distinguishedName, and the DelegateDN will be the distinguishedName of our AGPM service-account.
+We run the cmdlet twice to mimic the way AGPM edits the ACL in a controlled GPO. AccessSystemSecurity was not needed in the 2nd ACE and therefore I ended up selecting the first 9 (0..8) ADRights.</p>
+<h3 id="editing-the-acl-for-gpt">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#editing-the-acl-for-gpt">Editing the ACL for GPT</a>
+</h3>
+<p>Since GPT is in sysvol, we now have the task of editing a filesystem ACL. This is different from a directory service ACL. There&rsquo;s many ways of doing this as well, <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cacls">cacls</a>, and <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2">Set-ACL</a> works great. I ended up taking the easy way out and used <a href="https://www.powershellgallery.com/packages/NTFSSecurity/4.2.6">NTFSSecurity</a>, again another killer PowerShell module with 1,1mil downloads as of writing. And that&rsquo;s quite understandable considering this is how one can grant full control on a filesystem:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Add-NTFSAccess</span> <span class="n">-Path</span> <span class="s2">&#34;\\DOMAIN\SYSVOL\DOMAIN.TEST\Policies\{</span><span class="p">$(</span><span class="nv">$GPOObject</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span><span class="s2">}&#34;</span> <span class="n">-AccessRights</span> <span class="n">FullControl</span> <span class="n">-Account</span> <span class="s1">&#39;DOMAIN\Service-Account-AGPM&#39;</span></span></span></code></pre></div>
+<h3 id="almost-ready-to-solve">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#almost-ready-to-solve">Almost ready to solve!</a>
+</h3>
+<p>As we have learned, GPC and GPT is a bit different. Sysvol and AD does replicate, but in different ways. Key take-away is that most likely we need to wait for replication in order for the AGPM server to understand that the rights are in fact in place. This took me around 15m, this could have been avoided had I done the changes on the same server.</p>
+<p>Using the <a href="https://docs.microsoft.com/en-us/powershell/module/agpm/add-controlledgpo?view=win-mdop2-ps">AGPM module</a>, we&rsquo;re now ready to take control of the GPO, since we now have the access to do so.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Gpo</span> <span class="n">-Name</span> <span class="s2">&#34;TheUncontrolledGPO&#34;</span> <span class="p">|</span> <span class="nb">Add-ControlledGpo</span> <span class="n">-PassThru</span></span></span></code></pre></div>
+<p>In my case, I had more then 1 uncontrolled GPO, to say the least.
+Sadly the AGPM module doesn&rsquo;t have something like &lsquo;Get-UncontrolledGPO&rsquo;.</p>
+<p>What I ended up doing was to filter out all uncontrolled GPOs myself using Compare-Object, .</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ControlledGPOS</span> <span class="p">=</span> <span class="nb">Get-ControlledGpo</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$UncontrolledGPOS</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Compare-Object</span> <span class="nv">$ControlledGPOS</span><span class="p">.</span><span class="py">Name</span> <span class="p">(</span><span class="nb">Get-GPO</span> <span class="n">-All</span><span class="p">).</span><span class="n">DisplayName</span><span class="p">).</span><span class="py">InputObject</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$GPO</span> <span class="k">in</span> <span class="nv">$UncontrolledGPOS</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Get-Gpo</span> <span class="n">-Name</span> <span class="nv">$GPO</span> <span class="p">|</span> <span class="nb">Add-ControlledGpo</span> <span class="n">-PassThru</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>You can of course also navigate within GPMC &gt; ChangeControl &gt; Uncontrolled &gt; select all GPOs, rightclick, Control.</p>
+<p>Congratulations on having a fully controlled AGPM environment.</p>
+<h2 id="discussion">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#discussion">Discussion</a>
+</h2>
+<p>Understanding where a GPO is stored is a nice way of understanding how they work. The reason behind having them stored in separate places most likely goes back to fact that AD is old, and back in the days, size mattered.
+Having the GPT files in the AD database (.dit) would simply mean a huge increase in data for AD. Splitting things up and having the DCs taking a bit of storage was probably a good idea back then.</p>
+<p>On another note, notice my code in this solution was quite simple. Even thought we did some complex tasks. I was actively not trying to re-invent the wheel, and this is something that gets more important the &lsquo;harder&rsquo; the task becomes. Using &ldquo;blackbox&rdquo; modules where we only follow the PowerShell standard way of typing out a cmdlet, can be a great way of achieving complex tasks with speed.
+It&rsquo;s also important that when a &ldquo;blackbox&rdquo; module solves something for you, go back and try to dig deeper in what it actually did. I find this a good way of learning things in general.</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_making_binary_ps_module/" rel="bookmark">PowerShell: C Sharp for PowerShell Modules</a>
+  </h2>
+  
+    <time datetime="2022-08-15T14:58:11&#43;01:00">August 15, 2022</time>
+  
+</header>
+      
+        <figure><img src="/pics/stack_books.jpg"/>
+</figure>
+
+<h2 id="my-journey-into-c-so-far">
+  <a class="Heading-link u-clickable" href="/blog/ps_making_binary_ps_module/#my-journey-into-c-so-far">My journey into C# so far</a>
+</h2>
+<p>I&rsquo;ve always been somewhat interested in programming, and PowerShell scripting and module making has put fire to that interest.
+The natural next language to learn for me has always been C#, reason being it&rsquo;s easy to pick up if you already know PowerShell and it enables you to create binary PowerShell modules.</p>
+<p>Some content I&rsquo;ve devoured to increase my C# knowledge are:</p>
+<ul>
+<li>C# Fundamentals course on PluralSight by Scott Allen</li>
+<li>PowerShell to C# And Back, Book by Deepak Dhami &amp; Prateek Singh</li>
+</ul>
+<p>Various YouTube content and talks on building PowerShell Binary Modules using C#:</p>
+<ul>
+<li>Building Cross Platform PowerShell Modules by Adam Driscoll</li>
+<li>Writing Compiled PowerShell Cmdlets by Thomas Rayner</li>
+</ul>
+<p>The above lists are things I&rsquo;ve went through and I can honestly recommend.</p>
+<h2 id="whats-to-come">
+  <a class="Heading-link u-clickable" href="/blog/ps_making_binary_ps_module/#whats-to-come">What&rsquo;s to come</a>
+</h2>
+<p>I plan to further increase my knowledge with the books:</p>
+<ul>
+<li>The C# Player&rsquo;s Guide, Book by RB Whitaker</li>
+<li>C# In Depth, Book by Jon Skeet</li>
+</ul>
+<p>As well as writing more modules and other C# related projects.</p>
+<h2 id="the-process-of-wrapping-a-binary-module-using-a-nuget-package">
+  <a class="Heading-link u-clickable" href="/blog/ps_making_binary_ps_module/#the-process-of-wrapping-a-binary-module-using-a-nuget-package">The process of wrapping a binary module using a nuget package</a>
+</h2>
+<ol>
+<li>
+<p>Install a modern version of the dotnet cli together with a dotnet sdk suitable for that version</p>
+</li>
+<li>
+<p>Init an empty git repo for the new code to live in</p>
+</li>
+<li>
+<p>Navigate to the folder; dotnet new classlib. This will generate a dotnet class library, once compiled it will generate a DLL file that will be our module</p>
+</li>
+<li>
+<p>In the csproj file, to make the module compatible with Win PowerShell &amp; PowerShell, we set the TargetFramework to &ldquo;netstandard2.0&rdquo;</p>
+</li>
+<li>
+<p>Remove ImplicitUsings and Nullable Enabled. These are language features we do not need</p>
+</li>
+<li>
+<p>dotnet add package PowerShell Standard.Library</p>
+</li>
+<li>
+<p>dotnet add package thenugetpackage</p>
+</li>
+<li>
+<p>dotnet publish. We have now added the packages needed to start wrapping the nuget package into a PowerShell module</p>
+</li>
+<li>
+<p>To follow the official PowerShell repos naming standard, all the cmdlets are to be named: VerbNounCommand.cs</p>
+</li>
+</ol>
+<p>The following source code is commented to help one with a PowerShell background to understand it easier:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Csharp" data-lang="Csharp"><span class="line"><span class="cl"><span class="c1">// Usings, similar to Import-Module</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Management.Automation</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">PasswordGenerator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nn">PasswordGenerator</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// VerbsCommon contains a list of approved common verbs, the string Password is the Noun of the cmdlet</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [Cmdlet(VerbsCommon.New,&#34;Password&#34;)]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Cmdletname : PSCmdlet, similar to Function Name {}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">class</span> <span class="nc">GetGeneratedPasswordCommand</span> <span class="p">:</span> <span class="n">PSCmdlet</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// [Parameter], default value is 16. If Get &gt; Default, if set &gt; set the value of the param</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="kt">int</span> <span class="n">_pwLengthDefault</span> <span class="p">=</span> <span class="m">16</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [Parameter]</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [ValidateRange(4,128)]</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Int32</span> <span class="n">Length</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">get</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">_pwLengthDefault</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">set</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_pwLengthDefault</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">private</span> <span class="kt">int</span> <span class="n">_amountDefault</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [Parameter]</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">Int32</span> <span class="n">Amount</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">get</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">_amountDefault</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">set</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_amountDefault</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Switch parameters, they turn true if specified</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [Parameter]</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">SwitchParameter</span> <span class="n">IncludeSpecial</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [Parameter]</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">SwitchParameter</span> <span class="n">IncludeNumeric</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [Parameter]</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">SwitchParameter</span> <span class="n">IncludeUppercase</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">        [Parameter]</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="n">SwitchParameter</span> <span class="n">IncludeLowercase</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ProcessRecord</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// for loop, same concept as in PowerShell</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">Amount</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="n">IncludeNumeric</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeSpecial</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeLowercase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeLowercase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeSpecial</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeUppercase</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeUppercase</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeSpecial</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeUppercase</span><span class="p">().</span><span class="n">IncludeSpecial</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeNumeric</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeUppercase</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeSpecial</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="n">IncludeNumeric</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeSpecial</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeUppercase</span><span class="p">().</span><span class="n">IncludeSpecial</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="p">!</span><span class="n">IncludeSpecial</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeNumeric</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeUppercase</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="n">IncludeSpecial</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeSpecial</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="k">if</span> <span class="p">(!</span><span class="n">IncludeLowercase</span> <span class="p">&amp;</span> <span class="n">IncludeUppercase</span> <span class="p">&amp;</span> <span class="n">IncludeNumeric</span> <span class="p">&amp;</span> <span class="n">IncludeSpecial</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeUppercase</span><span class="p">().</span><span class="n">IncludeSpecial</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">pwd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Password</span><span class="p">(</span><span class="n">Length</span><span class="p">).</span><span class="n">IncludeLowercase</span><span class="p">().</span><span class="n">IncludeUppercase</span><span class="p">().</span><span class="n">IncludeSpecial</span><span class="p">().</span><span class="n">IncludeNumeric</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">var</span> <span class="n">password</span> <span class="p">=</span> <span class="n">pwd</span><span class="p">.</span><span class="n">Next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">WriteObject</span><span class="p">(</span><span class="n">password</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>The rest is a matter of figuring out how the package works, and what it supports.
+Make sure to try to get all the functionality of the package out in the PowerShell module. Obviously it might require you to make more cmdlets.</p>
+<p>Next blog will be how I published my module to the PowerShell Gallery. Using Git, Github, PSGallery and PlatyPS.</p>
+<p>Stay tuned!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_making_binary_ps_module/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_making_binary_ps_module/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/" rel="bookmark">PowerShell for Security: PassWord Gen Part 2</a>
+  </h2>
+  
+    <time datetime="2022-07-04T14:58:11&#43;01:00">July 4, 2022</time>
+  
+</header>
+      
+        <h2 id="did-it-again">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#did-it-again">Did it again</a>
+</h2>
+<p>2021-05-10 - <a href="https://blog.ehmiiz.tech/powershell-for-security-generate-a-x-platform-password-generator-using-powershell-7/">I wrote an article on Password Generators</a>.</p>
+<p>The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.</p>
+<h2 id="however">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#however">However,</a>
+</h2>
+<p>This time I&rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .net/C# developer would tackle the challenge that is coding a password generator, I stumbled upon &ldquo;<a href="https://www.nuget.org/packages/PasswordGenerator/">PasswordGenerator</a>&rdquo;.</p>
+<p>To my surprise, the package has reached 1.6 million(!!!) downloads. I figured this package must be something special, some sort of holy grail of pass gens. And while I&rsquo;m no C# expert, I&rsquo;m always up for a challenge!</p>
+<p>So I shamefully forked the repository and started working on a binary PowerShell cmdlet that would mimic the nuget package. 7 versions and 29 commits later, &ldquo;<a href="https://www.powershellgallery.com/packages/BinaryPasswordGenerator/1.0.1">BinaryPasswordGenerator</a>&rdquo; was born!</p>
+<h3 id="its-fast">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#its-fast">It&rsquo;s fast&hellip;</a>
+</h3>
+<p><img src="/pics/FastPWGen.png" alt="Fast"></p>
+<h3 id="its-customizable">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#its-customizable">It&rsquo;s customizable</a>
+</h3>
+<p>The cmdlet is highly customizable, just like the nuget package. This opens up a new usecase area that the former script did not cover:</p>
+<ul>
+<li>Backend engine for generating passwords, in GUI/Web senarios (like a nuget package)</li>
+<li>PIN/One Time Pass generations (usually 4-8 digit codes)</li>
+<li>More user-friendly passwords (example: lowercase + numeric)</li>
+<li>Supports up to 128 char length passwords</li>
+<li>It&rsquo;s wicked fast, meaning it scales better</li>
+</ul>
+<h3 id="examples">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#examples">Examples</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># By default, all characters available for use and a length of 16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Will return a random password with the default settings</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Same as above but you can set the length. Must be between 4 and 128</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Will return a password which is 32 characters long</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-Length</span> <span class="mf">32</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Same as above but you can set the length. Must be between 4 and 128</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Will return a password which only contains lowercase and uppercase characters and is 21 characters long.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeLowercase</span> <span class="n">-IncludeUppercase</span> <span class="n">-Length</span> <span class="mf">21</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># You can build up your reqirements by adding parameters, like -IncludeNumeric</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># This will return a password which is just numbers and has a default length of 16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeNumeric</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># As above, here is how to get lower, upper and special characters using this approach</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeLowercase</span> <span class="n">-IncludeUppercase</span> <span class="n">-IncludeSpecial</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># This is the same as the above, but with a length of 128</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeLowercase</span> <span class="n">-IncludeUppercase</span> <span class="n">-IncludeSpecial</span> <span class="n">-Length</span> <span class="mf">128</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># One Time Passwords</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># If you want to return a 4 digit number you can use this:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeNumeric</span> <span class="n">-Length</span> <span class="mf">4</span></span></span></code></pre></div>
+<h3 id="using-together-with-other-powershell-modules">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#using-together-with-other-powershell-modules">Using together with other PowerShell modules:</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Convert to SecureString</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$pw</span> <span class="p">=</span> <span class="nb">New-Password</span> <span class="p">|</span> <span class="nb">ConvertTo-SecureString</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Set a password in your SecretVault using Secret Store/Management</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Set-Secret</span> <span class="n">-Name</span> <span class="s1">&#39;User&#39;</span> <span class="n">-Secret</span> <span class="p">(</span><span class="nb">New-Password</span> <span class="n">-Length</span> <span class="mf">128</span><span class="p">)</span> <span class="n">-Vault</span> <span class="n">PSVault</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Secret</span> <span class="n">User</span>
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="p">.</span><span class="py">Security</span><span class="p">.</span><span class="py">SecureString</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Secret</span> <span class="n">User</span> <span class="n">-AsPlainText</span>
+</span></span><span class="line"><span class="cl"><span class="n">u</span><span class="k">%</span><span class="n">4EkQlMpVjPnO5VM5tYcnUE</span><span class="p">!</span><span class="n">F</span><span class="p">!</span><span class="n">D3wvhB8w595LXqIEAny1XC4OVn4</span><span class="p">\</span><span class="n">x</span><span class="p">!</span><span class="n">1Q79Nlj</span><span class="p">!</span><span class="n">QwK</span><span class="p">!</span><span class="n">zBVkFUAHVy44iEIO2icVE0meAz3YEWudP9UdKrjbrp8nJ8DECVll2Uq</span><span class="p">!</span><span class="n">kt5</span></span></span></code></pre></div>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/solution_efs_windows/" rel="bookmark">Solution: Restore Deleted Private key for EFS Encrypted Files</a>
+  </h2>
+  
+    <time datetime="2022-06-15T12:39:23&#43;01:00">June 15, 2022</time>
+  
+</header>
+      
+        <p><img src="/pics/accessdenied_after_removal.png" alt="a"></p>
+<h2 id="problem">
+  <a class="Heading-link u-clickable" href="/blog/solution_efs_windows/#problem">Problem</a>
+</h2>
+<p>You have encrypted files using the &ldquo;File &gt; Properties &gt; Advanced &gt; Encrypt content to secure data&rdquo; feature in Windows, and have lost your certificates in your personal certificate store.</p>
+<h2 id="solution">
+  <a class="Heading-link u-clickable" href="/blog/solution_efs_windows/#solution">Solution</a>
+</h2>
+<p>A solution to this problem is to restore the private key used for encrypting your file system (EKU: Encrypting File System 1.3.6.1.4.1.311.10.3.4 ) that was generated upon encrypting your files.</p>
+<p>The keypair to this certificate is stored in your Personal certificate store, luckily a copy of the public key is stored in your LocalMachine certificate store. This means we can restore the private key and enable decryption as long as the computer has not been reinstalled or lost.</p>
+<h3 id="step-by-step">
+  <a class="Heading-link u-clickable" href="/blog/solution_efs_windows/#step-by-step">Step-by-step</a>
+</h3>
+<ol>
+<li>This file is currently unecrypted. Let&rsquo;s encrypt is using the method discussed</li>
+</ol>
+<p><img src="/pics/file.png" alt="Secret!"></p>
+<p>Rightclick the file &gt; properties &gt; advanced &gt; encrypt content..</p>
+<p><img src="/pics/encrypt_gui.png" alt="encrypt_gui">
+<img src="/pics/encrypt_file.png" alt="encrypt_file"></p>
+<p>I will select &lsquo;Ecrypt the file only&rsquo; in this case</p>
+<p><img src="/pics/lock-icon.png" alt="loc_icon"></p>
+<p>The lock symbol indicates that the file is successfully encrypted. Under the hood, windows generated a self-signed certificate with a private/public keypair in my personal store and a certificate in my localmachine/addressbook only containing a public key.</p>
+<ol start="2">
+<li>Verify the certificates</li>
+</ol>
+<p><img src="/pics/currentuser_certstore_cert.png" alt="currentuser_certstore_cert"></p>
+<p>Let&rsquo;s verify it&rsquo;s private key:</p>
+<p><img src="/pics/currentuser_privatekey_true.png" alt="private"></p>
+<p>Let&rsquo;s verify the localmachine/addressbook certificate:</p>
+<p><img src="/pics/certstore_find_publickey.png" alt="cert_store_public"></p>
+<p><img src="/pics/localmachine_privatekey_false.png" alt="cert_store_public_private_key"></p>
+<p>HasPrivateKey: False - tells us this certificate lacks the private key, and is somewhat useless for the decrypting of our file. We will now move on to the issue at hand</p>
+<ol start="3">
+<li>Delete the current users private key to simulate the issue</li>
+</ol>
+<p><img src="/pics/delete_currentuser_privatekey_cert.png" alt="delete_currentuser_privatekey_cert"></p>
+<p>Let&rsquo;s try to query the certificate store to verify the lack of this deleted certificate</p>
+<p><img src="/pics/after_deleted_privatekey.png" alt="after_deleted_privatekey"></p>
+<p>We are recursivly looking for the certificate in the root of the certificate store, and we only got one hit. Meaning the private/public keypair has been removed, together with the ability to decrypt our file:</p>
+<p><img src="/pics/accessdenied_after_removal.png" alt="accessdenied_after_removal"></p>
+<p>The screenshot displays an attempt to move the file, as well as open it with notepad. Both failed due to a &ldquo;lack of access&rdquo;.</p>
+<ol start="4">
+<li>Restoring the certificate using the public key in LocalMachine store</li>
+</ol>
+<p><img src="/pics/restore_private_key.png" alt="restore_private_key"></p>
+<p>First, we move into the LocalMachine\AddressBook path in the certificate store, and we verify that it contains our public-key based certificate</p>
+<p>We then utilize certutil to restore the private-key part of that we had before lost:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">certutil</span> <span class="n">-repairstore</span> <span class="n">addressbook</span> <span class="s1">&#39;&lt;insert thumbprint&gt;&#39;</span></span></span></code></pre></div>
+<p><img src="/pics/privatekey_after_restore_success.png" alt="privatekey_after_restore_success"></p>
+<p>Verify that the PrivateKey was infact restored</p>
+<p>We have now restored the most critical part of the removal, but decryption will still fail, since windows will only query your personal store while the decryption process takes place. This means we will need to export this certificate, together with it&rsquo;s private key - and import it to your personal store.</p>
+<ol start="5">
+<li>Export / Import the key-pair to the Personal Store</li>
+</ol>
+<p><img src="/pics/export_privateandpublic_key.png" alt="export_privateandpublic_key"></p>
+<p>Navigate to the mmc snap-in, import the Certificate snap-in, select Local Computer, and navigate to the &lsquo;Other People&rsquo; folder</p>
+<p>Right-click the certificate (this is the same certificate that we displayed in PowerShell after the restore process) All Tasks &gt; Export&hellip;</p>
+<p><img src="/pics/private_key_selected.png" alt="private_key_selected"></p>
+<p>Export the private key &gt; Next</p>
+<p><img src="/pics/allow_only_current_user.png" alt="allow_only_current_user"></p>
+<p>Use your currently logged on user &gt; Next</p>
+<p><img src="/pics/savetopath.png" alt="savetopath"></p>
+<p>Save to path</p>
+<p><img src="/pics/import_current_user.png" alt="import_current_user"></p>
+<p>Navigate to the path, right-click &gt; Install PFX, Current User &gt; Next &gt; Next &gt; Next..</p>
+<p><img src="/pics/successful_import.png" alt="successful_import"></p>
+<p>We have now moved the key-pair back to the personal store, and can now decrypt files</p>
+<p><img src="/pics/successful_decrypt_and_write.png" alt="successful_decrypt_and_write"></p>
+<p>Verifying this by writing to the file, and getting it&rsquo;s content</p>
+<p><img src="/pics/successful_open_doubleclick.png" alt="successful_open_doubleclick"></p>
+<p>Double-clicking the file now works as expected</p>
+<h2 id="discussion">
+  <a class="Heading-link u-clickable" href="/blog/solution_efs_windows/#discussion">Discussion</a>
+</h2>
+<p>We have now simulated an issue that unaware users can be exposed to, and solved it using PowerShell, the Certificate snap-in in mmc, and certutil.</p>
+<p>Accidential deletion the private/public key-pair in the personal store can be quite common, since IT personel usually perform this, together with a GPUpdate, to re-enroll autoenrollment managed certificates. However, in this case the certificate will not re-enroll itself since it&rsquo;s a self-signed certificate, only used locally for ecryption/decryption.</p>
+<p>This problem be solved in this way for self-signed certificates, I would imagine that it&rsquo;s the most of cases.</p>
+<p>If your Public Key Infrastructure enrolls &ldquo;Encryption File System&rdquo; certificates to domain users, a PKI admin could in theory export the certificate in the CA (as long as the private key is exportable, that is).</p>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/" rel="bookmark">PowerShell Productivity tip: Working with History</a>
+  </h2>
+  
+    <time datetime="2022-05-16T08:05:11&#43;01:00">May 16, 2022</time>
+  
+</header>
+      
+        <figure><img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1317&amp;q=80"/>
+</figure>
+
+<p>One thing I&rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&rsquo;s quite a few ways to do so currently, so I thought i&rsquo;d share some of my favorite ones.</p>
+<h2 id="different-ways-of-viewing-your-history">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#different-ways-of-viewing-your-history">Different ways of viewing your history</a>
+</h2>
+<ul>
+<li>To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&gt; h. Simple as that.</li>
+</ul>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">h</span></span></span></code></pre></div>
+<ul>
+<li>To view your over-all history in your current environment, PSReadLine is your friend:</li>
+</ul>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">(</span><span class="nb">Get-PSReadLineOption</span><span class="p">).</span><span class="n">HistorySavePath</span></span></span></code></pre></div>
+<p>Viewing the txt-file of PSReadLines history can be a lifesaver if you work with colleagues that tend to never document their solutions. You could modify the HistorySavePath property of your own output, to view someone else&rsquo;s history on a shared server/computer.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">(</span><span class="nb">Get-PSReadLineOption</span><span class="p">).</span><span class="py">historysavepath</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$env:USERNAME</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;Your-Colleague-That-Did-Not-Docx-It&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="history-tend-to-repeat-itself">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#history-tend-to-repeat-itself">History Tend To Repeat Itself</a>
+</h2>
+<p>As we all know, we humans always have a need to re-run history. Without being political about it, here&rsquo;s some examples on how you could do this in PowerShell</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">r </span><span class="mf">25</span></span></span></code></pre></div>
+<p>It&rsquo;s that simple. In your current session, each command you enter will be available in your Get-History (h). Each history entry has an ID. The cmdlet behind the alias r (Invoke-History) will execute your history based on the ID you provide. In the example above, I&rsquo;m executing my 25&rsquo;th command inputed in my terminal.</p>
+<figure><img src="https://i.imgur.com/O4y0isj.png"/>
+</figure>
+
+<h2 id="but-theres-more">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#but-theres-more">But there&rsquo;s more!</a>
+</h2>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">Emil</span><span class="p">\</span><span class="n">git</span><span class="p">&gt;</span> <span class="c">#25&lt;tab&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">Emil</span><span class="p">\</span><span class="n">git</span><span class="p">&gt;</span> <span class="nb">Write-Host</span> <span class="s2">&#34;Tomorrow is monday!!!&#34;</span> <span class="n">-ForegroundColor</span> <span class="p">(</span><span class="nb">Get-Random</span> <span class="s2">&#34;Green&#34;</span><span class="p">,</span><span class="s2">&#34;Yellow&#34;</span><span class="p">,</span><span class="s2">&#34;Blue&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p>The following is PowerShell Black-Magic, and is&rsquo;s really useful. It saves you the trouble of copy-pasting your history.</p>
+<p>Simply view your history, memorize the ID, hit &lsquo;#&rsquo; and the ID, followed by a &rsquo;tab&rsquo; and you have it printed ready to be executed in your terminal.</p>
+<figure><img src="https://i.imgur.com/fw4C055.png"/>
+</figure>
+
+<h2 id="help">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#help">Help!</a>
+</h2>
+<p>If you&rsquo;ve read this far and desire more reading, run the following one-liner</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">gcm </span><span class="p">*</span><span class="n">-history</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="n">help</span> <span class="nv">$_</span><span class="p">.</span><span class="py">name</span> <span class="n">-s</span> <span class="p">}</span></span></span></code></pre></div>
+<p>To be clear:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Command</span> <span class="p">*</span><span class="n">-history</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span> <span class="nb">Get-Help</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Name</span> <span class="n">-ShowWindow</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Help</span> <span class="n">about_history</span></span></span></code></pre></div>
+<p>Hopefully this was a decent history-lesson for someone!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emilhttpstwittercomehmiiz">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#emilhttpstwittercomehmiiz">/<a href="https://twitter.com/ehmiiz">Emil</a></a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/" rel="bookmark">PowerShell in 2021: From my IAM Perspective</a>
+  </h2>
+  
+    <time datetime="2022-01-04T08:13:11&#43;01:00">January 4, 2022</time>
+  
+</header>
+      
+        <figure><img src="https://i.imgur.com/FiMaB8M.jpg"/>
+</figure>
+
+<h2 id="2021-from-my-iam-perspective">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#2021-from-my-iam-perspective">2021: From my IAM Perspective</a>
+</h2>
+<p>First of all, this <a href="https://www.dowst.dev/2021-a-powershell-year-in-review/">blog-post</a> inspired me to write something similar, so thanks <a href="https://twitter.com/MDowst/">@MDowst</a> for sharing.</p>
+<p>For myself I&rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.</p>
+<h2 id="2021-some-cool-stuff-i-found">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#2021-some-cool-stuff-i-found">2021: Some cool stuff I found</a>
+</h2>
+<ul>
+<li><a href="https://www.bing.com/search?q=psreadline+predictive+intellisense&amp;cvid=941892197e824c9c996f36910a1dbb04&amp;aqs=edge.0.0.6427j0j1&amp;pglt=163&amp;FORM=ANSPA1&amp;PC=U531">PSReadLine</a> and it&rsquo;s IntelliSense</li>
+<li><a href="https://github.com/endowdly/GoPS">GoPS</a> - a shell navigation module</li>
+<li><a href="https://poshbot.readthedocs.io/en/latest/">PoshBot</a></li>
+<li><a href="https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall">PowerShell Community Calls</a></li>
+<li><a href="https://github.com/Primycha/Write-Info">Write-Info</a> - a cool logging module</li>
+<li><a href="https://docs.microsoft.com/en-us/windows/terminal/panes">Windows terminal and it&rsquo;s split-tab functionality</a></li>
+</ul>
+<h2 id="2022-exciting-stuff">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#2022-exciting-stuff">2022 exciting stuff</a>
+</h2>
+<p>Some stuff I&rsquo;m personally excited about:</p>
+<ul>
+<li>Finish reading <a href="https://www.powershellcookbook.com/">PowerShell Cookbook</a></li>
+<li>Finish reading PowerShell In Action</li>
+<li>Developing more automation with <a href="https://azure.microsoft.com/en-us/updates/azure-automation-powershell-7/#:~:text=Azure%20Automation%20support%20for%20PowerShell%207.1%20runbooks%20is,as%20hybrid%20jobs%20across%20Azure%20and%20non-Azure%20machines.">PowerShell 7 and Azure Automation</a></li>
+<li>Implementing PowerShell logging / Protected logging</li>
+<li>Implementing a team oriented <a href="https://docs.microsoft.com/en-us/powershell/scripting/gallery/how-to/working-with-local-psrepositories?view=powershell-7.2">PowerShellGet repo</a></li>
+<li>Implementing SecretManegement/SecretStore/Az Keyvault on on-prem resources</li>
+<li>Attend the <a href="https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall">PowerShell Community Calls</a></li>
+<li>Creating more useful modules for my team in general, as well as improving existing code</li>
+<li>Would love to contribute to the PowerShell repo this year, or publish some useful code to the PSGallery, to give back to the community</li>
+</ul>
+<h2 id="time-flies">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#time-flies">Time flies</a>
+</h2>
+<p>This year will be my 9th year of using and working with PowerShell, much have changed but mostly for the better.</p>
+<p>I miss when ISE was the golden standard though, but hopefully VSCode will work more smoothly this year. I do appriciate the cross-platformness of VSCode, and the ability to export and import keybinds.</p>
+<p>Would be awesome with a competitor to VSCode though, I would assume that some competition would not hurt for the end-user exp, let&rsquo;s see what happens.</p>
+<h2 id="end-with-fire">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#end-with-fire">End with fire!</a>
+</h2>
+<p>I&rsquo;d like to end my blog-post with this old gem from <a href="https://www.leeholmes.com/burn-console-optimized-and-ready-for-marshmallows/">Lee Holmes</a>
+Still waiting for someone smart enough to re-write this for the Windows Terminal :)</p>
+<p>Have a good one!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/" rel="bookmark">PowerShell for Automation: Simple Hyper-V VM-Creation script</a>
+  </h2>
+  
+    <time datetime="2021-12-21T14:58:11&#43;01:00">December 21, 2021</time>
+  
+</header>
+      
+        <h2 id="meet-labmilhttpsgithubcomehmiizlabmil">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#meet-labmilhttpsgithubcomehmiizlabmil">Meet <a href="https://github.com/ehmiiz/labmil">Labmil</a>.</a>
+</h2>
+<p>Labmil is a script I made to serve a specific usecase. When <a href="https://automatedlab.org/en/latest/">AutomatedLab</a> is overkill, and when you don&rsquo;t want to skip the installation phase of the lab.</p>
+<p><img src="https://i.imgur.com/uBIzjmx.png" alt="Displaying the cmdlet" title="Get-GeneratedPassword"></p>
+<h2 id="features">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#features">Features</a>
+</h2>
+<ul>
+<li>Quickly put the Windows Server ISO-file to good use</li>
+<li>It&rsquo;s a simple script for anyone to modify for personal needs</li>
+<li>It outputs a customobject</li>
+<li>Create multiple VM&rsquo;s using PowerShell logic</li>
+</ul>
+<h2 id="non-features">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#non-features">Non-Features</a>
+</h2>
+<p>The script has a few non-features.
+Non-Features are cool because it makes the script unique and useful in certain senarios.</p>
+<ul>
+<li>Not touching the VMs application layer makes it simple and less prone to error</li>
+<li>It only has two parameters, and only one of them is mandatory after initial run, adding simplicity</li>
+<li>It enables you as an sysadmin/engineer to do the whole set-up. Giving you more work to do yourself, meaning more labbing!</li>
+<li>It&rsquo;s only focus is Hyper-V VMs</li>
+</ul>
+<h2 id="how-i-like-to-do-my-labs">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#how-i-like-to-do-my-labs">How I like to do my labs</a>
+</h2>
+<ol>
+<li>Spin up the VMs you plan on labbing with using New-LabmilVM.ps1</li>
+<li>Install the server with wanted settings and partitions</li>
+<li>Use Windows Terminal&rsquo;s split-tab functionallity, together with</li>
+</ol>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Enter-PSSession</span> <span class="n">-VMName</span> <span class="nv">$Name</span></span></span></code></pre></div>
+<p>To have one tab open with each newly created Lab-VM.</p>
+<p>Happy labbing!</p>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+  
+
+  
+  <nav>
+    
+      <a class="Pagination u-clickable" href="/page/3/" rel="prev">« Previous</a>
+    
+    
+      <a class="Pagination Pagination--right u-clickable" href="/" rel="next">Next »</a>
+    
+  </nav>
+
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

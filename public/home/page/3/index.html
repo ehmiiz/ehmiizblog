@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+
+  
+  
+
+
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>ehmiiz.se</title>
+  <link rel="canonical" href="//localhost:1313/home/">
+
+
+
+
+  <link rel="alternate" href="/home/feed.xml" type="application/rss+xml">
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+  
+
+
+  
+    <link rel="stylesheet" href="/css/base.min.d65df820ddc6f06504c68007f670384bf86961dfd54548a4668b56dea9d76ce8.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">ehmiiz.se</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">Home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">Blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">About</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">Software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">RSS</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/" rel="bookmark">PowerShell Solution: Automate GPO creations</a>
+  </h2>
+  
+    <time datetime="2021-05-12T14:56:09&#43;02:00">May 12, 2021</time>
+  
+</header>
+      
+        <h2 id="the-headache-of-setting-up-recurring-gpos">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#the-headache-of-setting-up-recurring-gpos">The headache of setting up recurring GPO&rsquo;s</a>
+</h2>
+<p>I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.</p>
+<p>The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&rsquo;s, true/false), in an automated fasion?</p>
+<p>The best answer to this question is; You probably shouldn&rsquo;t.</p>
+<p>If the GPO planning is done carefully, you should not find yourself having this problem - since why would we want 10-100-1000 different GPOs doing basically the same thing? If we could use WMI filters, script-based, logically acting GPOs, the world would be a wonderful place.</p>
+<h2 id="reality-hits-you-hard-bro">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#reality-hits-you-hard-bro">Reality hits you hard, bro</a>
+</h2>
+<p>Let&rsquo;s be real, you either did the GPO planning yourself back in the 90&rsquo;s, or someones (probably awesome) dad did it. And he probably had a tight schedule, IT was probably understaffed already back then, and frankly, all companies might not have a <a href="https://en.wikipedia.org/wiki/Mark_Russinovich">Mark Russinovich</a>-kind of guy, implementing flawless, scalable GPO plans for your organization.</p>
+<p>Sadly the facts listed above does not help you in any way what so ever. Hopefully the rest of this blog post can.</p>
+<h2 id="technical-bits">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#technical-bits">Technical bits</a>
+</h2>
+<p>PowerShell and GPO&rsquo;s go quite nicly hand in hand, thankfully. Now starts the technical fun stuff. The following is what we need to solve:</p>
+<p>Have a script that allows you to input a specific condition (City name, Group name, Computer name, yada yada), and have this script:</p>
+<ul>
+<li>
+<p>Create a New GPO</p>
+</li>
+<li>
+<p>Set the specific GPO settings you need</p>
+</li>
+<li>
+<p>Link the GPO to the specific OU(s)</p>
+</li>
+</ul>
+<p>But how? GPO&rsquo;s are all XML and you really need GPMC to get the exact settings right, and I would rather not edit XML files in SYSVOL, what if I mess something up?</p>
+<p>I&rsquo;m glad you asked! Here&rsquo;s the kicker:</p>
+<p>Since we&rsquo;re trying to automate the creation of a recurring GPO, there&rsquo;s already a GPO in place that does almost the exact thing you need. All we need to do is;</p>
+<ol>
+<li>
+<p>Create a similar GPO (disabled) alternatively use the production GPO (the one that someones dad created, aka DADGPO (tm) )</p>
+</li>
+<li>
+<p>Backup this GPO to a safe(er) area (not sysvol)</p>
+</li>
+<li>
+<p>Commit XML edits to change the desired condition</p>
+</li>
+<li>
+<p>Create a new Blank GPO</p>
+</li>
+<li>
+<p>Use Import-GPO&rsquo;s ID parameter, and input the edited GPO</p>
+</li>
+<li>
+<p>Link the GPO to desired new OU</p>
+</li>
+<li>
+<p>(optional) Be excited and tell everyone that you&rsquo;ve just automated a process of EDITING AND CREATING new GPOs</p>
+</li>
+</ol>
+<p>This process solves two big issues, firstly it allows you to just edit the recurring GPO once, this would otherwise be a recurring task.</p>
+<p>Secondly, it solves the issue with editing GPO&rsquo;s in production, since you should&rsquo;t tamper with XML files in a production sysvol. Instead the edits you do are directly done to the backup file that&rsquo;s outside of sysvol.</p>
+<h2 id="let-us-see-some-code-already">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#let-us-see-some-code-already">Let us see some code already</a>
+</h2>
+<p>This function lets you input</p>
+<ol>
+<li>
+<p>Name of the new GPO</p>
+</li>
+<li>
+<p>Group name (DelegationGrouo) of the AD group you want to edit within the GPO settings</p>
+</li>
+<li>
+<p>Domain name in case of multi-domain forest</p>
+</li>
+</ol>
+<p>Takes the input, and outputs a new GPO with the updated AD Group provided:</p>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> New-AdminPolicyGPO {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">param</span> (
+</span></span><span style="display:flex;"><span>        $Name,
+</span></span><span style="display:flex;"><span>        $DelegationGroup,
+</span></span><span style="display:flex;"><span>        $Domain
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Begin</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Insert whatever validation checks you need</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Get-GPO $Name -ErrorAction SilentlyContinue) {
+</span></span><span style="display:flex;"><span>            Write-Warning <span style="color:#e6db74">&#34;GPO already exists&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Break</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Get-ADGroup $DelegationGroup) {
+</span></span><span style="display:flex;"><span>            $DelegationGroup = Get-ADGroup $DelegationGroup
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            Write-Warning <span style="color:#e6db74">&#34;ADGroup not identified&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Break</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Process</span> {
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;#
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        RootGPOs GUID needs to be changed to the DADGPO guid
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        An easy way of getting GUID is to just run: 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        Get-GPO -All | ? DisplayName -Like &#34;Name of gpo&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    #&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $RootGPO = Get-GPO -Guid <span style="color:#e6db74">&#34;D4DGP0-GU1D-D4DGP0-GU1D-D4DGP0-GU1D&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Create blank GPO and store it in a variable</span>
+</span></span><span style="display:flex;"><span>        New-GPO $Name
+</span></span><span style="display:flex;"><span>        $GPO = Get-GPO $Name
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#Create path for backup gpo</span>
+</span></span><span style="display:flex;"><span>        $BackUpPath = <span style="color:#e6db74">&#34;</span>$env:LOCALAPPDATA<span style="color:#e6db74">\BackupGPO\&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Test-Path $BackUpPath) {
+</span></span><span style="display:flex;"><span>            $BackedupGPO = Backup-GPO -Guid $RootGPO.Guid -Path BackUpPath
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            New-Item -Path $BackUpPath -ItemType Directory
+</span></span><span style="display:flex;"><span>            $BackedupGPO = Backup-GPO -Guid $RootGPO.Guid -Path $BackUpPath
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#Store XML file of backup gpo in variable</span>
+</span></span><span style="display:flex;"><span>        $SuperLongAndFunString = <span style="color:#e6db74">&#34;</span>$BackUpPath<span style="color:#e6db74">{</span>$($BackedupGPO.ID.GUID)<span style="color:#e6db74">}\DomainSysvol\gpo\Machine\Preferences\Groups\Groups.xml&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Test-Path $SuperLongAndFunString) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Play around with this part until Set-Content</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># changes the desired GPO setting</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                $xml = Get-Content $SuperLongAndFunString
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                $xml = $xml.Replace(<span style="color:#e6db74">&#39;&#34;Domain\ADGroupName&#34; action=&#34;ADD&#34; sid=&#34;Whatever the SID is&#34;&#39;</span>, <span style="color:#e6db74">&#34;&#34;&#34;</span>$Domain<span style="color:#e6db74">\$
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                (</span>$DelegationGroup<span style="color:#e6db74">.Name)&#34;&#34; action=</span>$(<span style="color:#e6db74">&#39;&#34;ADD&#34;&#39;</span>)<span style="color:#e6db74"> sid=&#34;&#34;</span>$($DelegationGroup.sid)<span style="color:#e6db74">&#34;&#34;&#34;</span> ) <span style="color:#75715e">#Edit XML</span>
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                Set-Content $SuperLongAndFunString -Value $xml -Verbose
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                Import-GPO -BackupId $BackedupGPO.Id -Path $BackedupGPO.BackupDirectory -TargetName $GPO.DisplayName
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>                $Error[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Break</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">Break</span> <span style="color:#75715e">#Can&#39;t locate GPO from backup</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h2 id="lastly">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#lastly">Lastly</a>
+</h2>
+<p>This function serves as a base for you to use, and the point here is really to demonstrate the process of how you could tackle this problem. I would suggest playing around with get/set-content to get the desired outcome of the GPO settings in a lab env before even thinking about implementation to production.</p>
+<p>In many cases, GPO setting changes are XML changes. PowerShell lets you configure anything within an XML file. The key to doing so is to understand the specific setting, so you can manipulate the backed up GPO&rsquo;s XML in your favor.</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/" rel="bookmark">PowerShell for Security: PassWord Gen Part 1</a>
+  </h2>
+  
+    <time datetime="2021-05-10T14:58:11&#43;01:00">May 10, 2021</time>
+  
+</header>
+      
+        <h2 id="my-history-with-password-generators">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#my-history-with-password-generators">My history with Password Generators</a>
+</h2>
+<p>Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)</p>
+<p>My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</p>
+<p>However the first version was based on a dotnet class method called: <a href="https://adamtheautomator.com/random-password-generator/">[System.Web.Security.Membership]::GeneratePassword</a></p>
+<p>Adam Bertram does a great job covering how to wrap this in a module, click the class name to read his post about it.</p>
+<p>The class does bring a dependency on the the specific dotnet class, and for me, this approach started to bring errors in Powershell cores early versions.</p>
+<h2 id="new-attempt-without-dependencies">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#new-attempt-without-dependencies">New attempt without dependencies</a>
+</h2>
+<p>This is my attempt at creating my own password generator</p>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> Get-GeneratedPassword {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;#
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">SYNOPSIS</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Cross-platform password generator
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">DESCRIPTION</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Get-GeneratedPassword is using a Get-Random, a string and regex 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    validation to ensure that the password meets the complexity level 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    enforced by default in ActiveDirectory
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    PS C:\&gt; Get-GeneratedPassword -PwLength 10 -Amount 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Generates 10 passwords with the length set to 10
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    PS C:\&gt; Get-GeneratedPassword -PwLength 12 | clip
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Only supported in Windows. Will generate a password with 12 as length 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    and clip the result to clipboard
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    PS C:\&gt; $user = &#34;emil&#34;; $pw = ConvertTo-SecureString -String (Get-GeneratedPassword 12) -AsPlainText
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    PS C:\&gt; $creds = $user,$pw
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Creates a CredentialObject that can be passed in to user generating cmdlets
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">EXAMPLE</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    PS C:\&gt; Get-GeneratedPassword -PwLength 8 -Amount 100 | Out-File C:\Temp\PW.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Generates 100 passwords to a textfile stored in C:\Temp\PW.txt
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">INPUTS</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    PwLengt as int32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">OUTPUTS</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Outputs randomized password as string(s)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">.</span><span style="color:#e6db74">NOTES</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Purpose :   Designed to meet AD Complexity rules &amp; be crossplatform (Windows, Linux)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Author  :   Emil.t.Larsson@gmail.com
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Date    :   2021-05-11
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    OS      :   Win10, Ubuntu 20
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    Version :   1.0.0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#&gt;</span>
+</span></span><span style="display:flex;"><span>    [CmdletBinding()]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Param</span>
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $true,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">ValueFromPipelineByPropertyName</span> = $true,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">Position</span> = <span style="color:#ae81ff">0</span>)]
+</span></span><span style="display:flex;"><span>        [ValidateRange(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">30</span>)]
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int32</span>]$PwLength,
+</span></span><span style="display:flex;"><span>        [Parameter(<span style="color:#a6e22e">Mandatory</span> = $false)]
+</span></span><span style="display:flex;"><span>        [<span style="color:#66d9ef">int32</span>]$Amount = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Begin</span> {
+</span></span><span style="display:flex;"><span>        $Password = @()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">Process</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $PwdValues = <span style="color:#e6db74">&#34;-!@#$%^&amp;*_{}()?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">do</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            $PasswordGenerated = ($PwdValues.ToCharArray() | Sort-Object { Get-Random })[<span style="color:#ae81ff">1</span>..$PwLength] -join <span style="color:#e6db74">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Regex rules, contains any of the special AND 0-9 AND upper/lower</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (
+</span></span><span style="display:flex;"><span>                $PasswordGenerated <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;[-!@#$%^&amp;*_{}()?]&#34;</span> <span style="color:#f92672">-and</span> 
+</span></span><span style="display:flex;"><span>                $PasswordGenerated <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;(?-i)[A-Z]&#34;</span> <span style="color:#f92672">-and</span> 
+</span></span><span style="display:flex;"><span>                $PasswordGenerated <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;(?-i)[a-z]&#34;</span> <span style="color:#f92672">-and</span> 
+</span></span><span style="display:flex;"><span>                $PasswordGenerated <span style="color:#f92672">-match</span> <span style="color:#e6db74">&#34;[0-9]&#34;</span>
+</span></span><span style="display:flex;"><span>            ) {
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e"># Add to pw array</span>
+</span></span><span style="display:flex;"><span>                $Password += $PasswordGenerated
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">Continue</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">until</span> ($Password.count <span style="color:#f92672">-eq</span> $Amount)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">End</span> {
+</span></span><span style="display:flex;"><span>        $Password
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>The script can be found on my <a href="https://github.com/ehmiiz/PowerShell/blob/master/Get-GeneratedPassword.ps1">GitHub PS repo</a></p>
+<p><img src="https://i.imgur.com/fvwI0bb.png" alt="Displaying the cmdlet" title="Get-GeneratedPassword"></p>
+<p>Read the comment based help, or load the function and run:</p>
+<p><code>Get-Help Get-GeneratedPassword</code></p>
+<h3 id="my-requirements-was-the-following">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#my-requirements-was-the-following">My Requirements was the following</a>
+</h3>
+<ul>
+<li>Cover <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">AD complexity rules</a> (in 99,9%)</li>
+<li>String output, for simplicity</li>
+<li>X-platform</li>
+<li>No dependencies outside of Powershell 7</li>
+</ul>
+<h3 id="begin">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#begin">Begin</a>
+</h3>
+<p>The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the <code>-Amount</code> parameter<br>
+<code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
+<p>Since AD&rsquo;s complexity rule is enforcing at least 6 chars, this range checks that requirement box.</p>
+<p><code>[int32]$Amount = 1</code></p>
+<p>The default value solves the issue of just running the cmdlet without the <code>-Amount</code> parameter</p>
+<p>Next up is the whole idea behind the script, instead of using a dotnet class, I&rsquo;ll just generate my own string of chars to pick from:</p>
+<p><code>$pwdvalues = &quot;-!@#$%^&amp;*_{}()?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</code></p>
+<p>By using a <a href="https://devblogs.microsoft.com/scripting/powershell-looping-understanding-and-using-dountil/">do-until loop</a>, I can simply abuse Get-Random:<br>
+<code>$PasswordGenerated = ($pwdvalues.tochararray() | Sort-Object { Get-Random })[1..$PwLength] -join ''</code></p>
+<p>until my desired count of complex passwords are achieved by validating them through some regex validations:</p>
+<p><code>$PasswordGenerated -match &quot;[-!@#$%^&amp;*_{}()?]&quot; -and</code></p>
+<p><code>$PasswordGenerated -match &quot;(?-i)[A-Z]&quot; -and</code></p>
+<p><code>$PasswordGenerated -match &quot;(?-i)[a-z]&quot; -and</code></p>
+<p><code>$PasswordGenerated -match &quot;[0-9]&quot;</code></p>
+<p>This validation is critical for only getting the complex passwords for output</p>
+<p>The &ldquo;(?-i)&rdquo; part is needed since PowerShell by default is case-insensitive, this definition solves that part, and we need this since we really do care about the match being case-sensitive. <a href="https://ninmonkeys.com/blog/2020/11/21/using-case-sensitive-regular-expressions-in-powershell-tips/">This blog post by Jake Bolton</a> covers the problem in detail.</p>
+<p>Since all we do here is randomly grabbing strings and joining them, we&rsquo;re only working with a string object. Making the script fast and the output very simple, and since the output is just a simple string, it can be easily turned into a .txt file or used within <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1">ConvertTo-SecureString</a></p>
+<h3 id="lastly">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#lastly">Lastly</a>
+</h3>
+<p>This is a quite simple and short function, and I&rsquo;m sure it wont cover all my password generating needs for the future, but hopefully for some time at least.</p>
+<p>I hope this post got you thinking &amp; curious about:</p>
+<ul>
+<li>regex validation</li>
+<li>do-while loops</li>
+<li>string manipulation</li>
+<li>case sensitivity</li>
+<li>self-made functions</li>
+</ul>
+<p>in Powershell!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#emil">/Emil</a>
+</h3>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_digitallysigned/" rel="bookmark">PowerShell Solution: Script not digitally signed</a>
+  </h2>
+  
+    <time datetime="2021-02-11T08:23:11&#43;01:00">February 11, 2021</time>
+  
+</header>
+      
+        <h2 id="ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system">
+  <a class="Heading-link u-clickable" href="/blog/ps_digitallysigned/#ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system">“.ps1 is not digitally signed. The script will not execute on the system.”</a>
+</h2>
+<p>This error is clearly not really a typical error, but can be a blocker, nonetheless. It&rsquo;s more of a security feature than an error.</p>
+<p>Simple solution if you&rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:</p>
+<p><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></p>
+<p>This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.</p>
+<p>Another solution would be if you&rsquo;re executing the script from your own user:</p>
+<p><code>Set-ExecutionPolicy RemoteSigned</code></p>
+<p>Further documentation regarding Set-ExecutionPolicy may be found <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10)?redirectedfrom=MSDN">here</a>.</p>
+<p>Original blogpost that helped me solve this issue was found here: <a href="https://caiomsouza.medium.com/">here</a>.</p>
+<h2 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_digitallysigned/#happy-coding">Happy coding</a>
+</h2>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/life-3.0/" rel="bookmark">Book review: Life 3.0</a>
+  </h2>
+  
+    <time datetime="2021-02-08T08:23:11&#43;01:00">February 8, 2021</time>
+  
+</header>
+      
+        <h1 id="life-30-being-human-in-the-age-of-ai">
+  <a class="Heading-link u-clickable" href="/blog/life-3.0/#life-30-being-human-in-the-age-of-ai">Life 3.0, Being human in the age of AI</a>
+</h1>
+<figure><img src="https://images-na.ssl-images-amazon.com/images/I/818K2QDCZvL.jpg"
+         alt="Life 3.0 by Max Tegmark"/><figcaption>
+            <p>Life 3.0 by Max Tegmark
+                    <a href="https://www.amazon.com/Life-3-0-Being-Artificial-Intelligence/dp/1101946598">&ndash; Life 3.0 At Amazon</a></p>
+        </figcaption>
+</figure>
+
+<h1 id="first-book-on-ai">
+  <a class="Heading-link u-clickable" href="/blog/life-3.0/#first-book-on-ai">First book on AI</a>
+</h1>
+<p>Personally, this was the first time reading a book about AI. And as a tech-savvy sysadmin who loves video games, sci-fi and great stories, it got me hooked.</p>
+<p>It’s author, Max Tegmark, got me very interested in the subject and he does so by being naturally curious, super-nerdy in a fun way, and just all-round knowledgeable in tech, he’s a professor after all!</p>
+<p>The book starts off with a scenario (the Omega team) that could’ve been a Hollywood movie plot, and as well a real-life situation. The description on the treat of AI is very clear: It’s not the “Terminator” style AI that’s threatening, It’s AIs built with goals that do not align with the human civilization.</p>
+<h1 id="goals">
+  <a class="Heading-link u-clickable" href="/blog/life-3.0/#goals">Goals</a>
+</h1>
+<p>“The more intelligent and powerful machines get, the more important it becomes that their goals are aligned with ours. As long as we build only relatively dumb machines, the question isn&rsquo;t whether human goals will prevail in the end, but merely how much trouble these machines can cause humanity before we figure out how to solve the goal-alignment problem.”</p>
+<ul>
+<li>
+<p>Making AI understand our goal.</p>
+</li>
+<li>
+<p>Making AI adopt our goals.</p>
+</li>
+<li>
+<p>Making AI retain our goals.</p>
+</li>
+</ul>
+<p>I think this is one of the biggest take-aways of the book, and if I would’ve been a AI/deep-learning developer, I’d take this very serious in my line of work.</p>
+<h1 id="myths">
+  <a class="Heading-link u-clickable" href="/blog/life-3.0/#myths">Myths</a>
+</h1>
+<p>The book covers a few well-known AI myths as well as some facts regarding them, I’d figure that it would be good to list a few of them in this review since I found them both interesting and helpful in understanding what the actual AI problems and concerns are, not only what’s being rumored about or displayed in cinema:</p>
+<ul>
+<li>
+<p><em>Superintelligence by 2100 is inevitable.</em> Fact: Experts disagree &amp; simply does not know</p>
+</li>
+<li>
+<p><em>Only Luddites worry about AI.</em> Fact: Many top AI researchers are concerned</p>
+</li>
+<li>
+<p><em>Robots are the main concern.</em> Fact: Misaligned intelligence is the main concern: it needs no body, only an internet connection</p>
+</li>
+<li>
+<p><em>AI can’t control humans.</em> Fact: Intelligence enables control: we control tigers by being smarter</p>
+</li>
+<li>
+<p><em>Machines can’t have goals.</em> Fact: A heat-seeking missile has a goal</p>
+</li>
+</ul>
+<h1 id="closing-words">
+  <a class="Heading-link u-clickable" href="/blog/life-3.0/#closing-words">Closing words</a>
+</h1>
+<p>In general, the book is not as “heavy” as you would expect coming from a super-brain like Tegmark, it’s in-depth and detailed, but in an interesting and curious way.</p>
+<p>I would not recommend this book if you’re not interested in the subject, but if you are, it’s a great entry point.</p>
+<p>I’ve read a few books on AI now, some of them are listed in the “up and coming” section of the blog, but I must say that Max Tegmark is probably the more pedagogical AI-book author then many others, and to that I am grateful.</p>
+<p>I recommend reading this book if your interested in the subject of AI!</p>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/lotr-for/" rel="bookmark">Book Review: LOTR, The Fellowship of the Ring</a>
+  </h2>
+  
+    <time datetime="2021-02-07T12:51:50&#43;01:00">February 7, 2021</time>
+  
+</header>
+      
+        <figure><img src="https://images-na.ssl-images-amazon.com/images/I/91jBdaRVqML.jpg"
+         alt="LOTR: The Fellowship of the Ring"/><figcaption>
+            <p>LOTR: The Fellowship of the Ring
+                    <a href="https://www.amazon.com/Fellowship-Ring-Being-First-Rings/dp/0547928211/">&ndash; At Amazon</a></p>
+        </figcaption>
+</figure>
+
+<h1 id="one-ring-to-rule-them-all-one-ring-to-find-them">
+  <a class="Heading-link u-clickable" href="/blog/lotr-for/#one-ring-to-rule-them-all-one-ring-to-find-them">One ring to rule them all, one Ring to find them*</a>
+</h1>
+<h4 id="one-ring-to-bring-them-all-and-in-the-darkness-bind-them">
+  <a class="Heading-link u-clickable" href="/blog/lotr-for/#one-ring-to-bring-them-all-and-in-the-darkness-bind-them"><em>One Ring to bring them all and in the darkness bind them</em></a>
+</h4>
+<p>Sometimes when I read books, I get a feeling to just read faster, not pay attention to detail, to get to the point of the story. While reading Lord of the rings, I forgot about that feeling completely.</p>
+<p>I think this says a lot about Tolkien’s ability to pay attention to detail, details that forges the story deeper and deeper the more you read, it’s addictive.</p>
+<p>To compare this book with its prequel ‘The Hobbit’ is rather difficult, for the following reason: The book is not made for children, and it’s very refreshing to step into a darker and deeper side of middle earth, even the farmers of the Shire are somewhat scary for the adventurers.</p>
+<p>There are complete chapters of the book that will be a new story for readers that’ve watched the movies, and that fact alone is reason enough for you to pick it up and read the hell out of it! Because that’s what you’ll probably find yourself doing, binge read it, it’s that good.</p>
+<h1 id="character-details">
+  <a class="Heading-link u-clickable" href="/blog/lotr-for/#character-details">Character details</a>
+</h1>
+<p>Frodo is a completely different character compared to the movies, and for the better. And there’s so many lessons of life that Sam teaches throughout the book, about being humble, faithful, and a good friend.</p>
+<p>Another favorite character of mine is Elrond. The references he does to the elder days, he’s basically a living history book – paying attention Elrond, to be curious about his character, will tell a lot about the history of middle earth between the lines, about the 1st and 2nd age, the War of Wrath and history of the first children of Ilúvatar.</p>
+<p>Boromir’s inner demons, fighting what&rsquo;s right and wrong, fighting with valor within the fellowship, but being weak-minded and ensnared by the ring, is in my mind a timeless tale of how important it is with mindset, being humble, and how a constant seek for glory is doomed to fail in the long run.</p>
+<p>I deeply love this book, if you couldn’t tell already, and would of course highly recommend it to you!</p>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/hobbit/" rel="bookmark">Book Review: The Hobbit</a>
+  </h2>
+  
+    <time datetime="2021-02-07T12:39:23&#43;01:00">February 7, 2021</time>
+  
+</header>
+      
+        <figure><img src="https://images-na.ssl-images-amazon.com/images/I/91b0C2YNSrL.jpg"
+         alt="The Hobbit"/><figcaption>
+            <p>The Hobbit
+                    <a href="https://www.amazon.com/Hobbit-J-R-Tolkien/dp/054792822X">&ndash; At Amazon</a></p>
+        </figcaption>
+</figure>
+
+<h1 id="a-timeless-advanture-for-all-ages">
+  <a class="Heading-link u-clickable" href="/blog/hobbit/#a-timeless-advanture-for-all-ages">&ldquo;A timeless advanture for all ages&rdquo;</a>
+</h1>
+<p>This book was surprisingly easy to read, and it’s in my opinion light-years better than the movies.
+I read the entire book in Swedish, and although it’s only been a year since I read it, I already have an urge to re-read the whole book in English. The translations just don’t cut it for someone who’s interested in the lore of middle earth.<br>
+Although this book is less heavy on lore, and more focused on the telling of a great adventure.</p>
+<h1 id="a-recommendation">
+  <a class="Heading-link u-clickable" href="/blog/hobbit/#a-recommendation">A recommendation</a>
+</h1>
+<p>From me would be, if you read the book to your child, the translated version is fine, but if you plan on reading the Hobbit for your own amusement, read the English version.</p>
+<p>I plan to read this book for my children, and hopefully they’ll get hooked on Tolkien’s world, just like I did by reading The Hobbit.</p>
+<p>My favorite part of the book must be the whole meeting between Bilbo and Gollum. Tolkien&rsquo;s style of writing is just mesmerizing, and even though you know that Bilbo is probably not going to get murdered, you can’t help it to be on edge throughout most of the chapter.</p>
+<p>I will revisit this review once I&rsquo;ve read it in English, the translations are a bit fuzzy still, but till then I highly recommend reading The Hobbit to anyone having a slight interest in fantasy.</p>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+  
+
+  
+  <nav>
+    
+    
+      <a class="Pagination Pagination--right u-clickable" href="/home/page/2/" rel="next">Next »</a>
+    
+  </nav>
+
+
+
+
+      </div>
+    </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        Except where otherwise noted, content on this site is licensed under a &#32; <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
