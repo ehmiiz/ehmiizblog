@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -26,7 +26,7 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>Using the PowerShell Module Z to Save Time in the Terminal | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_z_mod/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_z_mod/">
 
 
 
@@ -44,9 +44,9 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -58,32 +58,32 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -91,7 +91,7 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -106,7 +106,7 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_z_mod/" rel="bookmark">Using the PowerShell Module Z to Save Time in the Terminal</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/" rel="bookmark">Using the PowerShell Module Z to Save Time in the Terminal</a>
   </h2>
   
     <time datetime="2023-03-17T08:23:11&#43;01:00">March 17, 2023</time>
@@ -117,7 +117,7 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
 
 <p>The module <a href="https://github.com/badmotorfinger/z">&ldquo;Z&rdquo;</a> is a handy tool that can save you lots of time when navigating around your terminal. In this blog-post, we&rsquo;ll cover how to install it to user scope, how to configure it by jumping around the terminal to different places, and how it saves lots of time in the long run.</p>
 <h2 id="installing-z-to-your-currentuser-scope">
-  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#installing-z-to-your-currentuser-scope">Installing Z to your CurrentUser scope</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/#installing-z-to-your-currentuser-scope">Installing Z to your CurrentUser scope</a>
 </h2>
 <p>To install Z, open a PowerShell terminal and run the following command:</p>
 
@@ -126,7 +126,7 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">z</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span></span></span></code></pre></div>
 <p>This will install Z for your current user only. If you want to install it for all users on your system, you can use -Scope AllUsers instead.</p>
 <h2 id="configuring-z">
-  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#configuring-z">Configuring Z</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/#configuring-z">Configuring Z</a>
 </h2>
 <p>Once you have Z installed, you can start configuring it by jumping around your terminal to different places. To do this, simply navigate to a directory that you frequently visit and then run z followed by a space and then part of the directory name. For example:</p>
 
@@ -137,12 +137,12 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
 </span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="n">MyProject</span></span></span></code></pre></div>
 <p>This will add C:\Users\MyUser\Documents\Projects\MyProject to Z&rsquo;s list of directories. The more you use z with different directories, the more accurate it will become at predicting where you want to go.</p>
 <h2 id="saving-time-with-z">
-  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#saving-time-with-z">Saving Time with Z</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/#saving-time-with-z">Saving Time with Z</a>
 </h2>
 <p>Once you have Z configured with your frequently visited directories, you can start saving time by using z instead of typing out long paths.</p>
 <p>It may not seem that much of a timer-saver at first glance, however the more you get used to using z, instead of cd/tab-completion for navigation, the more time you will save. And I would imagine if you use your terminal daily, the time-savings are huge.</p>
 <h2 id="zs-a-bash-fork">
-  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#zs-a-bash-fork">Z&rsquo;s a bash fork</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/#zs-a-bash-fork">Z&rsquo;s a bash fork</a>
 </h2>
 <p>That&rsquo;s right. The module is actually forked and ported from a bash script, what makes it super useful together with PowerShell is, you guessed it: <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.3">PSProviders</a>.</p>
 <p>Not only can you navigate around your file-system, you can also visit your local reg hive, cert store, and other PSProviders, to save them to your directory history.</p>
@@ -164,11 +164,11 @@ Installing Z to your CurrentUser scopeTo install Z, open a PowerShell terminal 
 </ul>
 <p>This works with lots of different PSProviders, so try it out yourself!</p>
 <h2 id="to-sum-it-up">
-  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#to-sum-it-up">To sum it up</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/#to-sum-it-up">To sum it up</a>
 </h2>
 <p>By installing, using and configuring Z, you can save lots of time when navigating around your terminal. By installing it to user scope and configuring it by jumping around your terminal to different places, you&rsquo;ll be able to quickly navigate to frequently visited directories and other PowerShell provider paths, with just a few keystrokes. Keep in mind that the more you use it, the better it gets, both from a functional standpoint but also the amount of time it saves you (So that you can drink coffee instead 😁 ).</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_z_mod/#happy-coding">Happy Coding</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_z_mod/#happy-coding">Happy Coding</a>
 </h3>
 
     

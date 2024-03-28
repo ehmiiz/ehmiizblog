@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -26,7 +26,7 @@ The problem I was trying to solve was the following; How do we script the task o
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell Solution: Automate GPO creations | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_automatedgpocloning/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_automatedgpocloning/">
 
 
 
@@ -44,9 +44,9 @@ The problem I was trying to solve was the following; How do we script the task o
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -58,32 +58,32 @@ The problem I was trying to solve was the following; How do we script the task o
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -91,7 +91,7 @@ The problem I was trying to solve was the following; How do we script the task o
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -106,26 +106,26 @@ The problem I was trying to solve was the following; How do we script the task o
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/" rel="bookmark">PowerShell Solution: Automate GPO creations</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/" rel="bookmark">PowerShell Solution: Automate GPO creations</a>
   </h2>
   
     <time datetime="2021-05-12T14:56:09&#43;02:00">May 12, 2021</time>
   
 </header>
     <h2 id="the-headache-of-setting-up-recurring-gpos">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#the-headache-of-setting-up-recurring-gpos">The headache of setting up recurring GPO&rsquo;s</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#the-headache-of-setting-up-recurring-gpos">The headache of setting up recurring GPO&rsquo;s</a>
 </h2>
 <p>I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.</p>
 <p>The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&rsquo;s, true/false), in an automated fasion?</p>
 <p>The best answer to this question is; You probably shouldn&rsquo;t.</p>
 <p>If the GPO planning is done carefully, you should not find yourself having this problem - since why would we want 10-100-1000 different GPOs doing basically the same thing? If we could use WMI filters, script-based, logically acting GPOs, the world would be a wonderful place.</p>
 <h2 id="reality-hits-you-hard-bro">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#reality-hits-you-hard-bro">Reality hits you hard, bro</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#reality-hits-you-hard-bro">Reality hits you hard, bro</a>
 </h2>
 <p>Let&rsquo;s be real, you either did the GPO planning yourself back in the 90&rsquo;s, or someones (probably awesome) dad did it. And he probably had a tight schedule, IT was probably understaffed already back then, and frankly, all companies might not have a <a href="https://en.wikipedia.org/wiki/Mark_Russinovich">Mark Russinovich</a>-kind of guy, implementing flawless, scalable GPO plans for your organization.</p>
 <p>Sadly the facts listed above does not help you in any way what so ever. Hopefully the rest of this blog post can.</p>
 <h2 id="technical-bits">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#technical-bits">Technical bits</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#technical-bits">Technical bits</a>
 </h2>
 <p>PowerShell and GPO&rsquo;s go quite nicly hand in hand, thankfully. Now starts the technical fun stuff. The following is what we need to solve:</p>
 <p>Have a script that allows you to input a specific condition (City name, Group name, Computer name, yada yada), and have this script:</p>
@@ -169,7 +169,7 @@ The problem I was trying to solve was the following; How do we script the task o
 <p>This process solves two big issues, firstly it allows you to just edit the recurring GPO once, this would otherwise be a recurring task.</p>
 <p>Secondly, it solves the issue with editing GPO&rsquo;s in production, since you should&rsquo;t tamper with XML files in a production sysvol. Instead the edits you do are directly done to the backup file that&rsquo;s outside of sysvol.</p>
 <h2 id="let-us-see-some-code-already">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#let-us-see-some-code-already">Let us see some code already</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#let-us-see-some-code-already">Let us see some code already</a>
 </h2>
 <p>This function lets you input</p>
 <ol>
@@ -264,15 +264,15 @@ The problem I was trying to solve was the following; How do we script the task o
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <h2 id="lastly">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#lastly">Lastly</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#lastly">Lastly</a>
 </h2>
 <p>This function serves as a base for you to use, and the point here is really to demonstrate the process of how you could tackle this problem. I would suggest playing around with get/set-content to get the desired outcome of the GPO settings in a lab env before even thinking about implementation to production.</p>
 <p>In many cases, GPO setting changes are XML changes. PowerShell lets you configure anything within an XML file. The key to doing so is to understand the specific setting, so you can manipulate the backed up GPO&rsquo;s XML in your favor.</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_automatedgpocloning/#emil">/Emil</a>
 </h3>
 
     

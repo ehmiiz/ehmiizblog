@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -27,7 +27,7 @@ When combined with new sysadmins that has not been introduced to the concept of 
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell Solution: AGPM unable to take control of a GPO | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_agpm_setacl/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_agpm_setacl/">
 
 
 
@@ -45,9 +45,9 @@ When combined with new sysadmins that has not been introduced to the concept of 
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -59,32 +59,32 @@ When combined with new sysadmins that has not been introduced to the concept of 
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -92,7 +92,7 @@ When combined with new sysadmins that has not been introduced to the concept of 
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -107,7 +107,7 @@ When combined with new sysadmins that has not been introduced to the concept of 
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/" rel="bookmark">PowerShell Solution: AGPM unable to take control of a GPO</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/" rel="bookmark">PowerShell Solution: AGPM unable to take control of a GPO</a>
   </h2>
   
     <time datetime="2022-09-08T14:56:09&#43;02:00">September 8, 2022</time>
@@ -117,7 +117,7 @@ When combined with new sysadmins that has not been introduced to the concept of 
 </figure>
 
 <h2 id="problem">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#problem">Problem</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#problem">Problem</a>
 </h2>
 <p>If you enjoy the principle of least privileges, version control and doing big infrastructural changes in a safe manner, <a href="https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/agpm/">Advanced Group Policy Management</a> or AGPM, is an amazing tool.</p>
 <p>AGPM itself has a few years on its back, and as we sysadmins tend to get easier and easier systems now days, legacy systems can mean complexity.</p>
@@ -131,7 +131,7 @@ When combined with new sysadmins that has not been introduced to the concept of 
 
 <p>Access denied is caused by the AGPM service-account not having the permission to take control of the GPO (not having control of a GPO in AGPM really does ruin the point of AGPM). Solving this problem involves giving the service-account the permissions needed, however it&rsquo;s a bit of a tricky thing to do.</p>
 <h2 id="solution">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#solution">Solution</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#solution">Solution</a>
 </h2>
 <p>As we&rsquo;ve established, we must add the correct permissions for the service-account to the GPO, easy right?
 Luckily yes, because we know PowerShell!</p>
@@ -140,21 +140,21 @@ Luckily yes, because we know PowerShell!</p>
 
 <p>To add the permissions, we need to understand how a GPO is stored. There&rsquo;s two places a GPOs data resides in, ActiveDirectory (GPC) &amp; Sysvol (GPT).</p>
 <h3 id="gpc">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#gpc">GPC</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#gpc">GPC</a>
 </h3>
 <p>Group Policy Container (GPC), luckily the name is easy to remember because we already understand that AD consists of Organizational Units and&hellip; Containers.
 The GPC is stored in AD, under &ldquo;CN=,Policies,CN=System,DC=x,DC=x&rdquo;. Since it&rsquo;s an AD object, logically it has attributes describing the object version etc.</p>
 <h3 id="gpt">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#gpt">GPT</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#gpt">GPT</a>
 </h3>
 <p>Group Policy Template (GPT), is stored in the DC&rsquo;s system volume (sysvol), under the &lsquo;policies&rsquo; subfolder.</p>
 <p>The GPT stores the majority of GPO data, it contains a folder structure of files that describes the GPOs functionality, meaning it stores script files, administrative template-based policies and various other security settings.</p>
 <h3 id="replication">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#replication">Replication</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#replication">Replication</a>
 </h3>
 <p>GPC uses AD replication, and GPT uses DFS-R since its in sysvol. This is important because we will edit the ACLs of both AD and sysvol in order to solve our issue.</p>
 <h3 id="editing-acl-for-gpc">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#editing-acl-for-gpc">Editing ACL for GPC</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#editing-acl-for-gpc">Editing ACL for GPC</a>
 </h3>
 <p>Editing its ACL requires generating an ActiveDirectoryRights object with the desired access. This can be done multiple ways, <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc771151(v=ws.11)">dsacls</a>, using <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2">Set-ACL</a> to name a few. In this case I had heard of an amazing module from <a href="https://twitter.com/SimonWahlin">Simon Wahlin</a> called <a href="https://www.powershellgallery.com/packages/DSACL/1.0.0">DSACL</a>, so I can simply do the following:</p>
 
@@ -170,7 +170,7 @@ The GPC is stored in AD, under &ldquo;CN=,Policies,CN=System,DC=x,DC=x&rdquo;. S
 <p>The &lsquo;TargetDN&rsquo; in this case will be the GPCs distinguishedName, and the DelegateDN will be the distinguishedName of our AGPM service-account.
 We run the cmdlet twice to mimic the way AGPM edits the ACL in a controlled GPO. AccessSystemSecurity was not needed in the 2nd ACE and therefore I ended up selecting the first 9 (0..8) ADRights.</p>
 <h3 id="editing-the-acl-for-gpt">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#editing-the-acl-for-gpt">Editing the ACL for GPT</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#editing-the-acl-for-gpt">Editing the ACL for GPT</a>
 </h3>
 <p>Since GPT is in sysvol, we now have the task of editing a filesystem ACL. This is different from a directory service ACL. There&rsquo;s many ways of doing this as well, <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cacls">cacls</a>, and <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2">Set-ACL</a> works great. I ended up taking the easy way out and used <a href="https://www.powershellgallery.com/packages/NTFSSecurity/4.2.6">NTFSSecurity</a>, again another killer PowerShell module with 1,1mil downloads as of writing. And that&rsquo;s quite understandable considering this is how one can grant full control on a filesystem:</p>
 
@@ -178,7 +178,7 @@ We run the cmdlet twice to mimic the way AGPM edits the ACL in a controlled GPO.
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Add-NTFSAccess</span> <span class="n">-Path</span> <span class="s2">&#34;\\DOMAIN\SYSVOL\DOMAIN.TEST\Policies\{</span><span class="p">$(</span><span class="nv">$GPOObject</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span><span class="s2">}&#34;</span> <span class="n">-AccessRights</span> <span class="n">FullControl</span> <span class="n">-Account</span> <span class="s1">&#39;DOMAIN\Service-Account-AGPM&#39;</span></span></span></code></pre></div>
 <h3 id="almost-ready-to-solve">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#almost-ready-to-solve">Almost ready to solve!</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#almost-ready-to-solve">Almost ready to solve!</a>
 </h3>
 <p>As we have learned, GPC and GPT is a bit different. Sysvol and AD does replicate, but in different ways. Key take-away is that most likely we need to wait for replication in order for the AGPM server to understand that the rights are in fact in place. This took me around 15m, this could have been avoided had I done the changes on the same server.</p>
 <p>Using the <a href="https://docs.microsoft.com/en-us/powershell/module/agpm/add-controlledgpo?view=win-mdop2-ps">AGPM module</a>, we&rsquo;re now ready to take control of the GPO, since we now have the access to do so.</p>
@@ -201,17 +201,17 @@ Sadly the AGPM module doesn&rsquo;t have something like &lsquo;Get-UncontrolledG
 <p>You can of course also navigate within GPMC &gt; ChangeControl &gt; Uncontrolled &gt; select all GPOs, rightclick, Control.</p>
 <p>Congratulations on having a fully controlled AGPM environment.</p>
 <h2 id="discussion">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#discussion">Discussion</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#discussion">Discussion</a>
 </h2>
 <p>Understanding where a GPO is stored is a nice way of understanding how they work. The reason behind having them stored in separate places most likely goes back to fact that AD is old, and back in the days, size mattered.
 Having the GPT files in the AD database (.dit) would simply mean a huge increase in data for AD. Splitting things up and having the DCs taking a bit of storage was probably a good idea back then.</p>
 <p>On another note, notice my code in this solution was quite simple. Even thought we did some complex tasks. I was actively not trying to re-invent the wheel, and this is something that gets more important the &lsquo;harder&rsquo; the task becomes. Using &ldquo;blackbox&rdquo; modules where we only follow the PowerShell standard way of typing out a cmdlet, can be a great way of achieving complex tasks with speed.
 It&rsquo;s also important that when a &ldquo;blackbox&rdquo; module solves something for you, go back and try to dig deeper in what it actually did. I find this a good way of learning things in general.</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/blog/ps_agpm_setacl/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_agpm_setacl/#emil">/Emil</a>
 </h3>
 
     

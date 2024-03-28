@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -27,7 +27,7 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell for Security: PassWord Gen Part 2 | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_pwgenerator_update/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_pwgenerator_update/">
 
 
 
@@ -45,9 +45,9 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -59,32 +59,32 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -92,7 +92,7 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -107,29 +107,29 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/" rel="bookmark">PowerShell for Security: PassWord Gen Part 2</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/" rel="bookmark">PowerShell for Security: PassWord Gen Part 2</a>
   </h2>
   
     <time datetime="2022-07-04T14:58:11&#43;01:00">July 4, 2022</time>
   
 </header>
     <h2 id="did-it-again">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#did-it-again">Did it again</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#did-it-again">Did it again</a>
 </h2>
 <p>2021-05-10 - <a href="https://blog.ehmiiz.tech/powershell-for-security-generate-a-x-platform-password-generator-using-powershell-7/">I wrote an article on Password Generators</a>.</p>
 <p>The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.</p>
 <h2 id="however">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#however">However,</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#however">However,</a>
 </h2>
 <p>This time I&rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .net/C# developer would tackle the challenge that is coding a password generator, I stumbled upon &ldquo;<a href="https://www.nuget.org/packages/PasswordGenerator/">PasswordGenerator</a>&rdquo;.</p>
 <p>To my surprise, the package has reached 1.6 million(!!!) downloads. I figured this package must be something special, some sort of holy grail of pass gens. And while I&rsquo;m no C# expert, I&rsquo;m always up for a challenge!</p>
 <p>So I shamefully forked the repository and started working on a binary PowerShell cmdlet that would mimic the nuget package. 7 versions and 29 commits later, &ldquo;<a href="https://www.powershellgallery.com/packages/BinaryPasswordGenerator/1.0.1">BinaryPasswordGenerator</a>&rdquo; was born!</p>
 <h3 id="its-fast">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#its-fast">It&rsquo;s fast&hellip;</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#its-fast">It&rsquo;s fast&hellip;</a>
 </h3>
 <p><img src="/pics/FastPWGen.png" alt="Fast"></p>
 <h3 id="its-customizable">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#its-customizable">It&rsquo;s customizable</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#its-customizable">It&rsquo;s customizable</a>
 </h3>
 <p>The cmdlet is highly customizable, just like the nuget package. This opens up a new usecase area that the former script did not cover:</p>
 <ul>
@@ -140,7 +140,7 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
 <li>It&rsquo;s wicked fast, meaning it scales better</li>
 </ul>
 <h3 id="examples">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#examples">Examples</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#examples">Examples</a>
 </h3>
 
   
@@ -195,7 +195,7 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeNumeric</span> <span class="n">-Length</span> <span class="mf">4</span></span></span></code></pre></div>
 <h3 id="using-together-with-other-powershell-modules">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#using-together-with-other-powershell-modules">Using together with other PowerShell modules:</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#using-together-with-other-powershell-modules">Using together with other PowerShell modules:</a>
 </h3>
 
   
@@ -213,10 +213,10 @@ However,This time I&rsquo;ve taken a whole new bull by the horn. While looking 
 </span></span><span class="line"><span class="cl"><span class="nb">Get-Secret</span> <span class="n">User</span> <span class="n">-AsPlainText</span>
 </span></span><span class="line"><span class="cl"><span class="n">u</span><span class="k">%</span><span class="n">4EkQlMpVjPnO5VM5tYcnUE</span><span class="p">!</span><span class="n">F</span><span class="p">!</span><span class="n">D3wvhB8w595LXqIEAny1XC4OVn4</span><span class="p">\</span><span class="n">x</span><span class="p">!</span><span class="n">1Q79Nlj</span><span class="p">!</span><span class="n">QwK</span><span class="p">!</span><span class="n">zBVkFUAHVy44iEIO2icVE0meAz3YEWudP9UdKrjbrp8nJ8DECVll2Uq</span><span class="p">!</span><span class="n">kt5</span></span></span></code></pre></div>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator_update/#emil">/Emil</a>
 </h3>
 
     

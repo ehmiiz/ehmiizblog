@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -26,7 +26,7 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_msgraph_mail/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_msgraph_mail/">
 
 
 
@@ -44,9 +44,9 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -58,32 +58,32 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -91,7 +91,7 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -106,7 +106,7 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/" rel="bookmark">PowerShell Solution: Use Send-MgUserMail in Azure Automation</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/" rel="bookmark">PowerShell Solution: Use Send-MgUserMail in Azure Automation</a>
   </h2>
   
     <time datetime="2023-11-06T08:23:11&#43;01:00">November 6, 2023</time>
@@ -116,11 +116,11 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
 </figure>
 
 <h2 id="send-mgusermail">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#send-mgusermail">Send-MgUserMail</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#send-mgusermail">Send-MgUserMail</a>
 </h2>
 <p>The following solution example is covering how to set-up and use the <code>Send-MgUserMail</code> cmdlet in <code>Azure Automation</code> to send an email with a subject, message body and an attached zip file.</p>
 <h2 id="pre-requirements">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#pre-requirements">Pre-Requirements</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#pre-requirements">Pre-Requirements</a>
 </h2>
 <ul>
 <li><a href="https://learn.microsoft.com/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide#create-a-shared-mailbox-and-add-members">M365 licensed <code>noreply</code> address as a shared mailbox</a></li>
@@ -128,7 +128,7 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
 <li>App Registration with <code>Send.Mail</code> application API permission exposed</li>
 </ul>
 <h2 id="authentication--access">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#authentication--access">Authentication &amp; Access</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#authentication--access">Authentication &amp; Access</a>
 </h2>
 <p>This solution will use an <code>Client Secret</code> and a <code>encrypted automation variable</code>.</p>
 <p>The alternative to using an Client Secret would be to <a href="https://learn.microsoft.com/entra/identity-platform/howto-create-self-signed-certificate">use a certificate</a> and I would recommend doing so since it&rsquo;s a more secure solution in general.</p>
@@ -183,7 +183,7 @@ Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automat
 <p><strong>Note</strong> that <code>Get-AutomationVariable</code> is a cmdlet which is only available for the az automation sandbox environment. It&rsquo;s also the only way of getting the encrypted variable.</p>
 <p><code>Get-AutomationVariable</code> is an internal cmdlet from the module <code>Orchestrator.AssetManagement.Cmdlets</code> which is a part of Azure Automation, so running this outside of a runbook will fail.</p>
 <h2 id="sending-the-mail">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#sending-the-mail">Sending the mail</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#sending-the-mail">Sending the mail</a>
 </h2>
 <p>Now that we have authentication and access out of the way, we can start developing a function that we will use in the runbook to send an email.
 My example below has a requirement of an attachment. I&rsquo;m using this for gathering data, compressing it and attaching the .zip file in the mail function.</p>
@@ -292,13 +292,13 @@ My example below has a requirement of an attachment. I&rsquo;m using this for ga
 </span></span><span class="line"><span class="cl"><span class="nb">Send-AutomatedEmail</span> <span class="nv">@SendMailSplat</span></span></span></code></pre></div>
 <p>And that&rsquo;s all there is to it! Congrats on sending an email using the Microsoft Graph.</p>
 <h2 id="key-takeaways">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#key-takeaways">Key Takeaways</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#key-takeaways">Key Takeaways</a>
 </h2>
 <p>While building this solution, I noticed that there&rsquo;s a lack of content and documentation on some things, one of those things are how to send an email to more than one recipient. If your migration from <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.3">Send-MailMessage</a>, it isn&rsquo;t so straightforward, since <code>Send-MgUserMail</code> is based on either JSON or MIME format.</p>
 <p>Meaning in a nutshell we can&rsquo;t just pass an array of email accounts and call it a day, instead we need to build an object that looks like something along the lines of:
 Message -&gt; ToRecipients -&gt; emailAddress -&gt; adress : adress.company.com</p>
 <h3 id="alternative-1-fast">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#alternative-1-fast">Alternative 1 (fast)</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#alternative-1-fast">Alternative 1 (fast)</a>
 </h3>
 
   
@@ -313,7 +313,7 @@ Message -&gt; ToRecipients -&gt; emailAddress -&gt; adress : adress.company.com<
 </span></span><span class="line"><span class="cl">        <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <h3 id="alternative-2-slow">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#alternative-2-slow">Alternative 2 (slow)</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#alternative-2-slow">Alternative 2 (slow)</a>
 </h3>
 
   
@@ -328,10 +328,10 @@ Message -&gt; ToRecipients -&gt; emailAddress -&gt; adress : adress.company.com<
 <p>Use whatever fits your needs best.</p>
 <p>Hope this was valuable to someone wanting to move away from <code>Send-MailMessage</code> to <code>Send-MgUserMail</code>!</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_msgraph_mail/#emil">/Emil</a>
 </h3>
 
     

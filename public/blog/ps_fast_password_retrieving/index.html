@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -28,7 +28,7 @@ However, I found myself using the graphical user interface (GUI) of my password 
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell KeePass and saving time | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_fast_password_retrieving/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_fast_password_retrieving/">
 
 
 
@@ -46,9 +46,9 @@ However, I found myself using the graphical user interface (GUI) of my password 
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -60,32 +60,32 @@ However, I found myself using the graphical user interface (GUI) of my password 
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -93,7 +93,7 @@ However, I found myself using the graphical user interface (GUI) of my password 
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -108,7 +108,7 @@ However, I found myself using the graphical user interface (GUI) of my password 
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_fast_password_retrieving/" rel="bookmark">PowerShell KeePass and saving time</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_fast_password_retrieving/" rel="bookmark">PowerShell KeePass and saving time</a>
   </h2>
   
     <time datetime="2023-08-25T00:00:00Z">August 25, 2023</time>
@@ -119,14 +119,14 @@ However, I found myself using the graphical user interface (GUI) of my password 
 
 <p>Glad to be back from a 7-month dad leave. Let&rsquo;s dive into some timesaving PowerShell!</p>
 <h3 id="the-problem">
-  <a class="Heading-link u-clickable" href="/blog/ps_fast_password_retrieving/#the-problem">The Problem</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_fast_password_retrieving/#the-problem">The Problem</a>
 </h3>
 <p>Password managers are very useful for anyone having more than one set of credentials, and most of us do.</p>
 <p>They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.</p>
 <p>However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret. The problem with navigating a GUI every day is that it&rsquo;s time consuming, and there&rsquo;s room for improvement, especially if you enjoy delving into some PowerShell and/or always have a terminal open.</p>
 <p>Summary: Password managers GUIs are slow and tedious to work with. Let&rsquo;s explore an alternative that is much faster!</p>
 <h3 id="my-solution">
-  <a class="Heading-link u-clickable" href="/blog/ps_fast_password_retrieving/#my-solution">My Solution</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_fast_password_retrieving/#my-solution">My Solution</a>
 </h3>
 <p>The solution to this problem that I went with was to create a custom script, which will install and configure my PowerShell session to easily access my password manager after typing in its master password. Together with a couple of functions to easily retrieve and copy-paste my password to the clipboard.</p>
 <p>Setting something to your clipboard, especially a password, is a risk since other applications also can access the clipboard, thus the clipboard needs to be cleared by setting a sleep timer and overwriting the secret.</p>
@@ -175,7 +175,7 @@ Since the <code>Install-Module</code> cmdlets <code>Name</code> parameter accept
 </span></span><span class="line"><span class="cl">    <span class="nb">Write-Verbose</span> <span class="s2">&#34;</span><span class="nv">$KeePassDataBaseName</span><span class="s2"> was already configured.&#34;</span> <span class="n">-Verbose</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <h3 id="functions">
-  <a class="Heading-link u-clickable" href="/blog/ps_fast_password_retrieving/#functions">Function(s)</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_fast_password_retrieving/#functions">Function(s)</a>
 </h3>
 <p>To speed things up even further, we want to create some smaller functions to wrap all the long cmdlets that we&rsquo;d otherwise have to write, to get our secrets to the clipboard.</p>
 <p>I say functions, because here&rsquo;s where you can enable the work we&rsquo;ve done even further, to work with PSCredentialObjects or start a process, wait, and send the password directly too it, thus generating a sort of custom single sign-on solution. However, sticking to the subject, my function will:</p>
@@ -217,7 +217,7 @@ Since the <code>Install-Module</code> cmdlets <code>Name</code> parameter accept
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ffs</span> <span class="n">github</span>
 </span></span><span class="line"><span class="cl"><span class="n">VERBOSE</span><span class="err">:</span> <span class="n">Secret</span> <span class="n">found</span> <span class="n">and</span> <span class="nb">set </span><span class="n">to</span> <span class="n">clipboard</span><span class="p">.</span> <span class="n">Will</span> <span class="n">auto</span> <span class="nb">clear </span><span class="k">in</span> <span class="mf">20</span> <span class="n">seconds</span><span class="p">.</span></span></span></code></pre></div>
 <h2 id="discussion">
-  <a class="Heading-link u-clickable" href="/blog/ps_fast_password_retrieving/#discussion">Discussion</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_fast_password_retrieving/#discussion">Discussion</a>
 </h2>
 <p>In my example, I&rsquo;m using KeePass, however this is very applicable to other password managers, in fact the PowerShell Gallery has tons of SecretManagement modules can be just as simple to use as in my examples.</p>
 <p>Some examples:</p>
@@ -257,19 +257,19 @@ Since the <code>Install-Module</code> cmdlets <code>Name</code> parameter accept
         <ul class="Tags">
           
             <li class="Tags-item u-background">
-              <a class="Tags-link u-clickable" href="/tags/powershell/" rel="tag">Powershell</a>
+              <a class="Tags-link u-clickable" href="/ehmiizblog/tags/powershell/" rel="tag">Powershell</a>
             </li>
           
             <li class="Tags-item u-background">
-              <a class="Tags-link u-clickable" href="/tags/security/" rel="tag">Security</a>
+              <a class="Tags-link u-clickable" href="/ehmiizblog/tags/security/" rel="tag">Security</a>
             </li>
           
             <li class="Tags-item u-background">
-              <a class="Tags-link u-clickable" href="/tags/passwords/" rel="tag">Passwords</a>
+              <a class="Tags-link u-clickable" href="/ehmiizblog/tags/passwords/" rel="tag">Passwords</a>
             </li>
           
             <li class="Tags-item u-background">
-              <a class="Tags-link u-clickable" href="/tags/automation/" rel="tag">Automation</a>
+              <a class="Tags-link u-clickable" href="/ehmiizblog/tags/automation/" rel="tag">Automation</a>
             </li>
           
         </ul>

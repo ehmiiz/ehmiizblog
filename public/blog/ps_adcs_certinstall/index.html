@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -28,7 +28,7 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell Solution: Install PFX certificate on servers | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_adcs_certinstall/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_adcs_certinstall/">
 
 
 
@@ -46,9 +46,9 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -60,32 +60,32 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -93,7 +93,7 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -108,7 +108,7 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/" rel="bookmark">PowerShell Solution: Install PFX certificate on servers</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_adcs_certinstall/" rel="bookmark">PowerShell Solution: Install PFX certificate on servers</a>
   </h2>
   
     <time datetime="2022-11-16T08:13:11&#43;01:00">November 16, 2022</time>
@@ -118,7 +118,7 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
 </figure>
 
 <h2 id="problem">
-  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#problem">Problem</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_adcs_certinstall/#problem">Problem</a>
 </h2>
 <p>As you may have guessed, this post will be about installing certificates using PowerShell.</p>
 <p>Every year as someone working with identity topics, I am tasked with renewing certificates across the environment. Many services relies fully on valid certificates in order to function securely.</p>
@@ -126,7 +126,7 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
 <p>In most cases, you will have multiple ADFS servers, meaning, if your not automating already, you will need to install the SSL certificate manually (no fun experience on 10+ servers).</p>
 <p><em>There&rsquo;s more to say regarding specifically ADFS SSL certificates, that this post will not cover, however an installation will be needed in many of those scenarios as well.</em></p>
 <h2 id="solution">
-  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#solution">Solution</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_adcs_certinstall/#solution">Solution</a>
 </h2>
 <p>This solution covers how one could do this for ADFS servers, however it carries over to other services that requires a valid certificate as well.</p>
 <p>To generate an pfx file out of an external certificate, I recommend using <a href="https://www.digicert.com/support/tools/certificate-utility-for-windows">The Digicert Cert Utility</a> to generate the CSR (Certificate Signing Request) on the root server. Then simply import it using the digicert tool, and export the certificate to a .pfx file.</p>
@@ -173,16 +173,16 @@ In most cases, you will have multiple ADFS servers, meaning, if your not automat
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
 <h2 id="small-talk">
-  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#small-talk">Small Talk</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_adcs_certinstall/#small-talk">Small Talk</a>
 </h2>
 <p>And just like that, you&rsquo;ve saved truckloads of time every year using PowerShell.</p>
 <p>I highly recommend checking out more cmdlets based from the <a href="https://learn.microsoft.com/en-us/powershell/module/pki/?view=windowsserver2022-ps">pki</a> and <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/?view=powershell-7.3">Microsoft.PowerShell.Security module</a>. The script above displays how one can tackle a .pfx certificate, but using <a href="https://learn.microsoft.com/en-us/powershell/module/pki/import-certificate?view=windowsserver2022-ps">Import-Certificate</a>, you could do similar things with .cer files.</p>
 <p>Also, one could eliminate the need for generating a password with using something like <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.secretmanagement/?view=ps-modules">Microsoft.PowerShell.SecretManagement</a>. This module translates well into a lot of cmdlets in the pki/security module.</p>
 <h3 id="stay-safe--happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#stay-safe--happy-coding">Stay safe &amp; happy coding!</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_adcs_certinstall/#stay-safe--happy-coding">Stay safe &amp; happy coding!</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/blog/ps_adcs_certinstall/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_adcs_certinstall/#emil">/Emil</a>
 </h3>
 
     

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   <meta charset="utf-8">
 
@@ -27,7 +27,7 @@ In this blog post, I will cover a trick that I frequently use when generating st
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PSCustomObject conditional loop-trick! | all posts</title>
-  <link rel="canonical" href="//localhost:1313/blog/ps_pscustomobject_trick/">
+  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_pscustomobject_trick/">
 
 
 
@@ -45,9 +45,9 @@ In this blog post, I will cover a trick that I frequently use when generating st
     
   
   
-    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -59,32 +59,32 @@ In this blog post, I will cover a trick that I frequently use when generating st
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/">all posts</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/home/">home</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/about/">about</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
         </li>
       
         
@@ -92,7 +92,7 @@ In this blog post, I will cover a trick that I frequently use when generating st
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -107,7 +107,7 @@ In this blog post, I will cover a trick that I frequently use when generating st
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/" rel="bookmark">PSCustomObject conditional loop-trick!</a>
+    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pscustomobject_trick/" rel="bookmark">PSCustomObject conditional loop-trick!</a>
   </h2>
   
     <time datetime="2023-03-22T08:23:11&#43;01:00">March 22, 2023</time>
@@ -117,13 +117,13 @@ In this blog post, I will cover a trick that I frequently use when generating st
 </figure>
 
 <h2 id="pscustomobject-valuable-skill">
-  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#pscustomobject-valuable-skill">PSCustomObject, valuable skill</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pscustomobject_trick/#pscustomobject-valuable-skill">PSCustomObject, valuable skill</a>
 </h2>
 <p>PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.</p>
 <p>There&rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.3">PowerShell docs cover it very well</a>.</p>
 <p>In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.3">Export-CSV</a>, or even better, <a href="https://adamtheautomator.com/powershell-excel/">Export-Excel</a></p>
 <h2 id="looping--conditions">
-  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#looping--conditions">Looping &amp; Conditions</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pscustomobject_trick/#looping--conditions">Looping &amp; Conditions</a>
 </h2>
 <p>This trick involves when you want to create a boolean (true or false) value in your PSCustomObject variable.
 Here&rsquo;s an example of what I mean:</p>
@@ -184,7 +184,7 @@ Here&rsquo;s an example of what I mean:</p>
 <li>Server answers on ping request?</li>
 </ul>
 <h2 id="steps">
-  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#steps">Steps</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pscustomobject_trick/#steps">Steps</a>
 </h2>
 <ol>
 <li>Generate an array of data</li>
@@ -194,12 +194,12 @@ Here&rsquo;s an example of what I mean:</p>
 <li>Export data</li>
 </ol>
 <h2 id="closing-thoughts">
-  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#closing-thoughts">Closing thoughts</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pscustomobject_trick/#closing-thoughts">Closing thoughts</a>
 </h2>
 <p>In this post, I aim to keep things short and concise by letting the example do the talking. The code is commented for easy understanding. This technique can be incredibly useful for generating reports or structured data that can inform decision-making in larger processes. I hope you find it helpful and please let me know if you do.</p>
 <p>Wishing you a great day and, as always:</p>
 <h2 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pscustomobject_trick/#happy-coding">Happy coding</a>
 </h2>
 
     
