@@ -27,7 +27,7 @@ Get-Command -Name Install-ModuleCommandType Name Version Source----------- ---
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell 7.4: Install-Module is evolving. | all posts</title>
-  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_resourceget/">
+  <link rel="canonical" href="https://ehmiiz.se/blog/ps_resourceget/">
 
 
 
@@ -45,9 +45,9 @@ Get-Command -Name Install-ModuleCommandType Name Version Source----------- ---
     
   
   
-      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -59,32 +59,32 @@ Get-Command -Name Install-ModuleCommandType Name Version Source----------- ---
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
+          <a class="Banner-link u-clickable" href="/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
+          <a class="Banner-link u-clickable" href="/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
+          <a class="Banner-link u-clickable" href="/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
         </li>
       
         
@@ -92,7 +92,7 @@ Get-Command -Name Install-ModuleCommandType Name Version Source----------- ---
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -107,7 +107,7 @@ Get-Command -Name Install-ModuleCommandType Name Version Source----------- ---
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/" rel="bookmark">PowerShell 7.4: Install-Module is evolving.</a>
+    <a class="Heading-link u-clickable" href="/blog/ps_resourceget/" rel="bookmark">PowerShell 7.4: Install-Module is evolving.</a>
   </h2>
   
     <time datetime="2023-11-16T08:23:11&#43;01:00">November 16, 2023</time>
@@ -117,7 +117,7 @@ Get-Command -Name Install-ModuleCommandType Name Version Source----------- ---
 </figure>
 
 <h2 id="where-does-install-module-come-from">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#where-does-install-module-come-from">Where does Install-Module come from?</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#where-does-install-module-come-from">Where does Install-Module come from?</a>
 </h2>
 <p><code>Install-Module</code> has evolved.</p>
 <p>Have you ever asked yourself, what module imports the <code>Install-Module</code> cmdlet?
@@ -135,7 +135,7 @@ It&rsquo;s kind of a meta question, check for yourself! Spoiler a bit down for a
     Function        Install-Module                                     2.2.5      PowerShellGet</code></pre>
 <!-- raw HTML omitted -->
 <h2 id="new-sheriff-in-town-">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#new-sheriff-in-town-">New sheriff in town 🤠</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#new-sheriff-in-town-">New sheriff in town 🤠</a>
 </h2>
 <p>With the <a href="https://devblogs.microsoft.com/powershell/powershell-7-4-general-availability/">GA release of PowerShell 7.4</a> a rewrite of PowerShellGet is included, (hint hint, renamed to <a href="https://devblogs.microsoft.com/powershell/psresourceget-is-generally-available/">PSResourceGet</a>), and boy is it fast.</p>
 <p>I installed PowerShell 7.4 on two different Ubuntu 20.04 WSL distros, and I installed a few modules to benchmark the old trusty <code>Install-Module</code> and the new sheriff in town: <code>Install-PSResource</code>.</p>
@@ -156,7 +156,7 @@ It&rsquo;s kind of a meta question, check for yourself! Spoiler a bit down for a
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PowerShellGet</span> <span class="n">-AllowPrerelease</span> <span class="n">-Force</span></span></span></code></pre></div>
 <p>The parameters of the new PSResourceGet is not supported from calling the older cmdlets, and there&rsquo;s no official documentation out for PowerShellGet V3 yet, so to me this seems purely for pipeline scenarios where you have code in place that can just use the new functionality. It has less to do with interactive use it seems. <a href="https://devblogs.microsoft.com/powershell/powershellget-3-0-22-beta22-is-now-available/">Here&rsquo;s some further reading</a> on the subject.</p>
 <h2 id="lets-take-psresourceget-for-a-spin">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#lets-take-psresourceget-for-a-spin">Let&rsquo;s take PSResourceGet for a spin</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#lets-take-psresourceget-for-a-spin">Let&rsquo;s take PSResourceGet for a spin</a>
 </h2>
 <p>PSResourceGet seem to me an awesome new module based on it&rsquo;s speed, so better get used to it&rsquo;s new syntax because this will be my new main driver for sure.</p>
 
@@ -187,7 +187,7 @@ Cmdlet          Update-PSModuleManifest                            1.0.1      Mi
 Cmdlet          Update-PSResource                                  1.0.1      Microsoft.PowerShell.PSResourceGet
 Cmdlet          Update-PSScriptFileInfo                            1.0.1      Microsoft.PowerShell.PSResourceGet</code></pre>
 <h2 id="whats-installed">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#whats-installed">What&rsquo;s installed?</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#whats-installed">What&rsquo;s installed?</a>
 </h2>
 <p>It&rsquo;s not only installing modules that&rsquo;s faster, it&rsquo;s also very fast at getting installed modules.</p>
 <p>Getting installed modules can be very time-consuming on shared systems, especially where you have the az modules installed, so this is a great performance win overall.</p>
@@ -195,7 +195,7 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 </figure>
 
 <h2 id="find-new-stuff">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#find-new-stuff">Find new stuff</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#find-new-stuff">Find new stuff</a>
 </h2>
 <p>Finding new modules and scripts is also a crucial part of PowerShell, especially for the community members. I would argue with PSResourceGet going GA, PowerShell 7.4 is probably one of the most significant performance boosters of PowerShell (in it&rsquo;s open source life).</p>
 <figure><img src="/pics/find-module.png"/>
@@ -203,7 +203,7 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 
 <p>As you can see, finding modules is way faster, and here we&rsquo;re even using two-way wildcards.</p>
 <h2 id="what-about-publishing">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#what-about-publishing">What about publishing?</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#what-about-publishing">What about publishing?</a>
 </h2>
 <p>Let&rsquo;s try to use the new <code>Publish-PSResource</code>. I have a minor bug-fix to do on my project <a href="https://www.ehmiiz.se/blog/ps_linuxinfo_release/">linuxinfo</a> and will edit my publishing script so that github action will publish it for me using Publish-PSResource.</p>
 <p>I start with editing my very simple publishing script. Since I don&rsquo;t know if the github-hosted runner will have PSResourceGet installed yet, I need to validate that the cmdlet is present before calling it. If it&rsquo;s not, I&rsquo;m simply installing it using PowerShellGet v2.</p>
@@ -224,7 +224,7 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 
 <p>And there&rsquo;s a new version of <code>linuxinfo</code> with a minor bugfix. And the Publish-PSResource migration was very straightforward.</p>
 <h2 id="conclusion">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#conclusion">Conclusion</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#conclusion">Conclusion</a>
 </h2>
 <p>In this post, we learned about the origin of <code>Install-Module</code>, being PowerShellGet v2, and it&rsquo;s predecessor <code>Install-PSResource</code>, being PSResourceGet. We took some cmdlets for a spin and realized that, the new version is easily twice as fast, in some cases even 3 times faster.</p>
 <p>We covered PowerShellGet V3 being a compatibility layer and some caveats with it.</p>
@@ -232,10 +232,10 @@ Cmdlet          Update-PSScriptFileInfo                            1.0.1      Mi
 <p>I recommend to poke around with the new PSResourceGet cmdlets and <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.psresourceget/?view=powershellget-3.x">read it&rsquo;s official documentation</a>, and for interactive use not rely on any compatibility layer, save that for the edge-cases.</p>
 <p>Thanks for reading this far, hope you found it helpful. PM me on twitter for any feedback.</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_resourceget/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_resourceget/#emil">/Emil</a>
 </h3>
 
     

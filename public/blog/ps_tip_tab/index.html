@@ -26,7 +26,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell Productivity tip: Working with History | all posts</title>
-  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_tip_tab/">
+  <link rel="canonical" href="https://ehmiiz.se/blog/ps_tip_tab/">
 
 
 
@@ -44,9 +44,9 @@ Different ways of viewing your historyTo view your current sessions history, Po
     
   
   
-      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -58,32 +58,32 @@ Different ways of viewing your historyTo view your current sessions history, Po
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
+          <a class="Banner-link u-clickable" href="/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
+          <a class="Banner-link u-clickable" href="/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
+          <a class="Banner-link u-clickable" href="/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
         </li>
       
         
@@ -91,7 +91,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -106,7 +106,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/" rel="bookmark">PowerShell Productivity tip: Working with History</a>
+    <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/" rel="bookmark">PowerShell Productivity tip: Working with History</a>
   </h2>
   
     <time datetime="2022-05-16T08:05:11&#43;01:00">May 16, 2022</time>
@@ -117,7 +117,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
 
 <p>One thing I&rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&rsquo;s quite a few ways to do so currently, so I thought i&rsquo;d share some of my favorite ones.</p>
 <h2 id="different-ways-of-viewing-your-history">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/#different-ways-of-viewing-your-history">Different ways of viewing your history</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#different-ways-of-viewing-your-history">Different ways of viewing your history</a>
 </h2>
 <ul>
 <li>To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&gt; h. Simple as that.</li>
@@ -139,7 +139,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">(</span><span class="nb">Get-PSReadLineOption</span><span class="p">).</span><span class="py">historysavepath</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$env:USERNAME</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;Your-Colleague-That-Did-Not-Docx-It&#34;</span><span class="p">)</span></span></span></code></pre></div>
 <h2 id="history-tend-to-repeat-itself">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/#history-tend-to-repeat-itself">History Tend To Repeat Itself</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#history-tend-to-repeat-itself">History Tend To Repeat Itself</a>
 </h2>
 <p>As we all know, we humans always have a need to re-run history. Without being political about it, here&rsquo;s some examples on how you could do this in PowerShell</p>
 
@@ -151,7 +151,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
 </figure>
 
 <h2 id="but-theres-more">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/#but-theres-more">But there&rsquo;s more!</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#but-theres-more">But there&rsquo;s more!</a>
 </h2>
 
   
@@ -164,7 +164,7 @@ Different ways of viewing your historyTo view your current sessions history, Po
 </figure>
 
 <h2 id="help">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/#help">Help!</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#help">Help!</a>
 </h2>
 <p>If you&rsquo;ve read this far and desire more reading, run the following one-liner</p>
 
@@ -179,10 +179,10 @@ Different ways of viewing your historyTo view your current sessions history, Po
 </span></span><span class="line"><span class="cl"><span class="nb">Get-Help</span> <span class="n">about_history</span></span></span></code></pre></div>
 <p>Hopefully this was a decent history-lesson for someone!</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emilhttpstwittercomehmiiz">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_tip_tab/#emilhttpstwittercomehmiiz">/<a href="https://twitter.com/ehmiiz">Emil</a></a>
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#emilhttpstwittercomehmiiz">/<a href="https://twitter.com/ehmiiz">Emil</a></a>
 </h3>
 
     

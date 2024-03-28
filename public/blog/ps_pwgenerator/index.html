@@ -26,7 +26,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 
 <meta name="generator" content="Hugo 0.123.8">
   <title>PowerShell for Security: PassWord Gen Part 1 | all posts</title>
-  <link rel="canonical" href="https://ehmiiz.github.io/ehmiizblog/blog/ps_pwgenerator/">
+  <link rel="canonical" href="https://ehmiiz.se/blog/ps_pwgenerator/">
 
 
 
@@ -44,9 +44,9 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
     
   
   
-      <link rel="stylesheet" href="/ehmiizblog/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css" integrity="sha256-YxWMcxA0dwHzrcNcIQgG8/xW92ZBEvPKH1iawdH6wpQ=" crossorigin="anonymous">
 
-      <link rel="stylesheet" href="/ehmiizblog/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
 
 
 
@@ -58,32 +58,32 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
     <ul class="Banner">
       <li class="Banner-item Banner-item--title">
         <h1 class="Banner-heading">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/">all posts</a>
+          <a class="Banner-link u-clickable" href="/">all posts</a>
         </h1>
       </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/home/">home</a>
+          <a class="Banner-link u-clickable" href="/home/">home</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/blog/">blog</a>
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/about/">about</a>
+          <a class="Banner-link u-clickable" href="/about/">about</a>
         </li>
       
         
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/modules/">software</a>
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
         </li>
       
         
@@ -91,7 +91,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
           
         
         <li class="Banner-item">
-          <a class="Banner-link u-clickable" href="/ehmiizblog/feed.xml">rss</a>
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
         </li>
       
     </ul>
@@ -106,14 +106,14 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
   <article>
     <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/" rel="bookmark">PowerShell for Security: PassWord Gen Part 1</a>
+    <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/" rel="bookmark">PowerShell for Security: PassWord Gen Part 1</a>
   </h2>
   
     <time datetime="2021-05-10T14:58:11&#43;01:00">May 10, 2021</time>
   
 </header>
     <h2 id="my-history-with-password-generators">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#my-history-with-password-generators">My history with Password Generators</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#my-history-with-password-generators">My history with Password Generators</a>
 </h2>
 <p>Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)</p>
 <p>My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</p>
@@ -121,7 +121,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 <p>Adam Bertram does a great job covering how to wrap this in a module, click the class name to read his post about it.</p>
 <p>The class does bring a dependency on the the specific dotnet class, and for me, this approach started to bring errors in Powershell cores early versions.</p>
 <h2 id="new-attempt-without-dependencies">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#new-attempt-without-dependencies">New attempt without dependencies</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#new-attempt-without-dependencies">New attempt without dependencies</a>
 </h2>
 <p>This is my attempt at creating my own password generator</p>
 
@@ -209,7 +209,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 <p>Read the comment based help, or load the function and run:</p>
 <p><code>Get-Help Get-GeneratedPassword</code></p>
 <h3 id="my-requirements-was-the-following">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#my-requirements-was-the-following">My Requirements was the following</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#my-requirements-was-the-following">My Requirements was the following</a>
 </h3>
 <ul>
 <li>Cover <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">AD complexity rules</a> (in 99,9%)</li>
@@ -218,7 +218,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 <li>No dependencies outside of Powershell 7</li>
 </ul>
 <h3 id="begin">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#begin">Begin</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#begin">Begin</a>
 </h3>
 <p>The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the <code>-Amount</code> parameter<br>
 <code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
@@ -238,7 +238,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 <p>The &ldquo;(?-i)&rdquo; part is needed since PowerShell by default is case-insensitive, this definition solves that part, and we need this since we really do care about the match being case-sensitive. <a href="https://ninmonkeys.com/blog/2020/11/21/using-case-sensitive-regular-expressions-in-powershell-tips/">This blog post by Jake Bolton</a> covers the problem in detail.</p>
 <p>Since all we do here is randomly grabbing strings and joining them, we&rsquo;re only working with a string object. Making the script fast and the output very simple, and since the output is just a simple string, it can be easily turned into a .txt file or used within <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1">ConvertTo-SecureString</a></p>
 <h3 id="lastly">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#lastly">Lastly</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#lastly">Lastly</a>
 </h3>
 <p>This is a quite simple and short function, and I&rsquo;m sure it wont cover all my password generating needs for the future, but hopefully for some time at least.</p>
 <p>I hope this post got you thinking &amp; curious about:</p>
@@ -251,10 +251,10 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 </ul>
 <p>in Powershell!</p>
 <h3 id="happy-coding">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#happy-coding">Happy coding</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#happy-coding">Happy coding</a>
 </h3>
 <h3 id="emil">
-  <a class="Heading-link u-clickable" href="/ehmiizblog/blog/ps_pwgenerator/#emil">/Emil</a>
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#emil">/Emil</a>
 </h3>
 
     
