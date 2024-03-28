@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<?xml-stylesheet type="text/xsl" href="/xml/base.min.xml" ?>
+<?xml-stylesheet type="text/xsl" href="https://ehmiiz.se/xml/base.min.xml" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on all posts</title>
-    <link>/tags/</link>
+    <link>https://ehmiiz.se/tags/</link>
     <description>Recent content in Tags on all posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link rel="self" href="/tags/feed.xml" type="application/rss+xml" />
+    <atom:link rel="self" href="https://ehmiiz.se/tags/feed.xml" type="application/rss+xml" />
   </channel>
 </rss>
