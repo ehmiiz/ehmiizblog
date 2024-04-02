@@ -37,3 +37,7 @@ menu:
       weight: 5
       params:
         - format: rss
+
+services:
+  disqus:
+    shortname: ehmiiz-se
