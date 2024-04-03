@@ -1368,9 +1368,11 @@ Non-Features are cool because it makes the script unique and useful in certain s
   <footer>
     <div id="disqus_thread"></div>
     <script>
-        
 
-        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  
+        this.page.identifier = PAGE_IDENTIFIER; 
+        };
 
         (function() { 
         var d = document, s = d.createElement('script');

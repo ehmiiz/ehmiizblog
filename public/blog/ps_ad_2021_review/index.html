@@ -186,9 +186,11 @@ Still waiting for someone smart enough to re-write this for the Windows Terminal
   <footer>
     <div id="disqus_thread"></div>
     <script>
-        
 
-        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  
+        this.page.identifier = PAGE_IDENTIFIER; 
+        };
 
         (function() { 
         var d = document, s = d.createElement('script');

@@ -218,9 +218,11 @@ The keypair to this certificate is stored in your Personal certificate store, lu
   <footer>
     <div id="disqus_thread"></div>
     <script>
-        
 
-        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  
+        this.page.identifier = PAGE_IDENTIFIER; 
+        };
 
         (function() { 
         var d = document, s = d.createElement('script');

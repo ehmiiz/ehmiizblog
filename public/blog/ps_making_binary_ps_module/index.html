@@ -363,9 +363,11 @@ Make sure to try to get all the functionality of the package out in the PowerShe
   <footer>
     <div id="disqus_thread"></div>
     <script>
-        
 
-        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  
+        this.page.identifier = PAGE_IDENTIFIER; 
+        };
 
         (function() { 
         var d = document, s = d.createElement('script');

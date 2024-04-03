@@ -223,9 +223,11 @@ Scenario 1: Saved Locally on the Local Git RepositoryThe simplest scenario is w
   <footer>
     <div id="disqus_thread"></div>
     <script>
-        
 
-        
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  
+        this.page.identifier = PAGE_IDENTIFIER; 
+        };
 
         (function() { 
         var d = document, s = d.createElement('script');
