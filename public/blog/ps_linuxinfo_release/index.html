@@ -1,6 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Install-Module linuxinfoI am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.
+Install it from the PowerShellGallery:
+Install-Module linuxinfo -VerboseView it&rsquo;s functions:
+Get-Command -Module linuxinfoCommandType Name Version Source ----------- ---- ------- ------ Function Get-BatteryInfo 0.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>Analyze your Linux system using PowerShell | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_linuxinfo_release/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_linuxinfo_release/" rel="bookmark">Analyze your Linux system using PowerShell</a>
+  </h2>
+  
+    <time datetime="2023-04-08T08:23:11&#43;01:00">April 8, 2023</time>
+  
+</header>
+    <figure><img src="/pics/linuxinfogallery.png"/>
+</figure>
+
+<h2 id="install-module-linuxinfohttpsgithubcomehmiizlinuxinfo">
+  <a class="Heading-link u-clickable" href="/blog/ps_linuxinfo_release/#install-module-linuxinfohttpsgithubcomehmiizlinuxinfo">Install-Module <a href="https://github.com/ehmiiz/linuxinfo">linuxinfo</a></a>
+</h2>
+<p>I am pleased to share that I have been working on a fun hobby project! A PowerShell module designed to facilitate Linux system analysis for PowerShell users. With its standardized noun-verb commands and object-based output, this module leverages the benefits of PowerShell to streamline analysis and information gathering on a Linux system.</p>
+<p>Install it from the PowerShellGallery:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="n">linuxinfo</span> <span class="n">-Verbose</span></span></span></code></pre></div>
+<p>View it&rsquo;s functions:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Command</span> <span class="n">-Module</span> <span class="n">linuxinfo</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">CommandType     Name                                               Version    Source
+</span></span><span class="line"><span class="cl">-----------     ----                                               -------    ------
+</span></span><span class="line"><span class="cl">Function        Get-BatteryInfo                                    0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-ComputerInfo                                   0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-DisplayInfo                                    0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-FileSystemHelp                                 0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-NetworkInfo                                    0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-OSInfo                                         0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-SystemUptime                                   0.0.1      linuxinfo
+</span></span><span class="line"><span class="cl">Function        Get-USBInfo                                        0.0.1      linuxinfo</span></span></code></pre></div>
+<p>Get computer information:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-ComputerInfo</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">BiosDate        : 06/17/2022
+</span></span><span class="line"><span class="cl">BiosVendor      : INSYDE Corp.
+</span></span><span class="line"><span class="cl">BiosVerson      : 03.09
+</span></span><span class="line"><span class="cl">CPU             : 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
+</span></span><span class="line"><span class="cl">CPUArchitecture : x86_64
+</span></span><span class="line"><span class="cl">CPUThreads      : 8
+</span></span><span class="line"><span class="cl">CPUCores        : 4
+</span></span><span class="line"><span class="cl">CPUSockets      : 1
+</span></span><span class="line"><span class="cl">DistName        : Fedora Linux
+</span></span><span class="line"><span class="cl">DistSupportURL  : https://fedoraproject.org/
+</span></span><span class="line"><span class="cl">DiskSizeGb      : {930, 16}
+</span></span><span class="line"><span class="cl">DiskFreeGb      : {848, 16}
+</span></span><span class="line"><span class="cl">DiskUsedGb      : 82
+</span></span><span class="line"><span class="cl">GPU             : Intel Corporation TigerLake-LP GT2 [Iris Xe Graphics] (rev 01)
+</span></span><span class="line"><span class="cl">DistVersion     : 37 (KDE Plasma)
+</span></span><span class="line"><span class="cl">KernelRelease   : 6.2.9-200.fc37.x86_64
+</span></span><span class="line"><span class="cl">OS              : GNU/Linux
+</span></span><span class="line"><span class="cl">RAM             : 31.9G</span></span></code></pre></div>
+<p>Getting the Operating system information:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-OSInfo</span></span></span></code></pre></div>
+
+  
+
+<pre tabindex="0"><code>DistName      : Fedora Linux
+DistVersion   : 37 (KDE Plasma)
+SupportURL    : https://fedoraproject.org/
+OS            : GNU/Linux
+KernelRelease : 6.2.9-200.fc37.x86_64
+OSInstallDate : 2023-03-25</code></pre>
+<h2 id="beyond-hardware-info">
+  <a class="Heading-link u-clickable" href="/blog/ps_linuxinfo_release/#beyond-hardware-info">Beyond Hardware Info</a>
+</h2>
+<p>There&rsquo;s more functions similar to the ones described above, where linuxinfo is parsing useful system information and displaying the output as a PSCustomObject. However, taking a look at a different kind of info:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-FileSystemHelp</span> <span class="n">-All</span></span></span></code></pre></div>
+
+  
+
+<pre tabindex="0"><code>Name                           Value
+----                           -----
+root                           root users home directory
+etc                            system-global configuration files
+mnt                            temporary mount points
+dev                            device files for hardware access
+bin                            essential user binaries
+run                            stores runtime information
+opt                            optional application software packages
+media                          mount point for external / removable devices
+lost+found                     stores corrupted filesystem files
+usr                            user utilities and applications
+tmp                            temporary files
+var                            variable files
+lib                            system libraries and kernel modules
+boot                           boot loader files
+proc                           procfs - process and kernel information
+sys                            sysfs - devices and kernel information
+srv                            services data directories
+sbin                           essential system binaries
+home                           users home directories</code></pre>
+<p>Get basic information about the linux filesystem using PowerShell. Can be very handy if you&rsquo;re coming from a Windows background.</p>
+<p>The function supports quick navigation using the <code>-Go</code> parameter, and displaying a richer help message with the <code>-Full</code> parameter.</p>
+<h2 id="testing--disclaimer">
+  <a class="Heading-link u-clickable" href="/blog/ps_linuxinfo_release/#testing--disclaimer">Testing &amp; Disclaimer</a>
+</h2>
+<p>Currently the module has been tested on Ubuntu and Fedora, so I&rsquo;m fairly confident that it works good on Debian &amp; RHEL distributions.</p>
+<p>However I&rsquo;ve done no testing on arch linux, therefore I&rsquo;m not sure how the experience is there. It&rsquo;s also in an early stage (version 0.0.1), with improvement plans and new functionality. Be sure to hop on the GitHub<a href="https://github.com/ehmiiz/linuxinfo"> repo</a> to learn more.</p>
+<h2 id="reason">
+  <a class="Heading-link u-clickable" href="/blog/ps_linuxinfo_release/#reason">Reason</a>
+</h2>
+<p>I understand that the use-case for something like linuxinfo is a bit limited since Linux already has great tools for doing similar tasks. However this project is more of a personal journey into learning:</p>
+<ul>
+<li><a href="https://devblogs.microsoft.com/powershell-community/a-closer-look-at-the-parsing-code-of-a-crescendo-output-handler/">Parsing techniques</a></li>
+<li><a href="https://ubuntu.com/blog/if-youre-still-using-ifconfig-youre-living-in-the-past">What Linux binaries to use, when</a></li>
+<li><a href="https://diego.assencio.com/?index=1363692dafeabeff8e3f975077f92dfe">Learning standard Linux binaries</a></li>
+</ul>
+<p>But most importantly, having some fun with PowerShell and extending the usefulness and value of PowerShell.</p>
+<p>I&rsquo;d be happy if you&rsquo;d like to try it, and star the github repo if you feel it&rsquo;s worth it.</p>
+<h2 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_linuxinfo_release/#happy-coding">Happy coding</a>
+</h2>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

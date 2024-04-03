@@ -1,6 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Did it again2021-05-10 - I wrote an article on Password Generators.
+The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp; PowerShell 7&#43;. The goal was also to cover AD complexity rules, and it did just that.
+However,This time I&rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell for Security: PassWord Gen Part 2 | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_pwgenerator_update/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/" rel="bookmark">PowerShell for Security: PassWord Gen Part 2</a>
+  </h2>
+  
+    <time datetime="2022-07-04T14:58:11&#43;01:00">July 4, 2022</time>
+  
+</header>
+    <h2 id="did-it-again">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#did-it-again">Did it again</a>
+</h2>
+<p>2021-05-10 - <a href="https://blog.ehmiiz.tech/powershell-for-security-generate-a-x-platform-password-generator-using-powershell-7/">I wrote an article on Password Generators</a>.</p>
+<p>The goal of that pass-gen was to have a script in my $Profile that would simply work on both PowerShell 5.1 &amp; PowerShell 7+. The goal was also to cover AD complexity rules, and it did just that.</p>
+<h2 id="however">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#however">However,</a>
+</h2>
+<p>This time I&rsquo;ve taken a whole new bull by the horn. While looking for a nuget package for password generators, out of curiosity on how a .net/C# developer would tackle the challenge that is coding a password generator, I stumbled upon &ldquo;<a href="https://www.nuget.org/packages/PasswordGenerator/">PasswordGenerator</a>&rdquo;.</p>
+<p>To my surprise, the package has reached 1.6 million(!!!) downloads. I figured this package must be something special, some sort of holy grail of pass gens. And while I&rsquo;m no C# expert, I&rsquo;m always up for a challenge!</p>
+<p>So I shamefully forked the repository and started working on a binary PowerShell cmdlet that would mimic the nuget package. 7 versions and 29 commits later, &ldquo;<a href="https://www.powershellgallery.com/packages/BinaryPasswordGenerator/1.0.1">BinaryPasswordGenerator</a>&rdquo; was born!</p>
+<h3 id="its-fast">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#its-fast">It&rsquo;s fast&hellip;</a>
+</h3>
+<p><img src="/pics/FastPWGen.png" alt="Fast"></p>
+<h3 id="its-customizable">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#its-customizable">It&rsquo;s customizable</a>
+</h3>
+<p>The cmdlet is highly customizable, just like the nuget package. This opens up a new usecase area that the former script did not cover:</p>
+<ul>
+<li>Backend engine for generating passwords, in GUI/Web senarios (like a nuget package)</li>
+<li>PIN/One Time Pass generations (usually 4-8 digit codes)</li>
+<li>More user-friendly passwords (example: lowercase + numeric)</li>
+<li>Supports up to 128 char length passwords</li>
+<li>It&rsquo;s wicked fast, meaning it scales better</li>
+</ul>
+<h3 id="examples">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#examples">Examples</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># By default, all characters available for use and a length of 16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Will return a random password with the default settings</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Same as above but you can set the length. Must be between 4 and 128</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Will return a password which is 32 characters long</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-Length</span> <span class="mf">32</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Same as above but you can set the length. Must be between 4 and 128</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Will return a password which only contains lowercase and uppercase characters and is 21 characters long.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeLowercase</span> <span class="n">-IncludeUppercase</span> <span class="n">-Length</span> <span class="mf">21</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># You can build up your reqirements by adding parameters, like -IncludeNumeric</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># This will return a password which is just numbers and has a default length of 16</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeNumeric</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># As above, here is how to get lower, upper and special characters using this approach</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeLowercase</span> <span class="n">-IncludeUppercase</span> <span class="n">-IncludeSpecial</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># This is the same as the above, but with a length of 128</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeLowercase</span> <span class="n">-IncludeUppercase</span> <span class="n">-IncludeSpecial</span> <span class="n">-Length</span> <span class="mf">128</span></span></span></code></pre></div>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># One Time Passwords</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># If you want to return a 4 digit number you can use this:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">New-Password</span> <span class="n">-IncludeNumeric</span> <span class="n">-Length</span> <span class="mf">4</span></span></span></code></pre></div>
+<h3 id="using-together-with-other-powershell-modules">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#using-together-with-other-powershell-modules">Using together with other PowerShell modules:</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Convert to SecureString</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$pw</span> <span class="p">=</span> <span class="nb">New-Password</span> <span class="p">|</span> <span class="nb">ConvertTo-SecureString</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Set a password in your SecretVault using Secret Store/Management</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Set-Secret</span> <span class="n">-Name</span> <span class="s1">&#39;User&#39;</span> <span class="n">-Secret</span> <span class="p">(</span><span class="nb">New-Password</span> <span class="n">-Length</span> <span class="mf">128</span><span class="p">)</span> <span class="n">-Vault</span> <span class="n">PSVault</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Secret</span> <span class="n">User</span>
+</span></span><span class="line"><span class="cl"><span class="n">System</span><span class="p">.</span><span class="py">Security</span><span class="p">.</span><span class="py">SecureString</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Secret</span> <span class="n">User</span> <span class="n">-AsPlainText</span>
+</span></span><span class="line"><span class="cl"><span class="n">u</span><span class="k">%</span><span class="n">4EkQlMpVjPnO5VM5tYcnUE</span><span class="p">!</span><span class="n">F</span><span class="p">!</span><span class="n">D3wvhB8w595LXqIEAny1XC4OVn4</span><span class="p">\</span><span class="n">x</span><span class="p">!</span><span class="n">1Q79Nlj</span><span class="p">!</span><span class="n">QwK</span><span class="p">!</span><span class="n">zBVkFUAHVy44iEIO2icVE0meAz3YEWudP9UdKrjbrp8nJ8DECVll2Uq</span><span class="p">!</span><span class="n">kt5</span></span></span></code></pre></div>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator_update/#emil">/Emil</a>
+</h3>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

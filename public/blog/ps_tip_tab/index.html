@@ -1,6 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="One thing I&rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&rsquo;s quite a few ways to do so currently, so I thought i&rsquo;d share some of my favorite ones.
+Different ways of viewing your historyTo view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&gt; h. Simple as that. hTo view your over-all history in your current environment, PSReadLine is your friend: cat (Get-PSReadLineOption).">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell Productivity tip: Working with History | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_tip_tab/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/" rel="bookmark">PowerShell Productivity tip: Working with History</a>
+  </h2>
+  
+    <time datetime="2022-05-16T08:05:11&#43;01:00">May 16, 2022</time>
+  
+</header>
+    <figure><img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1317&amp;q=80"/>
+</figure>
+
+<p>One thing I&rsquo;ve always done while hacking along in the terminal is working with my command-line history. There&rsquo;s quite a few ways to do so currently, so I thought i&rsquo;d share some of my favorite ones.</p>
+<h2 id="different-ways-of-viewing-your-history">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#different-ways-of-viewing-your-history">Different ways of viewing your history</a>
+</h2>
+<ul>
+<li>To view your current sessions history, PowerShell creates an alias for the cmdlet Get-History -&gt; h. Simple as that.</li>
+</ul>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">h</span></span></span></code></pre></div>
+<ul>
+<li>To view your over-all history in your current environment, PSReadLine is your friend:</li>
+</ul>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">(</span><span class="nb">Get-PSReadLineOption</span><span class="p">).</span><span class="n">HistorySavePath</span></span></span></code></pre></div>
+<p>Viewing the txt-file of PSReadLines history can be a lifesaver if you work with colleagues that tend to never document their solutions. You could modify the HistorySavePath property of your own output, to view someone else&rsquo;s history on a shared server/computer.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cat </span><span class="p">(</span><span class="nb">Get-PSReadLineOption</span><span class="p">).</span><span class="py">historysavepath</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="nv">$env:USERNAME</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;Your-Colleague-That-Did-Not-Docx-It&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="history-tend-to-repeat-itself">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#history-tend-to-repeat-itself">History Tend To Repeat Itself</a>
+</h2>
+<p>As we all know, we humans always have a need to re-run history. Without being political about it, here&rsquo;s some examples on how you could do this in PowerShell</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">r </span><span class="mf">25</span></span></span></code></pre></div>
+<p>It&rsquo;s that simple. In your current session, each command you enter will be available in your Get-History (h). Each history entry has an ID. The cmdlet behind the alias r (Invoke-History) will execute your history based on the ID you provide. In the example above, I&rsquo;m executing my 25&rsquo;th command inputed in my terminal.</p>
+<figure><img src="https://i.imgur.com/O4y0isj.png"/>
+</figure>
+
+<h2 id="but-theres-more">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#but-theres-more">But there&rsquo;s more!</a>
+</h2>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">Emil</span><span class="p">\</span><span class="n">git</span><span class="p">&gt;</span> <span class="c">#25&lt;tab&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">Emil</span><span class="p">\</span><span class="n">git</span><span class="p">&gt;</span> <span class="nb">Write-Host</span> <span class="s2">&#34;Tomorrow is monday!!!&#34;</span> <span class="n">-ForegroundColor</span> <span class="p">(</span><span class="nb">Get-Random</span> <span class="s2">&#34;Green&#34;</span><span class="p">,</span><span class="s2">&#34;Yellow&#34;</span><span class="p">,</span><span class="s2">&#34;Blue&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p>The following is PowerShell Black-Magic, and is&rsquo;s really useful. It saves you the trouble of copy-pasting your history.</p>
+<p>Simply view your history, memorize the ID, hit &lsquo;#&rsquo; and the ID, followed by a &rsquo;tab&rsquo; and you have it printed ready to be executed in your terminal.</p>
+<figure><img src="https://i.imgur.com/fw4C055.png"/>
+</figure>
+
+<h2 id="help">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#help">Help!</a>
+</h2>
+<p>If you&rsquo;ve read this far and desire more reading, run the following one-liner</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">gcm </span><span class="p">*</span><span class="n">-history</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span> <span class="n">help</span> <span class="nv">$_</span><span class="p">.</span><span class="py">name</span> <span class="n">-s</span> <span class="p">}</span></span></span></code></pre></div>
+<p>To be clear:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Command</span> <span class="p">*</span><span class="n">-history</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span> <span class="nb">Get-Help</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Name</span> <span class="n">-ShowWindow</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Get-Help</span> <span class="n">about_history</span></span></span></code></pre></div>
+<p>Hopefully this was a decent history-lesson for someone!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emilhttpstwittercomehmiiz">
+  <a class="Heading-link u-clickable" href="/blog/ps_tip_tab/#emilhttpstwittercomehmiiz">/<a href="https://twitter.com/ehmiiz">Emil</a></a>
+</h3>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,6 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="2021: From my IAM PerspectiveFirst of all, this blog-post inspired me to write something similar, so thanks @MDowst for sharing.
+For myself I&rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.
+2021: Some cool stuff I foundPSReadLine and it&rsquo;s IntelliSense GoPS - a shell navigation module PoshBot PowerShell Community Calls Write-Info - a cool logging module Windows terminal and it&rsquo;s split-tab functionality 2022 exciting stuffSome stuff I&rsquo;m personally excited about:">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell in 2021: From my IAM Perspective | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_ad_2021_review/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/" rel="bookmark">PowerShell in 2021: From my IAM Perspective</a>
+  </h2>
+  
+    <time datetime="2022-01-04T08:13:11&#43;01:00">January 4, 2022</time>
+  
+</header>
+    <figure><img src="https://i.imgur.com/FiMaB8M.jpg"/>
+</figure>
+
+<h2 id="2021-from-my-iam-perspective">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#2021-from-my-iam-perspective">2021: From my IAM Perspective</a>
+</h2>
+<p>First of all, this <a href="https://www.dowst.dev/2021-a-powershell-year-in-review/">blog-post</a> inspired me to write something similar, so thanks <a href="https://twitter.com/MDowst/">@MDowst</a> for sharing.</p>
+<p>For myself I&rsquo;ve been writing quite a few security focused modules and scripts to help me in my day-to-day life as an IAM Engineer. I&rsquo;ve discovered the PowerShell community calls, and found a whole array of inspirational twitter-users to follow.</p>
+<h2 id="2021-some-cool-stuff-i-found">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#2021-some-cool-stuff-i-found">2021: Some cool stuff I found</a>
+</h2>
+<ul>
+<li><a href="https://www.bing.com/search?q=psreadline+predictive+intellisense&amp;cvid=941892197e824c9c996f36910a1dbb04&amp;aqs=edge.0.0.6427j0j1&amp;pglt=163&amp;FORM=ANSPA1&amp;PC=U531">PSReadLine</a> and it&rsquo;s IntelliSense</li>
+<li><a href="https://github.com/endowdly/GoPS">GoPS</a> - a shell navigation module</li>
+<li><a href="https://poshbot.readthedocs.io/en/latest/">PoshBot</a></li>
+<li><a href="https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall">PowerShell Community Calls</a></li>
+<li><a href="https://github.com/Primycha/Write-Info">Write-Info</a> - a cool logging module</li>
+<li><a href="https://docs.microsoft.com/en-us/windows/terminal/panes">Windows terminal and it&rsquo;s split-tab functionality</a></li>
+</ul>
+<h2 id="2022-exciting-stuff">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#2022-exciting-stuff">2022 exciting stuff</a>
+</h2>
+<p>Some stuff I&rsquo;m personally excited about:</p>
+<ul>
+<li>Finish reading <a href="https://www.powershellcookbook.com/">PowerShell Cookbook</a></li>
+<li>Finish reading PowerShell In Action</li>
+<li>Developing more automation with <a href="https://azure.microsoft.com/en-us/updates/azure-automation-powershell-7/#:~:text=Azure%20Automation%20support%20for%20PowerShell%207.1%20runbooks%20is,as%20hybrid%20jobs%20across%20Azure%20and%20non-Azure%20machines.">PowerShell 7 and Azure Automation</a></li>
+<li>Implementing PowerShell logging / Protected logging</li>
+<li>Implementing a team oriented <a href="https://docs.microsoft.com/en-us/powershell/scripting/gallery/how-to/working-with-local-psrepositories?view=powershell-7.2">PowerShellGet repo</a></li>
+<li>Implementing SecretManegement/SecretStore/Az Keyvault on on-prem resources</li>
+<li>Attend the <a href="https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall">PowerShell Community Calls</a></li>
+<li>Creating more useful modules for my team in general, as well as improving existing code</li>
+<li>Would love to contribute to the PowerShell repo this year, or publish some useful code to the PSGallery, to give back to the community</li>
+</ul>
+<h2 id="time-flies">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#time-flies">Time flies</a>
+</h2>
+<p>This year will be my 9th year of using and working with PowerShell, much have changed but mostly for the better.</p>
+<p>I miss when ISE was the golden standard though, but hopefully VSCode will work more smoothly this year. I do appriciate the cross-platformness of VSCode, and the ability to export and import keybinds.</p>
+<p>Would be awesome with a competitor to VSCode though, I would assume that some competition would not hurt for the end-user exp, let&rsquo;s see what happens.</p>
+<h2 id="end-with-fire">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#end-with-fire">End with fire!</a>
+</h2>
+<p>I&rsquo;d like to end my blog-post with this old gem from <a href="https://www.leeholmes.com/burn-console-optimized-and-ready-for-marshmallows/">Lee Holmes</a>
+Still waiting for someone smart enough to re-write this for the Windows Terminal :)</p>
+<p>Have a good one!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#emil">/Emil</a>
+</h3>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

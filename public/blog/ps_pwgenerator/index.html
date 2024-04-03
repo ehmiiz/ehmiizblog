@@ -1,6 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="My history with Password GeneratorsPassword generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)
+My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell for Security: PassWord Gen Part 1 | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_pwgenerator/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/" rel="bookmark">PowerShell for Security: PassWord Gen Part 1</a>
+  </h2>
+  
+    <time datetime="2021-05-10T14:58:11&#43;01:00">May 10, 2021</time>
+  
+</header>
+    <h2 id="my-history-with-password-generators">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#my-history-with-password-generators">My history with Password Generators</a>
+</h2>
+<p>Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)</p>
+<p>My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.</p>
+<p>However the first version was based on a dotnet class method called: <a href="https://adamtheautomator.com/random-password-generator/">[System.Web.Security.Membership]::GeneratePassword</a></p>
+<p>Adam Bertram does a great job covering how to wrap this in a module, click the class name to read his post about it.</p>
+<p>The class does bring a dependency on the the specific dotnet class, and for me, this approach started to bring errors in Powershell cores early versions.</p>
+<h2 id="new-attempt-without-dependencies">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#new-attempt-without-dependencies">New attempt without dependencies</a>
+</h2>
+<p>This is my attempt at creating my own password generator</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">Get-GeneratedPassword</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Cross-platform password generator
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Get-GeneratedPassword is using a Get-Random, a string and regex 
+</span></span></span><span class="line"><span class="cl"><span class="cm">    validation to ensure that the password meets the complexity level 
+</span></span></span><span class="line"><span class="cl"><span class="cm">    enforced by default in ActiveDirectory
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:\&gt; Get-GeneratedPassword -PwLength 10 -Amount 10
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Generates 10 passwords with the length set to 10
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:\&gt; Get-GeneratedPassword -PwLength 12 | clip
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Only supported in Windows. Will generate a password with 12 as length 
+</span></span></span><span class="line"><span class="cl"><span class="cm">    and clip the result to clipboard
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:\&gt; $user = &#34;emil&#34;; $pw = ConvertTo-SecureString -String (Get-GeneratedPassword 12) -AsPlainText
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:\&gt; $creds = $user,$pw
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Creates a CredentialObject that can be passed in to user generating cmdlets
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:\&gt; Get-GeneratedPassword -PwLength 8 -Amount 100 | Out-File C:\Temp\PW.txt
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Generates 100 passwords to a textfile stored in C:\Temp\PW.txt
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">INPUTS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PwLengt as int32
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">OUTPUTS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Outputs randomized password as string(s)
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Purpose :   Designed to meet AD Complexity rules &amp; be crossplatform (Windows, Linux)
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author  :   Emil.t.Larsson@gmail.com
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date    :   2021-05-11
+</span></span></span><span class="line"><span class="cl"><span class="cm">    OS      :   Win10, Ubuntu 20
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Version :   1.0.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">CmdletBinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Param</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="na">Position</span> <span class="p">=</span> <span class="mf">0</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">ValidateRange</span><span class="p">(</span><span class="mf">6</span><span class="p">,</span> <span class="mf">30</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">int32</span><span class="p">]</span><span class="nv">$PwLength</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">int32</span><span class="p">]</span><span class="nv">$Amount</span> <span class="p">=</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">Begin</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Password</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Process</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$PwdValues</span> <span class="p">=</span> <span class="s2">&#34;-!@#$%^&amp;*_{}()?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nv">$PasswordGenerated</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$PwdValues</span><span class="p">.</span><span class="py">ToCharArray</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="p">{</span> <span class="nb">Get-Random</span> <span class="p">})[</span><span class="mf">1</span><span class="p">..</span><span class="nv">$PwLength</span><span class="p">]</span> <span class="n">-join</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c"># Regex rules, contains any of the special AND 0-9 AND upper/lower</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$PasswordGenerated</span> <span class="o">-match</span> <span class="s2">&#34;[-!@#$%^&amp;*_{}()?]&#34;</span> <span class="o">-and</span> 
+</span></span><span class="line"><span class="cl">                <span class="nv">$PasswordGenerated</span> <span class="o">-match</span> <span class="s2">&#34;(?-i)[A-Z]&#34;</span> <span class="o">-and</span> 
+</span></span><span class="line"><span class="cl">                <span class="nv">$PasswordGenerated</span> <span class="o">-match</span> <span class="s2">&#34;(?-i)[a-z]&#34;</span> <span class="o">-and</span> 
+</span></span><span class="line"><span class="cl">                <span class="nv">$PasswordGenerated</span> <span class="o">-match</span> <span class="s2">&#34;[0-9]&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c"># Add to pw array</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$Password</span> <span class="p">+=</span> <span class="nv">$PasswordGenerated</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">Continue</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">until</span> <span class="p">(</span><span class="nv">$Password</span><span class="p">.</span><span class="py">count</span> <span class="o">-eq</span> <span class="nv">$Amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">End</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Password</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>The script can be found on my <a href="https://github.com/ehmiiz/PowerShell/blob/master/Get-GeneratedPassword.ps1">GitHub PS repo</a></p>
+<p><img src="https://i.imgur.com/fvwI0bb.png" alt="Displaying the cmdlet" title="Get-GeneratedPassword"></p>
+<p>Read the comment based help, or load the function and run:</p>
+<p><code>Get-Help Get-GeneratedPassword</code></p>
+<h3 id="my-requirements-was-the-following">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#my-requirements-was-the-following">My Requirements was the following</a>
+</h3>
+<ul>
+<li>Cover <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">AD complexity rules</a> (in 99,9%)</li>
+<li>String output, for simplicity</li>
+<li>X-platform</li>
+<li>No dependencies outside of Powershell 7</li>
+</ul>
+<h3 id="begin">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#begin">Begin</a>
+</h3>
+<p>The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the <code>-Amount</code> parameter<br>
+<code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
+<p>Since AD&rsquo;s complexity rule is enforcing at least 6 chars, this range checks that requirement box.</p>
+<p><code>[int32]$Amount = 1</code></p>
+<p>The default value solves the issue of just running the cmdlet without the <code>-Amount</code> parameter</p>
+<p>Next up is the whole idea behind the script, instead of using a dotnet class, I&rsquo;ll just generate my own string of chars to pick from:</p>
+<p><code>$pwdvalues = &quot;-!@#$%^&amp;*_{}()?0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</code></p>
+<p>By using a <a href="https://devblogs.microsoft.com/scripting/powershell-looping-understanding-and-using-dountil/">do-until loop</a>, I can simply abuse Get-Random:<br>
+<code>$PasswordGenerated = ($pwdvalues.tochararray() | Sort-Object { Get-Random })[1..$PwLength] -join ''</code></p>
+<p>until my desired count of complex passwords are achieved by validating them through some regex validations:</p>
+<p><code>$PasswordGenerated -match &quot;[-!@#$%^&amp;*_{}()?]&quot; -and</code></p>
+<p><code>$PasswordGenerated -match &quot;(?-i)[A-Z]&quot; -and</code></p>
+<p><code>$PasswordGenerated -match &quot;(?-i)[a-z]&quot; -and</code></p>
+<p><code>$PasswordGenerated -match &quot;[0-9]&quot;</code></p>
+<p>This validation is critical for only getting the complex passwords for output</p>
+<p>The &ldquo;(?-i)&rdquo; part is needed since PowerShell by default is case-insensitive, this definition solves that part, and we need this since we really do care about the match being case-sensitive. <a href="https://ninmonkeys.com/blog/2020/11/21/using-case-sensitive-regular-expressions-in-powershell-tips/">This blog post by Jake Bolton</a> covers the problem in detail.</p>
+<p>Since all we do here is randomly grabbing strings and joining them, we&rsquo;re only working with a string object. Making the script fast and the output very simple, and since the output is just a simple string, it can be easily turned into a .txt file or used within <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1">ConvertTo-SecureString</a></p>
+<h3 id="lastly">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#lastly">Lastly</a>
+</h3>
+<p>This is a quite simple and short function, and I&rsquo;m sure it wont cover all my password generating needs for the future, but hopefully for some time at least.</p>
+<p>I hope this post got you thinking &amp; curious about:</p>
+<ul>
+<li>regex validation</li>
+<li>do-while loops</li>
+<li>string manipulation</li>
+<li>case sensitivity</li>
+<li>self-made functions</li>
+</ul>
+<p>in Powershell!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#emil">/Emil</a>
+</h3>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

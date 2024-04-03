@@ -1,6 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="The headache of setting up recurring GPO&rsquo;sI was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.
+The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&rsquo;s, true/false), in an automated fasion?">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell Solution: Automate GPO creations | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_automatedgpocloning/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/" rel="bookmark">PowerShell Solution: Automate GPO creations</a>
+  </h2>
+  
+    <time datetime="2021-05-12T14:56:09&#43;02:00">May 12, 2021</time>
+  
+</header>
+    <h2 id="the-headache-of-setting-up-recurring-gpos">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#the-headache-of-setting-up-recurring-gpos">The headache of setting up recurring GPO&rsquo;s</a>
+</h2>
+<p>I was faced with an issue not too long ago, and I spent quite some time trying to come up with an @automated solution to the problem. I thought that some hypothetical sysadmin might find themselves in a similar situation in the future, and this might save the hypothetical person some time.</p>
+<p>The problem I was trying to solve was the following; How do we script the task of creating a new GPO with the same base settings but with different conditions (Strings (AD Groups, Hostnames), IP&rsquo;s, true/false), in an automated fasion?</p>
+<p>The best answer to this question is; You probably shouldn&rsquo;t.</p>
+<p>If the GPO planning is done carefully, you should not find yourself having this problem - since why would we want 10-100-1000 different GPOs doing basically the same thing? If we could use WMI filters, script-based, logically acting GPOs, the world would be a wonderful place.</p>
+<h2 id="reality-hits-you-hard-bro">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#reality-hits-you-hard-bro">Reality hits you hard, bro</a>
+</h2>
+<p>Let&rsquo;s be real, you either did the GPO planning yourself back in the 90&rsquo;s, or someones (probably awesome) dad did it. And he probably had a tight schedule, IT was probably understaffed already back then, and frankly, all companies might not have a <a href="https://en.wikipedia.org/wiki/Mark_Russinovich">Mark Russinovich</a>-kind of guy, implementing flawless, scalable GPO plans for your organization.</p>
+<p>Sadly the facts listed above does not help you in any way what so ever. Hopefully the rest of this blog post can.</p>
+<h2 id="technical-bits">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#technical-bits">Technical bits</a>
+</h2>
+<p>PowerShell and GPO&rsquo;s go quite nicly hand in hand, thankfully. Now starts the technical fun stuff. The following is what we need to solve:</p>
+<p>Have a script that allows you to input a specific condition (City name, Group name, Computer name, yada yada), and have this script:</p>
+<ul>
+<li>
+<p>Create a New GPO</p>
+</li>
+<li>
+<p>Set the specific GPO settings you need</p>
+</li>
+<li>
+<p>Link the GPO to the specific OU(s)</p>
+</li>
+</ul>
+<p>But how? GPO&rsquo;s are all XML and you really need GPMC to get the exact settings right, and I would rather not edit XML files in SYSVOL, what if I mess something up?</p>
+<p>I&rsquo;m glad you asked! Here&rsquo;s the kicker:</p>
+<p>Since we&rsquo;re trying to automate the creation of a recurring GPO, there&rsquo;s already a GPO in place that does almost the exact thing you need. All we need to do is;</p>
+<ol>
+<li>
+<p>Create a similar GPO (disabled) alternatively use the production GPO (the one that someones dad created, aka DADGPO (tm) )</p>
+</li>
+<li>
+<p>Backup this GPO to a safe(er) area (not sysvol)</p>
+</li>
+<li>
+<p>Commit XML edits to change the desired condition</p>
+</li>
+<li>
+<p>Create a new Blank GPO</p>
+</li>
+<li>
+<p>Use Import-GPO&rsquo;s ID parameter, and input the edited GPO</p>
+</li>
+<li>
+<p>Link the GPO to desired new OU</p>
+</li>
+<li>
+<p>(optional) Be excited and tell everyone that you&rsquo;ve just automated a process of EDITING AND CREATING new GPOs</p>
+</li>
+</ol>
+<p>This process solves two big issues, firstly it allows you to just edit the recurring GPO once, this would otherwise be a recurring task.</p>
+<p>Secondly, it solves the issue with editing GPO&rsquo;s in production, since you should&rsquo;t tamper with XML files in a production sysvol. Instead the edits you do are directly done to the backup file that&rsquo;s outside of sysvol.</p>
+<h2 id="let-us-see-some-code-already">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#let-us-see-some-code-already">Let us see some code already</a>
+</h2>
+<p>This function lets you input</p>
+<ol>
+<li>
+<p>Name of the new GPO</p>
+</li>
+<li>
+<p>Group name (DelegationGrouo) of the AD group you want to edit within the GPO settings</p>
+</li>
+<li>
+<p>Domain name in case of multi-domain forest</p>
+</li>
+</ol>
+<p>Takes the input, and outputs a new GPO with the updated AD Group provided:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">New-AdminPolicyGPO</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Name</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$DelegationGroup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$Domain</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Begin</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c"># Insert whatever validation checks you need</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nb">Get-GPO</span> <span class="nv">$Name</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Warning</span> <span class="s2">&#34;GPO already exists&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">Break</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nb">Get-ADGroup</span> <span class="nv">$DelegationGroup</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$DelegationGroup</span> <span class="p">=</span> <span class="nb">Get-ADGroup</span> <span class="nv">$DelegationGroup</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">Write-Warning</span> <span class="s2">&#34;ADGroup not identified&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">Break</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">Process</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">        RootGPOs GUID needs to be changed to the DADGPO guid
+</span></span></span><span class="line"><span class="cl"><span class="cm">        An easy way of getting GUID is to just run: 
+</span></span></span><span class="line"><span class="cl"><span class="cm">        Get-GPO -All | ? DisplayName -Like &#34;Name of gpo&#34;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    #&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$RootGPO</span> <span class="p">=</span> <span class="nb">Get-GPO</span> <span class="n">-Guid</span> <span class="s2">&#34;D4DGP0-GU1D-D4DGP0-GU1D-D4DGP0-GU1D&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c"># Create blank GPO and store it in a variable</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">New-GPO</span> <span class="nv">$Name</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$GPO</span> <span class="p">=</span> <span class="nb">Get-GPO</span> <span class="nv">$Name</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Create path for backup gpo</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$BackUpPath</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$env:LOCALAPPDATA</span><span class="s2">\BackupGPO\&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$BackUpPath</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$BackedupGPO</span> <span class="p">=</span> <span class="nb">Backup-GPO</span> <span class="n">-Guid</span> <span class="nv">$RootGPO</span><span class="p">.</span><span class="py">Guid</span> <span class="n">-Path</span> <span class="n">BackUpPath</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">New-Item</span> <span class="n">-Path</span> <span class="nv">$BackUpPath</span> <span class="n">-ItemType</span> <span class="n">Directory</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$BackedupGPO</span> <span class="p">=</span> <span class="nb">Backup-GPO</span> <span class="n">-Guid</span> <span class="nv">$RootGPO</span><span class="p">.</span><span class="py">Guid</span> <span class="n">-Path</span> <span class="nv">$BackUpPath</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c">#Store XML file of backup gpo in variable</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$SuperLongAndFunString</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$BackUpPath</span><span class="s2">{</span><span class="p">$(</span><span class="nv">$BackedupGPO</span><span class="p">.</span><span class="py">ID</span><span class="p">.</span><span class="n">GUID</span><span class="p">)</span><span class="s2">}\DomainSysvol\gpo\Machine\Preferences\Groups\Groups.xml&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="nv">$SuperLongAndFunString</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c"># Play around with this part until Set-Content</span>
+</span></span><span class="line"><span class="cl">                <span class="c"># changes the desired GPO setting</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="nv">$xml</span> <span class="p">=</span> <span class="nb">Get-Content</span> <span class="nv">$SuperLongAndFunString</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="nv">$xml</span> <span class="p">=</span> <span class="nv">$xml</span><span class="p">.</span><span class="py">Replace</span><span class="p">(</span><span class="s1">&#39;&#34;Domain\ADGroupName&#34; action=&#34;ADD&#34; sid=&#34;Whatever the SID is&#34;&#39;</span><span class="p">,</span> <span class="s2">&#34;&#34;&#34;</span><span class="nv">$Domain</span><span class="s2">\$
+</span></span></span><span class="line"><span class="cl"><span class="s2">                (</span><span class="nv">$DelegationGroup</span><span class="s2">.Name)&#34;&#34; action=</span><span class="p">$(</span><span class="s1">&#39;&#34;ADD&#34;&#39;</span><span class="p">)</span><span class="s2"> sid=&#34;&#34;</span><span class="p">$(</span><span class="nv">$DelegationGroup</span><span class="p">.</span><span class="n">sid</span><span class="p">)</span><span class="s2">&#34;&#34;&#34;</span> <span class="p">)</span> <span class="c">#Edit XML</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="nb">Set-Content</span> <span class="nv">$SuperLongAndFunString</span> <span class="n">-Value</span> <span class="nv">$xml</span> <span class="n">-Verbose</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="nb">Import-GPO</span> <span class="n">-BackupId</span> <span class="nv">$BackedupGPO</span><span class="p">.</span><span class="py">Id</span> <span class="n">-Path</span> <span class="nv">$BackedupGPO</span><span class="p">.</span><span class="py">BackupDirectory</span> <span class="n">-TargetName</span> <span class="nv">$GPO</span><span class="p">.</span><span class="py">DisplayName</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">Break</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">Break</span> <span class="c">#Can&#39;t locate GPO from backup</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<h2 id="lastly">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#lastly">Lastly</a>
+</h2>
+<p>This function serves as a base for you to use, and the point here is really to demonstrate the process of how you could tackle this problem. I would suggest playing around with get/set-content to get the desired outcome of the GPO settings in a lab env before even thinking about implementation to production.</p>
+<p>In many cases, GPO setting changes are XML changes. PowerShell lets you configure anything within an XML file. The key to doing so is to understand the specific setting, so you can manipulate the backed up GPO&rsquo;s XML in your favor.</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_automatedgpocloning/#emil">/Emil</a>
+</h3>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

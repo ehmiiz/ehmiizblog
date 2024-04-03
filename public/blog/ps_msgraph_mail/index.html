@@ -1,6 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Send-MgUserMailThe following solution example is covering how to set-up and use the Send-MgUserMail cmdlet in Azure Automation to send an email with a subject, message body and an attached zip file.
+Pre-RequirementsM365 licensed noreply address as a shared mailbox Azure Automation account with the modules Microsoft.Graph.Users.Actions and Microsoft.Graph.Authentication installed App Registration with Send.Mail application API permission exposed Authentication &amp; AccessThis solution will use an Client Secret and a encrypted automation variable.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell Solution: Use Send-MgUserMail in Azure Automation | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_msgraph_mail/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/" rel="bookmark">PowerShell Solution: Use Send-MgUserMail in Azure Automation</a>
+  </h2>
+  
+    <time datetime="2023-11-06T08:23:11&#43;01:00">November 6, 2023</time>
+  
+</header>
+    <figure><img src="/pics/NiceMail.png"/>
+</figure>
+
+<h2 id="send-mgusermail">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#send-mgusermail">Send-MgUserMail</a>
+</h2>
+<p>The following solution example is covering how to set-up and use the <code>Send-MgUserMail</code> cmdlet in <code>Azure Automation</code> to send an email with a subject, message body and an attached zip file.</p>
+<h2 id="pre-requirements">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#pre-requirements">Pre-Requirements</a>
+</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide#create-a-shared-mailbox-and-add-members">M365 licensed <code>noreply</code> address as a shared mailbox</a></li>
+<li>Azure Automation account with the modules <code>Microsoft.Graph.Users.Actions</code> and <code>Microsoft.Graph.Authentication</code> installed</li>
+<li>App Registration with <code>Send.Mail</code> application API permission exposed</li>
+</ul>
+<h2 id="authentication--access">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#authentication--access">Authentication &amp; Access</a>
+</h2>
+<p>This solution will use an <code>Client Secret</code> and a <code>encrypted automation variable</code>.</p>
+<p>The alternative to using an Client Secret would be to <a href="https://learn.microsoft.com/entra/identity-platform/howto-create-self-signed-certificate">use a certificate</a> and I would recommend doing so since it&rsquo;s a more secure solution in general.</p>
+<p>Using a <code>Client Secret</code> is fine if you have good control over who has access to your App Registration and your automation account.</p>
+<p>This step-by-step guide will set up the app registration and the secret, and finally add the secret to the automation accounts shared resources as a variable.</p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>If you&rsquo;re looking to be more fine-grained in your access delegation, and want to skip the whole secret management aspect, be sure to look into <a href="https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities?pivots=identity-mi-methods-azp">Managed Identities</a>, specifically User-Assigned. Thanks <a href="https://www.linkedin.com/in/denkaj/">Dennis</a>!</p>
+<hr>
+<ol>
+<li>In the Azure Portal -&gt; <code>App registrations</code></li>
+<li><code>New Registration</code> -&gt; Name the app to something descriptive like Runbook name or similar</li>
+<li><code>Register</code></li>
+<li><code>API permissions</code> -&gt; <code>Add permissions</code> -&gt; <code>Microsoft Graph</code> -&gt; <code>Application permission</code></li>
+<li>Search for <code>Mail.Send</code>, check it, <code>Add permissions</code>, <code>Grant admin consent for ORG</code></li>
+<li>Navigate to <code>Certificates &amp; Secrets</code> -&gt; <code>Client secrets</code> -&gt; <code>new client secret</code></li>
+<li>Fill in <code>description</code> and <code>Expires</code> after your needs</li>
+<li>Navigate to your automation account in Azure -&gt; <code>Variables</code> -&gt; <code>Add variable</code> -&gt; Copy-paste your secret into this variable, select <code>Encrypted</code>, <code>Create</code></li>
+</ol>
+<p>The authentication will be done in the azure automation runbook, and finally the code will look similar to this:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Connects to graph as your new app using encrypted secret</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Look in your App Registration -&gt; Application (client) ID</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ClientId</span> <span class="p">=</span> <span class="s2">&#34;o2jvskg2-[notreal]-1246-820s-2621786s35e5&#34;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Look in Azure -&gt; Microsoft Entra ID -&gt; Overview -&gt; Tenant ID</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$TenantId</span> <span class="p">=</span> <span class="s2">&#34;626226122-[notreal]-62ww-5053-56e32ss89sa5&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Variable Name from step 8 (Authentication)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ClientSecretCredential</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-AutomationVariable</span> <span class="n">-Name</span> <span class="s1">&#39;From Step 8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$Body</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Grant_Type</span>    <span class="p">=</span> <span class="s2">&#34;client_credentials&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Scope</span>         <span class="p">=</span> <span class="s2">&#34;https://graph.microsoft.com/.default&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Client_Id</span>     <span class="p">=</span> <span class="nv">$ClientId</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Client_Secret</span> <span class="p">=</span> <span class="nv">$ClientSecretCredential</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$RestMethodParams</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Uri</span> <span class="p">=</span> <span class="s2">&#34;https://login.microsoftonline.com/</span><span class="nv">$TenantId</span><span class="s2">/oauth2/v2.0/token&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Method</span> <span class="p">=</span> <span class="s2">&#34;POST&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Body</span> <span class="p">=</span> <span class="nv">$Body</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$Connection</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="nv">@RestMethodParams</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Token</span> <span class="p">=</span> <span class="nv">$Connection</span><span class="p">.</span><span class="py">access_token</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Connect-MgGraph</span> <span class="n">-AccessToken</span> <span class="nv">$Token</span></span></span></code></pre></div>
+<p><strong>Note</strong> that <code>Get-AutomationVariable</code> is a cmdlet which is only available for the az automation sandbox environment. It&rsquo;s also the only way of getting the encrypted variable.</p>
+<p><code>Get-AutomationVariable</code> is an internal cmdlet from the module <code>Orchestrator.AssetManagement.Cmdlets</code> which is a part of Azure Automation, so running this outside of a runbook will fail.</p>
+<h2 id="sending-the-mail">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#sending-the-mail">Sending the mail</a>
+</h2>
+<p>Now that we have authentication and access out of the way, we can start developing a function that we will use in the runbook to send an email.
+My example below has a requirement of an attachment. I&rsquo;m using this for gathering data, compressing it and attaching the .zip file in the mail function.</p>
+<p>Customize the function to your specific needs.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">function</span><span class="w"> </span><span class="nb">Send-AutomatedEmail</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">param</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$From</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$Subject</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$To</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$Body</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span> <span class="p">(</span><span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">string</span><span class="p">]</span><span class="nv">$AttachmentPath</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">([</span><span class="no">string</span><span class="p">]::</span><span class="n">IsNullOrEmpty</span><span class="p">(</span> <span class="nv">$From</span> <span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$From</span> <span class="p">=</span> <span class="s2">&#34;noreply@contoso.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># I&#39;m defining the parameters in a hashtable </span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$ParamTable</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Subject</span> <span class="p">=</span> <span class="nv">$Subject</span>
+</span></span><span class="line"><span class="cl">        <span class="n">From</span>    <span class="p">=</span> <span class="nv">$From</span>
+</span></span><span class="line"><span class="cl">        <span class="n">To</span>      <span class="p">=</span> <span class="nv">$To</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Type </span>   <span class="p">=</span> <span class="s2">&#34;html&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Body</span>    <span class="p">=</span> <span class="nv">$body</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c"># ArrayList instead of adding to an array with += for increased performance</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$ToRecipients</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Collections.ArrayList</span><span class="p">]::</span><span class="n">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">void</span><span class="p">]</span><span class="nv">$ToRecipients</span><span class="p">.</span><span class="py">Add</span><span class="p">(</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">emailAddress</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">address</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$MessageAttachment</span> <span class="p">=</span> <span class="p">[</span><span class="no">Convert</span><span class="p">]::</span><span class="n">ToBase64String</span><span class="p">([</span><span class="no">IO.File</span><span class="p">]::</span><span class="n">ReadAllBytes</span><span class="p">(</span><span class="nv">$AttachmentPath</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$MessageAttachmentName</span> <span class="p">=</span> <span class="nv">$AttachmentPath</span><span class="p">.</span><span class="py">Split</span><span class="p">(</span><span class="s2">&#34;\&#34;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Last</span> <span class="mf">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nv">$params</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Message</span>         <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Subject</span>      <span class="p">=</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">Subject</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Body</span>         <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ContentType</span> <span class="p">=</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="nb">Type
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span>                <span class="n">Content</span>     <span class="p">=</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">Body</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ToRecipients</span> <span class="p">=</span> <span class="nv">$ToRecipients</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Attachments</span>  <span class="p">=</span> <span class="vm">@</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="s2">&#34;@odata.type&#34;</span> <span class="p">=</span> <span class="s2">&#34;#microsoft.graph.fileAttachment&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">Name</span>          <span class="p">=</span> <span class="nv">$MessageAttachmentName</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ContentBytes</span>  <span class="p">=</span> <span class="nv">$MessageAttachment</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SaveToSentItems</span> <span class="p">=</span> <span class="s2">&#34;false&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Send-MgUserMail</span> <span class="n">-UserId</span> <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">From</span> <span class="n">-BodyParameter</span> <span class="nv">$params</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Output</span> <span class="s2">&#34;Email sent to:&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Write-Error</span> <span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Finally, we construct a new <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.3">splatting table</a> and send the email. A note, for this to run authentication must have happened earlier in the runbook.</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Generate some data and compress it</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Date</span> <span class="p">=</span> <span class="nb">Get-Date</span> <span class="n">-Format</span> <span class="nb">yyyy-MM</span><span class="n">-dd</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$CSVPath</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$env:temp</span><span class="s2">\</span><span class="p">$(</span><span class="nv">$Date</span><span class="p">)</span><span class="s2">-BigReport.csv&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ZIPPath</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="nv">$env:temp</span><span class="s2">\</span><span class="p">$(</span><span class="nv">$Date</span><span class="p">)</span><span class="s2">-BigReport.zip&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$BigReport</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="p">|</span> <span class="nb">Export-Csv</span> <span class="n">-Path</span> <span class="nv">$CSVPath</span> <span class="n">-NoTypeInformation</span> <span class="n">-Encoding</span> <span class="n">UTF8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Compress-Archive</span> <span class="n">-Path</span> <span class="nv">$CSVPath</span> <span class="n">-DestinationPath</span> <span class="nv">$ZipPath</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Build the email parameters</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$SendMailSplat</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Subject</span>        <span class="p">=</span> <span class="s2">&#34;Automated Email via MGGraph&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Body</span>           <span class="p">=</span> <span class="s2">&#34;This is an automated email sent from Azure Automation using MGGraph.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">To</span>             <span class="p">=</span> <span class="s2">&#34;user1@mail.com&#34;</span><span class="p">,</span> <span class="s2">&#34;user2@mail.com&#34;</span><span class="p">,</span><span class="s2">&#34;user3@mail.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AttachmentPath</span> <span class="p">=</span> <span class="nv">$ZIPPath</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Send the email</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Send-AutomatedEmail</span> <span class="nv">@SendMailSplat</span></span></span></code></pre></div>
+<p>And that&rsquo;s all there is to it! Congrats on sending an email using the Microsoft Graph.</p>
+<h2 id="key-takeaways">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#key-takeaways">Key Takeaways</a>
+</h2>
+<p>While building this solution, I noticed that there&rsquo;s a lack of content and documentation on some things, one of those things are how to send an email to more than one recipient. If your migration from <a href="https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.3">Send-MailMessage</a>, it isn&rsquo;t so straightforward, since <code>Send-MgUserMail</code> is based on either JSON or MIME format.</p>
+<p>Meaning in a nutshell we can&rsquo;t just pass an array of email accounts and call it a day, instead we need to build an object that looks like something along the lines of:
+Message -&gt; ToRecipients -&gt; emailAddress -&gt; adress : adress.company.com</p>
+<h3 id="alternative-1-fast">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#alternative-1-fast">Alternative 1 (fast)</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ToRecipients</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Collections.ArrayList</span><span class="p">]::</span><span class="n">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="no">void</span><span class="p">]</span><span class="nv">$ToRecipients</span><span class="p">.</span><span class="py">Add</span><span class="p">(</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">emailAddress</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">address</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<h3 id="alternative-2-slow">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#alternative-2-slow">Alternative 2 (slow)</a>
+</h3>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$ToRecipients</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$ParamTable</span><span class="p">.</span><span class="py">To</span> <span class="p">|</span> <span class="nb">ForEach-Object</span> <span class="p">{</span> <span class="nv">$ToRecipients</span> <span class="p">+=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">emailAddress</span> <span class="p">=</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">address</span> <span class="p">=</span> <span class="nv">$_</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p>Use whatever fits your needs best.</p>
+<p>Hope this was valuable to someone wanting to move away from <code>Send-MailMessage</code> to <code>Send-MgUserMail</code>!</p>
+<h3 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#happy-coding">Happy coding</a>
+</h3>
+<h3 id="emil">
+  <a class="Heading-link u-clickable" href="/blog/ps_msgraph_mail/#emil">/Emil</a>
+</h3>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

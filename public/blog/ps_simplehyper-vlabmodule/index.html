@@ -1,6 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Meet Labmil.Labmil is a script I made to serve a specific usecase. When AutomatedLab is overkill, and when you don&rsquo;t want to skip the installation phase of the lab.
+FeaturesQuickly put the Windows Server ISO-file to good use It&rsquo;s a simple script for anyone to modify for personal needs It outputs a customobject Create multiple VM&rsquo;s using PowerShell logic Non-FeaturesThe script has a few non-features. Non-Features are cool because it makes the script unique and useful in certain senarios.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell for Automation: Simple Hyper-V VM-Creation script | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_simplehyper-vlabmodule/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/" rel="bookmark">PowerShell for Automation: Simple Hyper-V VM-Creation script</a>
+  </h2>
+  
+    <time datetime="2021-12-21T14:58:11&#43;01:00">December 21, 2021</time>
+  
+</header>
+    <h2 id="meet-labmilhttpsgithubcomehmiizlabmil">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#meet-labmilhttpsgithubcomehmiizlabmil">Meet <a href="https://github.com/ehmiiz/labmil">Labmil</a>.</a>
+</h2>
+<p>Labmil is a script I made to serve a specific usecase. When <a href="https://automatedlab.org/en/latest/">AutomatedLab</a> is overkill, and when you don&rsquo;t want to skip the installation phase of the lab.</p>
+<p><img src="https://i.imgur.com/uBIzjmx.png" alt="Displaying the cmdlet" title="Get-GeneratedPassword"></p>
+<h2 id="features">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#features">Features</a>
+</h2>
+<ul>
+<li>Quickly put the Windows Server ISO-file to good use</li>
+<li>It&rsquo;s a simple script for anyone to modify for personal needs</li>
+<li>It outputs a customobject</li>
+<li>Create multiple VM&rsquo;s using PowerShell logic</li>
+</ul>
+<h2 id="non-features">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#non-features">Non-Features</a>
+</h2>
+<p>The script has a few non-features.
+Non-Features are cool because it makes the script unique and useful in certain senarios.</p>
+<ul>
+<li>Not touching the VMs application layer makes it simple and less prone to error</li>
+<li>It only has two parameters, and only one of them is mandatory after initial run, adding simplicity</li>
+<li>It enables you as an sysadmin/engineer to do the whole set-up. Giving you more work to do yourself, meaning more labbing!</li>
+<li>It&rsquo;s only focus is Hyper-V VMs</li>
+</ul>
+<h2 id="how-i-like-to-do-my-labs">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#how-i-like-to-do-my-labs">How I like to do my labs</a>
+</h2>
+<ol>
+<li>Spin up the VMs you plan on labbing with using New-LabmilVM.ps1</li>
+<li>Install the server with wanted settings and partitions</li>
+<li>Use Windows Terminal&rsquo;s split-tab functionallity, together with</li>
+</ol>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Enter-PSSession</span> <span class="n">-VMName</span> <span class="nv">$Name</span></span></span></code></pre></div>
+<p>To have one tab open with each newly created Lab-VM.</p>
+<p>Happy labbing!</p>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,6 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="PSCustomObject, valuable skillPSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.
+There&rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the PowerShell docs cover it very well.
+In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to Export-CSV, or even better, Export-Excel">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PSCustomObject conditional loop-trick! | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_pscustomobject_trick/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+    <link rel="stylesheet" href="/css/syntax.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/" rel="bookmark">PSCustomObject conditional loop-trick!</a>
+  </h2>
+  
+    <time datetime="2023-03-22T08:23:11&#43;01:00">March 22, 2023</time>
+  
+</header>
+    <figure><img src="/pics/PSCustomObjectTrick.png"/>
+</figure>
+
+<h2 id="pscustomobject-valuable-skill">
+  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#pscustomobject-valuable-skill">PSCustomObject, valuable skill</a>
+</h2>
+<p>PSCustomObject is a feature in PowerShell that allows you to create structured data in a simple way.</p>
+<p>There&rsquo;s a ton to cover on the topic, but if your unfamiliar with it, first of all it&rsquo;s probably one of the most important thing to spend time on understanding in PowerShell, secondly the <a href="https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.3">PowerShell docs cover it very well</a>.</p>
+<p>In this blog post, I will cover a trick that I frequently use when generating structured data in form of objects that can later be piped to <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.3">Export-CSV</a>, or even better, <a href="https://adamtheautomator.com/powershell-excel/">Export-Excel</a></p>
+<h2 id="looping--conditions">
+  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#looping--conditions">Looping &amp; Conditions</a>
+</h2>
+<p>This trick involves when you want to create a boolean (true or false) value in your PSCustomObject variable.
+Here&rsquo;s an example of what I mean:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Create an array object in a variable</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$PSCustomObject</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Get some data</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$Process</span> <span class="p">=</span> <span class="nb">Get-Process</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span> <span class="n">-Unique</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Loop through data</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span><span class="p">(</span><span class="nv">$p</span> <span class="k">in</span> <span class="nv">$Process</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c"># Check if condition exists</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nv">$p</span><span class="p">.</span><span class="n">Description</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># If it does, create the &#34;true&#34; version of the PSCustomObject</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$PSCustomObject</span> <span class="p">+=</span> <span class="p">[</span><span class="no">PSCustomObject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Name</span> <span class="p">=</span> <span class="nv">$p</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ProcessHasDescription</span> <span class="p">=</span> <span class="vm">$true</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Description</span> <span class="p">=</span> <span class="nv">$p</span><span class="p">.</span><span class="py">Description</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c"># If it does not, create the &#34;false&#34; version</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$PSCustomObject</span> <span class="p">+=</span> <span class="p">[</span><span class="no">PSCustomObject</span><span class="p">]</span><span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Name</span> <span class="p">=</span> <span class="nv">$p</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ProcessHasDescription</span> <span class="p">=</span> <span class="vm">$false</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Description</span> <span class="p">=</span> <span class="vm">$null</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># Show results</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$PSCustomObject</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="mf">10</span></span></span></code></pre></div>
+<p>Output:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Name             ProcessHasDescription Description
+</span></span><span class="line"><span class="cl">----             --------------------- -----------
+</span></span><span class="line"><span class="cl">audiodg                          False
+</span></span><span class="line"><span class="cl">Code                              True Visual Studio Code
+</span></span><span class="line"><span class="cl">CompPkgSrv                        True Component Package Support Server
+</span></span><span class="line"><span class="cl">concentr                          True Citrix Connection Center        
+</span></span><span class="line"><span class="cl">conhost                          False
+</span></span><span class="line"><span class="cl">conhost                           True Console Window Host
+</span></span><span class="line"><span class="cl">crashpad_handler                 False
+</span></span><span class="line"><span class="cl">csrss                            False
+</span></span><span class="line"><span class="cl">ctfmon                           False
+</span></span><span class="line"><span class="cl">dllhost                           True COM Surrogate</span></span></code></pre></div>
+<p>In this example, the <code>Get-Process</code> command is used to generate a list of system processes. The code then checks if a description is attached to each process. This technique can be applied to generate objects for all kinds of purposes. I&rsquo;ve found it particularly useful for creating reports on Active Directory, computer hardware, access reports, or any other subject that requires a report with boolean values.</p>
+<p>Some examples:</p>
+<ul>
+<li>User changed password the last 30 days?</li>
+<li>Computer disk less then 10gb left?</li>
+<li>User has <code>Full Control</code> rights on network share?</li>
+<li>Server answers on ping request?</li>
+</ul>
+<h2 id="steps">
+  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#steps">Steps</a>
+</h2>
+<ol>
+<li>Generate an array of data</li>
+<li>Loop it and construct a condition</li>
+<li>If condition is met, create a PSCustomObject &ldquo;true&rdquo; block</li>
+<li>Else, create a PSCustomObject &ldquo;false&rdquo; block</li>
+<li>Export data</li>
+</ol>
+<h2 id="closing-thoughts">
+  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#closing-thoughts">Closing thoughts</a>
+</h2>
+<p>In this post, I aim to keep things short and concise by letting the example do the talking. The code is commented for easy understanding. This technique can be incredibly useful for generating reports or structured data that can inform decision-making in larger processes. I hope you find it helpful and please let me know if you do.</p>
+<p>Wishing you a great day and, as always:</p>
+<h2 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_pscustomobject_trick/#happy-coding">Happy coding</a>
+</h2>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

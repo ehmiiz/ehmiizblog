@@ -1,6 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="“.ps1 is not digitally signed. The script will not execute on the system.”This error is clearly not really a typical error, but can be a blocker, nonetheless. It&rsquo;s more of a security feature than an error.
+Simple solution if you&rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.123.8">
+  <title>PowerShell Solution: Script not digitally signed | all posts</title>
+  <link rel="canonical" href="http://localhost:1313/blog/ps_digitallysigned/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+    <link rel="stylesheet" href="/css/base.min.63158c7310347701f3adc35c210806f3fc56f7664112f3ca1f589ac1d1fac294.css">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+        
+        
+          
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/feed.xml">rss</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_digitallysigned/" rel="bookmark">PowerShell Solution: Script not digitally signed</a>
+  </h2>
+  
+    <time datetime="2021-02-11T08:23:11&#43;01:00">February 11, 2021</time>
+  
+</header>
+    <h2 id="ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system">
+  <a class="Heading-link u-clickable" href="/blog/ps_digitallysigned/#ps1-is-not-digitally-signed-the-script-will-not-execute-on-the-system">“.ps1 is not digitally signed. The script will not execute on the system.”</a>
+</h2>
+<p>This error is clearly not really a typical error, but can be a blocker, nonetheless. It&rsquo;s more of a security feature than an error.</p>
+<p>Simple solution if you&rsquo;re running this script from another service, or as an Azure Runbook, before executing the Invoke-Command:</p>
+<p><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></p>
+<p>This will allow the powershell session process itself to bypass the Exec policy, and after termination the next powershell process has the default user or system policy.</p>
+<p>Another solution would be if you&rsquo;re executing the script from your own user:</p>
+<p><code>Set-ExecutionPolicy RemoteSigned</code></p>
+<p>Further documentation regarding Set-ExecutionPolicy may be found <a href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10)?redirectedfrom=MSDN">here</a>.</p>
+<p>Original blogpost that helped me solve this issue was found here: <a href="https://caiomsouza.medium.com/">here</a>.</p>
+<h2 id="happy-coding">
+  <a class="Heading-link u-clickable" href="/blog/ps_digitallysigned/#happy-coding">Happy coding</a>
+</h2>
 
     
-    <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><div id="statique">
-        <script defer="" src="http://localhost:1313/js/statique.js"></script>
-        <noscript>Please enable JavaScript to load the comments.</noscript>
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
     </div>
+  </main>
+  
+  <footer class="Footer">
+    <div class="u-wrapper">
+      <div class="u-padding u-noboosting">
+        <a href="http://github.com/ehmiiz" rel="Github">GitHub</a> <div></div> <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
