@@ -1,6 +1,8 @@
 var comments = []
 var loadingListener = null
 var commentsLoadPending = 0
+var statiqueAuth = 'sv=2023-08-03&spr=https&se=2098-12-31T23%3A00%3A00Z&sr=c&sp=rcl&sig=9en1brRgOtQ1VnZG%2Bg0oJpRHP81LhgXi3FCQckz7VAo%3D'
+var statiqueBaseUri = 'https://statiquecommentsehmiiz.blob.core.windows.net/comments'
 
 function statiqueHtmlEncode(value) {
     return value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
