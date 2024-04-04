@@ -33,8 +33,3 @@ menu:
     - name: software
       pageRef: /modules
       weight: 4
-    - name: rss
-      pageRef: /
-      weight: 5
-      params:
-        - format: rss

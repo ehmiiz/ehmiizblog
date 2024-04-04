@@ -14,4 +14,14 @@ My goal is to educate the reader and myself, around these topics.
 
 I hope you enjoy your stay here.
 
-If you have any questions about any of the blog posts or just want to chat, feel free to send me a private message on any social media platform. I'd love to hear from you!
+
+## rss
+
+To subscribe to this RSS feed, copy this address and paste it into your favorite feed reader:
+`https://ehmiiz.com/feed.xml`
+
+## contact
+
+If you have any questions about any of the blog posts or just want to chat, feel free to send me a private message on any social media platform.
+
+I'd love to hear from you! You can use the icons below to get in contact with me.
