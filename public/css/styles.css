@@ -1039,3 +1039,7 @@ h1 svg {
   background: rgba(0,0,0,.8);
   color: #fefefe;
 }
+.social-icon svg {
+    width: 24px;  /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+}

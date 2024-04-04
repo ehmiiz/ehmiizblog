@@ -1,0 +1,29 @@
+<style>
+.social-icon svg {
+    width: 45px;  /* Adjust as needed */
+    height: 45px; /* Adjust as needed */
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+</style>
+<div class="social-icons-container">
+{{ if .Site.Params.twitter }}
+<a href="https://twitter.com/{{ .Site.Params.twitter }}" target="_blank" rel="noopener">
+    <span class="social-icon">{{ readFile "static/svg/x-twitter.svg" | safeHTML }}</span>
+</a>
+{{ end }}
+{{ if .Site.Params.linkedin }}
+<a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">
+    <span class="social-icon">{{ readFile "static/svg/linkedin.svg" | safeHTML }}</span>
+</a>
+{{ end }}
+{{ if .Site.Params.github }}
+<a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener">
+    <span class="social-icon">{{ readFile "static/svg/github.svg" | safeHTML }}</span>
+</a>
+</div>
+{{ end }}

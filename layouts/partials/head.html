@@ -4,7 +4,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   {{ hugo.Generator }}
   <link rel="canonical" href="{{ .Permalink }}" />
-
   {{ if .IsHome }}
     {{ with .Site.Params.homeMetaContent }}
       <meta name="description" content="{{ . | plainify }}">
@@ -37,7 +36,7 @@
   </style>
 
   <style id="darkTheme">
-    .intro-and-nav,
+        .intro-and-nav,
     .main-and-footer {
       filter: invert(100%);
     }
@@ -53,7 +52,6 @@
       filter: invert(100%);
     }
   </style>
-
   <link rel="stylesheet" href="{{ "css/prism.css" | relURL }}" media="none" onload="this.media='all';">
 
   {{ $templateStyles := resources.Get "css/template-styles.css" }}

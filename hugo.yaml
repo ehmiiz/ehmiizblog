@@ -6,11 +6,12 @@ params:
   contact:
     email: emil@wirely.se
   subtitle: automation, security, infrastructure
-  footer: >-            # HTML spaces (&#32;) are needed before HTML elements
-    <a href="http://github.com/ehmiiz" rel="Github">GitHub</a>
-    <div></div>
-    <a href="https://www.linkedin.com/in/emilarsson/" rel="LinkedIn">LinkedIn</a>
+  twitter: ehmiiz
+  linkedin: emilarsson
+  github: ehmiiz
   noClasses: false
+  footer: >-            # HTML spaces (&#32;) are needed before HTML elements
+    <div></div>
 
 markup:
   highlight:

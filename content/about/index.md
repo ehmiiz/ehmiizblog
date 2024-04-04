@@ -20,17 +20,17 @@ I'm 30 years old living in Sweden. I started writing this blog mainly as a "book
 * Get more .md/git experience
 * Share PowerShell solutions
 
-## Transparency
+## Support
 
-This blog is running ads. If you want to support me completely free, please disable your AdBlock and click on one or two ads.
+This blog does not run any ads whatsoever.
 
-### Contact
+Did I help you in any way and you wish to express your support, please feel free to utilize or click on the QR code.
 
-You can DM me on twitter:
-https://twitter.com/ehmiiz
+This will direct you to my BuyMeACoffee page. Your generosity is super appreciated.
 
-or LinkedIn:
-https://www.linkedin.com/in/ehmiiz
+{{< clickable-figure src="/pics/bmc_qr.png" attrlink="https://www.buymeacoffee.com/7zwl7afwly" >}}
 
-or Mastodon:
-https://mastodon.nu/@ehmiiz@infosec.exchange
+## Contact
+
+Feel free to use the icons below to contact me via any social media platform!
+
