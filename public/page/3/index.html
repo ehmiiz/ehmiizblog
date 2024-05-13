@@ -30,7 +30,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.123.8">
+<meta name="generator" content="Hugo 0.121.2">
   <title>all posts</title>
   <link rel="canonical" href="https://www.ehmiiz.se/">
 
@@ -50,6 +50,15 @@
 
   
 
+  
+    
+    
+    
+      
+      
+    
+    
+    
   
     
     
@@ -160,6 +169,72 @@
         
 
   
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/" rel="bookmark">PowerShell for Automation: Simple Hyper-V VM-Creation script</a>
+  </h2>
+  
+    <time datetime="2021-12-21T14:58:11&#43;01:00">December 21, 2021</time>
+  
+</header>
+      
+        <h2 id="meet-labmilhttpsgithubcomehmiizlabmil">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#meet-labmilhttpsgithubcomehmiizlabmil">Meet <a href="https://github.com/ehmiiz/labmil">Labmil</a>.</a>
+</h2>
+<p>Labmil is a script I made to serve a specific usecase. When <a href="https://automatedlab.org/en/latest/">AutomatedLab</a> is overkill, and when you don&rsquo;t want to skip the installation phase of the lab.</p>
+<p><img src="https://i.imgur.com/uBIzjmx.png" alt="Displaying the cmdlet" title="Get-GeneratedPassword"></p>
+<h2 id="features">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#features">Features</a>
+</h2>
+<ul>
+<li>Quickly put the Windows Server ISO-file to good use</li>
+<li>It&rsquo;s a simple script for anyone to modify for personal needs</li>
+<li>It outputs a customobject</li>
+<li>Create multiple VM&rsquo;s using PowerShell logic</li>
+</ul>
+<h2 id="non-features">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#non-features">Non-Features</a>
+</h2>
+<p>The script has a few non-features.
+Non-Features are cool because it makes the script unique and useful in certain senarios.</p>
+<ul>
+<li>Not touching the VMs application layer makes it simple and less prone to error</li>
+<li>It only has two parameters, and only one of them is mandatory after initial run, adding simplicity</li>
+<li>It enables you as an sysadmin/engineer to do the whole set-up. Giving you more work to do yourself, meaning more labbing!</li>
+<li>It&rsquo;s only focus is Hyper-V VMs</li>
+</ul>
+<h2 id="how-i-like-to-do-my-labs">
+  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#how-i-like-to-do-my-labs">How I like to do my labs</a>
+</h2>
+<ol>
+<li>Spin up the VMs you plan on labbing with using New-LabmilVM.ps1</li>
+<li>Install the server with wanted settings and partitions</li>
+<li>Use Windows Terminal&rsquo;s split-tab functionallity, together with</li>
+</ol>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Enter-PSSession</span> <span class="n">-VMName</span> <span class="nv">$Name</span></span></span></code></pre></div>
+<p>To have one tab open with each newly created Lab-VM.</p>
+<p>Happy labbing!</p>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
   
     <article>
       <header class="Heading">
@@ -469,7 +544,7 @@
   <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#begin">Begin</a>
 </h3>
 <p>The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the <code>-Amount</code> parameter<br>
-<code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
+<code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
 <p>Since AD&rsquo;s complexity rule is enforcing at least 6 chars, this range checks that requirement box.</p>
 <p><code>[int32]$Amount = 1</code></p>
 <p>The default value solves the issue of just running the cmdlet without the <code>-Amount</code> parameter</p>

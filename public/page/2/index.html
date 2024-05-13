@@ -30,7 +30,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.123.8">
+<meta name="generator" content="Hugo 0.121.2">
   <title>all posts</title>
   <link rel="canonical" href="https://www.ehmiiz.se/">
 
@@ -196,6 +196,118 @@
         
 
   
+  
+    <article>
+      <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/" rel="bookmark">How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository</a>
+  </h2>
+  
+    <time datetime="2023-03-17T08:23:11&#43;01:00">March 17, 2023</time>
+  
+</header>
+      
+        <figure><img src="/pics/docs_cont.png"/>
+</figure>
+
+<h2 id="intro">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#intro">Intro</a>
+</h2>
+<p>The PowerShell-Docs repository is the home of the official PowerShell documentation. It contains reference and conceptual content for various versions and modules of PowerShell. Contributing to this repository is a great way to learn Git, Markdown and PowerShell, as well as to help improve the quality and accuracy of the documentation.</p>
+<p>In this blog post, I will show you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s beneficial for your learning and development.</p>
+<h2 id="what-are-quality-contributions">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#what-are-quality-contributions">What are quality contributions?</a>
+</h2>
+<p>Quality contributions are enhancements or fixes that improve the readability, consistency, style or accuracy of the documentation. They can include things like:</p>
+<ul>
+<li>Adding <a href="https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements?view=powershell-7.2#aliases">alias notes</a> for cmdlets</li>
+<li><a href="https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements?view=powershell-7.2#formatting-code-samples">Formatting code</a> samples and command syntax</li>
+<li>Updating <a href="https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements?view=powershell-7.2#link-references">link references</a></li>
+<li>Fixing <a href="https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements?view=powershell-7.2#spelling">spelling</a> errors</li>
+<li>Applying <a href="https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements?view=powershell-7.2#markdown-linting">Markdown linting</a> rules</li>
+</ul>
+<p>Quality contributions are different from content contributions, which involve adding new articles or topics, or making significant changes to existing ones. Content contributions require more discussion and approval from the PowerShell-Docs team before they can be merged.</p>
+<h2 id="how-to-make-quality-contributions">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#how-to-make-quality-contributions">How to make quality contributions?</a>
+</h2>
+<p>Before we get into how to make quality contributions, I&rsquo;d like to shamelessly plug my own module: <a href="https://www.powershellgallery.com/packages/PowerShell-Docs-CommunityModule/">PowerShell-Docs-CommunityModule</a>
+It will help you pick out work that has not been done yet.</p>
+<p>Install &amp; try it, using the following code:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-Location</span> <span class="nv">$env:USERPROFILE</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">#  Make sure &#39;username&#39; reflects your actual github username</span>
+</span></span><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">username</span><span class="p">/</span><span class="nb">PowerShell-Docs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="nb">PowerShell-Docs</span><span class="n">-CommunityModule</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">Find-MissingAliasNotes</span> <span class="n">-Verbose</span></span></span></code></pre></div>
+<p>To make quality contributions, you need to have a GitHub account and some basic knowledge of Git and Markdown. You also need to install some tools that will help you edit and preview your changes locally. Here are some steps you can follow:</p>
+<ol>
+<li>Fork the PowerShell-Docs repository on GitHub.</li>
+<li>Clone your forked repository to your local machine using Git.</li>
+<li>Install Git, Markdown tools, Docs Authoring Pack (a VS Code extension), and Posh-Git (a PowerShell module).</li>
+<li>Check out the PowerShell Docs Quality Contributions project on GitHub. This project tracks all the open issues and PRs related to quality improvements.</li>
+<li>Pick an issue that interests you or create a new one if you find something that needs fixing. You can use PowerShell-Docs-CommunityModule to help you here.</li>
+<li>Assign yourself to the issue and start working on it locally using VS Code or your preferred editor. Make sure you <a href="https://www.atlassian.com/git/tutorials/using-branches">create a new branch</a> before editing any files. Making a new branch will ensure your edited files is clean in your upcoming Pull-Request.</li>
+<li>Preview your changes, make sure you&rsquo;ve edited the <code>ms.date</code> at the top of the document to todays date (MM/dd/yyy), this way other contributors know when the document has been edited, it&rsquo;s also required when doing an update, so the owners of the repository will ask you to do this if you miss it.</li>
+<li>Commit your changes using Git and push them to your forked repository on GitHub.</li>
+<li>Create a pull request (PR) from your forked repository to the original PowerShell-Docs repository on GitHub.</li>
+<li>Wait for feedback from reviewers or maintainers of the PowerShell-Docs team.</li>
+<li>Address any comments or suggestions they may have until your PR is approved and merged.</li>
+</ol>
+<h2 id="why-make-quality-contributions">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#why-make-quality-contributions">Why make quality contributions?</a>
+</h2>
+<p>Making quality contributions has many benefits for both you and the PowerShell community.</p>
+<h3 id="for-you">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#for-you">For you:</a>
+</h3>
+<ul>
+<li>You can learn Git, by contributing to a very friendly large code-base project. The owners are more then willing to help you with git related questions. You&rsquo;ll grow a ton in this area once you start doing some PRs.</li>
+<li>You will write/edit files in Markdown (.md), a very popular markup language.</li>
+<li>Because you will be proof-reading the markdown documents, you will learn more PowerShell topics straight from the source of the documentation.</li>
+<li>You can improve your writing skills by following Microsofts style guides and best practices for technical documentation.</li>
+<li>You can get feedback from experts who work on PowerShell, Markdown and Git every day.</li>
+<li>You can build your reputation as a contributor by having your name appear in commit history.</li>
+</ul>
+<h3 id="for-the-community">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#for-the-community">For the community:</a>
+</h3>
+<ul>
+<li>You can help improve the clarity, consistency, style or accuracy of the documentation that many people rely on every day.</li>
+<li>You can help reduce confusion, errors or frustration among users who read the documentation.</li>
+<li>You can help keep the documentation up-to-date with changes in PowerShell features or
+functionality.</li>
+<li>You will be listed in the <a href="https://learn.microsoft.com/powershell/scripting/community/contributing/overview?view=powershell-7.2">Community Contributor Hall of Fame</a></li>
+</ul>
+<h2 id="conclusion">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#conclusion">Conclusion</a>
+</h2>
+<p>In this post, I showed you how you can contribute to the PowerShell-Docs repository by doing quality contributions, and why it’s great for learning Git, Markdown and PowerShell, while at the same time using the PowerShell-Docs-CommunityModule to find out what to do first. We hope this blog post inspires you to join us in making the PowerShell documentation better for everyone.</p>
+<p>If you have any questions, comments, or suggestions, please feel free to reach out on a DM either on twitter, email or mastodon!
+I hope to see a PR from you, and if you&rsquo;ve successfully done so because of this post, make sure to notify me about it! 😃</p>
+<h2 id="happy-contributing">
+  <a class="Heading-link u-clickable" href="/blog/ps_docs_contributions/#happy-contributing">Happy contributing</a>
+</h2>
+
+      
+      
+
+  
+
+  
+
+
+
+
+
+    </article>
+    
+      <div class="Divider"></div>
+    
   
     <article>
       <header class="Heading">
@@ -1259,72 +1371,6 @@ Still waiting for someone smart enough to re-write this for the Windows Terminal
 <h3 id="emil">
   <a class="Heading-link u-clickable" href="/blog/ps_ad_2021_review/#emil">/Emil</a>
 </h3>
-
-      
-      
-
-  
-
-  
-
-
-
-
-
-    </article>
-    
-      <div class="Divider"></div>
-    
-  
-    <article>
-      <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/" rel="bookmark">PowerShell for Automation: Simple Hyper-V VM-Creation script</a>
-  </h2>
-  
-    <time datetime="2021-12-21T14:58:11&#43;01:00">December 21, 2021</time>
-  
-</header>
-      
-        <h2 id="meet-labmilhttpsgithubcomehmiizlabmil">
-  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#meet-labmilhttpsgithubcomehmiizlabmil">Meet <a href="https://github.com/ehmiiz/labmil">Labmil</a>.</a>
-</h2>
-<p>Labmil is a script I made to serve a specific usecase. When <a href="https://automatedlab.org/en/latest/">AutomatedLab</a> is overkill, and when you don&rsquo;t want to skip the installation phase of the lab.</p>
-<p><img src="https://i.imgur.com/uBIzjmx.png" alt="Displaying the cmdlet" title="Get-GeneratedPassword"></p>
-<h2 id="features">
-  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#features">Features</a>
-</h2>
-<ul>
-<li>Quickly put the Windows Server ISO-file to good use</li>
-<li>It&rsquo;s a simple script for anyone to modify for personal needs</li>
-<li>It outputs a customobject</li>
-<li>Create multiple VM&rsquo;s using PowerShell logic</li>
-</ul>
-<h2 id="non-features">
-  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#non-features">Non-Features</a>
-</h2>
-<p>The script has a few non-features.
-Non-Features are cool because it makes the script unique and useful in certain senarios.</p>
-<ul>
-<li>Not touching the VMs application layer makes it simple and less prone to error</li>
-<li>It only has two parameters, and only one of them is mandatory after initial run, adding simplicity</li>
-<li>It enables you as an sysadmin/engineer to do the whole set-up. Giving you more work to do yourself, meaning more labbing!</li>
-<li>It&rsquo;s only focus is Hyper-V VMs</li>
-</ul>
-<h2 id="how-i-like-to-do-my-labs">
-  <a class="Heading-link u-clickable" href="/blog/ps_simplehyper-vlabmodule/#how-i-like-to-do-my-labs">How I like to do my labs</a>
-</h2>
-<ol>
-<li>Spin up the VMs you plan on labbing with using New-LabmilVM.ps1</li>
-<li>Install the server with wanted settings and partitions</li>
-<li>Use Windows Terminal&rsquo;s split-tab functionallity, together with</li>
-</ol>
-
-  
-
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Enter-PSSession</span> <span class="n">-VMName</span> <span class="nv">$Name</span></span></span></code></pre></div>
-<p>To have one tab open with each newly created Lab-VM.</p>
-<p>Happy labbing!</p>
 
       
       

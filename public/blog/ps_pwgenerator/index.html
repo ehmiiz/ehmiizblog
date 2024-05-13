@@ -11,7 +11,7 @@
 
 
   
-    <meta name="description" content="My history with Password GeneratorsPassword generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)
+    <meta name="description" content="My history with Password Generators Password generators can be very simple and fun to build, and I thought that publishing my own history with creating them can be a good source of knowledge for other people, hence this post :)
 My first version of Get-GeneratedPassword was created in Powershell 3.0, and at that point I didn&rsquo;t have that many requirements, the usecase for the function was basically to stash it in my $profile to quickly set new passwords for various AD accounts.">
   
 
@@ -24,7 +24,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
 
 
 
-<meta name="generator" content="Hugo 0.123.8">
+<meta name="generator" content="Hugo 0.121.2">
   <title>PowerShell for Security: PassWord Gen Part 1 | all posts</title>
   <link rel="canonical" href="https://www.ehmiiz.se/blog/ps_pwgenerator/">
 
@@ -213,7 +213,7 @@ My first version of Get-GeneratedPassword was created in Powershell 3.0, and at 
   <a class="Heading-link u-clickable" href="/blog/ps_pwgenerator/#begin">Begin</a>
 </h3>
 <p>The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the <code>-Amount</code> parameter<br>
-<code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
+<code>[ValidateRange(6, 30)] [int32]$PwLength</code></p>
 <p>Since AD&rsquo;s complexity rule is enforcing at least 6 chars, this range checks that requirement box.</p>
 <p><code>[int32]$Amount = 1</code></p>
 <p>The default value solves the issue of just running the cmdlet without the <code>-Amount</code> parameter</p>

@@ -10,6 +10,114 @@
     <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate>
     <atom:link rel="self" href="https://www.ehmiiz.se/tags/feed.xml" type="application/rss+xml" />
     <item>
+      <title>Linux on GU605MI: Sound, Keyboard, Brightness &amp; asusctl</title>
+      <link>https://www.ehmiiz.se/blog/linux_asus_g16_2024/</link>
+      <pubDate>Fri, 10 May 2024 08:23:11 +0100</pubDate>
+      <guid>https://www.ehmiiz.se/blog/linux_asus_g16_2024/</guid>
+      <description>&lt;figure&gt;&lt;img src=&#34;https://www.ehmiiz.se/pics/rog_g16.png&#34;/&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Disclaimer: Please note that while these steps have been provided to assist you, I cannot guarantee that they will work flawlessly in every scenario. Always proceed with caution and make sure to back up your data before making any significant changes to your system.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Written on 2024-05-08 (Note: Information may become outdated soon, and this was &lt;em&gt;just&lt;/em&gt; my approach)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re a proud owner of the 2024 Asus Rog Zephyrus G16 (GU605MI) and running Fedora 40+, ensuring smooth functionality of essential features like sound, keyboard, screen brightness, and asusctl might require a bit (hehe) of tweaking.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a comprehensive guide, or really the steps I took, to get everything up and running.&lt;/p&gt;
+&lt;h2 id=&#34;ensure-kernel-compatibility&#34;&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;https://www.ehmiiz.se/blog/linux_asus_g16_2024/#ensure-kernel-compatibility&#34;&gt;Ensure Kernel Compatibility&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;First things first, ensure that your kernel version is at least 6.9.*. If you&amp;rsquo;re on a newer kernel, skip this step.&lt;/p&gt;
+&lt;p&gt;Kernel 6.9 has audio improvements for Intels new 14th gen CPUs, so it&amp;rsquo;s mandatory for the GU605 to have it.&lt;/p&gt;
+&lt;p&gt;You might want to research on how to perform this in a safer way.&lt;/p&gt;
+&lt;p&gt;I trust in Fedora and the Copr build system, so I just executed the following:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf copr &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; @kernel-vanilla/mainline
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf update -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Wait for transactions to complete (may take 5+ minutes)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl reboot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;follow-the-fedora-workstation-guide&#34;&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;https://www.ehmiiz.se/blog/linux_asus_g16_2024/#follow-the-fedora-workstation-guide&#34;&gt;Follow the Fedora Workstation Guide&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Refer to the Fedora Workstation guide provided by Asus: &lt;a href=&#34;https://asus-linux.org/guides/fedora-guide/&#34;&gt;Fedora Guide&lt;/a&gt;. The steps I took myself where the following:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Updates the system&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf update -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;rpm -E %fedora&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;rpm -E %fedora&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;.noarch.rpm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Installs the nvidia driver&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf update -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install kernel-devel
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Enable hibrenate&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; nvidia-hibernate.service nvidia-suspend.service nvidia-resume.service nvidia-powerd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Install asusctl and superfxctl, used to interact with the system&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Installs Rog Control gui (to interact with the command line interfaces graphically)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf copr &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; lukenukem/asus-linux
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install asusctl supergfxctl
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf update --refresh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; supergfxd.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install asusctl-rog-gui&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;install-firmware-needed-as-of-2024-05-08&#34;&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;https://www.ehmiiz.se/blog/linux_asus_g16_2024/#install-firmware-needed-as-of-2024-05-08&#34;&gt;Install Firmware, needed as of 2024-05-08&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In the future the firmware might be added into the linux-kernel, if the sound works great after you&amp;rsquo;ve updated the system, skip this step.&lt;/p&gt;
+&lt;p&gt;The sound will not work without the correct firmware, we can clone down the correct firmware and copy it over to our system using the following lines:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://gitlab.com/kernel-firmware/linux-firmware.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dnf install rdfind
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make install &lt;span class=&#34;nv&#34;&gt;DESTDIR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;installdir
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cp -r installdir/lib/firmware/cirrus /lib/firmware
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl reboot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;fix-screen-brightness&#34;&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;https://www.ehmiiz.se/blog/linux_asus_g16_2024/#fix-screen-brightness&#34;&gt;Fix Screen Brightness&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The screens brightness works out of the box while on the dGPU.&lt;/p&gt;
+&lt;p&gt;However that comes with certain drawbacks, like flickering electron applications and increase in power consumption. The steps below gets the screen brightness controls to work in &amp;ldquo;Hybrid&amp;rdquo; and &amp;ldquo;Integrated&amp;rdquo; mode (while the display is being ran by the iGPU).&lt;/p&gt;
+&lt;p&gt;Open the grub configuration file:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nano /etc/default/grub&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Add the following string at the end of the line &lt;code&gt;GRUB_CMD_LINE_LINUX=&lt;/code&gt;:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;quiet splash nvidia-drm.modeset&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; i915.enable_dpcd_backlight&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; nvidia.NVreg_EnableBacklightHandler&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; nvidia.NVreg_RegistryDwords&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;EnableBrightnessControl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;After editing, the line should look like this:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_TIMEOUT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_DISTRIBUTOR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;sed &lt;span class=&#34;s1&#34;&gt;&amp;#39;s, release .*$,,g&amp;#39;&lt;/span&gt; /etc/system-release&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_DEFAULT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;saved
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_DISABLE_SUBMENU&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_TERMINAL_OUTPUT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;console&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_CMDLINE_LINUX&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;rd.driver.blacklist=nouveau modprobe.blacklist=nouveau rhgb quiet rd.driver.blacklist=nouveau modprobe.blacklist=nouveau acpi_backlight=native quiet splash nvidia-drm.modeset=1 i915.enable_dpcd_backlight=1 nvidia.NVreg_EnableBacklightHandler=0 nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_DISABLE_RECOVERY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;GRUB_ENABLE_BLSCFG&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;true&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Update the grub configuration and reboot:&lt;/p&gt;
+
+  
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl reboot&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With these steps, I was able get a somewhat functional GU605MI Fedora system. If you encounter any issues, refer to the respective documentation or seek further assistance from the &lt;a href=&#34;https://asus-linux.org/&#34;&gt;Asus-Linux&lt;/a&gt; community.&lt;/p&gt;
+&lt;h3 id=&#34;happy-computing&#34;&gt;
+  &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;https://www.ehmiiz.se/blog/linux_asus_g16_2024/#happy-computing&#34;&gt;Happy computing!&lt;/a&gt;
+&lt;/h3&gt;
+</description>
+    </item>
+    <item>
       <title>PowerShell Guide: Script as a Windows Service</title>
       <link>https://www.ehmiiz.se/blog/ps_scriptasaservice/</link>
       <pubDate>Tue, 26 Mar 2024 14:58:11 +0100</pubDate>
@@ -2466,7 +2574,7 @@ Non-Features are cool because it makes the script unique and useful in certain s
   &lt;a class=&#34;Heading-link u-clickable&#34; href=&#34;https://www.ehmiiz.se/blog/ps_pwgenerator/#begin&#34;&gt;Begin&lt;/a&gt;
 &lt;/h3&gt;
 &lt;p&gt;The function starts of by enforcing some of the requirements using ValidateRange, and a default value for the &lt;code&gt;-Amount&lt;/code&gt; parameter&lt;br&gt;
-&lt;code&gt;[ValidateRange(6, 30)] [int32]$PwLength&lt;/code&gt;&lt;/p&gt;
+&lt;code&gt;[ValidateRange(6, 30)] [int32]$PwLength&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Since AD&amp;rsquo;s complexity rule is enforcing at least 6 chars, this range checks that requirement box.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;[int32]$Amount = 1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The default value solves the issue of just running the cmdlet without the &lt;code&gt;-Amount&lt;/code&gt; parameter&lt;/p&gt;

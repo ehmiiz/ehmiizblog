@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+  <meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+    <meta name="description" content="Disclaimer: Please note that while these steps have been provided to assist you, I cannot guarantee that they will work flawlessly in every scenario. Always proceed with caution and make sure to back up your data before making any significant changes to your system.
+Written on 2024-05-08 (Note: Information may become outdated soon, and this was just my approach)
+If you&rsquo;re a proud owner of the 2024 Asus Rog Zephyrus G16 (GU605MI) and running Fedora 40&#43;, ensuring smooth functionality of essential features like sound, keyboard, screen brightness, and asusctl might require a bit (hehe) of tweaking.">
+  
+
+
+<meta name="color-scheme" content="light dark">
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.121.2">
+  <title>Linux on GU605MI: Sound, Keyboard, Brightness &amp; asusctl | all posts</title>
+  <link rel="canonical" href="https://www.ehmiiz.se/blog/linux_asus_g16_2024/">
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+      <link rel="stylesheet" href="/css/base.min.1acad582ac8b152661f9475cff97ae7980a4773d7013b34229d2f382e85b6cd6.min.1acad582ac8b152661f9475cff97ae7980a4773d7013b34229d2f382e85b6cd6.css" integrity="sha256-GsrVgqyLFSZh&#43;Udc/5eueYCkdz1wE7NCKdLzguhbbNY=" crossorigin="anonymous">
+
+      <link rel="stylesheet" href="/css/syntax.min.065df42d2be658bb8e0720297aadf469355a5ffaf863b00e3cce0627dd106ca0.css" integrity="sha256-Bl30LSvmWLuOByApeq30aTVaX/r4Y7AOPM4GJ90QbKA=" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <h1 class="Banner-heading">
+          <a class="Banner-link u-clickable" href="/">all posts</a>
+        </h1>
+      </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/home/">home</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/blog/">blog</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/about/">about</a>
+        </li>
+      
+        
+        
+        <li class="Banner-item">
+          <a class="Banner-link u-clickable" href="/modules/">software</a>
+        </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+  <article>
+    <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="/blog/linux_asus_g16_2024/" rel="bookmark">Linux on GU605MI: Sound, Keyboard, Brightness &amp; asusctl</a>
+  </h2>
+  
+    <time datetime="2024-05-10T08:23:11&#43;01:00">May 10, 2024</time>
+  
+</header>
+    <figure><img src="/pics/rog_g16.png"/>
+</figure>
+
+<p><strong>Disclaimer: Please note that while these steps have been provided to assist you, I cannot guarantee that they will work flawlessly in every scenario. Always proceed with caution and make sure to back up your data before making any significant changes to your system.</strong></p>
+<p><em>Written on 2024-05-08 (Note: Information may become outdated soon, and this was <em>just</em> my approach)</em></p>
+<p>If you&rsquo;re a proud owner of the 2024 Asus Rog Zephyrus G16 (GU605MI) and running Fedora 40+, ensuring smooth functionality of essential features like sound, keyboard, screen brightness, and asusctl might require a bit (hehe) of tweaking.</p>
+<p>Here&rsquo;s a comprehensive guide, or really the steps I took, to get everything up and running.</p>
+<h2 id="ensure-kernel-compatibility">
+  <a class="Heading-link u-clickable" href="/blog/linux_asus_g16_2024/#ensure-kernel-compatibility">Ensure Kernel Compatibility</a>
+</h2>
+<p>First things first, ensure that your kernel version is at least 6.9.*. If you&rsquo;re on a newer kernel, skip this step.</p>
+<p>Kernel 6.9 has audio improvements for Intels new 14th gen CPUs, so it&rsquo;s mandatory for the GU605 to have it.</p>
+<p>You might want to research on how to perform this in a safer way.</p>
+<p>I trust in Fedora and the Copr build system, so I just executed the following:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo dnf copr <span class="nb">enable</span> @kernel-vanilla/mainline
+</span></span><span class="line"><span class="cl">sudo dnf update -y
+</span></span><span class="line"><span class="cl"><span class="c1"># Wait for transactions to complete (may take 5+ minutes)</span>
+</span></span><span class="line"><span class="cl">systemctl reboot</span></span></code></pre></div>
+<h2 id="follow-the-fedora-workstation-guide">
+  <a class="Heading-link u-clickable" href="/blog/linux_asus_g16_2024/#follow-the-fedora-workstation-guide">Follow the Fedora Workstation Guide</a>
+</h2>
+<p>Refer to the Fedora Workstation guide provided by Asus: <a href="https://asus-linux.org/guides/fedora-guide/">Fedora Guide</a>. The steps I took myself where the following:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Updates the system</span>
+</span></span><span class="line"><span class="cl">sudo dnf update -y
+</span></span><span class="line"><span class="cl">sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-<span class="k">$(</span>rpm -E %fedora<span class="k">)</span>.noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-<span class="k">$(</span>rpm -E %fedora<span class="k">)</span>.noarch.rpm
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Installs the nvidia driver</span>
+</span></span><span class="line"><span class="cl">sudo dnf update -y
+</span></span><span class="line"><span class="cl">sudo dnf install kernel-devel
+</span></span><span class="line"><span class="cl">sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Enable hibrenate</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> nvidia-hibernate.service nvidia-suspend.service nvidia-resume.service nvidia-powerd.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Install asusctl and superfxctl, used to interact with the system</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Installs Rog Control gui (to interact with the command line interfaces graphically)</span>
+</span></span><span class="line"><span class="cl">sudo dnf copr <span class="nb">enable</span> lukenukem/asus-linux
+</span></span><span class="line"><span class="cl">sudo dnf update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo dnf install asusctl supergfxctl
+</span></span><span class="line"><span class="cl">sudo dnf update --refresh
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> supergfxd.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo dnf install asusctl-rog-gui</span></span></code></pre></div>
+<h2 id="install-firmware-needed-as-of-2024-05-08">
+  <a class="Heading-link u-clickable" href="/blog/linux_asus_g16_2024/#install-firmware-needed-as-of-2024-05-08">Install Firmware, needed as of 2024-05-08</a>
+</h2>
+<p>In the future the firmware might be added into the linux-kernel, if the sound works great after you&rsquo;ve updated the system, skip this step.</p>
+<p>The sound will not work without the correct firmware, we can clone down the correct firmware and copy it over to our system using the following lines:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://gitlab.com/kernel-firmware/linux-firmware.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> linux-firmware
+</span></span><span class="line"><span class="cl">sudo dnf install rdfind
+</span></span><span class="line"><span class="cl">make install <span class="nv">DESTDIR</span><span class="o">=</span>installdir
+</span></span><span class="line"><span class="cl">sudo cp -r installdir/lib/firmware/cirrus /lib/firmware
+</span></span><span class="line"><span class="cl">systemctl reboot</span></span></code></pre></div>
+<h2 id="fix-screen-brightness">
+  <a class="Heading-link u-clickable" href="/blog/linux_asus_g16_2024/#fix-screen-brightness">Fix Screen Brightness</a>
+</h2>
+<p>The screens brightness works out of the box while on the dGPU.</p>
+<p>However that comes with certain drawbacks, like flickering electron applications and increase in power consumption. The steps below gets the screen brightness controls to work in &ldquo;Hybrid&rdquo; and &ldquo;Integrated&rdquo; mode (while the display is being ran by the iGPU).</p>
+<p>Open the grub configuration file:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo nano /etc/default/grub</span></span></code></pre></div>
+<p>Add the following string at the end of the line <code>GRUB_CMD_LINE_LINUX=</code>:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">quiet splash nvidia-drm.modeset<span class="o">=</span><span class="m">1</span> i915.enable_dpcd_backlight<span class="o">=</span><span class="m">1</span> nvidia.NVreg_EnableBacklightHandler<span class="o">=</span><span class="m">0</span> nvidia.NVreg_RegistryDwords<span class="o">=</span><span class="nv">EnableBrightnessControl</span><span class="o">=</span><span class="m">0</span></span></span></code></pre></div>
+<p>After editing, the line should look like this:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">GRUB_TIMEOUT</span><span class="o">=</span><span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DISTRIBUTOR</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>sed <span class="s1">&#39;s, release .*$,,g&#39;</span> /etc/system-release<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DEFAULT</span><span class="o">=</span>saved
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DISABLE_SUBMENU</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_TERMINAL_OUTPUT</span><span class="o">=</span><span class="s2">&#34;console&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&#34;rd.driver.blacklist=nouveau modprobe.blacklist=nouveau rhgb quiet rd.driver.blacklist=nouveau modprobe.blacklist=nouveau acpi_backlight=native quiet splash nvidia-drm.modeset=1 i915.enable_dpcd_backlight=1 nvidia.NVreg_EnableBacklightHandler=0 nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DISABLE_RECOVERY</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GRUB_ENABLE_BLSCFG</span><span class="o">=</span>true</span></span></code></pre></div>
+<p>Update the grub configuration and reboot:</p>
+
+  
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+</span></span><span class="line"><span class="cl">systemctl reboot</span></span></code></pre></div>
+<p>With these steps, I was able get a somewhat functional GU605MI Fedora system. If you encounter any issues, refer to the respective documentation or seek further assistance from the <a href="https://asus-linux.org/">Asus-Linux</a> community.</p>
+<h3 id="happy-computing">
+  <a class="Heading-link u-clickable" href="/blog/linux_asus_g16_2024/#happy-computing">Happy computing!</a>
+</h3>
+
+    
+
+  
+
+  
+
+
+
+
+
+    
+  
+
+  </article>
+
+
+      </div>
+    </div>
+  </main>
+  <style>
+body {
+    font-size: 110%;
+}
+</style>
+
+<style>
+html {
+    overflow-y: scroll;
+}
+</style>
+<style>
+.social-icon svg {
+    width: 45px;   
+    height: 45px;  
+}
+
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+</style>
+<div class="social-icons-container">
+
+<a href="https://twitter.com/ehmiiz" target="_blank" rel="noopener">
+    <span class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></span>
+</a>
+
+
+<a href="https://linkedin.com/in/emilarsson" target="_blank" rel="noopener">
+    <span class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></span>
+</a>
+
+
+<a href="https://github.com/ehmiiz" target="_blank" rel="noopener">
+    <span class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 496 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+</a>
+</div>
+
+</body>
+
+</html>

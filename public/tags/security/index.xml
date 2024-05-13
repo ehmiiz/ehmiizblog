@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on </title>
-    <link>http://localhost:1313/tags/security/</link>
-    <description>Recent content in Security on </description>
+    <title>security on all posts</title>
+    <link>https://www.ehmiiz.se/tags/security/</link>
+    <description>Recent content in security on all posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Nov 2023 07:51:24 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 08:23:11 +0100</lastBuildDate>
+    <atom:link href="https://www.ehmiiz.se/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PowerShell for Security: Continuous post of AD Weaknesses</title>
-      <link>http://localhost:1313/blog/ps_ad_unsecure_by_default/</link>
+      <link>https://www.ehmiiz.se/blog/ps_ad_unsecure_by_default/</link>
       <pubDate>Mon, 23 Oct 2023 08:23:11 +0100</pubDate>
-      <guid>http://localhost:1313/blog/ps_ad_unsecure_by_default/</guid>
+      <guid>https://www.ehmiiz.se/blog/ps_ad_unsecure_by_default/</guid>
       <description>Idea behind this post As an Active Directory professional, I have gained insights into its unsecure features and outdated legacy “ideas,” as well as the growing list of vulnerabilities in the ADDS, ADCS &amp;amp; ADFS suite.&#xA;In this post, I will share my knowledge and experience in defending Active Directory with other AD admins. Each vulnerability section will be divided into three parts: Problem, Solution, and Script.&#xA;Please note that this post is personal and subject to change.</description>
     </item>
     <item>
       <title>PowerShell KeePass and saving time</title>
-      <link>http://localhost:1313/blog/ps_fast_password_retrieving/</link>
+      <link>https://www.ehmiiz.se/blog/ps_fast_password_retrieving/</link>
       <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/ps_fast_password_retrieving/</guid>
+      <guid>https://www.ehmiiz.se/blog/ps_fast_password_retrieving/</guid>
       <description>Glad to be back from a 7-month dad leave. Let&amp;rsquo;s dive into some timesaving PowerShell!&#xA;The Problem Password managers are very useful for anyone having more than one set of credentials, and most of us do.&#xA;They reduce the chance of credential leakage to unauthorized people and are vastly superior both post-it papers and notepad files.&#xA;However, I found myself using the graphical user interface (GUI) of my password manager daily to simply search copy and paste secret.</description>
     </item>
   </channel>
