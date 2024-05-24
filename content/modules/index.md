@@ -1,5 +1,5 @@
 ---
-date: 2024-04-17
+date: 2024-05-24
 title: "List of published software"
 ---
 
@@ -15,6 +15,17 @@ They're all open source and licensed under MIT.
 ## Programs
 
 In this section, you'll find different programs (GUI, Web, CLI, Tray).
+
+
+---
+
+### [TicTacToe](https://github.com/ehmiiz/TicTacToe)
+
+{{< figure
+  src="https://github.com/ehmiiz/TicTacToe/blob/e764b02268bbf662e6049512294fdc51c219dad3/demo.gif"
+>}}
+
+The classic TicTacToe game from your terminal! Delivered by the python interpreter.
 
 ---
 

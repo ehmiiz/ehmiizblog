@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.ehmiiz.se/modules/</loc>
+    <lastmod>2024-05-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.ehmiiz.se/</loc>
     <lastmod>2024-05-10T08:23:11+01:00</lastmod>
   </url><url>
@@ -10,9 +13,6 @@
   </url><url>
     <loc>https://www.ehmiiz.se/blog/linux_asus_g16_2024/</loc>
     <lastmod>2024-05-10T08:23:11+01:00</lastmod>
-  </url><url>
-    <loc>https://www.ehmiiz.se/modules/</loc>
-    <lastmod>2024-04-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.ehmiiz.se/blog/ps_scriptasaservice/</loc>
     <lastmod>2024-03-26T14:58:11+01:00</lastmod>

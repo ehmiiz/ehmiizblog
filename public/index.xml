@@ -6,8 +6,15 @@
     <description>Recent content on all posts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Mar 2024 14:58:11 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2024 08:23:11 +0100</lastBuildDate>
     <atom:link href="https://www.ehmiiz.se/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux on GU605MI: Sound, Keyboard, Brightness &amp; asusctl</title>
+      <link>https://www.ehmiiz.se/blog/linux_asus_g16_2024/</link>
+      <pubDate>Fri, 10 May 2024 08:23:11 +0100</pubDate>
+      <guid>https://www.ehmiiz.se/blog/linux_asus_g16_2024/</guid>
+      <description>Disclaimer: Please note that while these steps have been provided to assist you, I cannot guarantee that they will work flawlessly in every scenario. Always proceed with caution and make sure to back up your data before making any significant changes to your system.&#xA;Written on 2024-05-08 (Note: Information may become outdated soon, and this was just my approach)&#xA;If you&amp;rsquo;re a proud owner of the 2024 Asus Rog Zephyrus G16 (GU605MI) and running Fedora 40+, ensuring smooth functionality of essential features like sound, keyboard, screen brightness, and asusctl might require a bit (hehe) of tweaking.</description>
+    </item>
     <item>
       <title>List of published software</title>
       <link>https://www.ehmiiz.se/modules/</link>
