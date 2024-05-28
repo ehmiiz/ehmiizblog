@@ -18,7 +18,7 @@ I hope you enjoy your stay here.
 ## rss
 
 To subscribe to this RSS feed, copy this address and paste it into your favorite feed reader:
-`https://ehmiiz.com/feed.xml`
+`https://ehmiiz.se/feed.xml`
 
 ## contact
 
