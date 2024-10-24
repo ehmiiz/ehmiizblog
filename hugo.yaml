@@ -31,5 +31,5 @@ menu:
       pageRef: /about
       weight: 3
     - name: software
-      pageRef: /modules
+      pageRef: /software
       weight: 4
